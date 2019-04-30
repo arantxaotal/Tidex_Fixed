@@ -1,0 +1,17 @@
+﻿Build started 6/16/2015 4:03:22 PM.
+     1>Project "D:\programming\lib\blitz-0.10\blitz\blitz.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         C:\Program Files (x86)\Intel\Composer XE 2015\bin\Intel64\xilib.exe /OUT:"x64\Debug\blitz_d.lib" /NOLOGO /MACHINE:X64 x64\Debug\globals.obj /MACHINE:X64 
+         xilib: executing 'lib'
+         blitz.vcxproj -> D:\programming\lib\blitz-0.10\blitz\x64\Debug\blitz_d.lib
+       PostBuildEvent:
+         mkdir "D:\programming\lib\blitz-0.10\lib\x64"
+         copy /Y "D:\programming\lib\blitz-0.10\blitz\x64\Debug\blitz_d.lib" "D:\programming\lib\blitz-0.10\lib\x64\blitz_d.lib"
+         :VCEnd
+         A subdirectory or file D:\programming\lib\blitz-0.10\lib\x64 already exists.
+                 1 file(s) copied.
+     1>Done Building Project "D:\programming\lib\blitz-0.10\blitz\blitz.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.10

@@ -1,0 +1,19 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly Interop.VFProjExtLib.19.0, Version=19.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class VFProjExtLib.VFProjAOConstants: AutoLayout, AnsiClass, Class, Public, Abstract
+  Fields:
+    System.String prjKindVFPrjProjects = {7c56574c-38ee-489c-8d79-9cd3cb628188} : Public, Static, Literal, HasFieldMarshal, HasDefault
+    System.String prjKindVFPrjProject = {60B2DF28-7A97-4db5-AD4A-C0A6CFA6A9EC} : Public, Static, Literal, HasFieldMarshal, HasDefault
+    System.String prjKindVFPrjProjectItems = {72E8D02A-1A7C-4f74-A1C7-03CE46994E5B} : Public, Static, Literal, HasFieldMarshal, HasDefault
+    System.String prjCATIDVFPrjProject = {99145B3B-3369-46c7-AA3E-EC22F298412C} : Public, Static, Literal, HasFieldMarshal, HasDefault
+    System.String prjCATIDVFPrjProjectItem = {48A76EC3-E92C-4667-8AE8-3E55DA615F51} : Public, Static, Literal, HasFieldMarshal, HasDefault
+Interface VFProjExtLib.IVFProjEventsRoot: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    System.Object VFProjectsEvents 'get ' : 
+    System.Object VFProjectItemsEvents [System.Object] 'get ' : 
+  Methods:
+    get_VFProjectsEvents(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_VFProjectItemsEvents(Object(In, Optional, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName

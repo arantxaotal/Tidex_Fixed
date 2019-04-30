@@ -1,0 +1,6 @@
+part=BBRD-A
+version=18.0
+build=6883
+prod=Box Data Provider 2018
+licpath=./
+licname=System.Data.CData.Box

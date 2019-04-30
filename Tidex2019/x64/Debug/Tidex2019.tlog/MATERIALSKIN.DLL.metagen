@@ -1,0 +1,883 @@
+  MaterialSkin.Properties.Resources.resources - Embedded, ContainedInManifestFile, 
+  MaterialSkin.Resources.Roboto-Regular.ttf - Embedded, ContainedInManifestFile, 
+  MaterialSkin.Resources.Roboto-Medium.ttf - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly MaterialSkin, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class MaterialSkin.Animations.AnimationEaseOut: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    CalculateProgress(Double): PrivateScope, Public, Static, HideBySig
+Class MaterialSkin.Animations.AnimationCustomQuadratic: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    CalculateProgress(Double): PrivateScope, Public, Static, HideBySig
+Class MaterialSkin.ColorScheme: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(MaterialSkin.Primary, MaterialSkin.Primary, MaterialSkin.Primary, MaterialSkin.Accent, MaterialSkin.TextShade): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Drawing.Color PrimaryColor : Public, InitOnly
+    System.Drawing.Color DarkPrimaryColor : Public, InitOnly
+    System.Drawing.Color LightPrimaryColor : Public, InitOnly
+    System.Drawing.Color AccentColor : Public, InitOnly
+    System.Drawing.Color TextColor : Public, InitOnly
+    System.Drawing.Pen PrimaryPen : Public, InitOnly
+    System.Drawing.Pen DarkPrimaryPen : Public, InitOnly
+    System.Drawing.Pen LightPrimaryPen : Public, InitOnly
+    System.Drawing.Pen AccentPen : Public, InitOnly
+    System.Drawing.Pen TextPen : Public, InitOnly
+    System.Drawing.Brush PrimaryBrush : Public, InitOnly
+    System.Drawing.Brush DarkPrimaryBrush : Public, InitOnly
+    System.Drawing.Brush LightPrimaryBrush : Public, InitOnly
+    System.Drawing.Brush AccentBrush : Public, InitOnly
+    System.Drawing.Brush TextBrush : Public, InitOnly
+Class MaterialSkin.ColorExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    ToColor(Int32): PrivateScope, Public, Static, HideBySig
+    RemoveAlpha(Color): PrivateScope, Public, Static, HideBySig
+    PercentageToColorComponent(Int32): PrivateScope, Public, Static, HideBySig
+Struct MaterialSkin.TextShade: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    MaterialSkin.TextShade WHITE = 16777215 : Public, Static, Literal, HasDefault
+    MaterialSkin.TextShade BLACK = 2171169 : Public, Static, Literal, HasDefault
+Struct MaterialSkin.Primary: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    MaterialSkin.Primary Red50 = 16772078 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Red100 = 16764370 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Red200 = 15702682 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Red300 = 15037299 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Red400 = 15684432 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Red500 = 16007990 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Red600 = 15022389 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Red700 = 13840175 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Red800 = 12986408 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Red900 = 12000284 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Pink50 = 16573676 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Pink100 = 16301008 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Pink200 = 16027569 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Pink300 = 15753874 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Pink400 = 15483002 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Pink500 = 15277667 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Pink600 = 14162784 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Pink700 = 12720219 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Pink800 = 11342935 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Pink900 = 8916559 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Purple50 = 15984117 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Purple100 = 14794471 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Purple200 = 13538264 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Purple300 = 12216520 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Purple400 = 11225020 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Purple500 = 10233776 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Purple600 = 9315498 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Purple700 = 8069026 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Purple800 = 6953882 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Purple900 = 4854924 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepPurple50 = 15591414 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepPurple100 = 13747433 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepPurple200 = 11771355 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepPurple300 = 9795021 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepPurple400 = 8280002 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepPurple500 = 6765239 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepPurple600 = 6174129 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepPurple700 = 5320104 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepPurple800 = 4532128 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepPurple900 = 3218322 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Indigo50 = 15264502 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Indigo100 = 12962537 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Indigo200 = 10463450 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Indigo300 = 7964363 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Indigo400 = 6056896 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Indigo500 = 4149685 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Indigo600 = 3754411 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Indigo700 = 3162015 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Indigo800 = 2635155 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Indigo900 = 1713022 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Blue50 = 14938877 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Blue100 = 12312315 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Blue200 = 9489145 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Blue300 = 6600182 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Blue400 = 4367861 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Blue500 = 2201331 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Blue600 = 2001125 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Blue700 = 1668818 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Blue800 = 1402304 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Blue900 = 870305 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightBlue50 = 14808574 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightBlue100 = 11789820 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightBlue200 = 8508666 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightBlue300 = 5227511 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightBlue400 = 2733814 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightBlue500 = 240116 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightBlue600 = 236517 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightBlue700 = 166097 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightBlue800 = 161725 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightBlue900 = 87963 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Cyan50 = 14743546 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Cyan100 = 11725810 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Cyan200 = 8445674 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Cyan300 = 5099745 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Cyan400 = 2541274 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Cyan500 = 48340 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Cyan600 = 44225 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Cyan700 = 38823 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Cyan800 = 33679 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Cyan900 = 24676 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Teal50 = 14742257 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Teal100 = 11722715 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Teal200 = 8440772 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Teal300 = 5093036 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Teal400 = 2533018 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Teal500 = 38536 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Teal600 = 35195 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Teal700 = 31083 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Teal800 = 26972 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Teal900 = 19776 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Green50 = 15267305 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Green100 = 13166281 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Green200 = 10868391 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Green300 = 8505220 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Green400 = 6732650 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Green500 = 5025616 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Green600 = 4431943 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Green700 = 3706428 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Green800 = 3046706 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Green900 = 1793568 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightGreen50 = 15857897 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightGreen100 = 14478792 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightGreen200 = 12968357 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightGreen300 = 11457921 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightGreen400 = 10275941 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightGreen500 = 9159498 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightGreen600 = 8172354 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightGreen700 = 6856504 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightGreen800 = 5606191 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary LightGreen900 = 3369246 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Lime50 = 16382951 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Lime100 = 15791299 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Lime200 = 15134364 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Lime300 = 14477173 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Lime400 = 13951319 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Lime500 = 13491257 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Lime600 = 12634675 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Lime700 = 11514923 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Lime800 = 10394916 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Lime900 = 8550167 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Yellow50 = 16776679 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Yellow100 = 16775620 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Yellow200 = 16774557 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Yellow300 = 16773494 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Yellow400 = 16772696 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Yellow500 = 16771899 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Yellow600 = 16635957 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Yellow700 = 16498733 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Yellow800 = 16361509 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Yellow900 = 16088855 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Amber50 = 16775393 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Amber100 = 16772275 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Amber200 = 16769154 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Amber300 = 16766287 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Amber400 = 16763432 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Amber500 = 16761095 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Amber600 = 16757504 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Amber700 = 16752640 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Amber800 = 16748288 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Amber900 = 16740096 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Orange50 = 16774112 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Orange100 = 16769202 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Orange200 = 16764032 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Orange300 = 16758605 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Orange400 = 16754470 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Orange500 = 16750592 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Orange600 = 16485376 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Orange700 = 16088064 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Orange800 = 15690752 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Orange900 = 15094016 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepOrange50 = 16509415 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepOrange100 = 16764092 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepOrange200 = 16755601 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepOrange300 = 16747109 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepOrange400 = 16740419 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepOrange500 = 16733986 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepOrange600 = 16011550 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepOrange700 = 15092249 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepOrange800 = 14172949 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary DeepOrange900 = 12531212 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Brown50 = 15723497 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Brown100 = 14142664 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Brown200 = 12364452 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Brown300 = 10586239 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Brown400 = 9268835 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Brown500 = 7951688 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Brown600 = 7162945 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Brown700 = 6111287 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Brown800 = 5125166 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Brown900 = 4073251 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Grey50 = 16448250 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Grey100 = 16119285 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Grey200 = 15658734 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Grey300 = 14737632 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Grey400 = 12434877 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Grey500 = 10395294 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Grey600 = 7697781 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Grey700 = 6381921 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Grey800 = 4342338 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary Grey900 = 2171169 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary BlueGrey50 = 15527921 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary BlueGrey100 = 13621468 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary BlueGrey200 = 11583173 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary BlueGrey300 = 9479342 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary BlueGrey400 = 7901340 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary BlueGrey500 = 6323595 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary BlueGrey600 = 5533306 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary BlueGrey700 = 4545124 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary BlueGrey800 = 3622735 : Public, Static, Literal, HasDefault
+    MaterialSkin.Primary BlueGrey900 = 2503224 : Public, Static, Literal, HasDefault
+Struct MaterialSkin.Accent: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    MaterialSkin.Accent Red100 = 16747136 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Red200 = 16732754 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Red400 = 16717636 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Red700 = 13959168 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Pink100 = 16744619 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Pink200 = 16728193 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Pink400 = 16056407 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Pink700 = 12915042 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Purple100 = 15368444 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Purple200 = 14696699 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Purple400 = 13959417 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Purple700 = 11141375 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent DeepPurple100 = 11766015 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent DeepPurple200 = 8146431 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent DeepPurple400 = 6627327 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent DeepPurple700 = 6422762 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Indigo100 = 9215743 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Indigo200 = 5467646 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Indigo400 = 4020990 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Indigo700 = 3166206 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Blue100 = 8565247 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Blue200 = 4492031 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Blue400 = 2718207 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Blue700 = 2712319 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent LightBlue100 = 8444159 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent LightBlue200 = 4244735 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent LightBlue400 = 45311 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent LightBlue700 = 37354 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Cyan100 = 8716287 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Cyan200 = 1638399 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Cyan400 = 58879 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Cyan700 = 47316 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Teal100 = 11010027 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Teal200 = 6619098 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Teal400 = 1960374 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Teal700 = 49061 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Green100 = 12187338 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Green200 = 6942894 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Green400 = 58998 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Green700 = 51283 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent LightGreen100 = 13434768 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent LightGreen200 = 11730777 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent LightGreen400 = 7798531 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent LightGreen700 = 6610199 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Lime100 = 16056193 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Lime200 = 15662913 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Lime400 = 13041408 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Lime700 = 11463168 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Yellow100 = 16777101 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Yellow200 = 16776960 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Yellow400 = 16771584 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Yellow700 = 16766464 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Amber100 = 16770431 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Amber200 = 16766784 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Amber400 = 16761856 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Amber700 = 16755456 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Orange100 = 16765312 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Orange200 = 16755520 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Orange400 = 16748800 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent Orange700 = 16739584 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent DeepOrange100 = 16752256 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent DeepOrange200 = 16739904 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent DeepOrange400 = 16727296 : Public, Static, Literal, HasDefault
+    MaterialSkin.Accent DeepOrange700 = 14494720 : Public, Static, Literal, HasDefault
+Class MaterialSkin.Controls.MaterialCheckBox: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.CheckBox
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    MaterialSkin.IMaterialControl
+  Properties:
+    Int32 Depth 'get set' : 
+    MaterialSkin.MaterialSkinManager SkinManager 'get ' : 
+    MaterialSkin.MouseState MouseState 'get set' : 
+    System.Drawing.Point MouseLocation 'get set' : 
+    Boolean Ripple 'get set' : 
+    Boolean AutoSize 'get set' : 
+  Methods:
+    get_Depth(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Depth(Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_SkinManager(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MouseState(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MouseState(MouseState): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MouseLocation(): PrivateScope, Public, HideBySig, SpecialName
+    set_MouseLocation(Point): PrivateScope, Public, HideBySig, SpecialName
+    get_Ripple(): PrivateScope, Public, HideBySig, SpecialName
+    set_Ripple(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    GetPreferredSize(Size): PrivateScope, Public, Virtual, HideBySig
+    get_AutoSize(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_AutoSize(Boolean): PrivateScope, Public, Virtual, HideBySig, SpecialName
+Class MaterialSkin.Controls.MaterialContextMenuStrip: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.ContextMenuStrip
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    MaterialSkin.IMaterialControl
+  Properties:
+    Int32 Depth 'get set' : 
+    MaterialSkin.MaterialSkinManager SkinManager 'get ' : 
+    MaterialSkin.MouseState MouseState 'get set' : 
+  Events:
+    ItemClickStart OnItemClickStart: 
+  Methods:
+    get_Depth(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Depth(Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_SkinManager(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MouseState(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MouseState(MouseState): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_OnItemClickStart(ItemClickStart): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnItemClickStart(ItemClickStart): PrivateScope, Public, HideBySig, SpecialName
+Class MaterialSkin.Controls.MaterialContextMenuStrip+ItemClickStart: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Object, ToolStripItemClickedEventArgs): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(Object, ToolStripItemClickedEventArgs, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class MaterialSkin.Controls.MaterialToolStripMenuItem: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.ToolStripMenuItem
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class MaterialSkin.Controls.MaterialDivider: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Windows.Forms.Control
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    MaterialSkin.IMaterialControl
+  Properties:
+    Int32 Depth 'get set' : 
+    MaterialSkin.MaterialSkinManager SkinManager 'get ' : 
+    MaterialSkin.MouseState MouseState 'get set' : 
+  Methods:
+    get_Depth(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Depth(Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_SkinManager(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MouseState(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MouseState(MouseState): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Class MaterialSkin.Controls.MaterialFlatButton: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Button
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    MaterialSkin.IMaterialControl
+  Properties:
+    Int32 Depth 'get set' : 
+    MaterialSkin.MaterialSkinManager SkinManager 'get ' : 
+    MaterialSkin.MouseState MouseState 'get set' : 
+    Boolean Primary 'get set' : 
+    System.String Text 'get set' : 
+  Methods:
+    get_Depth(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Depth(Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_SkinManager(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MouseState(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MouseState(MouseState): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Primary(): PrivateScope, Public, HideBySig, SpecialName
+    set_Primary(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Text(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_Text(String): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    GetPreferredSize(Size): PrivateScope, Public, Virtual, HideBySig
+Class MaterialSkin.Controls.MaterialForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    MaterialSkin.IMaterialControl
+  Fields:
+    Int32 WM_NCLBUTTONDOWN = 161 : Public, Static, Literal, HasDefault
+    Int32 HT_CAPTION = 2 : Public, Static, Literal, HasDefault
+    Int32 WM_MOUSEMOVE = 512 : Public, Static, Literal, HasDefault
+    Int32 WM_LBUTTONDOWN = 513 : Public, Static, Literal, HasDefault
+    Int32 WM_LBUTTONUP = 514 : Public, Static, Literal, HasDefault
+    Int32 WM_LBUTTONDBLCLK = 515 : Public, Static, Literal, HasDefault
+    Int32 WM_RBUTTONDOWN = 516 : Public, Static, Literal, HasDefault
+  Properties:
+    Int32 Depth 'get set' : 
+    MaterialSkin.MaterialSkinManager SkinManager 'get ' : 
+    MaterialSkin.MouseState MouseState 'get set' : 
+    System.Windows.Forms.FormBorderStyle FormBorderStyle 'get set' : 
+    Boolean Sizable 'get set' : 
+  Methods:
+    get_Depth(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Depth(Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_SkinManager(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MouseState(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MouseState(MouseState): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_FormBorderStyle(): PrivateScope, Public, HideBySig, SpecialName
+    set_FormBorderStyle(FormBorderStyle): PrivateScope, Public, HideBySig, SpecialName
+    get_Sizable(): PrivateScope, Public, HideBySig, SpecialName
+    set_Sizable(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    SendMessage(IntPtr, Int32, Int32, Int32): PrivateScope, Public, Static, HideBySig, PinvokeImpl
+    ReleaseCapture(): PrivateScope, Public, Static, HideBySig, PinvokeImpl
+    TrackPopupMenuEx(IntPtr, UInt32, Int32, Int32, IntPtr, IntPtr): PrivateScope, Public, Static, HideBySig, PinvokeImpl
+    GetSystemMenu(IntPtr, Boolean): PrivateScope, Public, Static, HideBySig, PinvokeImpl
+    MonitorFromWindow(IntPtr, UInt32): PrivateScope, Public, Static, HideBySig, PinvokeImpl
+    GetMonitorInfo(HandleRef, MONITORINFOEX(In, Out)): PrivateScope, Public, Static, HideBySig, PinvokeImpl
+Class MaterialSkin.Controls.MaterialForm+MONITORINFOEX: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, AutoClass, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 cbSize : Public
+    RECT rcMonitor : Public
+    RECT rcWork : Public
+    Int32 dwFlags : Public
+    Char[] szDevice : Public, HasFieldMarshal
+Struct MaterialSkin.Controls.MaterialForm+RECT: AutoLayout, AnsiClass, Class, NestedPublic, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    Int32 left : Public
+    Int32 top : Public
+    Int32 right : Public
+    Int32 bottom : Public
+  Methods:
+    Width(): PrivateScope, Public, HideBySig
+    Height(): PrivateScope, Public, HideBySig
+Class MaterialSkin.Controls.MouseMessageFilter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.Windows.Forms.IMessageFilter
+  Events:
+    System.Windows.Forms.MouseEventHandler MouseMove: 
+  Methods:
+    add_MouseMove(MouseEventHandler): PrivateScope, Public, Static, HideBySig, SpecialName
+    remove_MouseMove(MouseEventHandler): PrivateScope, Public, Static, HideBySig, SpecialName
+    PreFilterMessage(Message&): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class MaterialSkin.Controls.MaterialLabel: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Label
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    MaterialSkin.IMaterialControl
+  Properties:
+    Int32 Depth 'get set' : 
+    MaterialSkin.MaterialSkinManager SkinManager 'get ' : 
+    MaterialSkin.MouseState MouseState 'get set' : 
+  Methods:
+    get_Depth(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Depth(Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_SkinManager(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MouseState(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MouseState(MouseState): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Class MaterialSkin.Controls.MaterialRadioButton: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.RadioButton
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    MaterialSkin.IMaterialControl
+  Properties:
+    Int32 Depth 'get set' : 
+    MaterialSkin.MaterialSkinManager SkinManager 'get ' : 
+    MaterialSkin.MouseState MouseState 'get set' : 
+    System.Drawing.Point MouseLocation 'get set' : 
+    Boolean Ripple 'get set' : 
+  Methods:
+    get_Depth(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Depth(Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_SkinManager(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MouseState(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MouseState(MouseState): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MouseLocation(): PrivateScope, Public, HideBySig, SpecialName
+    set_MouseLocation(Point): PrivateScope, Public, HideBySig, SpecialName
+    get_Ripple(): PrivateScope, Public, HideBySig, SpecialName
+    set_Ripple(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    GetPreferredSize(Size): PrivateScope, Public, Virtual, HideBySig
+Class MaterialSkin.Controls.MaterialSingleLineTextField: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Control
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    MaterialSkin.IMaterialControl
+  Properties:
+    Int32 Depth 'get set' : 
+    MaterialSkin.MaterialSkinManager SkinManager 'get ' : 
+    MaterialSkin.MouseState MouseState 'get set' : 
+    System.String Text 'get set' : 
+    System.Object Tag 'get set' : 
+    System.String SelectedText 'get set' : 
+    System.String Hint 'get set' : 
+    Int32 SelectionStart 'get set' : 
+    Int32 SelectionLength 'get set' : 
+    Int32 TextLength 'get ' : 
+    Boolean UseSystemPasswordChar 'get set' : 
+    Char PasswordChar 'get set' : 
+  Events:
+    System.EventHandler AcceptsTabChanged: 
+    System.EventHandler AutoSizeChanged: 
+    System.EventHandler BackgroundImageChanged: 
+    System.EventHandler BackgroundImageLayoutChanged: 
+    System.EventHandler BindingContextChanged: 
+    System.EventHandler BorderStyleChanged: 
+    System.EventHandler CausesValidationChanged: 
+    System.Windows.Forms.UICuesEventHandler ChangeUICues: 
+    System.EventHandler Click: 
+    System.EventHandler ClientSizeChanged: 
+    System.EventHandler ContextMenuChanged: 
+    System.EventHandler ContextMenuStripChanged: 
+    System.Windows.Forms.ControlEventHandler ControlAdded: 
+    System.Windows.Forms.ControlEventHandler ControlRemoved: 
+    System.EventHandler CursorChanged: 
+    System.EventHandler Disposed: 
+    System.EventHandler DockChanged: 
+    System.EventHandler DoubleClick: 
+    System.Windows.Forms.DragEventHandler DragDrop: 
+    System.Windows.Forms.DragEventHandler DragEnter: 
+    System.EventHandler DragLeave: 
+    System.Windows.Forms.DragEventHandler DragOver: 
+    System.EventHandler EnabledChanged: 
+    System.EventHandler Enter: 
+    System.EventHandler FontChanged: 
+    System.EventHandler ForeColorChanged: 
+    System.Windows.Forms.GiveFeedbackEventHandler GiveFeedback: 
+    System.EventHandler GotFocus: 
+    System.EventHandler HandleCreated: 
+    System.EventHandler HandleDestroyed: 
+    System.Windows.Forms.HelpEventHandler HelpRequested: 
+    System.EventHandler HideSelectionChanged: 
+    System.EventHandler ImeModeChanged: 
+    System.Windows.Forms.InvalidateEventHandler Invalidated: 
+    System.Windows.Forms.KeyEventHandler KeyDown: 
+    System.Windows.Forms.KeyPressEventHandler KeyPress: 
+    System.Windows.Forms.KeyEventHandler KeyUp: 
+    System.Windows.Forms.LayoutEventHandler Layout: 
+    System.EventHandler Leave: 
+    System.EventHandler LocationChanged: 
+    System.EventHandler LostFocus: 
+    System.EventHandler MarginChanged: 
+    System.EventHandler ModifiedChanged: 
+    System.EventHandler MouseCaptureChanged: 
+    System.Windows.Forms.MouseEventHandler MouseClick: 
+    System.Windows.Forms.MouseEventHandler MouseDoubleClick: 
+    System.Windows.Forms.MouseEventHandler MouseDown: 
+    System.EventHandler MouseEnter: 
+    System.EventHandler MouseHover: 
+    System.EventHandler MouseLeave: 
+    System.Windows.Forms.MouseEventHandler MouseMove: 
+    System.Windows.Forms.MouseEventHandler MouseUp: 
+    System.Windows.Forms.MouseEventHandler MouseWheel: 
+    System.EventHandler Move: 
+    System.EventHandler MultilineChanged: 
+    System.EventHandler PaddingChanged: 
+    System.Windows.Forms.PaintEventHandler Paint: 
+    System.EventHandler ParentChanged: 
+    System.Windows.Forms.PreviewKeyDownEventHandler PreviewKeyDown: 
+    System.Windows.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp: 
+    System.Windows.Forms.QueryContinueDragEventHandler QueryContinueDrag: 
+    System.EventHandler ReadOnlyChanged: 
+    System.EventHandler RegionChanged: 
+    System.EventHandler Resize: 
+    System.EventHandler RightToLeftChanged: 
+    System.EventHandler SizeChanged: 
+    System.EventHandler StyleChanged: 
+    System.EventHandler SystemColorsChanged: 
+    System.EventHandler TabIndexChanged: 
+    System.EventHandler TabStopChanged: 
+    System.EventHandler TextAlignChanged: 
+    System.EventHandler TextChanged: 
+    System.EventHandler Validated: 
+    System.ComponentModel.CancelEventHandler Validating: 
+    System.EventHandler VisibleChanged: 
+  Methods:
+    add_VisibleChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_VisibleChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_HideSelectionChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_ImeModeChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ImeModeChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_Invalidated(InvalidateEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_Invalidated(InvalidateEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_KeyDown(KeyEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_KeyDown(KeyEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_KeyPress(KeyPressEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_KeyPress(KeyPressEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_KeyUp(KeyEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_KeyUp(KeyEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_Layout(LayoutEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_Layout(LayoutEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_Leave(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_Leave(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_LocationChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_LocationChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_LostFocus(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_LostFocus(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MarginChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MarginChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_ModifiedChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ModifiedChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseCaptureChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseCaptureChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseClick(MouseEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseClick(MouseEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseDoubleClick(MouseEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseDoubleClick(MouseEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseDown(MouseEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseDown(MouseEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseEnter(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseEnter(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseHover(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseHover(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseLeave(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseLeave(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseMove(MouseEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseMove(MouseEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseUp(MouseEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseUp(MouseEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseWheel(MouseEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseWheel(MouseEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_Move(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_Move(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MultilineChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MultilineChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_PaddingChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_PaddingChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_Paint(PaintEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_Paint(PaintEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_ParentChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ParentChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_PreviewKeyDown(PreviewKeyDownEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_PreviewKeyDown(PreviewKeyDownEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_QueryAccessibilityHelp(QueryAccessibilityHelpEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_QueryAccessibilityHelp(QueryAccessibilityHelpEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_QueryContinueDrag(QueryContinueDragEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_QueryContinueDrag(QueryContinueDragEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_ReadOnlyChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ReadOnlyChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_RegionChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_RegionChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_Resize(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_Resize(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_RightToLeftChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_RightToLeftChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_SizeChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_SizeChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_StyleChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_StyleChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_SystemColorsChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_SystemColorsChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_TabIndexChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_TabIndexChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_TabStopChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_TabStopChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_TextAlignChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_TextAlignChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_TextChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_TextChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_Validated(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_Validated(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_Validating(CancelEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_Validating(CancelEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_Depth(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Depth(Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_SkinManager(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MouseState(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MouseState(MouseState): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Text(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_Text(String): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Tag(): PrivateScope, Public, HideBySig, SpecialName
+    set_Tag(Object): PrivateScope, Public, HideBySig, SpecialName
+    get_SelectedText(): PrivateScope, Public, HideBySig, SpecialName
+    set_SelectedText(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Hint(): PrivateScope, Public, HideBySig, SpecialName
+    set_Hint(String): PrivateScope, Public, HideBySig, SpecialName
+    get_SelectionStart(): PrivateScope, Public, HideBySig, SpecialName
+    set_SelectionStart(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_SelectionLength(): PrivateScope, Public, HideBySig, SpecialName
+    set_SelectionLength(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_TextLength(): PrivateScope, Public, HideBySig, SpecialName
+    get_UseSystemPasswordChar(): PrivateScope, Public, HideBySig, SpecialName
+    set_UseSystemPasswordChar(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_PasswordChar(): PrivateScope, Public, HideBySig, SpecialName
+    set_PasswordChar(Char): PrivateScope, Public, HideBySig, SpecialName
+    SelectAll(): PrivateScope, Public, HideBySig
+    Clear(): PrivateScope, Public, HideBySig
+    add_AcceptsTabChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_AcceptsTabChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_AutoSizeChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_AutoSizeChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_BackgroundImageChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_BackgroundImageChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_BackgroundImageLayoutChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_BackgroundImageLayoutChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_BindingContextChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_BindingContextChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_BorderStyleChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_BorderStyleChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_CausesValidationChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_CausesValidationChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_ChangeUICues(UICuesEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ChangeUICues(UICuesEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_Click(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_Click(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_ClientSizeChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ClientSizeChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_ContextMenuChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ContextMenuChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_ContextMenuStripChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ContextMenuStripChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_ControlAdded(ControlEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ControlAdded(ControlEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_ControlRemoved(ControlEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ControlRemoved(ControlEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_CursorChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_CursorChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_Disposed(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_Disposed(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_DockChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_DockChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_DoubleClick(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_DoubleClick(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_DragDrop(DragEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_DragDrop(DragEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_DragEnter(DragEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_DragEnter(DragEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_DragLeave(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_DragLeave(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_DragOver(DragEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_DragOver(DragEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_EnabledChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_EnabledChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_Enter(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_Enter(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_FontChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_FontChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_ForeColorChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ForeColorChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_GiveFeedback(GiveFeedbackEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_GiveFeedback(GiveFeedbackEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_GotFocus(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_GotFocus(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_HandleCreated(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_HandleCreated(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_HandleDestroyed(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_HandleDestroyed(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_HelpRequested(HelpEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_HelpRequested(HelpEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_HideSelectionChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+Class MaterialSkin.Controls.MaterialTabControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.TabControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    MaterialSkin.IMaterialControl
+  Properties:
+    Int32 Depth 'get set' : 
+    MaterialSkin.MaterialSkinManager SkinManager 'get ' : 
+    MaterialSkin.MouseState MouseState 'get set' : 
+  Methods:
+    get_Depth(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Depth(Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_SkinManager(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MouseState(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MouseState(MouseState): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Class MaterialSkin.Controls.MaterialTabSelector: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Control
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    MaterialSkin.IMaterialControl
+  Properties:
+    Int32 Depth 'get set' : 
+    MaterialSkin.MaterialSkinManager SkinManager 'get ' : 
+    MaterialSkin.MouseState MouseState 'get set' : 
+    MaterialSkin.Controls.MaterialTabControl BaseTabControl 'get set' : 
+  Methods:
+    get_Depth(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Depth(Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_SkinManager(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MouseState(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MouseState(MouseState): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_BaseTabControl(): PrivateScope, Public, HideBySig, SpecialName
+    set_BaseTabControl(MaterialTabControl): PrivateScope, Public, HideBySig, SpecialName
+Struct MaterialSkin.MouseState: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    MaterialSkin.MouseState HOVER = 0 : Public, Static, Literal, HasDefault
+    MaterialSkin.MouseState DOWN = 1 : Public, Static, Literal, HasDefault
+    MaterialSkin.MouseState OUT = 2 : Public, Static, Literal, HasDefault
+Class MaterialSkin.Controls.MaterialRaisedButton: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Button
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    MaterialSkin.IMaterialControl
+  Properties:
+    Int32 Depth 'get set' : 
+    MaterialSkin.MaterialSkinManager SkinManager 'get ' : 
+    MaterialSkin.MouseState MouseState 'get set' : 
+    Boolean Primary 'get set' : 
+  Methods:
+    get_Depth(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Depth(Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_SkinManager(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MouseState(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_MouseState(MouseState): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Primary(): PrivateScope, Public, HideBySig, SpecialName
+    set_Primary(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Class MaterialSkin.MaterialSkinManager: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Fields:
+    System.Drawing.Color ACTION_BAR_TEXT : Public, InitOnly
+    System.Drawing.Brush ACTION_BAR_TEXT_BRUSH : Public, InitOnly
+    System.Drawing.Color ACTION_BAR_TEXT_SECONDARY : Public, InitOnly
+    System.Drawing.Brush ACTION_BAR_TEXT_SECONDARY_BRUSH : Public, InitOnly
+    System.Drawing.Font ROBOTO_MEDIUM_12 : Public
+    System.Drawing.Font ROBOTO_REGULAR_11 : Public
+    System.Drawing.Font ROBOTO_MEDIUM_11 : Public
+    System.Drawing.Font ROBOTO_MEDIUM_10 : Public
+    Int32 FORM_PADDING : Public
+    System.Drawing.Color SECONDARY_TEXT_BLACK : Public, Static
+    System.Drawing.Brush SECONDARY_TEXT_BLACK_BRUSH : Public, Static
+    System.Drawing.Color SECONDARY_TEXT_WHITE : Public, Static
+    System.Drawing.Brush SECONDARY_TEXT_WHITE_BRUSH : Public, Static
+  Properties:
+    Themes Theme 'get set' : 
+    MaterialSkin.ColorScheme ColorScheme 'get set' : 
+    MaterialSkin.MaterialSkinManager Instance 'get ' : 
+  Methods:
+    get_Theme(): PrivateScope, Public, HideBySig, SpecialName
+    set_Theme(Themes): PrivateScope, Public, HideBySig, SpecialName
+    get_ColorScheme(): PrivateScope, Public, HideBySig, SpecialName
+    set_ColorScheme(ColorScheme): PrivateScope, Public, HideBySig, SpecialName
+    GetMainTextColor(): PrivateScope, Public, HideBySig
+    GetMainTextBrush(): PrivateScope, Public, HideBySig
+    GetDisabledOrHintColor(): PrivateScope, Public, HideBySig
+    GetDisabledOrHintBrush(): PrivateScope, Public, HideBySig
+    GetDividersColor(): PrivateScope, Public, HideBySig
+    GetDividersBrush(): PrivateScope, Public, HideBySig
+    GetCheckboxOffColor(): PrivateScope, Public, HideBySig
+    GetCheckboxOffBrush(): PrivateScope, Public, HideBySig
+    GetCheckBoxOffDisabledColor(): PrivateScope, Public, HideBySig
+    GetCheckBoxOffDisabledBrush(): PrivateScope, Public, HideBySig
+    GetRaisedButtonBackgroundBrush(): PrivateScope, Public, HideBySig
+    GetRaisedButtonTextBrush(Boolean): PrivateScope, Public, HideBySig
+    GetFlatButtonHoverBackgroundColor(): PrivateScope, Public, HideBySig
+    GetFlatButtonHoverBackgroundBrush(): PrivateScope, Public, HideBySig
+    GetFlatButtonPressedBackgroundColor(): PrivateScope, Public, HideBySig
+    GetFlatButtonPressedBackgroundBrush(): PrivateScope, Public, HideBySig
+    GetFlatButtonDisabledTextBrush(): PrivateScope, Public, HideBySig
+    GetCmsSelectedItemBrush(): PrivateScope, Public, HideBySig
+    GetApplicationBackgroundColor(): PrivateScope, Public, HideBySig
+    get_Instance(): PrivateScope, Public, Static, HideBySig, SpecialName
+    AddFormToManage(MaterialForm): PrivateScope, Public, HideBySig
+    RemoveFormToManage(MaterialForm): PrivateScope, Public, HideBySig
+Struct MaterialSkin.MaterialSkinManager+Themes: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Byte value__ : Public, SpecialName, RTSpecialName
+    Themes LIGHT = 0 : Public, Static, Literal, HasDefault
+    Themes DARK = 1 : Public, Static, Literal, HasDefault

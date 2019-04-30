@@ -1,0 +1,60 @@
+  Simplify.Windows.Forms.Controls.TopmostProgressBar.resources - Embedded, ContainedInManifestFile, 
+  Simplify.Windows.Forms.LocalResources.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly Simplify.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76e7d56d397d79b9: 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly Simplify.Resources, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9bd406c11b99825b: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Class Simplify.Windows.Forms.ControlsValidator: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Windows.Forms.Control, System.Windows.Forms.Control[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    EnableValidation(): PrivateScope, Public, HideBySig
+Class Simplify.Windows.Forms.Controls.NullableDateTimePicker: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.DateTimePicker
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String NullValue 'get set' : 
+    System.Nullable`1[System.DateTime] Value 'get set' : 
+  Methods:
+    get_NullValue(): PrivateScope, Public, HideBySig, SpecialName
+    set_NullValue(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    set_Value(Nullable`1): PrivateScope, Public, HideBySig, SpecialName
+Class Simplify.Windows.Forms.Controls.TopmostProgressBar: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.ProgressBar Progress : Public
+Class Simplify.Windows.Forms.ListViewColumnSorter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.Collections.IComparer
+  Properties:
+    Int32 SortColumn 'get set' : 
+    System.Windows.Forms.SortOrder Order 'get set' : 
+  Methods:
+    Compare(Object, Object): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    set_SortColumn(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_SortColumn(): PrivateScope, Public, HideBySig, SpecialName
+    set_Order(SortOrder): PrivateScope, Public, HideBySig, SpecialName
+    get_Order(): PrivateScope, Public, HideBySig, SpecialName
+Class Simplify.Windows.Forms.MessageBox: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    ShowMessageBox(String, MessageBoxIcon(Optional, HasDefault), MessageBoxButtons(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    ShowStMessageBox(String, MessageBoxIcon(Optional, HasDefault), MessageBoxButtons(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+Class Simplify.Windows.Forms.TextBoxesValidator: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Windows.Forms.Control, System.Windows.Forms.TextBox[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Boolean, System.Windows.Forms.Control, System.Windows.Forms.TextBox[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    OnTextBoxNumberValidated(Object, CancelEventArgs): PrivateScope, Public, Static, HideBySig
+    EnableValidation(): PrivateScope, Public, HideBySig
+    DisableValidation(): PrivateScope, Public, HideBySig

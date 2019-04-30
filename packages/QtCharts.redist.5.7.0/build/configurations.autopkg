@@ -1,0 +1,17 @@
+configurations {
+    Toolset { 
+        key : "PlatformToolset";
+        choices : { v120 };
+    };
+    Platform { 
+        key : "Platform";
+        choices : { x64 };
+    };
+    Configuration { 
+        key : "Configuration";
+        choices : { Release, Debug };
+    };
+    Linkage { 
+        choices : { dynamic };
+    };
+};
