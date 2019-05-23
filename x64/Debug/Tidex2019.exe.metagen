@@ -251,8 +251,6 @@ Assembly System.Xml.XPath.XDocument, Version=4.1.0.0, Culture=neutral, PublicKey
 	hash=None, flags=None
 Assembly WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35: 
 	hash=None, flags=None
-Assembly Interop.VFProjExtLib.19.0, Version=19.0.*, Culture=Todos los idiomas (todos los países): 
-	hash=None, flags=None
 Assembly System.ComponentModel.Annotations, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
 	hash=None, flags=None
 Assembly System.Reflection.Emit, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 

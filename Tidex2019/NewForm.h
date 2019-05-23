@@ -858,23 +858,23 @@ private: System::Void dataGridView1_CellContentClick(System::Object^  sender, Sy
 
 //Método que aplica los datos añadidos al cuadro de texto
 private: System::Void updatebutton_Click(System::Object^  sender, System::EventArgs^  e) {
-	
+	richTextBox1->Clear();
 	//ChartForm^ chart = gcnew ChartForm();
 	//saveFileDialog1->ShowDialog();
 	
 	//chart->Show(this);
 
-	richTextBox1->AppendText(label19->Text + " : " + measuretime->Value+" min.\n");
-	richTextBox1->AppendText(label1->Text + " : " + begindate->Value+" "+begintime->Value+"\n");
-	richTextBox1->AppendText(label2->Text + " : " + enddate->Value+" "+endtime->Value+"\n");
-	richTextBox1->AppendText(label3->Text + " :\n" + label14->Text+" : "+coordinatesdeg1->Value+" "+label10->Text+" "+coordinatesmin1->Value+" "+label11->Text+
-		" "+nsbox->Text+"\n"+label15->Text+" : "+coordinatesdeg2->Value+" "+label12->Text+" "+coordinatesmin2->Value+" "+label13->Text+" "+ewbox->Text+"\n");
-	richTextBox1->AppendText(label4->Text + " : " + depth->Value + " m\n");
-	for (int i = 0; i < dataGridView1->RowCount-1; ++i)
+	//richTextBox1->AppendText(label19->Text + " : " + measuretime->Value+" min.\n");
+	//richTextBox1->AppendText(label1->Text + " : " + begindate->Value+" "+begintime->Value+"\n");
+	//richTextBox1->AppendText(label2->Text + " : " + enddate->Value+" "+endtime->Value+"\n");
+	richTextBox1->AppendText(coordinatesdeg1->Value+" "+coordinatesmin1->Value+
+		"\n"+coordinatesdeg2->Value+" "+coordinatesmin2->Value+"\n");
+	richTextBox1->AppendText(depth->Value+"\n");
+	for (int i = 0; i < dataGridView1->RowCount; ++i)
 	{
-		richTextBox1->AppendText(label5->Text + " : " + dataGridView1->Rows[i]->Cells[0]->Value+ "\n");
-		richTextBox1->AppendText(label6->Text + " : " + dataGridView1->Rows[i]->Cells[1]->Value + "\n");
-		richTextBox1->AppendText(label7->Text + " : " + dataGridView1->Rows[i]->Cells[2]->Value + "\n");
+		richTextBox1->AppendText( dataGridView1->Rows[i]->Cells[0]->Value+ " ");
+		richTextBox1->AppendText( dataGridView1->Rows[i]->Cells[1]->Value + " ");
+		richTextBox1->AppendText( dataGridView1->Rows[i]->Cells[2]->Value + "\n");
 	}
 
 
@@ -924,9 +924,9 @@ private: System::Void acceptbutton_Click(System::Object^  sender, System::EventA
 		richTextBox1->SaveFile(saveFileDialog1->FileName,System::Windows::Forms::RichTextBoxStreamType::PlainText);
 	}
 	
-	System::IO::StreamWriter^ writer = gcnew System::IO::StreamWriter("C:/Users/Arantxa/Documents/UNIVERSIDAD/PRACTICAS TFG/Tidex2019/recents.txt"); //open the file for writing.
-	writer->WriteLine(saveFileDialog1->FileName);
-	writer->Close();
+	//System::IO::StreamWriter^ writer = gcnew System::IO::StreamWriter("C:/Users/Arantxa/Documents/UNIVERSIDAD/PRACTICAS TFG/Tidex2019/recents.txt"); //open the file for writing.
+	//writer->WriteLine(saveFileDialog1->FileName);
+	//writer->Close();
 	this->Close();
 }
 //Método de botón de cerrar ventana
