@@ -1,9 +1,9 @@
 #include "ChartForm.h"
-
+//#include"chartdir.h"
 using namespace System;
 using namespace System::Windows::Forms;
 
-void Chart(array<String^>^args)
+void ChartForm(array<String^>^args)
 {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);

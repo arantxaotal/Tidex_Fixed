@@ -102,6 +102,12 @@
     <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="SampleCode\WinFormApplicationVersionSampleCode.txt">

@@ -927,6 +927,8 @@ private: System::Void acceptbutton_Click(System::Object^  sender, System::EventA
 	//System::IO::StreamWriter^ writer = gcnew System::IO::StreamWriter("C:/Users/Arantxa/Documents/UNIVERSIDAD/PRACTICAS TFG/Tidex2019/recents.txt"); //open the file for writing.
 	//writer->WriteLine(saveFileDialog1->FileName);
 	//writer->Close();
+	ChartForm ^f = gcnew ChartForm();
+	f->Show();
 	this->Close();
 }
 //Método de botón de cerrar ventana
