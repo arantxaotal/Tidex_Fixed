@@ -177,7 +177,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->FILE = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->FILE_NEW = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -188,6 +188,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->FILE_PRINTPREVIEW = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->FILE_PRINT = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->FILE_PRINTSETUP = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->recientes1ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->recientes2ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->recientes3ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->recientes4ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -220,7 +221,6 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->saveFileDialog2 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->printDialog2 = (gcnew System::Windows::Forms::PrintDialog());
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
-			this->recientes1ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -228,13 +228,15 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			// menuStrip1
 			// 
 			this->menuStrip1->BackColor = System::Drawing::Color::DarkCyan;
+			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->FILE, this->EDIT,
 					this->WINDOW, this->HELP
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1352, 33);
+			this->menuStrip1->Padding = System::Windows::Forms::Padding(8, 2, 0, 2);
+			this->menuStrip1->Size = System::Drawing::Size(1803, 40);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -250,7 +252,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->FILE->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 14.25F));
 			this->FILE->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->FILE->Name = L"FILE";
-			this->FILE->Size = System::Drawing::Size(53, 29);
+			this->FILE->Size = System::Drawing::Size(66, 36);
 			this->FILE->Text = L"File";
 			// 
 			// FILE_NEW
@@ -260,7 +262,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 				static_cast<System::Byte>(0)));
 			this->FILE_NEW->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_NEW->Name = L"FILE_NEW";
-			this->FILE_NEW->Size = System::Drawing::Size(226, 30);
+			this->FILE_NEW->Size = System::Drawing::Size(283, 36);
 			this->FILE_NEW->Text = L"New";
 			this->FILE_NEW->Click += gcnew System::EventHandler(this, &MyForm::FILE_NEW_Click);
 			// 
@@ -269,7 +271,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->FILE_OPEN->BackColor = System::Drawing::Color::DarkCyan;
 			this->FILE_OPEN->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_OPEN->Name = L"FILE_OPEN";
-			this->FILE_OPEN->Size = System::Drawing::Size(226, 30);
+			this->FILE_OPEN->Size = System::Drawing::Size(283, 36);
 			this->FILE_OPEN->Text = L"Open";
 			this->FILE_OPEN->Click += gcnew System::EventHandler(this, &MyForm::FILE_OPEN_Click);
 			// 
@@ -278,7 +280,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->FILE_CLOSE->BackColor = System::Drawing::Color::DarkCyan;
 			this->FILE_CLOSE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_CLOSE->Name = L"FILE_CLOSE";
-			this->FILE_CLOSE->Size = System::Drawing::Size(226, 30);
+			this->FILE_CLOSE->Size = System::Drawing::Size(283, 36);
 			this->FILE_CLOSE->Text = L"Close";
 			// 
 			// FILE_SAVE
@@ -286,7 +288,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->FILE_SAVE->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->FILE_SAVE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_SAVE->Name = L"FILE_SAVE";
-			this->FILE_SAVE->Size = System::Drawing::Size(226, 30);
+			this->FILE_SAVE->Size = System::Drawing::Size(283, 36);
 			this->FILE_SAVE->Text = L"Save Chart";
 			this->FILE_SAVE->Click += gcnew System::EventHandler(this, &MyForm::FILE_SAVE_Click);
 			// 
@@ -295,7 +297,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->FILE_SAVEPREDICTION->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->FILE_SAVEPREDICTION->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_SAVEPREDICTION->Name = L"FILE_SAVEPREDICTION";
-			this->FILE_SAVEPREDICTION->Size = System::Drawing::Size(226, 30);
+			this->FILE_SAVEPREDICTION->Size = System::Drawing::Size(283, 36);
 			this->FILE_SAVEPREDICTION->Text = L"Save Prediction...";
 			this->FILE_SAVEPREDICTION->Click += gcnew System::EventHandler(this, &MyForm::FILE_SAVEPREDICTION_Click);
 			// 
@@ -304,7 +306,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->FILE_PRINTPREVIEW->BackColor = System::Drawing::Color::DarkCyan;
 			this->FILE_PRINTPREVIEW->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_PRINTPREVIEW->Name = L"FILE_PRINTPREVIEW";
-			this->FILE_PRINTPREVIEW->Size = System::Drawing::Size(226, 30);
+			this->FILE_PRINTPREVIEW->Size = System::Drawing::Size(283, 36);
 			this->FILE_PRINTPREVIEW->Text = L"Print Preview";
 			this->FILE_PRINTPREVIEW->Click += gcnew System::EventHandler(this, &MyForm::FILE_PRINTPREVIEW_Click);
 			// 
@@ -313,7 +315,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->FILE_PRINT->BackColor = System::Drawing::Color::DarkCyan;
 			this->FILE_PRINT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_PRINT->Name = L"FILE_PRINT";
-			this->FILE_PRINT->Size = System::Drawing::Size(226, 30);
+			this->FILE_PRINT->Size = System::Drawing::Size(283, 36);
 			this->FILE_PRINT->Text = L"Print";
 			this->FILE_PRINT->Click += gcnew System::EventHandler(this, &MyForm::FILE_PRINT_Click);
 			// 
@@ -322,8 +324,18 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->FILE_PRINTSETUP->BackColor = System::Drawing::Color::DarkCyan;
 			this->FILE_PRINTSETUP->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_PRINTSETUP->Name = L"FILE_PRINTSETUP";
-			this->FILE_PRINTSETUP->Size = System::Drawing::Size(226, 30);
+			this->FILE_PRINTSETUP->Size = System::Drawing::Size(283, 36);
 			this->FILE_PRINTSETUP->Text = L"Print Setup...";
+			// 
+			// recientes1ToolStripMenuItem
+			// 
+			this->recientes1ToolStripMenuItem->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->recientes1ToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 14.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->recientes1ToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->recientes1ToolStripMenuItem->Name = L"recientes1ToolStripMenuItem";
+			this->recientes1ToolStripMenuItem->Size = System::Drawing::Size(283, 36);
+			this->recientes1ToolStripMenuItem->Text = L"...";
 			// 
 			// recientes2ToolStripMenuItem
 			// 
@@ -332,7 +344,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->recientes2ToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->recientes2ToolStripMenuItem->Name = L"recientes2ToolStripMenuItem";
-			this->recientes2ToolStripMenuItem->Size = System::Drawing::Size(226, 30);
+			this->recientes2ToolStripMenuItem->Size = System::Drawing::Size(283, 36);
 			this->recientes2ToolStripMenuItem->Text = L"recientes 2";
 			this->recientes2ToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::recientes2ToolStripMenuItem_Click);
 			// 
@@ -343,7 +355,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->recientes3ToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->recientes3ToolStripMenuItem->Name = L"recientes3ToolStripMenuItem";
-			this->recientes3ToolStripMenuItem->Size = System::Drawing::Size(226, 30);
+			this->recientes3ToolStripMenuItem->Size = System::Drawing::Size(283, 36);
 			this->recientes3ToolStripMenuItem->Text = L"recientes 3";
 			// 
 			// recientes4ToolStripMenuItem
@@ -353,7 +365,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->recientes4ToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->recientes4ToolStripMenuItem->Name = L"recientes4ToolStripMenuItem";
-			this->recientes4ToolStripMenuItem->Size = System::Drawing::Size(226, 30);
+			this->recientes4ToolStripMenuItem->Size = System::Drawing::Size(283, 36);
 			this->recientes4ToolStripMenuItem->Text = L"recientes 4";
 			// 
 			// FILE_EXIT
@@ -361,7 +373,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->FILE_EXIT->BackColor = System::Drawing::Color::DarkCyan;
 			this->FILE_EXIT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_EXIT->Name = L"FILE_EXIT";
-			this->FILE_EXIT->Size = System::Drawing::Size(226, 30);
+			this->FILE_EXIT->Size = System::Drawing::Size(283, 36);
 			this->FILE_EXIT->Text = L"Exit";
 			this->FILE_EXIT->Click += gcnew System::EventHandler(this, &MyForm::FILE_EXIT_Click);
 			// 
@@ -372,7 +384,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->EDIT->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->EDIT->Name = L"EDIT";
-			this->EDIT->Size = System::Drawing::Size(56, 29);
+			this->EDIT->Size = System::Drawing::Size(69, 36);
 			this->EDIT->Text = L"Edit";
 			// 
 			// EDIT_MODIFY
@@ -380,7 +392,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->EDIT_MODIFY->BackColor = System::Drawing::Color::DarkCyan;
 			this->EDIT_MODIFY->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->EDIT_MODIFY->Name = L"EDIT_MODIFY";
-			this->EDIT_MODIFY->Size = System::Drawing::Size(187, 30);
+			this->EDIT_MODIFY->Size = System::Drawing::Size(236, 36);
 			this->EDIT_MODIFY->Text = L"Modify Data";
 			this->EDIT_MODIFY->Click += gcnew System::EventHandler(this, &MyForm::EDIT_MODIFY_Click);
 			// 
@@ -394,7 +406,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->WINDOW->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->WINDOW->Name = L"WINDOW";
-			this->WINDOW->Size = System::Drawing::Size(94, 29);
+			this->WINDOW->Size = System::Drawing::Size(116, 36);
 			this->WINDOW->Text = L"Window";
 			// 
 			// WINDOW_ZOOMIN
@@ -402,7 +414,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->WINDOW_ZOOMIN->BackColor = System::Drawing::Color::DarkCyan;
 			this->WINDOW_ZOOMIN->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->WINDOW_ZOOMIN->Name = L"WINDOW_ZOOMIN";
-			this->WINDOW_ZOOMIN->Size = System::Drawing::Size(201, 30);
+			this->WINDOW_ZOOMIN->Size = System::Drawing::Size(250, 36);
 			this->WINDOW_ZOOMIN->Text = L"Zoom In +";
 			// 
 			// WINDOW_ZOOMOUT
@@ -410,7 +422,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->WINDOW_ZOOMOUT->BackColor = System::Drawing::Color::DarkCyan;
 			this->WINDOW_ZOOMOUT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->WINDOW_ZOOMOUT->Name = L"WINDOW_ZOOMOUT";
-			this->WINDOW_ZOOMOUT->Size = System::Drawing::Size(201, 30);
+			this->WINDOW_ZOOMOUT->Size = System::Drawing::Size(250, 36);
 			this->WINDOW_ZOOMOUT->Text = L"Zoom Out -";
 			// 
 			// WINDOW_NORMALIZE
@@ -418,7 +430,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->WINDOW_NORMALIZE->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->WINDOW_NORMALIZE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->WINDOW_NORMALIZE->Name = L"WINDOW_NORMALIZE";
-			this->WINDOW_NORMALIZE->Size = System::Drawing::Size(201, 30);
+			this->WINDOW_NORMALIZE->Size = System::Drawing::Size(250, 36);
 			this->WINDOW_NORMALIZE->Text = L"Normalize";
 			// 
 			// WINDOW_CASCADE
@@ -426,7 +438,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->WINDOW_CASCADE->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->WINDOW_CASCADE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->WINDOW_CASCADE->Name = L"WINDOW_CASCADE";
-			this->WINDOW_CASCADE->Size = System::Drawing::Size(201, 30);
+			this->WINDOW_CASCADE->Size = System::Drawing::Size(250, 36);
 			this->WINDOW_CASCADE->Text = L"Cascade";
 			// 
 			// WINDOW_TILE
@@ -434,7 +446,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->WINDOW_TILE->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->WINDOW_TILE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->WINDOW_TILE->Name = L"WINDOW_TILE";
-			this->WINDOW_TILE->Size = System::Drawing::Size(201, 30);
+			this->WINDOW_TILE->Size = System::Drawing::Size(250, 36);
 			this->WINDOW_TILE->Text = L"Tile";
 			// 
 			// WINDOW_ARRANGEICONS
@@ -442,7 +454,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->WINDOW_ARRANGEICONS->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->WINDOW_ARRANGEICONS->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->WINDOW_ARRANGEICONS->Name = L"WINDOW_ARRANGEICONS";
-			this->WINDOW_ARRANGEICONS->Size = System::Drawing::Size(201, 30);
+			this->WINDOW_ARRANGEICONS->Size = System::Drawing::Size(250, 36);
 			this->WINDOW_ARRANGEICONS->Text = L"Arrange Icons";
 			// 
 			// WINDOW_CLOSEALL
@@ -450,7 +462,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->WINDOW_CLOSEALL->BackColor = System::Drawing::Color::DarkCyan;
 			this->WINDOW_CLOSEALL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->WINDOW_CLOSEALL->Name = L"WINDOW_CLOSEALL";
-			this->WINDOW_CLOSEALL->Size = System::Drawing::Size(201, 30);
+			this->WINDOW_CLOSEALL->Size = System::Drawing::Size(250, 36);
 			this->WINDOW_CLOSEALL->Text = L"Close All";
 			// 
 			// HELP
@@ -460,7 +472,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->HELP->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->HELP->Name = L"HELP";
-			this->HELP->Size = System::Drawing::Size(63, 29);
+			this->HELP->Size = System::Drawing::Size(79, 36);
 			this->HELP->Text = L"Help";
 			// 
 			// HELP_ABOUT
@@ -468,7 +480,7 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			this->HELP_ABOUT->BackColor = System::Drawing::Color::DarkCyan;
 			this->HELP_ABOUT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->HELP_ABOUT->Name = L"HELP_ABOUT";
-			this->HELP_ABOUT->Size = System::Drawing::Size(147, 30);
+			this->HELP_ABOUT->Size = System::Drawing::Size(184, 36);
 			this->HELP_ABOUT->Text = L"About...";
 			this->HELP_ABOUT->Click += gcnew System::EventHandler(this, &MyForm::HELP_ABOUT_Click);
 			// 
@@ -480,9 +492,9 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 				this->NewButton, this->OpenButton,
 					this->TimerButton, this->SaveButton, this->PrintPreviewButton, this->PrintButton, this->ZoomInButton, this->ZoomOutButton
 			});
-			this->toolStrip1->Location = System::Drawing::Point(0, 33);
+			this->toolStrip1->Location = System::Drawing::Point(0, 40);
 			this->toolStrip1->Name = L"toolStrip1";
-			this->toolStrip1->Size = System::Drawing::Size(1352, 39);
+			this->toolStrip1->Size = System::Drawing::Size(1803, 39);
 			this->toolStrip1->TabIndex = 1;
 			this->toolStrip1->Text = L"toolStrip1";
 			this->toolStrip1->ItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &MyForm::toolStrip1_ItemClicked);
@@ -615,30 +627,21 @@ private: System::Windows::Forms::ToolStripMenuItem^  recientes1ToolStripMenuItem
 			// 
 			this->printDialog2->UseEXDialog = true;
 			// 
-			// recientes1ToolStripMenuItem
-			// 
-			this->recientes1ToolStripMenuItem->BackColor = System::Drawing::Color::DarkSlateGray;
-			this->recientes1ToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 14.25F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->recientes1ToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->recientes1ToolStripMenuItem->Name = L"recientes1ToolStripMenuItem";
-			this->recientes1ToolStripMenuItem->Size = System::Drawing::Size(226, 30);
-			this->recientes1ToolStripMenuItem->Text = L"...";
-			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::PowderBlue;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->ClientSize = System::Drawing::Size(1352, 571);
+			this->ClientSize = System::Drawing::Size(1803, 703);
 			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->menuStrip1);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Tidex 2019";

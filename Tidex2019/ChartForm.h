@@ -45,7 +45,9 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: MaterialSkin::Controls::MaterialRaisedButton^ savechartbutton;
 	private: MaterialSkin::Controls::MaterialRaisedButton^ printchartbutton;
+	private: System::Windows::Forms::PrintDialog^ printDialog1;
 	private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
+
 
 
 
@@ -79,6 +81,7 @@ namespace Tidex2019 {
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->savechartbutton = (gcnew MaterialSkin::Controls::MaterialRaisedButton());
 			this->printchartbutton = (gcnew MaterialSkin::Controls::MaterialRaisedButton());
+			this->printDialog1 = (gcnew System::Windows::Forms::PrintDialog());
 			this->printPreviewDialog1 = (gcnew System::Windows::Forms::PrintPreviewDialog());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
@@ -94,6 +97,8 @@ namespace Tidex2019 {
 			// 
 			// pictureBox1
 			// 
+			this->pictureBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBox1->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->pictureBox1->Location = System::Drawing::Point(142, 12);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -103,7 +108,6 @@ namespace Tidex2019 {
 			// 
 			// savechartbutton
 			// 
-			this->savechartbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->savechartbutton->Depth = 0;
 			this->savechartbutton->Location = System::Drawing::Point(29, 12);
 			this->savechartbutton->Margin = System::Windows::Forms::Padding(4);
@@ -118,7 +122,6 @@ namespace Tidex2019 {
 			// 
 			// printchartbutton
 			// 
-			this->printchartbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->printchartbutton->Depth = 0;
 			this->printchartbutton->Location = System::Drawing::Point(29, 64);
 			this->printchartbutton->Margin = System::Windows::Forms::Padding(4);
@@ -130,6 +133,10 @@ namespace Tidex2019 {
 			this->printchartbutton->Text = L"Print Chart";
 			this->printchartbutton->UseVisualStyleBackColor = true;
 			this->printchartbutton->Click += gcnew System::EventHandler(this, &ChartForm::Printchartbutton_Click);
+			// 
+			// printDialog1
+			// 
+			this->printDialog1->UseEXDialog = true;
 			// 
 			// printPreviewDialog1
 			// 
@@ -155,6 +162,7 @@ namespace Tidex2019 {
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->MaximizeBox = false;
 			this->Name = L"ChartForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Tidal Chart ";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
@@ -277,8 +285,18 @@ private: System::Void Savechartbutton_Click(System::Object^ sender, System::Even
 private: System::Void Printchartbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (saveFileDialog1->FileName != "")
 	{
-		printPreviewDialog1->Document->DocumentName = saveFileDialog1->FileName;
-		printPreviewDialog1->ShowDialog();
+		System::Drawing::Printing::PrintDocument ^docToPrint =gcnew System::Drawing::Printing::PrintDocument();
+		docToPrint->DocumentName = pictureBox1->ImageLocation;
+		printDialog1->Document = docToPrint;
+		printDialog1->AllowSomePages = true;
+		printDialog1->ShowHelp = true;
+		// If the result is OK then print the document.
+		if (printDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+		{
+
+				docToPrint->Print();
+		}
+		
 	}
 }
 
