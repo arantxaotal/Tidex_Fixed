@@ -830,6 +830,9 @@ ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000
 NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000033) para 'AxisInternal'; no se puede ejecutar la imagen
 MyForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100003C) para 'AxisInternal'; no se puede ejecutar la imagen
 ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000025) para 'AxisInternal'; no se puede ejecutar la imagen
+NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000036) para 'DataSetInternal'; no se puede ejecutar la imagen
+MyForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100003F) para 'DataSetInternal'; no se puede ejecutar la imagen
+ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000028) para 'DataSetInternal'; no se puede ejecutar la imagen
 NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000037) para 'LayerInternal'; no se puede ejecutar la imagen
 MyForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000040) para 'LayerInternal'; no se puede ejecutar la imagen
 ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000029) para 'LayerInternal'; no se puede ejecutar la imagen

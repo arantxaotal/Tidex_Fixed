@@ -259,10 +259,9 @@ private: System::Void Savechartbutton_Click(System::Object^ sender, System::Even
 		// Add a title to the x axis
 		c->xAxis()->setTitle("Tiempo", "arial.ttf", 14, 0x555555);
 		// Add a line layer to the chart 
-		double x[] = { resultado[0],resultado[1],resultado[2],resultado[3],resultado[4],resultado[5],resultado[6] };
-		const char* y[] = { fechafinal[0],fechafinal[1],fechafinal[2],fechafinal[3],fechafinal[4],fechafinal[5],fechafinal[6] };
-		c->addLineLayer(DoubleArray(x, (int)(sizeof(x) / sizeof(x[0]))), 0x5588cc, "Corriente");
-		c->xAxis()->setLabels(StringArray(y, (int)(sizeof(y) / sizeof(y[0]))));
+		LineLayer* layer = c->addLineLayer();
+		layer->addDataSet(DoubleArray(resultado, static_cast<int>(lines)), 0x5588cc, "Velocidad");
+		c->xAxis()->setLabels(StringArray(fechafinal, static_cast<int>(lines)));
 		// Output the chart
 		c->makeChart((const char*)System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(saveFileDialog1->FileName).ToPointer());
 
@@ -278,7 +277,7 @@ private: System::Void Savechartbutton_Click(System::Object^ sender, System::Even
 private: System::Void Printchartbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (saveFileDialog1->FileName != "")
 	{
-		//printPreviewDialog1->Document-> = pictureBox1->ImageLocation;
+		printPreviewDialog1->Document->DocumentName = saveFileDialog1->FileName;
 		printPreviewDialog1->ShowDialog();
 	}
 }
