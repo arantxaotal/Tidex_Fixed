@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-
+#include <sstream>
 namespace Tidex2019 {
 
 	using namespace System;
@@ -42,6 +42,8 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 
 
 
@@ -72,16 +74,23 @@ namespace Tidex2019 {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(492, 268);
+			this->button1->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 7.865546F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->button1->Location = System::Drawing::Point(23, 12);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(144, 67);
+			this->button1->Size = System::Drawing::Size(96, 47);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"Save chart";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Text = L"Save Chart";
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &ChartForm::Button1_Click);
 			// 
 			// saveFileDialog1
@@ -91,75 +100,148 @@ namespace Tidex2019 {
 			// openFileDialog1
 			// 
 			this->openFileDialog1->FileName = L"openFileDialog1";
+			this->openFileDialog1->Filter = L"DAT  (.dat)|*.dat";
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->pictureBox1->Location = System::Drawing::Point(142, 12);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(900, 700);
+			this->pictureBox1->TabIndex = 1;
+			this->pictureBox1->TabStop = false;
 			// 
 			// ChartForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::PowderBlue;
-			this->ClientSize = System::Drawing::Size(1095, 638);
+			this->ClientSize = System::Drawing::Size(1095, 750);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->button1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"ChartForm";
 			this->Text = L"ChartForm";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	//Botón que guarda gráfica 
+	//Botón que crea y guarda gráfica xy de lineas con datos de los .dat
 	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		openFileDialog1->ShowDialog();
-		std::string linea, fecha, resultado;
+		std::string* fecha, * finalDate;
+		std::stringstream*  hora;
+		double* resultado;
+		const char** fechafinal;
+		int lines;
+
 		if (openFileDialog1->FileName != "")
 		{
-			
-			std::ifstream fichero;
-			fichero.open((const char*)System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(openFileDialog1->FileName).ToPointer());
-			if (!fichero.is_open())return;
-			int cont = 0;
-			while (getline(fichero, linea))
+			std::filebuf fichero;
+			std::ifstream tempFilestream;
+			tempFilestream.open((const char*)System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(openFileDialog1->FileName).ToPointer(), std::ios::in);
+
+			if (!fichero.open((const char*)System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(openFileDialog1->FileName).ToPointer(), std::ios::in) || !tempFilestream.is_open())
 			{
-				cont = 0;
-				for (int i = 0; i < linea.size(); ++i)
-				{
-					if (cont<5)
-					{
-						if(linea[i]==' ')cont++;
-						fecha+=linea[i];
-					}else resultado += linea[i];
-				}
+				std::cout << "Error!" << std::endl;
+				exit(-1);
 			}
+
+			std::istream* filestream = new std::istream(&fichero);
+
+			lines = 0;
+
+			std::string tempString;
+			while (std::getline(tempFilestream, tempString))
+			{
+				lines++;
+			}
+
+			tempFilestream.close();
+			hora = new std::stringstream[lines];
+			fecha = new std::string[lines * 4];
+			resultado = new double[lines];
+			finalDate = new std::string[lines];
+			int dateCounter = 0, valueCounter = 0, ssCounter = 0;
+
+			while (!filestream->eof())
+			{
+				*filestream >> fecha[dateCounter] >> fecha[dateCounter + 1] >> fecha[dateCounter + 2] >> fecha[dateCounter + 3] >> resultado[valueCounter];
+				if (filestream->good())
+				{
+					//Con byte nulo
+					
+					hora[ssCounter] << fecha[dateCounter]<<"\n"<< fecha[dateCounter + 1] << "/" << fecha[dateCounter + 2] << "/" << fecha[dateCounter + 3];
+					finalDate[ssCounter] = hora[ssCounter].str();//ss[ssCounter].str();
+					
+				}
+				dateCounter += 4;
+				valueCounter++;
+				ssCounter++;
+			}
+
+			fechafinal = new const char* [lines];
+
+			for (int i = 0; i < lines; i++)
+			{
+				fechafinal[i] = finalDate[i].c_str();
+			}
+			delete filestream;
+			fichero.close();
+
 		}
-		saveFileDialog1->ShowDialog();		
+		saveFileDialog1->ShowDialog();
 		if (saveFileDialog1->FileName != "")
 		{
-			
-							// The data for the line chart
-			double data[] = { stod(resultado) };
-				
-				// The labels for the bar chart
-				const char* labels[] = { fecha.c_str() };
 
-				// Create a XYChart object of size 250 x 250 pixels
-				XYChart *c = new XYChart(900, 900);
+			// Create a XYChart object of size 250 x 250 pixels
+			XYChart* c = new XYChart(900, 700);
+			c->setBackground(c->linearGradientColor(0, 0, 0, 100, 0x99ccff, 0xffffff), 0x888888);
+			c->setRoundedFrame();
+			c->setDropShadow();
+			// Add a title box using grey(0x555555) 20pt Arial font
+			c->addTitle("Predicción de mareas", "arial.ttf", 20, 0x555555);
+			// Set the plotarea at (30, 20) and of size 200 x 200 pixels
+			c->setPlotArea(70, 70, 700, 500, Chart::Transparent, -1, Chart::Transparent, 0xcccccc);
+			// Set axis label font to 12pt Arial
+			c->xAxis()->setLabelStyle("arial.ttf", 10);
+			c->yAxis()->setLabelStyle("arial.ttf", 10);
 
-				// Set the plotarea at (30, 20) and of size 200 x 200 pixels
-				c->setPlotArea(30, 20, 200, 200);
+			// Set the x and y axis stems to transparent, and the x-axis tick color to grey (0xaaaaaa)
+			c->xAxis()->setColors(Chart::Transparent, Chart::TextColor, Chart::TextColor, 0xaaaaaa);
+			c->yAxis()->setColors(Chart::Transparent);
 
-				// Add a bar chart layer using the given data
-				c->addLineLayer(DoubleArray(data, (int)(sizeof(data) / sizeof(data[0]))));
+			// Set the major/minor tick lengths for the x-axis to 10 and 0.
+			c->xAxis()->setTickLength(10, 0);
 
-				// Set the labels on the x  axis.
-				c->xAxis()->setLabels(StringArray(labels, (int)(sizeof(labels) / sizeof(labels[0]))));
-				// Output the chart
-		
-				c->makeChart((const char*)System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(saveFileDialog1->FileName).ToPointer());
+			// For the automatic axis labels, set the minimum spacing to 80/40 pixels for the x/y axis.
+			c->xAxis()->setTickDensity(80);
+			c->yAxis()->setTickDensity(40);
+			//Sets the margins at the two ends of the axis during auto-scaling, and whether to start the axis from zero.
+			c->xAxis()->setAutoScale();
+			c->yAxis()->setAutoScale();
+			// Add a title to the y axis using dark grey (0x555555) 14pt Arial font
+			c->yAxis()->setTitle("Velocidad m/s", "arial.ttf", 14, 0x555555);
+			// Add a title to the x axis
+			c->xAxis()->setTitle("Tiempo", "arial.ttf", 14, 0x555555);
+			// Add a line layer to the chart 
+			double x[] = {resultado[0],resultado[1],resultado[2],resultado[3],resultado[4],resultado[5],resultado[6]};
+			const char* y[] = { fechafinal[0],fechafinal[1],fechafinal[2],fechafinal[3],fechafinal[4],fechafinal[5],fechafinal[6] };
+			c->addLineLayer(DoubleArray(x, (int)(sizeof(x) / sizeof(x[0]))), 0x5588cc, "Corriente");
+			c->xAxis()->setLabels(StringArray(y, (int)(sizeof(y) / sizeof(y[0]))));
+			// Output the chart
+			c->makeChart((const char*)System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(saveFileDialog1->FileName).ToPointer());
 
-				//free up resources
-				delete c;
-				
+			//free up resources
+			delete c;
+			delete[] fechafinal;
+			delete[] fecha;
+			delete[] resultado;
+			delete[] finalDate;
 		}
+		pictureBox1->ImageLocation= saveFileDialog1->FileName;
 
 	}
 //Botón que elige datos para hacer la grafica

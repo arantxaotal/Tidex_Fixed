@@ -815,34 +815,34 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bi
   c:\users\arant\documents\tidex\packages\chartdirector\lib\signed_client_profile\netchartdir_cp.dll: note: Diagnóstico resultante al importar el tipo 'ChartDirector.WPFViewPortControl' desde el ensamblado 'netchartdir_cp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=2db5fc05de12e204'.
   Generando código...
   ChartForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000029) para 'DrawObjInternal'; no se puede ejecutar la imagen
+NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100002A) para 'DrawObjInternal'; no se puede ejecutar la imagen
 MyForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000034) para 'DrawObjInternal'; no se puede ejecutar la imagen
-ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100001A) para 'DrawObjInternal'; no se puede ejecutar la imagen
-NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100002A) para 'BoxInternal'; no se puede ejecutar la imagen
+ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100001B) para 'DrawObjInternal'; no se puede ejecutar la imagen
+NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100002B) para 'BoxInternal'; no se puede ejecutar la imagen
 MyForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000035) para 'BoxInternal'; no se puede ejecutar la imagen
-ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100001B) para 'BoxInternal'; no se puede ejecutar la imagen
-NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100002B) para 'TextBoxInternal'; no se puede ejecutar la imagen
+ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100001C) para 'BoxInternal'; no se puede ejecutar la imagen
+NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100002C) para 'TextBoxInternal'; no se puede ejecutar la imagen
 MyForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000036) para 'TextBoxInternal'; no se puede ejecutar la imagen
-ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100001C) para 'TextBoxInternal'; no se puede ejecutar la imagen
-NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100002F) para 'BaseChartInternal'; no se puede ejecutar la imagen
+ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100001D) para 'TextBoxInternal'; no se puede ejecutar la imagen
+NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000030) para 'BaseChartInternal'; no se puede ejecutar la imagen
 MyForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100003A) para 'BaseChartInternal'; no se puede ejecutar la imagen
-ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000020) para 'BaseChartInternal'; no se puede ejecutar la imagen
-NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000032) para 'AxisInternal'; no se puede ejecutar la imagen
+ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000021) para 'BaseChartInternal'; no se puede ejecutar la imagen
+NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000033) para 'AxisInternal'; no se puede ejecutar la imagen
 MyForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100003D) para 'AxisInternal'; no se puede ejecutar la imagen
-ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000023) para 'AxisInternal'; no se puede ejecutar la imagen
-NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000036) para 'LayerInternal'; no se puede ejecutar la imagen
+ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000024) para 'AxisInternal'; no se puede ejecutar la imagen
+NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000037) para 'LayerInternal'; no se puede ejecutar la imagen
 MyForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000041) para 'LayerInternal'; no se puede ejecutar la imagen
-ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000027) para 'LayerInternal'; no se puede ejecutar la imagen
-NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000039) para 'LineLayerInternal'; no se puede ejecutar la imagen
+ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000028) para 'LayerInternal'; no se puede ejecutar la imagen
+NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100003A) para 'LineLayerInternal'; no se puede ejecutar la imagen
 MyForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000044) para 'LineLayerInternal'; no se puede ejecutar la imagen
-ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100002A) para 'LineLayerInternal'; no se puede ejecutar la imagen
-NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000044) para 'PlotAreaInternal'; no se puede ejecutar la imagen
+ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100002B) para 'LineLayerInternal'; no se puede ejecutar la imagen
+NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000045) para 'PlotAreaInternal'; no se puede ejecutar la imagen
 MyForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100004F) para 'PlotAreaInternal'; no se puede ejecutar la imagen
-ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000035) para 'PlotAreaInternal'; no se puede ejecutar la imagen
-NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000058) para 'ArrayMathInternal'; no se puede ejecutar la imagen
+ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000036) para 'PlotAreaInternal'; no se puede ejecutar la imagen
+NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000059) para 'ArrayMathInternal'; no se puede ejecutar la imagen
 MyForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000064) para 'ArrayMathInternal'; no se puede ejecutar la imagen
-ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000049) para 'ArrayMathInternal'; no se puede ejecutar la imagen
-NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100005E) para 'XYChartInternal'; no se puede ejecutar la imagen
+ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100004A) para 'ArrayMathInternal'; no se puede ejecutar la imagen
+NewForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100005F) para 'XYChartInternal'; no se puede ejecutar la imagen
 MyForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100006A) para 'XYChartInternal'; no se puede ejecutar la imagen
-ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (0100004F) para 'XYChartInternal'; no se puede ejecutar la imagen
+ChartForm.obj : warning LNK4248: sÝmbolo (token) de typeref sin resolver (01000050) para 'XYChartInternal'; no se puede ejecutar la imagen
   Tidex2019.vcxproj -> C:\Users\arant\Documents\TIDEX\x64\Debug\Tidex2019.exe
