@@ -1,7 +1,8 @@
   Tidex2019.ChartForm.resources - Embedded, ContainedInManifestFile, 
   Tidex2019.HelpForm.resources - Embedded, ContainedInManifestFile, 
-  Tidex2019.MyForm.resources - Embedded, ContainedInManifestFile, 
+  Tidex2019.IndexForm.resources - Embedded, ContainedInManifestFile, 
   Tidex2019.NewForm.resources - Embedded, ContainedInManifestFile, 
+  Tidex2019.UnityForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Tidex2019, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
 	hash=SHA1, flags=PublicKey
@@ -273,6 +274,7 @@ Assembly System.ServiceModel.Security, Version=4.0.0.0, Culture=neutral, PublicK
 	hash=None, flags=None
 Class Tidex2019.ChartForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Tidex2019.HelpForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
@@ -280,6 +282,10 @@ Class Tidex2019.HelpForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Tidex2019.NewForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Tidex2019.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class Tidex2019.UnityForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Tidex2019.IndexForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

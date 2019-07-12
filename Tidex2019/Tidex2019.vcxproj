@@ -45,11 +45,12 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
+    <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
     <UseIntelMKL>No</UseIntelMKL>
+    <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -116,6 +117,8 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>Dependencias\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ShowIncludes>true</ShowIncludes>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalDependencies>Dependencias\lib64\chartdir60.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -190,27 +193,35 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChartForm.cpp" />
+    <ClCompile Include="ChartViewer.cpp" />
     <ClCompile Include="DATMANAG.cpp" />
     <ClCompile Include="HelpForm.cpp" />
-    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="IndexForm.cpp" />
     <ClCompile Include="NewForm.cpp" />
+    <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="THarmonicData.cpp" />
+    <ClCompile Include="UnityForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChartForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ChartViewer.h" />
     <ClInclude Include="DATMANAG.H" />
     <ClInclude Include="HelpForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MyForm.h">
+    <ClInclude Include="IndexForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="NewForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="stdafx.h" />
     <ClInclude Include="THarmonicData.h" />
+    <ClInclude Include="UnityForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ChartForm.resx">
@@ -219,11 +230,14 @@
     <EmbeddedResource Include="HelpForm.resx">
       <DependentUpon>HelpForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm.resx">
-      <DependentUpon>MyForm.h</DependentUpon>
+    <EmbeddedResource Include="IndexForm.resx">
+      <DependentUpon>IndexForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewForm.resx">
       <DependentUpon>NewForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnityForm.resx">
+      <DependentUpon>UnityForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

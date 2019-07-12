@@ -1,5 +1,4 @@
 #include "ChartForm.h"
-//#include"chartdir.h"
 using namespace System;
 using namespace System::Windows::Forms;
 

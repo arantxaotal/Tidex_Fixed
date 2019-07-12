@@ -21,9 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MyForm.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="HelpForm.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -39,11 +36,20 @@
     <ClCompile Include="DATMANAG.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="UnityForm.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexForm.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartViewer.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyForm.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="NewForm.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -59,11 +65,20 @@
     <ClInclude Include="DATMANAG.H">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="IndexForm.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="UnityForm.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartViewer.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MyForm.resx">
-      <Filter>Archivos de recursos</Filter>
-    </EmbeddedResource>
     <EmbeddedResource Include="NewForm.resx">
       <Filter>Archivos de recursos</Filter>
     </EmbeddedResource>
@@ -96,6 +111,21 @@
     <None Include="@(CefSharpWinFormsBinaries32)" />
     <None Include="@(CefSharpWinFormsBinaries32)" />
     <None Include="@(CefSharpWinFormsBinaries32)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />

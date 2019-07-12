@@ -99,6 +99,7 @@ namespace Tidex2019 {
 	private: MaterialSkin::Controls::MaterialRaisedButton^  cancelbutton;
 
 	private: System::Windows::Forms::RichTextBox^  richTextBox2;
+	private: System::Windows::Forms::ComboBox^ unitbox;
 
 
 
@@ -172,6 +173,7 @@ namespace Tidex2019 {
 			this->acceptbutton = (gcnew MaterialSkin::Controls::MaterialRaisedButton());
 			this->cancelbutton = (gcnew MaterialSkin::Controls::MaterialRaisedButton());
 			this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
+			this->unitbox = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->depth))->BeginInit();
@@ -245,7 +247,7 @@ namespace Tidex2019 {
 				static_cast<System::Byte>(0)));
 			this->ewbox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"E", L"W" });
 			this->ewbox->Location = System::Drawing::Point(977, 190);
-			this->ewbox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->ewbox->Margin = System::Windows::Forms::Padding(4);
 			this->ewbox->Name = L"ewbox";
 			this->ewbox->Size = System::Drawing::Size(76, 33);
 			this->ewbox->TabIndex = 18;
@@ -257,7 +259,7 @@ namespace Tidex2019 {
 			this->coordinatesdeg2->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->coordinatesdeg2->Location = System::Drawing::Point(777, 190);
-			this->coordinatesdeg2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->coordinatesdeg2->Margin = System::Windows::Forms::Padding(4);
 			this->coordinatesdeg2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 180, 0, 0, 0 });
 			this->coordinatesdeg2->Name = L"coordinatesdeg2";
 			this->coordinatesdeg2->Size = System::Drawing::Size(109, 34);
@@ -269,7 +271,7 @@ namespace Tidex2019 {
 			this->coordinatesdeg1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->coordinatesdeg1->Location = System::Drawing::Point(396, 188);
-			this->coordinatesdeg1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->coordinatesdeg1->Margin = System::Windows::Forms::Padding(4);
 			this->coordinatesdeg1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 90, 0, 0, 0 });
 			this->coordinatesdeg1->Name = L"coordinatesdeg1";
 			this->coordinatesdeg1->Size = System::Drawing::Size(109, 34);
@@ -288,10 +290,10 @@ namespace Tidex2019 {
 					L"S03", L"MK3", L"SK3", L"MN4", L"M4", L"SN4", L"MS4", L"MK4", L"S4", L"SK4", L"2MK5", L"2SK5", L"2MN6", L"M6", L"2MS6", L"2MK6",
 					L"2SM6", L"MSK6", L"3MK7", L"M8", L"M10"
 			});
-			this->namebox->Location = System::Drawing::Point(513, 273);
-			this->namebox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->namebox->Location = System::Drawing::Point(513, 274);
+			this->namebox->Margin = System::Windows::Forms::Padding(4);
 			this->namebox->Name = L"namebox";
-			this->namebox->Size = System::Drawing::Size(179, 33);
+			this->namebox->Size = System::Drawing::Size(93, 33);
 			this->namebox->TabIndex = 36;
 			this->namebox->Text = L"Z0";
 			// 
@@ -301,7 +303,7 @@ namespace Tidex2019 {
 			this->depth->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->depth->Location = System::Drawing::Point(137, 247);
-			this->depth->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->depth->Margin = System::Windows::Forms::Padding(4);
 			this->depth->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 11022, 0, 0, 0 });
 			this->depth->Name = L"depth";
 			this->depth->Size = System::Drawing::Size(245, 34);
@@ -368,7 +370,7 @@ namespace Tidex2019 {
 			this->coordinatesmin2->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->coordinatesmin2->Location = System::Drawing::Point(895, 190);
-			this->coordinatesmin2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->coordinatesmin2->Margin = System::Windows::Forms::Padding(4);
 			this->coordinatesmin2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 59, 0, 0, 0 });
 			this->coordinatesmin2->Name = L"coordinatesmin2";
 			this->coordinatesmin2->Size = System::Drawing::Size(76, 34);
@@ -422,7 +424,7 @@ namespace Tidex2019 {
 			this->begindate->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->begindate->Location = System::Drawing::Point(395, 63);
-			this->begindate->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->begindate->Margin = System::Windows::Forms::Padding(4);
 			this->begindate->Name = L"begindate";
 			this->begindate->Size = System::Drawing::Size(535, 34);
 			this->begindate->TabIndex = 59;
@@ -432,7 +434,7 @@ namespace Tidex2019 {
 			this->enddate->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->enddate->Location = System::Drawing::Point(395, 106);
-			this->enddate->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->enddate->Margin = System::Windows::Forms::Padding(4);
 			this->enddate->Name = L"enddate";
 			this->enddate->Size = System::Drawing::Size(535, 34);
 			this->enddate->TabIndex = 60;
@@ -442,7 +444,7 @@ namespace Tidex2019 {
 			this->coordinatesmin1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->coordinatesmin1->Location = System::Drawing::Point(513, 188);
-			this->coordinatesmin1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->coordinatesmin1->Margin = System::Windows::Forms::Padding(4);
 			this->coordinatesmin1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 59, 0, 0, 0 });
 			this->coordinatesmin1->Name = L"coordinatesmin1";
 			this->coordinatesmin1->Size = System::Drawing::Size(76, 34);
@@ -463,7 +465,7 @@ namespace Tidex2019 {
 					this->Amplitude, this->Argument
 			});
 			this->dataGridView1->Location = System::Drawing::Point(60, 320);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->Size = System::Drawing::Size(1137, 212);
@@ -520,7 +522,7 @@ namespace Tidex2019 {
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::Black;
-			this->label6->Location = System::Drawing::Point(693, 244);
+			this->label6->Location = System::Drawing::Point(609, 247);
 			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(111, 25);
@@ -548,8 +550,8 @@ namespace Tidex2019 {
 			this->amplitudebox->DecimalPlaces = 4;
 			this->amplitudebox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->amplitudebox->Location = System::Drawing::Point(699, 272);
-			this->amplitudebox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->amplitudebox->Location = System::Drawing::Point(614, 273);
+			this->amplitudebox->Margin = System::Windows::Forms::Padding(4);
 			this->amplitudebox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
 			this->amplitudebox->Name = L"amplitudebox";
 			this->amplitudebox->Size = System::Drawing::Size(183, 34);
@@ -562,7 +564,7 @@ namespace Tidex2019 {
 			this->argumentbox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->argumentbox->Location = System::Drawing::Point(889, 272);
-			this->argumentbox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->argumentbox->Margin = System::Windows::Forms::Padding(4);
 			this->argumentbox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 360, 0, 0, 0 });
 			this->argumentbox->Name = L"argumentbox";
 			this->argumentbox->Size = System::Drawing::Size(183, 34);
@@ -574,7 +576,7 @@ namespace Tidex2019 {
 				static_cast<System::Byte>(0)));
 			this->nsbox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"N", L"S" });
 			this->nsbox->Location = System::Drawing::Point(597, 190);
-			this->nsbox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->nsbox->Margin = System::Windows::Forms::Padding(4);
 			this->nsbox->Name = L"nsbox";
 			this->nsbox->Size = System::Drawing::Size(76, 33);
 			this->nsbox->TabIndex = 70;
@@ -669,7 +671,7 @@ namespace Tidex2019 {
 			this->choosebutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->choosebutton->Depth = 0;
 			this->choosebutton->Location = System::Drawing::Point(792, 838);
-			this->choosebutton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->choosebutton->Margin = System::Windows::Forms::Padding(4);
 			this->choosebutton->MouseState = MaterialSkin::MouseState::HOVER;
 			this->choosebutton->Name = L"choosebutton";
 			this->choosebutton->Primary = true;
@@ -693,7 +695,7 @@ namespace Tidex2019 {
 			this->measuretime->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->measuretime->Location = System::Drawing::Point(395, 20);
-			this->measuretime->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->measuretime->Margin = System::Windows::Forms::Padding(4);
 			this->measuretime->Name = L"measuretime";
 			this->measuretime->Size = System::Drawing::Size(100, 34);
 			this->measuretime->TabIndex = 81;
@@ -735,7 +737,7 @@ namespace Tidex2019 {
 				static_cast<System::Byte>(0)));
 			this->begintime->Format = System::Windows::Forms::DateTimePickerFormat::Time;
 			this->begintime->Location = System::Drawing::Point(945, 62);
-			this->begintime->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->begintime->Margin = System::Windows::Forms::Padding(4);
 			this->begintime->Name = L"begintime";
 			this->begintime->ShowUpDown = true;
 			this->begintime->Size = System::Drawing::Size(129, 34);
@@ -749,7 +751,7 @@ namespace Tidex2019 {
 				static_cast<System::Byte>(0)));
 			this->endtime->Format = System::Windows::Forms::DateTimePickerFormat::Time;
 			this->endtime->Location = System::Drawing::Point(945, 106);
-			this->endtime->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->endtime->Margin = System::Windows::Forms::Padding(4);
 			this->endtime->Name = L"endtime";
 			this->endtime->ShowUpDown = true;
 			this->endtime->Size = System::Drawing::Size(129, 34);
@@ -771,7 +773,7 @@ namespace Tidex2019 {
 			this->richTextBox1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->richTextBox1->Location = System::Drawing::Point(53, 578);
-			this->richTextBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->richTextBox1->Margin = System::Windows::Forms::Padding(4);
 			this->richTextBox1->Name = L"richTextBox1";
 			this->richTextBox1->ReadOnly = true;
 			this->richTextBox1->Size = System::Drawing::Size(1141, 250);
@@ -784,7 +786,7 @@ namespace Tidex2019 {
 			this->acceptbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->acceptbutton->Depth = 0;
 			this->acceptbutton->Location = System::Drawing::Point(1008, 838);
-			this->acceptbutton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->acceptbutton->Margin = System::Windows::Forms::Padding(4);
 			this->acceptbutton->MouseState = MaterialSkin::MouseState::HOVER;
 			this->acceptbutton->Name = L"acceptbutton";
 			this->acceptbutton->Primary = true;
@@ -799,7 +801,7 @@ namespace Tidex2019 {
 			this->cancelbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->cancelbutton->Depth = 0;
 			this->cancelbutton->Location = System::Drawing::Point(1171, 838);
-			this->cancelbutton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->cancelbutton->Margin = System::Windows::Forms::Padding(4);
 			this->cancelbutton->MouseState = MaterialSkin::MouseState::HOVER;
 			this->cancelbutton->Name = L"cancelbutton";
 			this->cancelbutton->Primary = true;
@@ -815,11 +817,25 @@ namespace Tidex2019 {
 			this->richTextBox2->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->richTextBox2->Location = System::Drawing::Point(336, 848);
-			this->richTextBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->richTextBox2->Margin = System::Windows::Forms::Padding(4);
 			this->richTextBox2->Name = L"richTextBox2";
 			this->richTextBox2->Size = System::Drawing::Size(449, 32);
 			this->richTextBox2->TabIndex = 90;
 			this->richTextBox2->Text = L"";
+			// 
+			// unitbox
+			// 
+			this->unitbox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->unitbox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->unitbox->FormattingEnabled = true;
+			this->unitbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"cm/s", L"m", L"m/s" });
+			this->unitbox->Location = System::Drawing::Point(805, 273);
+			this->unitbox->Margin = System::Windows::Forms::Padding(4);
+			this->unitbox->Name = L"unitbox";
+			this->unitbox->Size = System::Drawing::Size(76, 33);
+			this->unitbox->TabIndex = 91;
+			this->unitbox->Text = L"m/s";
 			// 
 			// NewForm
 			// 
@@ -827,6 +843,7 @@ namespace Tidex2019 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::PowderBlue;
 			this->ClientSize = System::Drawing::Size(1344, 897);
+			this->Controls->Add(this->unitbox);
 			this->Controls->Add(this->richTextBox2);
 			this->Controls->Add(this->cancelbutton);
 			this->Controls->Add(this->acceptbutton);
@@ -870,7 +887,7 @@ namespace Tidex2019 {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->MinimumSize = System::Drawing::Size(1359, 883);
 			this->Name = L"NewForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -971,7 +988,7 @@ private: System::Void acceptbutton_Click(System::Object^  sender, System::EventA
 	//System::IO::StreamWriter^ writer = gcnew System::IO::StreamWriter("C:/Users/Arantxa/Documents/UNIVERSIDAD/PRACTICAS TFG/Tidex2019/recents.txt"); //open the file for writing.
 	//writer->WriteLine(saveFileDialog1->FileName);
 	//writer->Close();
-	ChartForm ^f = gcnew ChartForm();
+	ChartForm ^f = gcnew ChartForm(unitbox->Text);
 	f->Show();
 	this->Close();
 }

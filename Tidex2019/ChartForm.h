@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+//#include "ChartViewer.h"
 namespace Tidex2019 {
 
 	using namespace System;
@@ -12,17 +13,23 @@ namespace Tidex2019 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
 	/// <summary>
 	/// Resumen de ChartForm
 	/// </summary>
 	public ref class ChartForm : public System::Windows::Forms::Form
 	{
 	public:
-
 		ChartForm(void)
 		{
 			InitializeComponent();
+
+			//TODO: agregar código de constructor aquí
+		}
+
+		ChartForm(String^u)
+		{
+			InitializeComponent();
+			unit = u;
 			//
 			//TODO: agregar código de constructor aquí
 			//
@@ -39,7 +46,7 @@ namespace Tidex2019 {
 				delete components;
 			}
 		}
-
+	private: String^ unit;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
@@ -263,7 +270,21 @@ private: System::Void Savechartbutton_Click(System::Object^ sender, System::Even
 		c->xAxis()->setAutoScale();
 		c->yAxis()->setAutoScale();
 		// Add a title to the y axis using dark grey (0x555555) 14pt Arial font
-		c->yAxis()->setTitle("Velocidad m/s", "arial.ttf", 14, 0x555555);
+		if (unit == "cm/s")
+		{
+			c->yAxis()->setTitle("Velocidad cm/s", "arial.ttf", 14, 0x555555);
+		}
+		else
+		{
+			if (unit == "m")
+			{
+				c->yAxis()->setTitle("Metros", "arial.ttf", 14, 0x555555);
+			}else
+			{
+				c->yAxis()->setTitle("Velocidad m/s", "arial.ttf", 14, 0x555555);
+			}
+		}
+		
 		// Add a title to the x axis
 		c->xAxis()->setTitle("Tiempo", "arial.ttf", 14, 0x555555);
 		// Add a line layer to the chart 
@@ -272,7 +293,6 @@ private: System::Void Savechartbutton_Click(System::Object^ sender, System::Even
 		c->xAxis()->setLabels(StringArray(fechafinal, static_cast<int>(lines)));
 		// Output the chart
 		c->makeChart((const char*)System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(saveFileDialog1->FileName).ToPointer());
-
 		//free up resources
 		delete c;
 		delete[] fechafinal;
@@ -298,6 +318,7 @@ private: System::Void Printchartbutton_Click(System::Object^ sender, System::Eve
 		}
 		
 	}
+	
 }
 
 };
