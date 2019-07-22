@@ -63,6 +63,7 @@ namespace Tidex2019 {
 	private: System::ComponentModel::BackgroundWorker^  backgroundWorker1;
 	private: System::Windows::Forms::ToolStripMenuItem^ openPredictionToolStripMenuItem;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog2;
+	private: System::Windows::Forms::ToolStripButton^ toolStripButton1;
 	private: System::ComponentModel::IContainer^ components;
 	private:
 		/// <summary>
@@ -98,6 +99,7 @@ namespace Tidex2019 {
 			this->printDialog2 = (gcnew System::Windows::Forms::PrintDialog());
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
 			this->openFileDialog2 = (gcnew System::Windows::Forms::OpenFileDialog());
+			this->toolStripButton1 = (gcnew System::Windows::Forms::ToolStripButton());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -210,9 +212,9 @@ namespace Tidex2019 {
 			// 
 			this->toolStrip1->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->toolStrip1->ImageScalingSize = System::Drawing::Size(32, 32);
-			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->NewButton, this->OpenButton,
-					this->TimerButton
+					this->TimerButton, this->toolStripButton1
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 40);
 			this->toolStrip1->Name = L"toolStrip1";
@@ -307,6 +309,15 @@ namespace Tidex2019 {
 			this->openFileDialog2->Filter = L"\"Archivos de datos (*.dat)|*.dat|Todos los archivos (*.*)|*.*\"";
 			this->openFileDialog2->Title = L"Open prediction";
 			// 
+			// toolStripButton1
+			// 
+			this->toolStripButton1->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->toolStripButton1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton1.Image")));
+			this->toolStripButton1->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButton1->Name = L"toolStripButton1";
+			this->toolStripButton1->Size = System::Drawing::Size(36, 36);
+			this->toolStripButton1->Text = L"Open prediction";
+			// 
 			// IndexForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -340,8 +351,6 @@ namespace Tidex2019 {
 
 		NewForm^ newForm = gcnew NewForm();
 		newForm->Show(this);
-
-
 	}
 private: System::Void toolStrip1_ItemClicked(System::Object^  sender, System::Windows::Forms::ToolStripItemClickedEventArgs^  e) {
 }
@@ -351,8 +360,7 @@ private: System::Void FILE_EXIT_Click(System::Object^  sender, System::EventArgs
 }
 //Crea nuevo fichero de datos armónicos en menú
 private: System::Void NewButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	NewForm^ newForm = gcnew NewForm();
-	newForm->Show(this);
+	FILE_NEW_Click(sender, e);
 }
 //Abre nuevo fichero de datos armónicos en menú
 private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -364,10 +372,7 @@ private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs
 }
 //Abre nuevo fichero de datos armónicos en botón
 private: System::Void OpenButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	openFileDialog1->ShowDialog();
-	//abre otro dialogo preguntando en qué unidades de amplitud esta la gráfica
-	UnitForm^ unityform = gcnew UnitForm(openFileDialog1->FileName,"hdf");
-	unityform->Show();
+	FILE_OPEN_Click(sender, e);
 }
 //Método que abre dialogo para editar fichero armónico en menú
 private: System::Void EDIT_MODIFY_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -382,10 +387,9 @@ private: System::Void HELP_ABOUT_Click(System::Object^  sender, System::EventArg
 
 //Boton de editar fichero armónico
 private: System::Void TimerButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	NewForm^ newform = gcnew NewForm();
-	newform->Show(this);
+	EDIT_MODIFY_Click(sender, e);
 }
-//Opción Abrir predicción .dat
+//Opción Abrir predicción .dat en menú
 private: System::Void OpenPredictionToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	openFileDialog2->ShowDialog();
 	//abre otro dialogo preguntando en qué unidades de amplitud esta la gráfica
