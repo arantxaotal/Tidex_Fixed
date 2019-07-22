@@ -126,7 +126,7 @@ namespace Tidex2019 {
 			// 
 			// saveFileDialog1
 			// 
-			this->saveFileDialog1->Filter = L" \"Archivos de datos (*.dat)|*.dat\"";
+			this->saveFileDialog1->Filter = L" Archivos de datos (*.dat)|*.dat";
 			// 
 			// PredictionDoneForm
 			// 

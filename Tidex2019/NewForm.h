@@ -685,7 +685,7 @@ namespace Tidex2019 {
 			// 
 			this->openFileDialog1->DefaultExt = L"odf";
 			this->openFileDialog1->FileName = L"untitled";
-			this->openFileDialog1->Filter = L"\"Archivos de datos (*.odf)|*.odf|Todos los archivos (*.*)|*.*\"";
+			this->openFileDialog1->Filter = L"Archivos de datos (*.odf)|*.odf";
 			this->openFileDialog1->InitialDirectory = L"C:\\Users\\...\\Documents";
 			this->openFileDialog1->Multiselect = true;
 			this->openFileDialog1->RestoreDirectory = true;
@@ -761,7 +761,7 @@ namespace Tidex2019 {
 			// 
 			this->saveFileDialog1->DefaultExt = L"hdf";
 			this->saveFileDialog1->FileName = L"untitled";
-			this->saveFileDialog1->Filter = L"\"Archivos de datos (*.hdf)|*.hdf|Todos los archivos (*.*)|*.*\"";
+			this->saveFileDialog1->Filter = L"Archivos de datos (*.hdf)|*.hdf";
 			this->saveFileDialog1->InitialDirectory = L"C:\\Users\\...\\Documents";
 			this->saveFileDialog1->Title = L"Save harmonic data file";
 			// 

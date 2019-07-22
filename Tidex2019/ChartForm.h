@@ -97,12 +97,12 @@ namespace Tidex2019 {
 			// 
 			// saveFileDialog1
 			// 
-			this->saveFileDialog1->Filter = L"PDF(.pdf)|*.pdf|JPEG (.jpeg)|*.jpeg |PNG  (.png)|*.png";
+			this->saveFileDialog1->Filter = L"PNG(.png)|*.png|JPEG (.jpeg)|*.jpeg |PDF  (.pdf)|*.pdf";
 			// 
 			// openFileDialog1
 			// 
-			this->openFileDialog1->FileName = L"openFileDialog1";
-			this->openFileDialog1->Filter = L"DAT  (.dat)|*.dat";
+			this->openFileDialog1->Filter = L"Archivo de datos  (.dat)|*.dat";
+			this->openFileDialog1->InitialDirectory = L"C:\\Users";
 			// 
 			// pictureBox1
 			// 

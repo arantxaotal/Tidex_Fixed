@@ -264,7 +264,7 @@ namespace Tidex2019 {
 			// openFileDialog1
 			// 
 			this->openFileDialog1->DefaultExt = L"dat";
-			this->openFileDialog1->Filter = L" \"Archivos de datos (*.hdf)|*.hdf\"";
+			this->openFileDialog1->Filter = L" Archivos de datos (*.hdf)|*.hdf";
 			this->openFileDialog1->InitialDirectory = L"C:\\Users";
 			this->openFileDialog1->Multiselect = true;
 			this->openFileDialog1->ShowHelp = true;
@@ -273,7 +273,7 @@ namespace Tidex2019 {
 			// 
 			// openFileDialog2
 			// 
-			this->openFileDialog2->Filter = L"\"Archivos de datos (*.dat)|*.dat\"";
+			this->openFileDialog2->Filter = L"Archivos de datos (*.dat)|*.dat";
 			this->openFileDialog2->InitialDirectory = L"C:\\Users";
 			this->openFileDialog2->Title = L"Open prediction";
 			// 
