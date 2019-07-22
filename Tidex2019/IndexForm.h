@@ -55,15 +55,17 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::ToolStripButton^  TimerButton;
 	private: System::Windows::Forms::ToolStripMenuItem^  FILE_EXIT;
     private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
-	private: System::Windows::Forms::SaveFileDialog^  saveFileDialog1;
-	private: System::Windows::Forms::PrintDialog^  printDialog1;
-	private: System::Windows::Forms::PrintPreviewDialog^  printPreviewDialog1;
-	private: System::Windows::Forms::SaveFileDialog^  saveFileDialog2;
-	private: System::Windows::Forms::PrintDialog^  printDialog2;
+
+
+
+
+
 	private: System::ComponentModel::BackgroundWorker^  backgroundWorker1;
 	private: System::Windows::Forms::ToolStripMenuItem^ openPredictionToolStripMenuItem;
+
+	private: System::Windows::Forms::ToolStripButton^ predictionbutton;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog2;
-	private: System::Windows::Forms::ToolStripButton^ toolStripButton1;
+
 	private: System::ComponentModel::IContainer^ components;
 	private:
 		/// <summary>
@@ -91,15 +93,10 @@ namespace Tidex2019 {
 			this->NewButton = (gcnew System::Windows::Forms::ToolStripButton());
 			this->OpenButton = (gcnew System::Windows::Forms::ToolStripButton());
 			this->TimerButton = (gcnew System::Windows::Forms::ToolStripButton());
+			this->predictionbutton = (gcnew System::Windows::Forms::ToolStripButton());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
-			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
-			this->printDialog1 = (gcnew System::Windows::Forms::PrintDialog());
-			this->printPreviewDialog1 = (gcnew System::Windows::Forms::PrintPreviewDialog());
-			this->saveFileDialog2 = (gcnew System::Windows::Forms::SaveFileDialog());
-			this->printDialog2 = (gcnew System::Windows::Forms::PrintDialog());
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
 			this->openFileDialog2 = (gcnew System::Windows::Forms::OpenFileDialog());
-			this->toolStripButton1 = (gcnew System::Windows::Forms::ToolStripButton());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -214,7 +211,7 @@ namespace Tidex2019 {
 			this->toolStrip1->ImageScalingSize = System::Drawing::Size(32, 32);
 			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->NewButton, this->OpenButton,
-					this->TimerButton, this->toolStripButton1
+					this->TimerButton, this->predictionbutton
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 40);
 			this->toolStrip1->Name = L"toolStrip1";
@@ -254,69 +251,31 @@ namespace Tidex2019 {
 			this->TimerButton->Text = L"Edit";
 			this->TimerButton->Click += gcnew System::EventHandler(this, &IndexForm::TimerButton_Click);
 			// 
+			// predictionbutton
+			// 
+			this->predictionbutton->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->predictionbutton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"predictionbutton.Image")));
+			this->predictionbutton->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->predictionbutton->Name = L"predictionbutton";
+			this->predictionbutton->Size = System::Drawing::Size(36, 36);
+			this->predictionbutton->Text = L"Open prediction";
+			this->predictionbutton->Click += gcnew System::EventHandler(this, &IndexForm::Predictionbutton_Click);
+			// 
 			// openFileDialog1
 			// 
 			this->openFileDialog1->DefaultExt = L"dat";
-			this->openFileDialog1->FileName = L"openfile";
-			this->openFileDialog1->Filter = L" \"Archivos de datos (*.hdf)|*.hdf|Todos los archivos (*.*)|*.*\"";
+			this->openFileDialog1->Filter = L" \"Archivos de datos (*.hdf)|*.hdf\"";
 			this->openFileDialog1->InitialDirectory = L"C:\\Users";
 			this->openFileDialog1->Multiselect = true;
 			this->openFileDialog1->ShowHelp = true;
 			this->openFileDialog1->SupportMultiDottedExtensions = true;
 			this->openFileDialog1->Title = L"Open harmonic file";
 			// 
-			// saveFileDialog1
-			// 
-			this->saveFileDialog1->DefaultExt = L"dat";
-			this->saveFileDialog1->FileName = L"untitled";
-			this->saveFileDialog1->Filter = L" \"Archivos de datos (*.dat)|*.dat|Todos los archivos (*.*)|*.*\"";
-			this->saveFileDialog1->InitialDirectory = L"C:\\Users";
-			this->saveFileDialog1->Title = L"Save Chart";
-			// 
-			// printDialog1
-			// 
-			this->printDialog1->AllowCurrentPage = true;
-			this->printDialog1->AllowSelection = true;
-			this->printDialog1->AllowSomePages = true;
-			this->printDialog1->PrintToFile = true;
-			this->printDialog1->ShowHelp = true;
-			this->printDialog1->UseEXDialog = true;
-			// 
-			// printPreviewDialog1
-			// 
-			this->printPreviewDialog1->AutoScrollMargin = System::Drawing::Size(0, 0);
-			this->printPreviewDialog1->AutoScrollMinSize = System::Drawing::Size(0, 0);
-			this->printPreviewDialog1->ClientSize = System::Drawing::Size(400, 300);
-			this->printPreviewDialog1->Enabled = true;
-			this->printPreviewDialog1->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"printPreviewDialog1.Icon")));
-			this->printPreviewDialog1->Name = L"printPreviewDialog1";
-			this->printPreviewDialog1->ShowIcon = false;
-			this->printPreviewDialog1->Visible = false;
-			// 
-			// saveFileDialog2
-			// 
-			this->saveFileDialog2->FileName = L"untitled";
-			this->saveFileDialog2->Filter = L"\"Archivos de datos (*.pdf)|*.pdf|Todos los archivos (*.*)|*.*\"";
-			this->saveFileDialog2->InitialDirectory = L"C:\\Users";
-			// 
-			// printDialog2
-			// 
-			this->printDialog2->UseEXDialog = true;
-			// 
 			// openFileDialog2
 			// 
-			this->openFileDialog2->FileName = L"openFileDialog2";
-			this->openFileDialog2->Filter = L"\"Archivos de datos (*.dat)|*.dat|Todos los archivos (*.*)|*.*\"";
+			this->openFileDialog2->Filter = L"\"Archivos de datos (*.dat)|*.dat\"";
+			this->openFileDialog2->InitialDirectory = L"C:\\Users";
 			this->openFileDialog2->Title = L"Open prediction";
-			// 
-			// toolStripButton1
-			// 
-			this->toolStripButton1->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->toolStripButton1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton1.Image")));
-			this->toolStripButton1->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->toolStripButton1->Name = L"toolStripButton1";
-			this->toolStripButton1->Size = System::Drawing::Size(36, 36);
-			this->toolStripButton1->Text = L"Open prediction";
 			// 
 			// IndexForm
 			// 
@@ -366,8 +325,11 @@ private: System::Void NewButton_Click(System::Object^  sender, System::EventArgs
 private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs^  e) {
 	openFileDialog1->ShowDialog();
 	//abre otro dialogo preguntando en qué unidades de amplitud esta la gráfica
-	UnitForm^ unityform = gcnew UnitForm(openFileDialog1->FileName,"hdf");
-	unityform->Show();
+	if (openFileDialog1->SafeFileName != "")
+	{
+		UnitForm^ unityform = gcnew UnitForm(openFileDialog1->FileName, "hdf");
+		unityform->Show();
+	}
 
 }
 //Abre nuevo fichero de datos armónicos en botón
@@ -395,6 +357,9 @@ private: System::Void OpenPredictionToolStripMenuItem_Click(System::Object^ send
 	//abre otro dialogo preguntando en qué unidades de amplitud esta la gráfica
 	UnitForm^ unitform = gcnew UnitForm(openFileDialog2->FileName,"dat");
 	unitform->Show(this);
+}
+private: System::Void Predictionbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	OpenPredictionToolStripMenuItem_Click(sender, e);
 }
 };
 }
