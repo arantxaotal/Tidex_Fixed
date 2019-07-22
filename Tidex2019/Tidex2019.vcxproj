@@ -198,9 +198,12 @@
     <ClCompile Include="HelpForm.cpp" />
     <ClCompile Include="IndexForm.cpp" />
     <ClCompile Include="NewForm.cpp" />
+    <ClCompile Include="PredictionDoneForm.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="THarmonicData.cpp" />
-    <ClCompile Include="UnityForm.cpp" />
+    <ClCompile Include="UnitForm.cpp" />
+    <ClCompile Include="viewportcontrol.cpp" />
+    <ClCompile Include="viewportcontrolDlg.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChartForm.h">
@@ -217,11 +220,16 @@
     <ClInclude Include="NewForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="THarmonicData.h" />
-    <ClInclude Include="UnityForm.h">
+    <ClInclude Include="PredictionDoneForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="THarmonicData.h" />
+    <ClInclude Include="UnitForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="viewportcontroldemo.h" />
+    <ClInclude Include="viewportcontroldemoDlg.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ChartForm.resx">
@@ -236,8 +244,11 @@
     <EmbeddedResource Include="NewForm.resx">
       <DependentUpon>NewForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UnityForm.resx">
-      <DependentUpon>UnityForm.h</DependentUpon>
+    <EmbeddedResource Include="PredictionDoneForm.resx">
+      <DependentUpon>PredictionDoneForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitForm.resx">
+      <DependentUpon>UnitForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -23,13 +23,10 @@
 #include "stdafx.h"
 #include "ChartViewer.h"
 #include <math.h>
-#include <afxmt.h>
-#include <afxwin.h>
 
 #ifdef _DEBUG
 #define	new	DEBUG_NEW
-#endif
-
+#endif                                           
 
 /////////////////////////////////////////////////////////////////////////////
 //

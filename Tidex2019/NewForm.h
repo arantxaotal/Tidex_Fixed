@@ -1,5 +1,5 @@
 #pragma once
-#include"ChartForm.h"
+#include"PredictionDoneForm.h"
 #include <fstream>
 #include <iostream>
 namespace Tidex2019 {
@@ -985,11 +985,9 @@ private: System::Void acceptbutton_Click(System::Object^  sender, System::EventA
 		richTextBox1->SaveFile(saveFileDialog1->FileName,System::Windows::Forms::RichTextBoxStreamType::PlainText);
 	}
 	
-	//System::IO::StreamWriter^ writer = gcnew System::IO::StreamWriter("C:/Users/Arantxa/Documents/UNIVERSIDAD/PRACTICAS TFG/Tidex2019/recents.txt"); //open the file for writing.
-	//writer->WriteLine(saveFileDialog1->FileName);
-	//writer->Close();
-	ChartForm ^f = gcnew ChartForm(unitbox->Text);
-	f->Show();
+	//abre dialogo prediccion realizada
+	PredictionDoneForm ^predictiondone = gcnew PredictionDoneForm(unitbox->Text);
+	predictiondone->Show();
 	this->Close();
 }
 //Método de botón de cerrar ventana

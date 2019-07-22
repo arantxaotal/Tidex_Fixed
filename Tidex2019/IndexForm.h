@@ -1,7 +1,7 @@
 #include "NewForm.h"
 #include "HelpForm.h"
 #include "ChartForm.h"
-#include "UnityForm.h"
+#include "UnitForm.h"
 #pragma once
 
 
@@ -61,7 +61,9 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::SaveFileDialog^  saveFileDialog2;
 	private: System::Windows::Forms::PrintDialog^  printDialog2;
 	private: System::ComponentModel::BackgroundWorker^  backgroundWorker1;
-	private: System::ComponentModel::IContainer^  components;
+	private: System::Windows::Forms::ToolStripMenuItem^ openPredictionToolStripMenuItem;
+	private: System::Windows::Forms::OpenFileDialog^ openFileDialog2;
+	private: System::ComponentModel::IContainer^ components;
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
@@ -78,6 +80,7 @@ namespace Tidex2019 {
 			this->FILE = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->FILE_NEW = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->FILE_OPEN = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->openPredictionToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->FILE_EXIT = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->EDIT = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->EDIT_MODIFY = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -94,6 +97,7 @@ namespace Tidex2019 {
 			this->saveFileDialog2 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->printDialog2 = (gcnew System::Windows::Forms::PrintDialog());
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
+			this->openFileDialog2 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -116,9 +120,9 @@ namespace Tidex2019 {
 			// FILE
 			// 
 			this->FILE->BackColor = System::Drawing::Color::Transparent;
-			this->FILE->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->FILE->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->FILE_NEW, this->FILE_OPEN,
-					this->FILE_EXIT
+					this->openPredictionToolStripMenuItem, this->FILE_EXIT
 			});
 			this->FILE->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 14.25F));
 			this->FILE->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
@@ -133,7 +137,7 @@ namespace Tidex2019 {
 				static_cast<System::Byte>(0)));
 			this->FILE_NEW->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_NEW->Name = L"FILE_NEW";
-			this->FILE_NEW->Size = System::Drawing::Size(223, 36);
+			this->FILE_NEW->Size = System::Drawing::Size(317, 36);
 			this->FILE_NEW->Text = L"New";
 			this->FILE_NEW->Click += gcnew System::EventHandler(this, &IndexForm::FILE_NEW_Click);
 			// 
@@ -142,16 +146,25 @@ namespace Tidex2019 {
 			this->FILE_OPEN->BackColor = System::Drawing::Color::DarkCyan;
 			this->FILE_OPEN->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_OPEN->Name = L"FILE_OPEN";
-			this->FILE_OPEN->Size = System::Drawing::Size(223, 36);
-			this->FILE_OPEN->Text = L"Open";
+			this->FILE_OPEN->Size = System::Drawing::Size(317, 36);
+			this->FILE_OPEN->Text = L"Open Harmonic File";
 			this->FILE_OPEN->Click += gcnew System::EventHandler(this, &IndexForm::FILE_OPEN_Click);
+			// 
+			// openPredictionToolStripMenuItem
+			// 
+			this->openPredictionToolStripMenuItem->BackColor = System::Drawing::Color::DarkCyan;
+			this->openPredictionToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->openPredictionToolStripMenuItem->Name = L"openPredictionToolStripMenuItem";
+			this->openPredictionToolStripMenuItem->Size = System::Drawing::Size(317, 36);
+			this->openPredictionToolStripMenuItem->Text = L"Open Prediction";
+			this->openPredictionToolStripMenuItem->Click += gcnew System::EventHandler(this, &IndexForm::OpenPredictionToolStripMenuItem_Click);
 			// 
 			// FILE_EXIT
 			// 
 			this->FILE_EXIT->BackColor = System::Drawing::Color::DarkCyan;
 			this->FILE_EXIT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_EXIT->Name = L"FILE_EXIT";
-			this->FILE_EXIT->Size = System::Drawing::Size(223, 36);
+			this->FILE_EXIT->Size = System::Drawing::Size(317, 36);
 			this->FILE_EXIT->Text = L"Exit";
 			this->FILE_EXIT->Click += gcnew System::EventHandler(this, &IndexForm::FILE_EXIT_Click);
 			// 
@@ -189,7 +202,7 @@ namespace Tidex2019 {
 			this->HELP_ABOUT->BackColor = System::Drawing::Color::DarkCyan;
 			this->HELP_ABOUT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->HELP_ABOUT->Name = L"HELP_ABOUT";
-			this->HELP_ABOUT->Size = System::Drawing::Size(223, 36);
+			this->HELP_ABOUT->Size = System::Drawing::Size(184, 36);
 			this->HELP_ABOUT->Text = L"About...";
 			this->HELP_ABOUT->Click += gcnew System::EventHandler(this, &IndexForm::HELP_ABOUT_Click);
 			// 
@@ -226,7 +239,7 @@ namespace Tidex2019 {
 			this->OpenButton->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->OpenButton->Name = L"OpenButton";
 			this->OpenButton->Size = System::Drawing::Size(36, 36);
-			this->OpenButton->Text = L"Open";
+			this->OpenButton->Text = L"Open harmonic file";
 			this->OpenButton->Click += gcnew System::EventHandler(this, &IndexForm::OpenButton_Click);
 			// 
 			// TimerButton
@@ -248,7 +261,7 @@ namespace Tidex2019 {
 			this->openFileDialog1->Multiselect = true;
 			this->openFileDialog1->ShowHelp = true;
 			this->openFileDialog1->SupportMultiDottedExtensions = true;
-			this->openFileDialog1->Title = L"Open file";
+			this->openFileDialog1->Title = L"Open harmonic file";
 			// 
 			// saveFileDialog1
 			// 
@@ -287,6 +300,12 @@ namespace Tidex2019 {
 			// printDialog2
 			// 
 			this->printDialog2->UseEXDialog = true;
+			// 
+			// openFileDialog2
+			// 
+			this->openFileDialog2->FileName = L"openFileDialog2";
+			this->openFileDialog2->Filter = L"\"Archivos de datos (*.dat)|*.dat|Todos los archivos (*.*)|*.*\"";
+			this->openFileDialog2->Title = L"Open prediction";
 			// 
 			// IndexForm
 			// 
@@ -339,16 +358,16 @@ private: System::Void NewButton_Click(System::Object^  sender, System::EventArgs
 private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs^  e) {
 	openFileDialog1->ShowDialog();
 	//abre otro dialogo preguntando en qué unidades de amplitud esta la gráfica
-	UnityForm^ unityform = gcnew UnityForm(openFileDialog1->FileName);
-	unityform->Show(this);
+	UnitForm^ unityform = gcnew UnitForm(openFileDialog1->FileName,"hdf");
+	unityform->Show();
 
 }
 //Abre nuevo fichero de datos armónicos en botón
 private: System::Void OpenButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	openFileDialog1->ShowDialog();
 	//abre otro dialogo preguntando en qué unidades de amplitud esta la gráfica
-	UnityForm^ unityform = gcnew UnityForm(openFileDialog1->FileName);
-	unityform->Show(this);
+	UnitForm^ unityform = gcnew UnitForm(openFileDialog1->FileName,"hdf");
+	unityform->Show();
 }
 //Método que abre dialogo para editar fichero armónico en menú
 private: System::Void EDIT_MODIFY_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -366,6 +385,12 @@ private: System::Void TimerButton_Click(System::Object^  sender, System::EventAr
 	NewForm^ newform = gcnew NewForm();
 	newform->Show(this);
 }
-
+//Opción Abrir predicción .dat
+private: System::Void OpenPredictionToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	openFileDialog2->ShowDialog();
+	//abre otro dialogo preguntando en qué unidades de amplitud esta la gráfica
+	UnitForm^ unitform = gcnew UnitForm(openFileDialog2->FileName,"dat");
+	unitform->Show(this);
+}
 };
 }

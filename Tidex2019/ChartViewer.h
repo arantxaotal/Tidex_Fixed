@@ -9,8 +9,8 @@
 #pragma once
 
 #include "chartdir.h"
-#include <afxmt.h>
-#include <afxwin.h>
+//#include <afxmt.h>
+//#include <afxwin.h>
 #include "stdafx.h"
 //
 // Constants
@@ -22,6 +22,7 @@ namespace CD_NAMESPACE
 
 namespace Chart
 {
+
 	//
 	// Mouse usage mode constants
 	//

@@ -4,7 +4,8 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-//#include "ChartViewer.h"
+#include "ChartViewer.h"
+
 namespace Tidex2019 {
 
 	using namespace System;
@@ -54,6 +55,7 @@ namespace Tidex2019 {
 	private: MaterialSkin::Controls::MaterialRaisedButton^ printchartbutton;
 	private: System::Windows::Forms::PrintDialog^ printDialog1;
 	private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
+
 
 
 
@@ -112,6 +114,7 @@ namespace Tidex2019 {
 			this->pictureBox1->Size = System::Drawing::Size(900, 700);
 			this->pictureBox1->TabIndex = 1;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &ChartForm::PictureBox1_Click);
 			// 
 			// savechartbutton
 			// 
@@ -176,7 +179,7 @@ namespace Tidex2019 {
 
 		}
 #pragma endregion
-
+//Boton que accede a archivo .dat generado y realiza gráfica
 private: System::Void Savechartbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	openFileDialog1->ShowDialog();
 	std::string* fecha, * finalDate;
@@ -294,6 +297,32 @@ private: System::Void Savechartbutton_Click(System::Object^ sender, System::Even
 		// Output the chart
 		c->makeChart((const char*)System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(saveFileDialog1->FileName).ToPointer());
 		//free up resources
+		   // m_ViewPortControl es un CViewPortControl; c es un puntero 
+		CViewPortControl *m_ViewPortControl=new CViewPortControl();
+		CChartViewer* viewer=new CChartViewer();
+		// Set the full x range to be the duration of the data
+		DoubleArray m_timeStamps;
+		viewer->setFullRange("x", m_timeStamps[0], m_timeStamps[m_timeStamps.len - 1]);
+
+		// Initialize the view port to show the latest 20% of the time range
+		viewer->setViewPortWidth(0.2);
+		viewer->setViewPortLeft(1 - viewer->getViewPortWidth());
+
+		// Set the maximum zoom to 10 points
+		viewer->setZoomInWidthLimit(10.0 / m_timeStamps.len);
+
+		// Initially set the mouse to drag to scroll mode.
+		CButton m_PointerPB;
+		m_PointerPB.SetCheck(1);
+		viewer->setMouseUsage(Chart::MouseUsageScroll);
+
+		// Enable mouse wheel zooming by setting the zoom ratio to 1.1 per wheel event
+		viewer->setMouseWheelZoomRatio(1.1);
+		//Visualizar gráfica
+		viewer->setChart(c);
+		m_ViewPortControl->setChart(c);
+		m_ViewPortControl->setViewer(viewer);
+		//liberar espacio
 		delete c;
 		delete[] fechafinal;
 		delete[] fecha;
@@ -301,7 +330,10 @@ private: System::Void Savechartbutton_Click(System::Object^ sender, System::Even
 		delete[] finalDate;
 	}
 	pictureBox1->ImageLocation = saveFileDialog1->FileName;
+	
+	
 }
+//boton imprimir gráfica
 private: System::Void Printchartbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (saveFileDialog1->FileName != "")
 	{
@@ -319,6 +351,10 @@ private: System::Void Printchartbutton_Click(System::Object^ sender, System::Eve
 		
 	}
 	
+}
+
+private: System::Void PictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+
 }
 
 };
