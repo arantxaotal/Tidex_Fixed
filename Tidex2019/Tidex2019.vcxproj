@@ -193,23 +193,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChartForm.cpp" />
-    <ClCompile Include="ChartViewer.cpp" />
     <ClCompile Include="DATMANAG.cpp" />
     <ClCompile Include="HelpForm.cpp" />
     <ClCompile Include="IndexForm.cpp" />
     <ClCompile Include="NewForm.cpp" />
     <ClCompile Include="PredictionDoneForm.cpp" />
-    <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="THarmonicData.cpp" />
     <ClCompile Include="UnitForm.cpp" />
-    <ClCompile Include="viewportcontrol.cpp" />
-    <ClCompile Include="viewportcontrolDlg.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChartForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="ChartViewer.h" />
     <ClInclude Include="DATMANAG.H" />
     <ClInclude Include="HelpForm.h">
       <FileType>CppForm</FileType>
@@ -223,13 +218,10 @@
     <ClInclude Include="PredictionDoneForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="stdafx.h" />
     <ClInclude Include="THarmonicData.h" />
     <ClInclude Include="UnitForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="viewportcontroldemo.h" />
-    <ClInclude Include="viewportcontroldemoDlg.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ChartForm.resx">

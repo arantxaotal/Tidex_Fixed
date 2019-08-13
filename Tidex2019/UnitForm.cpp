@@ -1,9 +1,8 @@
 #include "UnitForm.h"
-
 using namespace System;
 using namespace System::Windows::Forms;
 
- void Unit(array<String^>^args)
+void Unitform(array<String^>^args)
 {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);

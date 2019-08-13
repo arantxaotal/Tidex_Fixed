@@ -26,6 +26,7 @@ namespace Tidex2019 {
 		{
 			InitializeComponent();
 			unit = u;
+
 		}
 
 	protected:
@@ -40,6 +41,7 @@ namespace Tidex2019 {
 			}
 		}
 	private: String^ unit;
+	private: String ^filename;
 	private: System::Windows::Forms::Label^ label1;
 	private: MaterialSkin::Controls::MaterialRaisedButton^ yesbutton;
 
@@ -94,7 +96,6 @@ namespace Tidex2019 {
 			this->yesbutton->TabIndex = 89;
 			this->yesbutton->Text = L"yes";
 			this->yesbutton->UseVisualStyleBackColor = true;
-			this->yesbutton->UseWaitCursor = true;
 			this->yesbutton->Click += gcnew System::EventHandler(this, &PredictionDoneForm::YesButton_Click);
 			// 
 			// nobutton
@@ -110,7 +111,6 @@ namespace Tidex2019 {
 			this->nobutton->TabIndex = 90;
 			this->nobutton->Text = L"no";
 			this->nobutton->UseVisualStyleBackColor = true;
-			this->nobutton->UseWaitCursor = true;
 			this->nobutton->Click += gcnew System::EventHandler(this, &PredictionDoneForm::NoButton_Click);
 			// 
 			// label2
@@ -132,6 +132,7 @@ namespace Tidex2019 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::Color::PowderBlue;
 			this->ClientSize = System::Drawing::Size(482, 254);
 			this->Controls->Add(this->label2);
@@ -139,6 +140,7 @@ namespace Tidex2019 {
 			this->Controls->Add(this->yesbutton);
 			this->Controls->Add(this->label1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->MaximizeBox = false;
 			this->Name = L"PredictionDoneForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Prediction";
@@ -149,7 +151,7 @@ namespace Tidex2019 {
 #pragma endregion
 	private: System::Void YesButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		saveFileDialog1->ShowDialog();
-		ChartForm^ chart = gcnew ChartForm(unit);
+		ChartForm^ chart = gcnew ChartForm(unit,saveFileDialog1->FileName);
 		chart->Show();
 		this->Close();
 	}
