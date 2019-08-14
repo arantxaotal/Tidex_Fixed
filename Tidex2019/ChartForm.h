@@ -373,8 +373,6 @@ namespace Tidex2019 {
 		{
 				if (e->NeedUpdateChart)
 				{
-					//Debugging
-					//std::cout << "Actualizando grafica" << std::endl;
 					drawChart();
 				}	
 		}
@@ -495,41 +493,24 @@ namespace Tidex2019 {
 		System::Void drawFullChart()
 		{
 			// Create an XYChart object of size 640 x 60 pixels   
-			XYChart^ c = gcnew XYChart(640, 60);
+			XYChart^ chart = gcnew ChartDirector::XYChart(640, 60);
+			chart->setPlotArea(55, 0, chart->getWidth() - 80, chart->getHeight() - 1, 0xc0d8ff, -1, 0x888888, ChartDirector::Chart::Transparent, 0xffffff);
 
-			// Set the plotarea with the same horizontal position as that in the main chart for alignment.
-			c->setPlotArea(55, 0, c->getWidth() - 80, c->getHeight() - 1, 0xc0d8ff, -1, 0x888888,
-				Chart::Transparent, 0xffffff);
+			chart->xAxis()->setColors(ChartDirector::Chart::Transparent);
+			chart->xAxis()->setLabelStyle("Arial", 10);
 
-			// Set the x axis stem to transparent and the label font to 10pt Arial
-			c->xAxis()->setColors(Chart::Transparent);
-			c->xAxis()->setLabelStyle("Arial", 10);
+			chart->xAxis()->setLabelGap(-1);
+			chart->xAxis()->setLabelAlignment(1);
 
-			// Put the x-axis labels inside the plot area by setting a negative label gap. Use
-			// setLabelAlignment to put the label at the right side of the tick.
-			c->xAxis()->setLabelGap(-1);
-			c->xAxis()->setLabelAlignment(1);
+			chart->yAxis()->setColors(ChartDirector::Chart::Transparent, ChartDirector::Chart::Transparent);
 
-			// Set the y axis stem and labels to transparent (that is, hide the labels)
-			c->yAxis()->setColors(Chart::Transparent, Chart::Transparent);
+			chart->addLineLayer(result);
+			chart->xAxis()->setLabels(labels);
 
-			// Add a line layer for the lines with fast line mode enabled
-			LineLayer^ layer = c->addLineLayer();
-			layer->setFastLineMode();
-			c->addLineLayer(result);
-			c->xAxis()->setLabels(labels);
-			// The x axis scales should reflect the full range of the view port
-			c->xAxis()->setDateScale(winChartViewer1->getValueAtViewPort("x", 0), winChartViewer1->getValueAtViewPort("x", 1));
+			chart->xAxis()->setTickDensity(75);
+			chart->yAxis()->setRounding(false, false);
 
-			// For the automatic x-axis labels, set the minimum spacing to 75 pixels.
-			c->xAxis()->setTickDensity(75);
-
-			// For the auto-scaled y-axis, as we hide the labels, we can disable axis rounding. This can
-			// make the axis scale fit the data tighter.
-			c->yAxis()->setRounding(false, false);
-
-			// Output the chart
-			viewPortControl1->Chart = c;
+			viewPortControl1->Chart = chart;
 		}
 		//
 		// Draw track cursor when mouse is moving over plotarea
@@ -640,14 +621,14 @@ private: System::Void PointerPB_CheckedChanged_1(System::Object^ sender, System:
 private: System::Void PrintPB_Click(System::Object^ sender, System::EventArgs^ e) {
 	PrintDialog^ printDlg = gcnew PrintDialog();
 	System::Drawing::Printing::PrintDocument^ documento=gcnew System::Drawing::Printing::PrintDocument();
-	//documento = dynamic_cast<System::Drawing::Printing::PrintDocument^>(winChartViewer1->Chart->makeImage()->ToString());
+	//documento = dynamic_cast<System::Drawing::Printing::PrintDocument^>(winChartViewer1->Chart->makeImage());
 	printDlg->Document = documento;
-	documento->DocumentName = winChartViewer1->Name;
+	documento->DocumentName = "C:/Users/arant/Documents/TFG/tidex/DAT/45m.dat";
 	printDlg->AllowSelection = true;
 	printDlg->AllowSomePages = true;
 	printDlg->ShowHelp = true;
 	//Call ShowDialog
-	if (printDlg->ShowDialog() != System::Windows::Forms::DialogResult::OK)
+	if (printDlg->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 	{
 		documento->Print();
 	}
