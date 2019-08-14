@@ -54,6 +54,8 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::RadioButton^ zoomOutPB;
 	private: System::Windows::Forms::Label^ topLabel;
 	private: System::Windows::Forms::Button^ printPB;
+	private: System::Drawing::Printing::PrintDocument^ printDocument1;
+	private: System::Windows::Forms::PrintDialog^ printDialog1;
 
 
 	private: ChartDirector::WinViewPortControl^ viewPortControl1;
@@ -107,6 +109,8 @@ namespace Tidex2019 {
 			this->zoomOutPB = (gcnew System::Windows::Forms::RadioButton());
 			this->topLabel = (gcnew System::Windows::Forms::Label());
 			this->viewPortControl1 = (gcnew ChartDirector::WinViewPortControl(this->components));
+			this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
+			this->printDialog1 = (gcnew System::Windows::Forms::PrintDialog());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->winChartViewer1))->BeginInit();
 			this->leftPanel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->viewPortControl1))->BeginInit();
@@ -114,9 +118,11 @@ namespace Tidex2019 {
 			// 
 			// winChartViewer1
 			// 
-			this->winChartViewer1->Location = System::Drawing::Point(126, 27);
+			this->winChartViewer1->ChartSizeMode = ChartDirector::WinChartSizeMode::StretchImage;
+			this->winChartViewer1->Location = System::Drawing::Point(92, 22);
+			this->winChartViewer1->Margin = System::Windows::Forms::Padding(2);
 			this->winChartViewer1->Name = L"winChartViewer1";
-			this->winChartViewer1->Size = System::Drawing::Size(654, 405);
+			this->winChartViewer1->Size = System::Drawing::Size(900, 600);
 			this->winChartViewer1->TabIndex = 90;
 			this->winChartViewer1->TabStop = false;
 			this->winChartViewer1->MouseMovePlotArea += gcnew System::Windows::Forms::MouseEventHandler(this, &ChartForm::WinChartViewer1_MouseMovePlotArea);
@@ -124,7 +130,7 @@ namespace Tidex2019 {
 			// 
 			// leftPanel
 			// 
-			this->leftPanel->BackColor = System::Drawing::Color::White;
+			this->leftPanel->BackColor = System::Drawing::Color::PowderBlue;
 			this->leftPanel->Controls->Add(this->printPB);
 			this->leftPanel->Controls->Add(this->savePB);
 			this->leftPanel->Controls->Add(this->separatorLine);
@@ -135,52 +141,61 @@ namespace Tidex2019 {
 			this->leftPanel->Font = (gcnew System::Drawing::Font(L"Arial", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->leftPanel->Location = System::Drawing::Point(0, 0);
+			this->leftPanel->Margin = System::Windows::Forms::Padding(2);
 			this->leftPanel->Name = L"leftPanel";
-			this->leftPanel->Size = System::Drawing::Size(120, 510);
+			this->leftPanel->Size = System::Drawing::Size(90, 729);
 			this->leftPanel->TabIndex = 91;
 			// 
 			// printPB
 			// 
+			this->printPB->BackColor = System::Drawing::Color::Azure;
 			this->printPB->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->printPB->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.07563F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->printPB->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"printPB.Image")));
 			this->printPB->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->printPB->Location = System::Drawing::Point(0, 143);
+			this->printPB->Location = System::Drawing::Point(0, 116);
+			this->printPB->Margin = System::Windows::Forms::Padding(2);
 			this->printPB->Name = L"printPB";
-			this->printPB->Size = System::Drawing::Size(120, 28);
+			this->printPB->Size = System::Drawing::Size(90, 23);
 			this->printPB->TabIndex = 37;
-			this->printPB->Text = L"      Print";
+			this->printPB->Text = L"        Print";
 			this->printPB->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->printPB->UseVisualStyleBackColor = false;
 			this->printPB->Click += gcnew System::EventHandler(this, &ChartForm::PrintPB_Click);
 			// 
 			// savePB
 			// 
+			this->savePB->BackColor = System::Drawing::Color::Azure;
 			this->savePB->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->savePB->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.07563F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->savePB->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"savePB.Image")));
 			this->savePB->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->savePB->Location = System::Drawing::Point(0, 109);
+			this->savePB->Location = System::Drawing::Point(0, 89);
+			this->savePB->Margin = System::Windows::Forms::Padding(2);
 			this->savePB->Name = L"savePB";
-			this->savePB->Size = System::Drawing::Size(120, 28);
+			this->savePB->Size = System::Drawing::Size(90, 23);
 			this->savePB->TabIndex = 36;
-			this->savePB->Text = L"      Save";
+			this->savePB->Text = L"        Save";
 			this->savePB->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->savePB->UseVisualStyleBackColor = false;
 			this->savePB->Click += gcnew System::EventHandler(this, &ChartForm::SavePB_Click_1);
 			// 
 			// separatorLine
 			// 
 			this->separatorLine->BackColor = System::Drawing::Color::Black;
 			this->separatorLine->Dock = System::Windows::Forms::DockStyle::Right;
-			this->separatorLine->Location = System::Drawing::Point(119, 0);
+			this->separatorLine->Location = System::Drawing::Point(89, 0);
+			this->separatorLine->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->separatorLine->Name = L"separatorLine";
-			this->separatorLine->Size = System::Drawing::Size(1, 510);
+			this->separatorLine->Size = System::Drawing::Size(1, 729);
 			this->separatorLine->TabIndex = 31;
 			// 
 			// pointerPB
 			// 
 			this->pointerPB->Appearance = System::Windows::Forms::Appearance::Button;
+			this->pointerPB->BackColor = System::Drawing::Color::Azure;
 			this->pointerPB->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->pointerPB->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -189,44 +204,52 @@ namespace Tidex2019 {
 			this->pointerPB->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pointerPB.Image")));
 			this->pointerPB->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->pointerPB->Location = System::Drawing::Point(0, 0);
+			this->pointerPB->Margin = System::Windows::Forms::Padding(2);
 			this->pointerPB->Name = L"pointerPB";
-			this->pointerPB->Size = System::Drawing::Size(120, 28);
+			this->pointerPB->Size = System::Drawing::Size(90, 23);
 			this->pointerPB->TabIndex = 0;
-			this->pointerPB->Text = L"      Pointer";
+			this->pointerPB->Text = L"       Pointer";
+			this->pointerPB->UseVisualStyleBackColor = false;
 			this->pointerPB->CheckedChanged += gcnew System::EventHandler(this, &ChartForm::PointerPB_CheckedChanged_1);
 			// 
 			// zoomInPB
 			// 
 			this->zoomInPB->Appearance = System::Windows::Forms::Appearance::Button;
+			this->zoomInPB->BackColor = System::Drawing::Color::Azure;
 			this->zoomInPB->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->zoomInPB->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->zoomInPB->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.07563F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->zoomInPB->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->zoomInPB->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"zoomInPB.Image")));
 			this->zoomInPB->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->zoomInPB->Location = System::Drawing::Point(0, 27);
+			this->zoomInPB->Location = System::Drawing::Point(0, 22);
+			this->zoomInPB->Margin = System::Windows::Forms::Padding(2);
 			this->zoomInPB->Name = L"zoomInPB";
-			this->zoomInPB->Size = System::Drawing::Size(120, 28);
+			this->zoomInPB->Size = System::Drawing::Size(90, 23);
 			this->zoomInPB->TabIndex = 1;
-			this->zoomInPB->Text = L"      Zoom In";
+			this->zoomInPB->Text = L"       Zoom In";
+			this->zoomInPB->UseVisualStyleBackColor = false;
 			this->zoomInPB->CheckedChanged += gcnew System::EventHandler(this, &ChartForm::ZoomInPB_CheckedChanged);
 			// 
 			// zoomOutPB
 			// 
 			this->zoomOutPB->Appearance = System::Windows::Forms::Appearance::Button;
+			this->zoomOutPB->BackColor = System::Drawing::Color::Azure;
 			this->zoomOutPB->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->zoomOutPB->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->zoomOutPB->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.07563F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->zoomOutPB->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->zoomOutPB->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"zoomOutPB.Image")));
 			this->zoomOutPB->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->zoomOutPB->Location = System::Drawing::Point(0, 54);
+			this->zoomOutPB->Location = System::Drawing::Point(0, 44);
+			this->zoomOutPB->Margin = System::Windows::Forms::Padding(2);
 			this->zoomOutPB->Name = L"zoomOutPB";
-			this->zoomOutPB->Size = System::Drawing::Size(120, 28);
+			this->zoomOutPB->Size = System::Drawing::Size(90, 23);
 			this->zoomOutPB->TabIndex = 2;
 			this->zoomOutPB->Text = L"      Zoom Out";
+			this->zoomOutPB->UseVisualStyleBackColor = false;
 			this->zoomOutPB->CheckedChanged += gcnew System::EventHandler(this, &ChartForm::ZoomOutPB_CheckedChanged);
 			// 
 			// topLabel
@@ -236,9 +259,10 @@ namespace Tidex2019 {
 			this->topLabel->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 10.28571F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->topLabel->ForeColor = System::Drawing::Color::PowderBlue;
-			this->topLabel->Location = System::Drawing::Point(120, 0);
+			this->topLabel->Location = System::Drawing::Point(90, 0);
+			this->topLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->topLabel->Name = L"topLabel";
-			this->topLabel->Size = System::Drawing::Size(660, 24);
+			this->topLabel->Size = System::Drawing::Size(902, 20);
 			this->topLabel->TabIndex = 92;
 			this->topLabel->Text = L"Tidex prediction chart";
 			this->topLabel->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -246,26 +270,31 @@ namespace Tidex2019 {
 			// viewPortControl1
 			// 
 			this->viewPortControl1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->viewPortControl1->Location = System::Drawing::Point(126, 438);
+			this->viewPortControl1->ChartSizeMode = ChartDirector::WinChartSizeMode::StretchImage;
+			this->viewPortControl1->Location = System::Drawing::Point(92, 626);
+			this->viewPortControl1->Margin = System::Windows::Forms::Padding(2);
 			this->viewPortControl1->Name = L"viewPortControl1";
-			this->viewPortControl1->Size = System::Drawing::Size(654, 60);
+			this->viewPortControl1->Size = System::Drawing::Size(900, 103);
 			this->viewPortControl1->TabIndex = 93;
 			this->viewPortControl1->TabStop = false;
 			this->viewPortControl1->Viewer = this->winChartViewer1;
 			// 
+			// printDialog1
+			// 
+			this->printDialog1->UseEXDialog = true;
+			// 
 			// ChartForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->BackColor = System::Drawing::Color::PowderBlue;
-			this->ClientSize = System::Drawing::Size(780, 510);
+			this->BackColor = System::Drawing::Color::White;
+			this->ClientSize = System::Drawing::Size(992, 729);
 			this->Controls->Add(this->viewPortControl1);
 			this->Controls->Add(this->topLabel);
 			this->Controls->Add(this->leftPanel);
 			this->Controls->Add(this->winChartViewer1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->MaximizeBox = false;
 			this->Name = L"ChartForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -618,20 +647,36 @@ private: System::Void PointerPB_CheckedChanged_1(System::Object^ sender, System:
 		winChartViewer1->MouseUsage = WinChartMouseUsage::ScrollOnDrag;
 }
 
-private: System::Void PrintPB_Click(System::Object^ sender, System::EventArgs^ e) {
-	PrintDialog^ printDlg = gcnew PrintDialog();
-	System::Drawing::Printing::PrintDocument^ documento=gcnew System::Drawing::Printing::PrintDocument();
-	//documento = dynamic_cast<System::Drawing::Printing::PrintDocument^>(winChartViewer1->Chart->makeImage());
-	printDlg->Document = documento;
-	documento->DocumentName = "C:/Users/arant/Documents/TFG/tidex/DAT/45m.dat";
-	printDlg->AllowSelection = true;
-	printDlg->AllowSomePages = true;
-	printDlg->ShowHelp = true;
+private: System::Void PrintPB_Click(System::Object^ sender, System::EventArgs^ e)
+{
+
+	System::Drawing::Printing::PrintDocument^ documento = gcnew System::Drawing::Printing::PrintDocument();
+	System::Drawing::Image^ graphImage = winChartViewer1->Chart->makeImage();
+
+	//documento = dynamic_cast<System::Drawing::Printing::PrintDocument^>();
+	printDialog1->Document = printDocument1;
+	//printDocument1->DocumentName = winChartViewer1->Name;
+	//printDialog1->AllowSelection = true;
+	//printDialog1->AllowSomePages = true;
+	//printDialog1->ShowHelp = true;
+
 	//Call ShowDialog
-	if (printDlg->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+	if (printDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 	{
-		documento->Print();
+		printDocument1->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &ChartForm::PrintDocument1_PrintPage);
+		printDocument1->Print();
 	}
+}
+
+private: System::Void PrintDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e)
+{
+	System::Drawing::Point^point0 = gcnew System::Drawing::Point(100, 100);
+	System::Drawing::Point^ point1 = gcnew System::Drawing::Point(550, 100);
+	System::Drawing::Point^ point2 = gcnew System::Drawing::Point(150, 250);
+	array<System::Drawing::Point>^ points = gcnew array<System::Drawing::Point>{*point0, * point1, * point2};
+	e->Graphics->DrawImage(winChartViewer1->Chart->makeImage(), points);
+	e->HasMorePages = false;
+
 }
 
 };
