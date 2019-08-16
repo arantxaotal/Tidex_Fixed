@@ -380,7 +380,7 @@ namespace Tidex2019 {
 
 			}
 		}
-		//
+	//
 	// Initialize the WinChartViewer
 	// 
 		System::Void initChartViewer()
@@ -646,20 +646,10 @@ private: System::Void PointerPB_CheckedChanged_1(System::Object^ sender, System:
 	if (pointerPB->Checked)
 		winChartViewer1->MouseUsage = WinChartMouseUsage::ScrollOnDrag;
 }
-
+//Boton para imprimir el trozo de grafica que se muestra por pantalla
 private: System::Void PrintPB_Click(System::Object^ sender, System::EventArgs^ e)
 {
-
-	System::Drawing::Printing::PrintDocument^ documento = gcnew System::Drawing::Printing::PrintDocument();
-	System::Drawing::Image^ graphImage = winChartViewer1->Chart->makeImage();
-
-	//documento = dynamic_cast<System::Drawing::Printing::PrintDocument^>();
 	printDialog1->Document = printDocument1;
-	//printDocument1->DocumentName = winChartViewer1->Name;
-	//printDialog1->AllowSelection = true;
-	//printDialog1->AllowSomePages = true;
-	//printDialog1->ShowHelp = true;
-
 	//Call ShowDialog
 	if (printDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 	{
@@ -670,10 +660,11 @@ private: System::Void PrintPB_Click(System::Object^ sender, System::EventArgs^ e
 
 private: System::Void PrintDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e)
 {
-	System::Drawing::Point^point0 = gcnew System::Drawing::Point(100, 100);
-	System::Drawing::Point^ point1 = gcnew System::Drawing::Point(550, 100);
-	System::Drawing::Point^ point2 = gcnew System::Drawing::Point(150, 250);
-	array<System::Drawing::Point>^ points = gcnew array<System::Drawing::Point>{*point0, * point1, * point2};
+
+	System::Drawing::Point*point1 = new System::Drawing::Point(0,0);
+	System::Drawing::Point*point2 = new System::Drawing::Point(700,0);
+	System::Drawing::Point*point3 = new System::Drawing::Point(0,600);
+	array<System::Drawing::Point>^ points = gcnew array<System::Drawing::Point>{*point1, *point2,*point3};
 	e->Graphics->DrawImage(winChartViewer1->Chart->makeImage(), points);
 	e->HasMorePages = false;
 
