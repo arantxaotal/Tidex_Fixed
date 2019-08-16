@@ -100,7 +100,7 @@ namespace Tidex2019 {
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"m/s", L"m", L"cm/s" });
 			this->comboBox1->Location = System::Drawing::Point(197, 66);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(2);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(72, 32);
 			this->comboBox1->TabIndex = 92;
@@ -117,7 +117,7 @@ namespace Tidex2019 {
 			this->Controls->Add(this->nextbutton);
 			this->Controls->Add(this->label1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->MaximizeBox = false;
 			this->Name = L"UnitForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;

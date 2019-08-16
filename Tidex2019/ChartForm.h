@@ -118,11 +118,10 @@ namespace Tidex2019 {
 			// 
 			// winChartViewer1
 			// 
-			this->winChartViewer1->ChartSizeMode = ChartDirector::WinChartSizeMode::StretchImage;
 			this->winChartViewer1->Location = System::Drawing::Point(92, 22);
 			this->winChartViewer1->Margin = System::Windows::Forms::Padding(2);
 			this->winChartViewer1->Name = L"winChartViewer1";
-			this->winChartViewer1->Size = System::Drawing::Size(900, 600);
+			this->winChartViewer1->Size = System::Drawing::Size(672, 411);
 			this->winChartViewer1->TabIndex = 90;
 			this->winChartViewer1->TabStop = false;
 			this->winChartViewer1->MouseMovePlotArea += gcnew System::Windows::Forms::MouseEventHandler(this, &ChartForm::WinChartViewer1_MouseMovePlotArea);
@@ -130,7 +129,7 @@ namespace Tidex2019 {
 			// 
 			// leftPanel
 			// 
-			this->leftPanel->BackColor = System::Drawing::Color::PowderBlue;
+			this->leftPanel->BackColor = System::Drawing::Color::PaleTurquoise;
 			this->leftPanel->Controls->Add(this->printPB);
 			this->leftPanel->Controls->Add(this->savePB);
 			this->leftPanel->Controls->Add(this->separatorLine);
@@ -143,7 +142,7 @@ namespace Tidex2019 {
 			this->leftPanel->Location = System::Drawing::Point(0, 0);
 			this->leftPanel->Margin = System::Windows::Forms::Padding(2);
 			this->leftPanel->Name = L"leftPanel";
-			this->leftPanel->Size = System::Drawing::Size(90, 729);
+			this->leftPanel->Size = System::Drawing::Size(90, 547);
 			this->leftPanel->TabIndex = 91;
 			// 
 			// printPB
@@ -189,7 +188,7 @@ namespace Tidex2019 {
 			this->separatorLine->Location = System::Drawing::Point(89, 0);
 			this->separatorLine->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->separatorLine->Name = L"separatorLine";
-			this->separatorLine->Size = System::Drawing::Size(1, 729);
+			this->separatorLine->Size = System::Drawing::Size(1, 547);
 			this->separatorLine->TabIndex = 31;
 			// 
 			// pointerPB
@@ -262,7 +261,7 @@ namespace Tidex2019 {
 			this->topLabel->Location = System::Drawing::Point(90, 0);
 			this->topLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->topLabel->Name = L"topLabel";
-			this->topLabel->Size = System::Drawing::Size(902, 20);
+			this->topLabel->Size = System::Drawing::Size(674, 20);
 			this->topLabel->TabIndex = 92;
 			this->topLabel->Text = L"Tidex prediction chart";
 			this->topLabel->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -270,11 +269,10 @@ namespace Tidex2019 {
 			// viewPortControl1
 			// 
 			this->viewPortControl1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->viewPortControl1->ChartSizeMode = ChartDirector::WinChartSizeMode::StretchImage;
-			this->viewPortControl1->Location = System::Drawing::Point(92, 626);
+			this->viewPortControl1->Location = System::Drawing::Point(92, 433);
 			this->viewPortControl1->Margin = System::Windows::Forms::Padding(2);
 			this->viewPortControl1->Name = L"viewPortControl1";
-			this->viewPortControl1->Size = System::Drawing::Size(900, 103);
+			this->viewPortControl1->Size = System::Drawing::Size(672, 114);
 			this->viewPortControl1->TabIndex = 93;
 			this->viewPortControl1->TabStop = false;
 			this->viewPortControl1->Viewer = this->winChartViewer1;
@@ -289,7 +287,7 @@ namespace Tidex2019 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(992, 729);
+			this->ClientSize = System::Drawing::Size(764, 547);
 			this->Controls->Add(this->viewPortControl1);
 			this->Controls->Add(this->topLabel);
 			this->Controls->Add(this->leftPanel);
@@ -424,32 +422,32 @@ namespace Tidex2019 {
 				result2[i] = result[i + startPoint];
 			}
 			ChartDirector::XYChart^ c = gcnew ChartDirector::XYChart(640, 400);
-			c->setPlotArea(55, 55, c->getWidth() - 80, c->getHeight() - 90, c->linearGradientColor(0, 55, 0, c->getHeight() - 35, 0xf0f6ff, 0xa0c0ff), -1, ChartDirector::Chart::Transparent, 0xffffff, 0xffffff);
+			c->setPlotArea(55, 55, c->getWidth() - 80, c->getHeight() - 90, c->linearGradientColor(0, 55, 0, c->getHeight() - 35, 0xf0f6ff, 0x99F3DF), -1, ChartDirector::Chart::Transparent, 0xffffff, 0xffffff);
 			c->setClipping();
-			c->addTitle("Predicción de mareas", "arial.ttf", 20, 0x555555);
+			c->addTitle("Predicción de mareas", "msjh.ttc", 20, 0x555555);
 			c->getLegend()->setLineStyleKey();
 			c->getLegend()->setFontSize(10);
 
 			c->xAxis()->setColors(ChartDirector::Chart::Transparent, ChartDirector::Chart::TextColor, ChartDirector::Chart::TextColor, 0xaaaaaa);
 			c->yAxis()->setColors(ChartDirector::Chart::Transparent);
-			c->xAxis()->setLabelStyle("arial.ttf", 10);
-			c->yAxis()->setLabelStyle("arial.ttf", 10);
+			c->xAxis()->setLabelStyle("msjh.ttc", 10);
+			c->yAxis()->setLabelStyle("msjh.ttc", 10);
 			if (unit == "cm/s")
 			{
-				c->yAxis()->setTitle("Velocidad cm/s", "arial.ttf", 10);
+				c->yAxis()->setTitle("Velocidad cm/s", "msjh.ttc", 10);
 			}
 			else
 			{
 				if (unit == "m")
 				{
-					c->yAxis()->setTitle("Metros", "arial.ttf", 10);
+					c->yAxis()->setTitle("Metros", "msjh.ttc", 10);
 				}
 				else
 				{
-					c->yAxis()->setTitle("Velocidad m/s", "arial.ttf", 10);
+					c->yAxis()->setTitle("Velocidad m/s", "msjh.ttc", 10);
 				}
 			}
-			c->xAxis()->setTitle("Tiempo", "arial.ttf", 14, 0x555555);
+			c->xAxis()->setTitle("Tiempo", "msjh.ttc", 14, 0x555555);
 
 			c->addLineLayer(result2);
 			c->xAxis()->setLabels(labels2);
@@ -474,7 +472,7 @@ namespace Tidex2019 {
 			double xValue = c->getNearestXValue(mouseX);
 			int xCoor = c->getXCoor(xValue);
 
-			d->vline(plotArea->getTopY(), plotArea->getBottomY(), xCoor, 0xaaaaaa);
+			d->vline(plotArea->getTopY(), plotArea->getBottomY(), xCoor, 0x0C1AF0);
 
 			std::vector<std::string> legendEntries;
 

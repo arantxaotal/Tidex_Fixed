@@ -70,10 +70,9 @@ namespace Tidex2019 {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::Black;
-			this->label1->Location = System::Drawing::Point(29, 346);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Location = System::Drawing::Point(22, 281);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(197, 25);
+			this->label1->Size = System::Drawing::Size(158, 20);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Tide stream graphic";
 			// 
@@ -83,10 +82,9 @@ namespace Tidex2019 {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::Black;
-			this->label2->Location = System::Drawing::Point(29, 378);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Location = System::Drawing::Point(22, 307);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(221, 25);
+			this->label2->Size = System::Drawing::Size(173, 20);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Tidex 2019 version 2.0";
 			// 
@@ -96,36 +94,33 @@ namespace Tidex2019 {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::Black;
-			this->label3->Location = System::Drawing::Point(29, 407);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Location = System::Drawing::Point(22, 331);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(363, 25);
+			this->label3->Size = System::Drawing::Size(289, 20);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Copyright © 2019. All rights reserved.";
 			// 
 			// pictureBox2
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(-56, -91);
-			this->pictureBox2->Margin = System::Windows::Forms::Padding(4);
+			this->pictureBox2->Location = System::Drawing::Point(-42, -74);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(552, 421);
+			this->pictureBox2->Size = System::Drawing::Size(414, 342);
 			this->pictureBox2->TabIndex = 4;
 			this->pictureBox2->TabStop = false;
 			// 
 			// HelpForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::Color::PowderBlue;
-			this->ClientSize = System::Drawing::Size(512, 444);
+			this->ClientSize = System::Drawing::Size(384, 361);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->MaximizeBox = false;
 			this->Name = L"HelpForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;

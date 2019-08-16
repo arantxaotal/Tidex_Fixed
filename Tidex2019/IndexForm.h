@@ -111,8 +111,7 @@ namespace Tidex2019 {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Padding = System::Windows::Forms::Padding(8, 2, 0, 2);
-			this->menuStrip1->Size = System::Drawing::Size(1803, 40);
+			this->menuStrip1->Size = System::Drawing::Size(1352, 33);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -126,7 +125,7 @@ namespace Tidex2019 {
 			this->FILE->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 14.25F));
 			this->FILE->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->FILE->Name = L"FILE";
-			this->FILE->Size = System::Drawing::Size(66, 36);
+			this->FILE->Size = System::Drawing::Size(53, 29);
 			this->FILE->Text = L"File";
 			// 
 			// FILE_NEW
@@ -136,7 +135,7 @@ namespace Tidex2019 {
 				static_cast<System::Byte>(0)));
 			this->FILE_NEW->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_NEW->Name = L"FILE_NEW";
-			this->FILE_NEW->Size = System::Drawing::Size(317, 36);
+			this->FILE_NEW->Size = System::Drawing::Size(251, 30);
 			this->FILE_NEW->Text = L"New";
 			this->FILE_NEW->Click += gcnew System::EventHandler(this, &IndexForm::FILE_NEW_Click);
 			// 
@@ -145,7 +144,7 @@ namespace Tidex2019 {
 			this->FILE_OPEN->BackColor = System::Drawing::Color::DarkCyan;
 			this->FILE_OPEN->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_OPEN->Name = L"FILE_OPEN";
-			this->FILE_OPEN->Size = System::Drawing::Size(317, 36);
+			this->FILE_OPEN->Size = System::Drawing::Size(251, 30);
 			this->FILE_OPEN->Text = L"Open Harmonic File";
 			this->FILE_OPEN->Click += gcnew System::EventHandler(this, &IndexForm::FILE_OPEN_Click);
 			// 
@@ -154,7 +153,7 @@ namespace Tidex2019 {
 			this->openPredictionToolStripMenuItem->BackColor = System::Drawing::Color::DarkCyan;
 			this->openPredictionToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->openPredictionToolStripMenuItem->Name = L"openPredictionToolStripMenuItem";
-			this->openPredictionToolStripMenuItem->Size = System::Drawing::Size(317, 36);
+			this->openPredictionToolStripMenuItem->Size = System::Drawing::Size(251, 30);
 			this->openPredictionToolStripMenuItem->Text = L"Open Prediction";
 			this->openPredictionToolStripMenuItem->Click += gcnew System::EventHandler(this, &IndexForm::OpenPredictionToolStripMenuItem_Click);
 			// 
@@ -163,7 +162,7 @@ namespace Tidex2019 {
 			this->FILE_EXIT->BackColor = System::Drawing::Color::DarkCyan;
 			this->FILE_EXIT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_EXIT->Name = L"FILE_EXIT";
-			this->FILE_EXIT->Size = System::Drawing::Size(317, 36);
+			this->FILE_EXIT->Size = System::Drawing::Size(251, 30);
 			this->FILE_EXIT->Text = L"Exit";
 			this->FILE_EXIT->Click += gcnew System::EventHandler(this, &IndexForm::FILE_EXIT_Click);
 			// 
@@ -174,7 +173,7 @@ namespace Tidex2019 {
 			this->EDIT->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->EDIT->Name = L"EDIT";
-			this->EDIT->Size = System::Drawing::Size(69, 36);
+			this->EDIT->Size = System::Drawing::Size(56, 29);
 			this->EDIT->Text = L"Edit";
 			// 
 			// EDIT_MODIFY
@@ -182,7 +181,7 @@ namespace Tidex2019 {
 			this->EDIT_MODIFY->BackColor = System::Drawing::Color::DarkCyan;
 			this->EDIT_MODIFY->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->EDIT_MODIFY->Name = L"EDIT_MODIFY";
-			this->EDIT_MODIFY->Size = System::Drawing::Size(236, 36);
+			this->EDIT_MODIFY->Size = System::Drawing::Size(187, 30);
 			this->EDIT_MODIFY->Text = L"Modify Data";
 			this->EDIT_MODIFY->Click += gcnew System::EventHandler(this, &IndexForm::EDIT_MODIFY_Click);
 			// 
@@ -193,7 +192,7 @@ namespace Tidex2019 {
 			this->HELP->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->HELP->Name = L"HELP";
-			this->HELP->Size = System::Drawing::Size(79, 36);
+			this->HELP->Size = System::Drawing::Size(63, 29);
 			this->HELP->Text = L"Help";
 			// 
 			// HELP_ABOUT
@@ -201,7 +200,7 @@ namespace Tidex2019 {
 			this->HELP_ABOUT->BackColor = System::Drawing::Color::DarkCyan;
 			this->HELP_ABOUT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->HELP_ABOUT->Name = L"HELP_ABOUT";
-			this->HELP_ABOUT->Size = System::Drawing::Size(184, 36);
+			this->HELP_ABOUT->Size = System::Drawing::Size(147, 30);
 			this->HELP_ABOUT->Text = L"About...";
 			this->HELP_ABOUT->Click += gcnew System::EventHandler(this, &IndexForm::HELP_ABOUT_Click);
 			// 
@@ -213,9 +212,9 @@ namespace Tidex2019 {
 				this->NewButton, this->OpenButton,
 					this->TimerButton, this->predictionbutton
 			});
-			this->toolStrip1->Location = System::Drawing::Point(0, 40);
+			this->toolStrip1->Location = System::Drawing::Point(0, 33);
 			this->toolStrip1->Name = L"toolStrip1";
-			this->toolStrip1->Size = System::Drawing::Size(1803, 39);
+			this->toolStrip1->Size = System::Drawing::Size(1352, 39);
 			this->toolStrip1->TabIndex = 1;
 			this->toolStrip1->Text = L"toolStrip1";
 			this->toolStrip1->ItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &IndexForm::toolStrip1_ItemClicked);
@@ -279,19 +278,18 @@ namespace Tidex2019 {
 			// 
 			// IndexForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::PowderBlue;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->ClientSize = System::Drawing::Size(1803, 703);
+			this->ClientSize = System::Drawing::Size(1352, 571);
 			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->menuStrip1);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"IndexForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Tidex 2019";
