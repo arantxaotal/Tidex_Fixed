@@ -55,8 +55,8 @@ namespace Tidex2019 {
 
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
-	private: System::Windows::Forms::RichTextBox^ richTextBox1;
-	private: System::Windows::Forms::Button^ button1;
+
+
 
 
 
@@ -81,8 +81,6 @@ namespace Tidex2019 {
 			this->nobutton = (gcnew MaterialSkin::Controls::MaterialRaisedButton());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
-			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -141,24 +139,6 @@ namespace Tidex2019 {
 			// 
 			this->saveFileDialog1->Filter = L" Archivos de datos (*.dat)|*.dat";
 			// 
-			// richTextBox1
-			// 
-			this->richTextBox1->Location = System::Drawing::Point(12, 12);
-			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(195, 41);
-			this->richTextBox1->TabIndex = 92;
-			this->richTextBox1->Text = L"";
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(273, 30);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 93;
-			this->button1->Text = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &PredictionDoneForm::Button1_Click);
-			// 
 			// PredictionDoneForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -166,8 +146,6 @@ namespace Tidex2019 {
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::Color::PowderBlue;
 			this->ClientSize = System::Drawing::Size(362, 206);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->richTextBox1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->nobutton);
 			this->Controls->Add(this->yesbutton);
@@ -183,6 +161,7 @@ namespace Tidex2019 {
 
 		}
 #pragma endregion
+	//Guarda predicción .dat y muestra gráfica
 	private: System::Void YesButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		char buf[256];
 		GetCurrentDirectoryA(256, buf);
