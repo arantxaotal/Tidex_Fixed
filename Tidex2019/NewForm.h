@@ -104,7 +104,9 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::RichTextBox^ richTextBox2;
 	private: System::Windows::Forms::ComboBox^ unitbox;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog2;
-	private: MaterialSkin::Controls::MaterialRaisedButton^ saveharmonicbutton;
+	private: System::Windows::Forms::ErrorProvider^ errorProvider1;
+	private: System::ComponentModel::IContainer^ components;
+
 
 
 
@@ -120,7 +122,7 @@ namespace Tidex2019 {
 
 		/// Variable del diseñador necesaria.
 		/// </summary>
-			 System::ComponentModel::Container^ components;
+
 #pragma region Windows Form Designer generated code
 			 /// <summary>
 			 /// Método necesario para admitir el Diseñador. No se puede modificar
@@ -128,6 +130,7 @@ namespace Tidex2019 {
 			 /// </summary>
 			 void InitializeComponent(void)
 			 {
+				 this->components = (gcnew System::ComponentModel::Container());
 				 System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 				 System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 				 System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(NewForm::typeid));
@@ -180,7 +183,7 @@ namespace Tidex2019 {
 				 this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
 				 this->unitbox = (gcnew System::Windows::Forms::ComboBox());
 				 this->saveFileDialog2 = (gcnew System::Windows::Forms::SaveFileDialog());
-				 this->saveharmonicbutton = (gcnew MaterialSkin::Controls::MaterialRaisedButton());
+				 this->errorProvider1 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg2))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg1))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->depth))->BeginInit();
@@ -190,6 +193,7 @@ namespace Tidex2019 {
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->amplitudebox))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->argumentbox))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->measuretime))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProvider1))->BeginInit();
 				 this->SuspendLayout();
 				 // 
 				 // label1
@@ -811,19 +815,9 @@ namespace Tidex2019 {
 				 this->saveFileDialog2->Filter = L"Archivos de datos (*.dat)|*.dat";
 				 this->saveFileDialog2->Title = L"Save data file";
 				 // 
-				 // saveharmonicbutton
+				 // errorProvider1
 				 // 
-				 this->saveharmonicbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-				 this->saveharmonicbutton->Depth = 0;
-				 this->saveharmonicbutton->Location = System::Drawing::Point(781, 680);
-				 this->saveharmonicbutton->MouseState = MaterialSkin::MouseState::HOVER;
-				 this->saveharmonicbutton->Name = L"saveharmonicbutton";
-				 this->saveharmonicbutton->Primary = true;
-				 this->saveharmonicbutton->Size = System::Drawing::Size(116, 36);
-				 this->saveharmonicbutton->TabIndex = 92;
-				 this->saveharmonicbutton->Text = L"SAVE HARMONIC FILE";
-				 this->saveharmonicbutton->UseVisualStyleBackColor = true;
-				 this->saveharmonicbutton->Click += gcnew System::EventHandler(this, &NewForm::Saveharmonicbutton_Click);
+				 this->errorProvider1->ContainerControl = this;
 				 // 
 				 // NewForm
 				 // 
@@ -831,7 +825,6 @@ namespace Tidex2019 {
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->BackColor = System::Drawing::Color::PowderBlue;
 				 this->ClientSize = System::Drawing::Size(1171, 729);
-				 this->Controls->Add(this->saveharmonicbutton);
 				 this->Controls->Add(this->unitbox);
 				 this->Controls->Add(this->richTextBox2);
 				 this->Controls->Add(this->cancelbutton);
@@ -890,6 +883,7 @@ namespace Tidex2019 {
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->amplitudebox))->EndInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->argumentbox))->EndInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->measuretime))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProvider1))->EndInit();
 				 this->ResumeLayout(false);
 				 this->PerformLayout();
 
@@ -1008,7 +1002,8 @@ namespace Tidex2019 {
 
 		char buf[256];
 		GetCurrentDirectoryA(256, buf);
-
+		saveFileDialog1->ShowDialog();
+		richTextBox1->SaveFile(saveFileDialog1->FileName, System::Windows::Forms::RichTextBoxStreamType::PlainText);
 		std::stringstream ssExec, ssAstroFile, ssOutputFile, ssDateFile, ssFinalFile;
 		ssExec << buf << "\\long2000.exe";
 		ssAstroFile << buf << "\\Astro.dat";
@@ -1069,23 +1064,16 @@ namespace Tidex2019 {
 				month = monthStream.str();
 			}
 
-			*finalFileStream << hour << ":" << minute << " " << day << " " << month << " " << year << "  " << value << "\n";
+			*finalFileStream << hour << ":" << minute<< " " << day << " " << month << " " << year << "  " << value << "\n";
 			i++;
-		}		
-		ChartForm^ chart = gcnew ChartForm(unitbox->Text, saveFileDialog2->FileName);
-		chart->Show();
+		}
 		delete outputFileStream;
 		delete finalFileStream;
 		finalFile.close();
 		outputFile.close();
+		ChartForm^ chart = gcnew ChartForm(unitbox->Text, saveFileDialog2->FileName);
+		chart->Show();
 		this->Close();
-
-		//abre dialogo prediccion realizada
-		/*
-		PredictionDoneForm ^predictiondone = gcnew PredictionDoneForm(unitbox->Text);
-		predictiondone->Show();
-		this->Close();
-		*/
 	}
 			 //Método de botón de cerrar ventana
 	private: System::Void cancelbutton_Click_1(System::Object^ sender, System::EventArgs^ e) {
@@ -1095,11 +1083,7 @@ namespace Tidex2019 {
 	}
 	private: System::Void Amplitudebox_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void Saveharmonicbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		saveFileDialog1->ShowDialog();
-		richTextBox1->SaveFile(saveFileDialog1->FileName, System::Windows::Forms::RichTextBoxStreamType::PlainText);
-	}
 };
 }
 

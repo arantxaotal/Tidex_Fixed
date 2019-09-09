@@ -25,7 +25,7 @@ namespace Tidex2019 {
 		UnitForm(String^ filerout, const char* ext)
 		{
 			InitializeComponent();
-			fileroute = filerout;
+			fileroute = gcnew String(filerout);
 			extension = ext;
 		}
 
@@ -46,6 +46,8 @@ namespace Tidex2019 {
 	private: MaterialSkin::Controls::MaterialRaisedButton^ nextbutton;
 
 	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
+
 	protected:
 
 	private:
@@ -65,6 +67,7 @@ namespace Tidex2019 {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->nextbutton = (gcnew MaterialSkin::Controls::MaterialRaisedButton());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -106,6 +109,11 @@ namespace Tidex2019 {
 			this->comboBox1->TabIndex = 92;
 			this->comboBox1->Text = L"m/s";
 			// 
+			// openFileDialog1
+			// 
+			this->openFileDialog1->FileName = L"openFileDialog1";
+			this->openFileDialog1->Filter = L" Archivos de datos (*.hdf)|*.hdf";
+			// 
 			// UnitForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -130,18 +138,15 @@ namespace Tidex2019 {
 	private: System::Void Nextbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (extension == "hdf")
 		{
-			//se hacen los calculos aquí con el .hdf route solicitado y se genera .dat temporal
-			//prediccion generada desea guardar?
-			//se abre dialogo save para guardar el .dat , donde desea guardarlo?
-			PredictionDoneForm^ predictiondoneform = gcnew PredictionDoneForm(comboBox1->Text); // se pasa las unidades y se muestra gráfica;
-			predictiondoneform->Show();
+			PredictionDoneForm^ prediction = gcnew PredictionDoneForm(comboBox1->Text, fileroute);
+			prediction->Show();
 			this->Close();
 		}
 		else
 		{
 			//se genera gráfica con .dat ruta pasada
-			ChartForm^ predictiondoneform = gcnew ChartForm(comboBox1->Text, fileroute); //se le pasa constructor la ruta del .dat elegida y las unidades y se muestra gráfica;
-			predictiondoneform->Show();
+			ChartForm^ chart = gcnew ChartForm(comboBox1->Text, fileroute); //se le pasa constructor la ruta del .dat elegida y las unidades y se muestra gráfica;
+			chart->Show();
 			this->Close();
 
 		}

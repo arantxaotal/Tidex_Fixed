@@ -1,5 +1,10 @@
 #pragma once
 #include"ChartForm.h"
+#include <fstream>
+#include <string>
+#include <iostream>
+#include <msclr/marshal.h>
+#include <process.h>
 namespace Tidex2019 {
 
 	using namespace System;
@@ -22,10 +27,11 @@ namespace Tidex2019 {
 			//TODO: agregar código de constructor aquí
 			//
 		}
-		PredictionDoneForm(String^ u)
+		PredictionDoneForm(String^ u,String^name)
 		{
 			InitializeComponent();
-			unit = u;
+			unit = gcnew String(u);
+			filename = gcnew String(name);
 
 		}
 
@@ -40,8 +46,8 @@ namespace Tidex2019 {
 				delete components;
 			}
 		}
-	private: String^ unit;
-	private: String ^filename;
+	private: System::String^ unit;
+	private: System::String^ filename;
 	private: System::Windows::Forms::Label^ label1;
 	private: MaterialSkin::Controls::MaterialRaisedButton^ yesbutton;
 
@@ -49,6 +55,11 @@ namespace Tidex2019 {
 
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
+	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+	private: System::Windows::Forms::Button^ button1;
+
+
+
 	protected:
 
 	private:
@@ -70,6 +81,8 @@ namespace Tidex2019 {
 			this->nobutton = (gcnew MaterialSkin::Controls::MaterialRaisedButton());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
+			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -94,7 +107,7 @@ namespace Tidex2019 {
 			this->yesbutton->Primary = true;
 			this->yesbutton->Size = System::Drawing::Size(116, 36);
 			this->yesbutton->TabIndex = 89;
-			this->yesbutton->Text = L"yes";
+			this->yesbutton->Text = L"save";
 			this->yesbutton->UseVisualStyleBackColor = true;
 			this->yesbutton->Click += gcnew System::EventHandler(this, &PredictionDoneForm::YesButton_Click);
 			// 
@@ -108,7 +121,7 @@ namespace Tidex2019 {
 			this->nobutton->Primary = true;
 			this->nobutton->Size = System::Drawing::Size(116, 36);
 			this->nobutton->TabIndex = 90;
-			this->nobutton->Text = L"no";
+			this->nobutton->Text = L"cancel";
 			this->nobutton->UseVisualStyleBackColor = true;
 			this->nobutton->Click += gcnew System::EventHandler(this, &PredictionDoneForm::NoButton_Click);
 			// 
@@ -128,6 +141,24 @@ namespace Tidex2019 {
 			// 
 			this->saveFileDialog1->Filter = L" Archivos de datos (*.dat)|*.dat";
 			// 
+			// richTextBox1
+			// 
+			this->richTextBox1->Location = System::Drawing::Point(12, 12);
+			this->richTextBox1->Name = L"richTextBox1";
+			this->richTextBox1->Size = System::Drawing::Size(195, 41);
+			this->richTextBox1->TabIndex = 92;
+			this->richTextBox1->Text = L"";
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(273, 30);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 93;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &PredictionDoneForm::Button1_Click);
+			// 
 			// PredictionDoneForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -135,12 +166,14 @@ namespace Tidex2019 {
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::Color::PowderBlue;
 			this->ClientSize = System::Drawing::Size(362, 206);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->richTextBox1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->nobutton);
 			this->Controls->Add(this->yesbutton);
 			this->Controls->Add(this->label1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->MaximizeBox = false;
 			this->Name = L"PredictionDoneForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -151,13 +184,86 @@ namespace Tidex2019 {
 		}
 #pragma endregion
 	private: System::Void YesButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		char buf[256];
+		GetCurrentDirectoryA(256, buf);
+
+		std::stringstream ssExec, ssAstroFile, ssOutputFile, ssDateFile, ssFinalFile;
+		ssExec << buf << "\\long2000.exe";
+		ssAstroFile << buf << "\\Astro.dat";
+		ssOutputFile << buf << "\\Output.dat";
+		ssDateFile << buf << "\\calc.tmp";
+		//ssFinalFile << buf << "\\finalData.dat";
+		std::string execPath = ssExec.str();
+		std::string astroPath = ssAstroFile.str();
+		std::string outputPath = ssOutputFile.str();
+		std::string datePath = msclr::interop::marshal_as <std::string>(filename->ToString());
+		spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
+
+		std::filebuf finalFile, outputFile;
+
 		saveFileDialog1->ShowDialog();
-		ChartForm^ chart = gcnew ChartForm(unit,saveFileDialog1->FileName);
+		if (!outputFile.open(outputPath.c_str(), std::ios::in) || !finalFile.open(msclr::interop::marshal_as<std::string>(saveFileDialog1->FileName).c_str(), std::ios::out))
+		{
+			std::cout << "Error!" << std::endl;
+			exit(-1);
+
+		}
+		std::istream* outputFileStream = new std::istream(&outputFile);
+		std::ostream* finalFileStream = new std::ostream(&finalFile);
+		int lines;
+		*outputFileStream >> lines;
+		int i = 0;
+		while (i < lines)
+		{
+			std::string hour, minute, day, month, year, value;
+			int hourInt, minInt, dayInt, monthInt;
+			std::stringstream hourStream, minuteStream, dayStream, monthStream;
+
+			*outputFileStream >> hour >> minute >> day >> month >> year >> value;
+
+			hourInt = std::stoi(hour);
+			minInt = std::stoi(minute);
+			dayInt = std::stoi(day);
+			monthInt = std::stoi(month);
+
+			if (hourInt < 10)
+			{
+				hourStream << "0" << hour;
+				hour = hourStream.str();
+			}
+			if (minInt < 10)
+			{
+				minuteStream << "0" << minInt;
+				minute = minuteStream.str();
+			}
+			if (dayInt < 10)
+			{
+				dayStream << "0" << dayInt;
+				day = dayStream.str();
+			}
+			if (monthInt < 10)
+			{
+				monthStream << "0" << monthInt;
+				month = monthStream.str();
+			}
+
+			*finalFileStream << hour << ":" << minute << " " << day << " " << month << " " << year << "  " << value << "\n";
+			i++;
+		}
+		delete outputFileStream;
+		delete finalFileStream;
+		finalFile.close();
+		outputFile.close();
+		ChartForm^ chart = gcnew ChartForm(unit, saveFileDialog1->FileName);
 		chart->Show();
 		this->Close();
 	}
 	private: System::Void NoButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-	};
+	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		richTextBox1->Text = filename->ToString();
+		
+	}
+};
 }

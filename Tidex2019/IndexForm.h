@@ -65,6 +65,7 @@ namespace Tidex2019 {
 
 	private: System::Windows::Forms::ToolStripButton^ predictionbutton;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog2;
+	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 
 	private: System::ComponentModel::IContainer^ components;
 	private:
@@ -97,6 +98,7 @@ namespace Tidex2019 {
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
 			this->openFileDialog2 = (gcnew System::Windows::Forms::OpenFileDialog());
+			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -276,6 +278,10 @@ namespace Tidex2019 {
 			this->openFileDialog2->InitialDirectory = L"C:\\Users";
 			this->openFileDialog2->Title = L"Open prediction";
 			// 
+			// saveFileDialog1
+			// 
+			this->saveFileDialog1->Filter = L" Archivos de datos (*.dat)|*.dat";
+			// 
 			// IndexForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -323,7 +329,7 @@ private: System::Void NewButton_Click(System::Object^  sender, System::EventArgs
 private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs^  e) {
 	openFileDialog1->ShowDialog();
 	//abre otro dialogo preguntando en qué unidades de amplitud esta la gráfica
-	if (openFileDialog1->SafeFileName != "")
+	if (openFileDialog1->FileName != "")
 	{
 		UnitForm^ unityform = gcnew UnitForm(openFileDialog1->FileName, "hdf");
 		unityform->Show();
