@@ -240,9 +240,6 @@ namespace Tidex2019 {
 	private: System::Void NoButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		richTextBox1->Text = filename->ToString();
-		
-	}
+
 };
 }
