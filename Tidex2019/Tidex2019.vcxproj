@@ -147,7 +147,7 @@
       <AdditionalDependencies />
       <SubSystem>Console</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
-      <TargetMachine>MachineX86</TargetMachine>
+      <TargetMachine>MachineX64</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
