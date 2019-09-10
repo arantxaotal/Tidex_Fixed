@@ -176,9 +176,13 @@ namespace Tidex2019 {
 		ssOutputFile << buf << "\\TIDEX\\Tidex2019\\Output.dat";
 		ssDateFile << buf << "\\TIDEX\\Tidex2019\\calc.tmp";
 		//ssFinalFile << buf << "\\finalData.dat";
+		
 		std::string execPath = ssExec.str();
 		std::string astroPath = ssAstroFile.str();
 		std::string outputPath = ssOutputFile.str();
+		cout << execPath << endl;
+		cout << astroPath << endl;
+		cout << outputPath << endl;
 		std::string datePath = msclr::interop::marshal_as<std::string>(filename->FileName);
 
 		spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
