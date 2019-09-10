@@ -27,11 +27,12 @@ namespace Tidex2019 {
 			//TODO: agregar código de constructor aquí
 			//
 		}
-		PredictionDoneForm(String^ u,String^name)
+		PredictionDoneForm(String^ u,OpenFileDialog^name)
 		{
 			InitializeComponent();
 			unit = gcnew String(u);
-			filename = gcnew String(name);
+			filename = gcnew OpenFileDialog();
+			filename = name;
 
 		}
 
@@ -47,7 +48,7 @@ namespace Tidex2019 {
 			}
 		}
 	private: System::String^ unit;
-	private: System::String^ filename;
+	private: OpenFileDialog^ filename;
 	private: System::Windows::Forms::Label^ label1;
 	private: MaterialSkin::Controls::MaterialRaisedButton^ yesbutton;
 
@@ -165,7 +166,6 @@ namespace Tidex2019 {
 	private: System::Void YesButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		char buf[256];
 		GetCurrentDirectoryA(256, buf);
-
 		std::stringstream ssExec, ssAstroFile, ssOutputFile, ssDateFile, ssFinalFile;
 		ssExec << buf << "\\long2000.exe";
 		ssAstroFile << buf << "\\Astro.dat";
@@ -175,17 +175,14 @@ namespace Tidex2019 {
 		std::string execPath = ssExec.str();
 		std::string astroPath = ssAstroFile.str();
 		std::string outputPath = ssOutputFile.str();
-		std::string datePath = msclr::interop::marshal_as <std::string>(filename->ToString());
+		std::string datePath = msclr::interop::marshal_as <std::string>(filename->FileName);
 		spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
-
 		std::filebuf finalFile, outputFile;
-
 		saveFileDialog1->ShowDialog();
-		if (!outputFile.open(outputPath.c_str(), std::ios::in) || !finalFile.open(msclr::interop::marshal_as<std::string>(saveFileDialog1->FileName).c_str(), std::ios::out))
+		if (!outputFile.open(outputPath.c_str(), std::ios::in) || !finalFile.open(msclr::interop::marshal_as<std::string>(saveFileDialog1->FileName), std::ios::out))
 		{
 			std::cout << "Error!" << std::endl;
 			exit(-1);
-
 		}
 		std::istream* outputFileStream = new std::istream(&outputFile);
 		std::ostream* finalFileStream = new std::ostream(&finalFile);

@@ -72,14 +72,8 @@ namespace Tidex2019 {
 		}
 	private: String^ unit;
 	private: int lines;
-
-
 	private: array<double>^ result,^result2;
 	private: array<System::String^, 1>^ labels,^labels2;
-
-
-
-
 	private: ChartDirector::WinChartViewer^ winChartViewer1;
 	protected:
 	private: System::ComponentModel::IContainer^ components;
@@ -88,8 +82,6 @@ namespace Tidex2019 {
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-
-
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Método necesario para admitir el Diseñador. No se puede modificar
@@ -655,7 +647,7 @@ private: System::Void PrintPB_Click(System::Object^ sender, System::EventArgs^ e
 		printDocument1->Print();
 	}
 }
-
+//Metodo que imprime gráfica
 private: System::Void PrintDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e)
 {
 

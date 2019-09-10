@@ -44,49 +44,35 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::ComboBox^ ewbox;
-
-
-
-
 	private: System::Windows::Forms::NumericUpDown^ coordinatesdeg2;
 	private: System::Windows::Forms::NumericUpDown^ coordinatesdeg1;
 	private: System::Windows::Forms::ComboBox^ namebox;
 	private: System::Windows::Forms::NumericUpDown^ depth;
 	private: System::Windows::Forms::Label^ label8;
-
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::NumericUpDown^ coordinatesmin2;
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::Label^ label17;
-
-
 	private: System::Windows::Forms::Label^ label18;
 	private: System::Windows::Forms::DateTimePicker^ begindate;
 	private: System::Windows::Forms::DateTimePicker^ enddate;
 	private: System::Windows::Forms::NumericUpDown^ coordinatesmin1;
-
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-
-
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::NumericUpDown^ amplitudebox;
 	private: System::Windows::Forms::NumericUpDown^ argumentbox;
-
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Nombre;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Amplitude;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
-
 	private: System::Windows::Forms::ComboBox^ nsbox;
 	private:
-
 	private: System::Windows::Forms::Label^ label14;
 	private: System::Windows::Forms::Label^ label15;
 	private: MaterialSkin::Controls::MaterialFlatButton^ updatebutton;
-
 	private: MaterialSkin::Controls::MaterialFlatButton^ addbutton;
 	private: MaterialSkin::Controls::MaterialFlatButton^ erasebutton;
 	private: MaterialSkin::Controls::MaterialRaisedButton^ choosebutton;
@@ -97,25 +83,15 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::DateTimePicker^ begintime;
 	private: System::Windows::Forms::DateTimePicker^ endtime;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
-	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+
 	private: MaterialSkin::Controls::MaterialRaisedButton^ acceptbutton;
 	private: MaterialSkin::Controls::MaterialRaisedButton^ cancelbutton;
-
 	private: System::Windows::Forms::RichTextBox^ richTextBox2;
 	private: System::Windows::Forms::ComboBox^ unitbox;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog2;
 	private: System::Windows::Forms::ErrorProvider^ errorProvider1;
+	private: System::Windows::Forms::RichTextBox^ richTextBox1;
 	private: System::ComponentModel::IContainer^ components;
-
-
-
-
-
-
-
-
-
-
 
 
 			 /// <summary>
@@ -177,13 +153,13 @@ namespace Tidex2019 {
 				 this->begintime = (gcnew System::Windows::Forms::DateTimePicker());
 				 this->endtime = (gcnew System::Windows::Forms::DateTimePicker());
 				 this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
-				 this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 				 this->acceptbutton = (gcnew MaterialSkin::Controls::MaterialRaisedButton());
 				 this->cancelbutton = (gcnew MaterialSkin::Controls::MaterialRaisedButton());
 				 this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
 				 this->unitbox = (gcnew System::Windows::Forms::ComboBox());
 				 this->saveFileDialog2 = (gcnew System::Windows::Forms::SaveFileDialog());
 				 this->errorProvider1 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
+				 this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg2))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg1))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->depth))->BeginInit();
@@ -534,15 +510,12 @@ namespace Tidex2019 {
 				 // amplitudebox
 				 // 
 				 this->amplitudebox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-				 this->amplitudebox->DecimalPlaces = 4;
 				 this->amplitudebox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->amplitudebox->Location = System::Drawing::Point(623, 222);
-				 this->amplitudebox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
+				 this->amplitudebox->Location = System::Drawing::Point(624, 222);
 				 this->amplitudebox->Name = L"amplitudebox";
-				 this->amplitudebox->Size = System::Drawing::Size(137, 29);
-				 this->amplitudebox->TabIndex = 66;
-				 this->amplitudebox->ValueChanged += gcnew System::EventHandler(this, &NewForm::Amplitudebox_ValueChanged);
+				 this->amplitudebox->Size = System::Drawing::Size(120, 29);
+				 this->amplitudebox->TabIndex = 93;
 				 // 
 				 // argumentbox
 				 // 
@@ -742,21 +715,6 @@ namespace Tidex2019 {
 				 this->saveFileDialog1->InitialDirectory = L"C:\\Users\\...\\Documents";
 				 this->saveFileDialog1->Title = L"Save harmonic file";
 				 // 
-				 // richTextBox1
-				 // 
-				 this->richTextBox1->AcceptsTab = true;
-				 this->richTextBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-				 this->richTextBox1->EnableAutoDragDrop = true;
-				 this->richTextBox1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-					 static_cast<System::Byte>(0)));
-				 this->richTextBox1->Location = System::Drawing::Point(40, 470);
-				 this->richTextBox1->Name = L"richTextBox1";
-				 this->richTextBox1->ReadOnly = true;
-				 this->richTextBox1->Size = System::Drawing::Size(857, 204);
-				 this->richTextBox1->TabIndex = 86;
-				 this->richTextBox1->Text = L"";
-				 this->richTextBox1->TextChanged += gcnew System::EventHandler(this, &NewForm::richTextBox1_TextChanged);
-				 // 
 				 // acceptbutton
 				 // 
 				 this->acceptbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
@@ -818,6 +776,18 @@ namespace Tidex2019 {
 				 // errorProvider1
 				 // 
 				 this->errorProvider1->ContainerControl = this;
+				 // 
+				 // richTextBox1
+				 // 
+				 this->richTextBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+				 this->richTextBox1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+					 static_cast<System::Byte>(0)));
+				 this->richTextBox1->Location = System::Drawing::Point(44, 443);
+				 this->richTextBox1->Name = L"richTextBox1";
+				 this->richTextBox1->ReadOnly = true;
+				 this->richTextBox1->Size = System::Drawing::Size(870, 232);
+				 this->richTextBox1->TabIndex = 92;
+				 this->richTextBox1->Text = L"";
 				 // 
 				 // NewForm
 				 // 
@@ -893,13 +863,11 @@ namespace Tidex2019 {
 		this->Close();
 	}
 
-
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		int n = e->RowIndex;
 
 	}
-
-			 //Método que aplica los datos añadidos al cuadro de texto
+	 //Método que aplica los datos añadidos al cuadro de texto
 	private: System::Void updatebutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		richTextBox1->Clear();
 		//ChartForm^ chart = gcnew ChartForm();
@@ -936,12 +904,12 @@ namespace Tidex2019 {
 
 
 	}
-			 //Metodo de cerrar ventana
+	//Metodo de cerrar ventana
 	private: System::Void cancelbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
 
-			 //Método de añadir nueva fila a la tabla
+	//Método de añadir nueva fila a la tabla
 	private: System::Void addbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		//add nueva fila
 		int x = dataGridView1->Rows->Add();
@@ -977,7 +945,7 @@ namespace Tidex2019 {
 		argumentbox->Text = "";
 
 	}
-			 //Método de borrar una fila de la tabla
+	//Método de borrar una fila de la tabla
 	private: System::Void erasebutton_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		if (dataGridView1->Rows->Count > 0 && dataGridView1->Rows != nullptr)
@@ -991,7 +959,7 @@ namespace Tidex2019 {
 
 
 	}
-			 //Método de elegir archivo y guardar ruta en cuadro de texto
+	//Método de elegir archivo y guardar ruta en cuadro de texto
 	private: System::Void choosebutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		openFileDialog1->ShowDialog();
 		richTextBox2->AppendText(openFileDialog1->FileName);
@@ -1075,13 +1043,9 @@ namespace Tidex2019 {
 		chart->Show();
 		this->Close();
 	}
-			 //Método de botón de cerrar ventana
+	//Método de botón de cerrar ventana
 	private: System::Void cancelbutton_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
-	}
-	private: System::Void richTextBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void Amplitudebox_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 
 };

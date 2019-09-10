@@ -331,7 +331,7 @@ private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs
 	//abre otro dialogo preguntando en qué unidades de amplitud esta la gráfica
 	if (openFileDialog1->FileName != "")
 	{
-		UnitForm^ unityform = gcnew UnitForm(openFileDialog1->FileName, "hdf");
+		UnitForm^ unityform = gcnew UnitForm(openFileDialog1, "hdf");
 		unityform->Show();
 	}
 
@@ -359,7 +359,7 @@ private: System::Void TimerButton_Click(System::Object^  sender, System::EventAr
 private: System::Void OpenPredictionToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	openFileDialog2->ShowDialog();
 	//abre otro dialogo preguntando en qué unidades de amplitud esta la gráfica
-	UnitForm^ unitform = gcnew UnitForm(openFileDialog2->FileName,"dat");
+	UnitForm^ unitform = gcnew UnitForm(openFileDialog2,"dat");
 	unitform->Show(this);
 }
 private: System::Void Predictionbutton_Click(System::Object^ sender, System::EventArgs^ e) {

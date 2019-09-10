@@ -22,10 +22,11 @@ namespace Tidex2019 {
 			//TODO: agregar código de constructor aquí
 			//
 		}
-		UnitForm(String^ filerout, const char* ext)
+		UnitForm(OpenFileDialog^ filerout, const char* ext)
 		{
 			InitializeComponent();
-			fileroute = gcnew String(filerout);
+			fileroute = gcnew OpenFileDialog();
+			fileroute = filerout;
 			extension = ext;
 		}
 
@@ -40,7 +41,7 @@ namespace Tidex2019 {
 				delete components;
 			}
 		}
-	private: String^ fileroute;
+	private: OpenFileDialog^ fileroute;
 	private: const char* extension;
 	private: System::Windows::Forms::Label^ label1;
 	private: MaterialSkin::Controls::MaterialRaisedButton^ nextbutton;
@@ -135,6 +136,7 @@ namespace Tidex2019 {
 
 		}
 #pragma endregion
+	//se elige la unidad del .hdf y sigue con la predicción
 	private: System::Void Nextbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (extension == "hdf")
 		{
@@ -145,7 +147,7 @@ namespace Tidex2019 {
 		else
 		{
 			//se genera gráfica con .dat ruta pasada
-			ChartForm^ chart = gcnew ChartForm(comboBox1->Text, fileroute); //se le pasa constructor la ruta del .dat elegida y las unidades y se muestra gráfica;
+			ChartForm^ chart = gcnew ChartForm(comboBox1->Text, fileroute->FileName); //se le pasa constructor la ruta del .dat elegida y las unidades y se muestra gráfica;
 			chart->Show();
 			this->Close();
 
