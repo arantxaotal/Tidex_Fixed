@@ -89,7 +89,7 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::RichTextBox^ richTextBox2;
 	private: System::Windows::Forms::ComboBox^ unitbox;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog2;
-	private: System::Windows::Forms::ErrorProvider^ errorProvider1;
+
 	private: System::Windows::Forms::RichTextBox^ richTextBox1;
 	private: System::ComponentModel::IContainer^ components;
 
@@ -106,7 +106,6 @@ namespace Tidex2019 {
 			 /// </summary>
 			 void InitializeComponent(void)
 			 {
-				 this->components = (gcnew System::ComponentModel::Container());
 				 System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 				 System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 				 System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(NewForm::typeid));
@@ -158,7 +157,6 @@ namespace Tidex2019 {
 				 this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
 				 this->unitbox = (gcnew System::Windows::Forms::ComboBox());
 				 this->saveFileDialog2 = (gcnew System::Windows::Forms::SaveFileDialog());
-				 this->errorProvider1 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
 				 this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg2))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg1))->BeginInit();
@@ -169,7 +167,6 @@ namespace Tidex2019 {
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->amplitudebox))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->argumentbox))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->measuretime))->BeginInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProvider1))->BeginInit();
 				 this->SuspendLayout();
 				 // 
 				 // label1
@@ -773,10 +770,6 @@ namespace Tidex2019 {
 				 this->saveFileDialog2->Filter = L"Archivos de datos (*.dat)|*.dat";
 				 this->saveFileDialog2->Title = L"Save data file";
 				 // 
-				 // errorProvider1
-				 // 
-				 this->errorProvider1->ContainerControl = this;
-				 // 
 				 // richTextBox1
 				 // 
 				 this->richTextBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
@@ -853,7 +846,6 @@ namespace Tidex2019 {
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->amplitudebox))->EndInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->argumentbox))->EndInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->measuretime))->EndInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->errorProvider1))->EndInit();
 				 this->ResumeLayout(false);
 				 this->PerformLayout();
 

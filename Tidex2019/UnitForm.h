@@ -130,7 +130,7 @@ namespace Tidex2019 {
 			this->MaximizeBox = false;
 			this->Name = L"UnitForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"UnitForm";
+			this->Text = L"Amplitude units";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

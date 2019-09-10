@@ -3,7 +3,6 @@
 #include <fstream>
 #include <string>
 #include <iostream>
-#include <msclr/marshal.h>
 #include <process.h>
 namespace Tidex2019 {
 
@@ -27,7 +26,7 @@ namespace Tidex2019 {
 			//TODO: agregar código de constructor aquí
 			//
 		}
-		PredictionDoneForm(String^ u,OpenFileDialog^name)
+		PredictionDoneForm(String^ u, OpenFileDialog^ name)
 		{
 			InitializeComponent();
 			unit = gcnew String(u);
@@ -56,6 +55,7 @@ namespace Tidex2019 {
 
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
+
 
 
 
@@ -138,7 +138,9 @@ namespace Tidex2019 {
 			// 
 			// saveFileDialog1
 			// 
+			this->saveFileDialog1->DefaultExt = L"dat";
 			this->saveFileDialog1->Filter = L" Archivos de datos (*.dat)|*.dat";
+			this->saveFileDialog1->Title = L"Save data file";
 			// 
 			// PredictionDoneForm
 			// 
@@ -162,7 +164,7 @@ namespace Tidex2019 {
 
 		}
 #pragma endregion
-	//Guarda predicción .dat y muestra gráfica
+		//Guarda predicción .dat y muestra gráfica
 	private: System::Void YesButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		char buf[256];
 		GetCurrentDirectoryA(256, buf);
@@ -238,5 +240,6 @@ namespace Tidex2019 {
 		this->Close();
 	}
 
-};
+
+	};
 }

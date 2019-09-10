@@ -30,12 +30,6 @@
     <ClCompile Include="ChartForm.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="THarmonicData.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="DATMANAG.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="IndexForm.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -99,6 +93,9 @@
     <None Include="@(CefSharpWinFormsBinaries32)" />
     <None Include="@(CefSharpWinFormsBinaries32)" />
     <None Include="@(CefSharpWinFormsBinaries32)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />

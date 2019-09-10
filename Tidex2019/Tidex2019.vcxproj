@@ -193,12 +193,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChartForm.cpp" />
-    <ClCompile Include="DATMANAG.cpp" />
     <ClCompile Include="HelpForm.cpp" />
     <ClCompile Include="IndexForm.cpp" />
     <ClCompile Include="NewForm.cpp" />
     <ClCompile Include="PredictionDoneForm.cpp" />
-    <ClCompile Include="THarmonicData.cpp" />
     <ClCompile Include="UnitForm.cpp" />
   </ItemGroup>
   <ItemGroup>
