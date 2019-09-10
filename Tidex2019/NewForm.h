@@ -965,10 +965,10 @@ namespace Tidex2019 {
 		saveFileDialog1->ShowDialog();
 		richTextBox1->SaveFile(saveFileDialog1->FileName, System::Windows::Forms::RichTextBoxStreamType::PlainText);
 		std::stringstream ssExec, ssAstroFile, ssOutputFile, ssDateFile, ssFinalFile;
-		ssExec << buf << "\\long2000.exe";
-		ssAstroFile << buf << "\\Astro.dat";
-		ssOutputFile << buf << "\\Output.dat";
-		ssDateFile << buf << "\\calc.tmp";
+		ssExec << buf << "\\TIDEX\\Tidex2019\\long2000.exe";
+		ssAstroFile << buf << "\\TIDEX\\Tidex2019\\Astro.dat";
+		ssOutputFile << buf << "\\TIDEX\\Tidex2019\\Output.dat";
+		ssDateFile << buf << "\\TIDEX\\Tidex2019\\calc.tmp";
 		//ssFinalFile << buf << "\\finalData.dat";
 		std::string execPath = ssExec.str();
 		std::string astroPath = ssAstroFile.str();

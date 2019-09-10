@@ -1,9 +1,9 @@
 #pragma once
 #include"ChartForm.h"
 #include <fstream>
-#include <string>
 #include <iostream>
 #include <process.h>
+#include <string>
 namespace Tidex2019 {
 
 	using namespace System;
@@ -12,6 +12,7 @@ namespace Tidex2019 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace std;
 
 	/// <summary>
 	/// Resumen de PredictionDoneForm
@@ -32,6 +33,7 @@ namespace Tidex2019 {
 			unit = gcnew String(u);
 			filename = gcnew OpenFileDialog();
 			filename = name;
+			filename->FileName = name->FileName;
 
 		}
 
@@ -169,18 +171,22 @@ namespace Tidex2019 {
 		char buf[256];
 		GetCurrentDirectoryA(256, buf);
 		std::stringstream ssExec, ssAstroFile, ssOutputFile, ssDateFile, ssFinalFile;
-		ssExec << buf << "\\long2000.exe";
-		ssAstroFile << buf << "\\Astro.dat";
-		ssOutputFile << buf << "\\Output.dat";
-		ssDateFile << buf << "\\calc.tmp";
+		ssExec << buf << "\\TIDEX\\Tidex2019\\long2000.exe";
+		ssAstroFile << buf << "\\TIDEX\\Tidex2019\\Astro.dat";
+		ssOutputFile << buf << "\\TIDEX\\Tidex2019\\Output.dat";
+		ssDateFile << buf << "\\TIDEX\\Tidex2019\\calc.tmp";
 		//ssFinalFile << buf << "\\finalData.dat";
 		std::string execPath = ssExec.str();
 		std::string astroPath = ssAstroFile.str();
 		std::string outputPath = ssOutputFile.str();
-		std::string datePath = msclr::interop::marshal_as <std::string>(filename->FileName);
+		std::string datePath = msclr::interop::marshal_as<std::string>(filename->FileName);
+
 		spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
+
 		std::filebuf finalFile, outputFile;
+
 		saveFileDialog1->ShowDialog();
+		cout << outputPath.c_str() << endl;
 		if (!outputFile.open(outputPath.c_str(), std::ios::in) || !finalFile.open(msclr::interop::marshal_as<std::string>(saveFileDialog1->FileName), std::ios::out))
 		{
 			std::cout << "Error!" << std::endl;
