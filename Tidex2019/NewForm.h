@@ -36,124 +36,125 @@ namespace Tidex2019 {
 		{
 			InitializeComponent();
 			this->buf = buf;
-			std::cout << "Ruta: " << this->buf << std::endl;
 			filename = gcnew String(filenam);
-			if (filename =="")
+			if (filename == "")
 			{
-				acceptbutton->Visible= false;
+				acceptbutton->Visible = false;
 
 			}
 			else
 			{
-				std::string harmonicPath = msclr::interop::marshal_as<std::string>(filenam);
-				std::filebuf harmonicFile;
-				if (!harmonicFile.open(harmonicPath.c_str(), std::ios::in))
-				{
-						std::cout << "Error!" << std::endl;
-						exit(-1);
-				}
-				std::istream *harmonicFileStream = new std::istream(&harmonicFile);
-				std::string latitudedeg, latitudemin, lengthdeg, lengthmin;
-				std::string hour1, minute1, day1, month1, year1,hour2,minute2,day2,month2,year2;
-				*harmonicFileStream >> latitudedeg >> latitudemin;
-				*harmonicFileStream >> lengthdeg >> lengthmin;
-				*harmonicFileStream >> hour1 >> minute1 >> day1 >> month1 >> year1;
-				*harmonicFileStream >> hour2 >> minute2 >> day2 >> month2 >> year2;
-
-				
-				std::vector<harmonicvariable>vect;
-			    std::string line;
-				while (std::getline(*harmonicFileStream, line))
-				{
-					harmonicvariable h;
-					*harmonicFileStream >> h.name >> h.amplitude >> h.argument;
-					vect.push_back(h);
-				}
-
-				coordinatesdeg1->Value = stoi(latitudedeg);
-				coordinatesdeg2->Value = stoi(lengthdeg);
-				coordinatesmin1->Value = stoi(latitudemin);
-				coordinatesmin2->Value = stoi(lengthmin);
-
-				std::cout << latitudedeg << " " << latitudemin << std::endl;
-				std::cout << lengthdeg << " " << lengthmin << std::endl;
-				std::cout << hour1 << " " << minute1 << " " << day1 << " " << month1 << " " << year1 << std::endl;
-				std::cout << hour2 << " " << minute2 << " " << day2 << " " << month2 << " " << year2 << std::endl;
-
-				
-				std::string cad = day1 + "/" + month1 + "/" + year1+ " " +hour1+":"+minute1+":"+"00";
-				std::string cad3 = day2 + "/" + month2 + "/" + year2 + " " + hour2 + ":" + minute2 + ":" + "00";
-				String^ cad2 = gcnew String(cad.c_str());
-				String^ cad4 = gcnew String(cad3.c_str());
-				std::string cad5 = day1+"/"+month1+"/"+year1+" 00:00";
-				std::string cad6 = day2 + "/" + month2+"/" + year2 + " 00:00";
-				String^ cad7= gcnew String(cad5.c_str());
-				String^ cad8= gcnew String(cad6.c_str());
-				
-				begindate->Value = System::DateTime::Parse(cad7);
-				enddate->Value = System::DateTime::Parse(cad8);
-
-				begintime->Value = System::DateTime::Parse(cad2);
-				endtime->Value = System::DateTime::Parse(cad4);
-
-				std::cout << msclr::interop::marshal_as<std::string>(begindate->Value.ToString()) << std::endl;
-				std::cout << msclr::interop::marshal_as<std::string>(cad2) << std::endl;
-				for (int j = 0; j < vect.size()-1; j++)
-				{
-					//add nueva fila
-					int x = dataGridView1->Rows->Add();
-					//colocamos info
-					String^ name2 = gcnew String(vect[j].name.c_str());
-					dataGridView1->Rows[x]->Cells[0]->Value = name2;
-					int i = 0;
-
-					std::string amplitude = vect[j].amplitude;
-					std::string argument = vect[j].argument;
-
-					while (i < amplitude.size())
+				try {
+					try
 					{
-						if (amplitude[i] == ',')
+						std::string harmonicPath = msclr::interop::marshal_as<std::string>(filenam);
+						std::filebuf harmonicFile;
+						if (!harmonicFile.open(harmonicPath.c_str(), std::ios::in))
 						{
-							amplitude[i] = '.';
+							std::cout << "Error!" << std::endl;
+							exit(-1);
 						}
-						i++;
+						std::istream* harmonicFileStream = new std::istream(&harmonicFile);
+						std::string latitudedeg, latitudemin, lengthdeg, lengthmin;
+						std::string hour1, minute1, day1, month1, year1, hour2, minute2, day2, month2, year2;
+						*harmonicFileStream >> latitudedeg >> latitudemin;
+						*harmonicFileStream >> lengthdeg >> lengthmin;
+						*harmonicFileStream >> hour1 >> minute1 >> day1 >> month1 >> year1;
+						*harmonicFileStream >> hour2 >> minute2 >> day2 >> month2 >> year2;
+
+
+						std::vector<harmonicvariable>vect;
+						std::string line;
+						while (std::getline(*harmonicFileStream, line))
+						{
+							harmonicvariable h;
+							*harmonicFileStream >> h.name >> h.amplitude >> h.argument;
+							vect.push_back(h);
+						}
+						coordinatesdeg1->Value = stoi(latitudedeg);
+						coordinatesdeg2->Value = stoi(lengthdeg);
+						coordinatesmin1->Value = stoi(latitudemin);
+						coordinatesmin2->Value = stoi(lengthmin);
+						std::string cad = day1 + "/" + month1 + "/" + year1 + " " + hour1 + ":" + minute1 + ":" + "00";
+						std::string cad3 = day2 + "/" + month2 + "/" + year2 + " " + hour2 + ":" + minute2 + ":" + "00";
+						String^ cad2 = gcnew String(cad.c_str());
+						String^ cad4 = gcnew String(cad3.c_str());
+						std::string cad5 = day1 + "/" + month1 + "/" + year1 + " 00:00";
+						std::string cad6 = day2 + "/" + month2 + "/" + year2 + " 00:00";
+						String^ cad7 = gcnew String(cad5.c_str());
+						String^ cad8 = gcnew String(cad6.c_str());
+
+						begindate->Value = System::DateTime::Parse(cad7);
+						enddate->Value = System::DateTime::Parse(cad8);
+
+						begintime->Value = System::DateTime::Parse(cad2);
+						endtime->Value = System::DateTime::Parse(cad4);
+						for (int j = 0; j < vect.size() - 1; j++)
+						{
+							//add nueva fila
+							int x = dataGridView1->Rows->Add();
+							//colocamos info
+							String^ name2 = gcnew String(vect[j].name.c_str());
+							dataGridView1->Rows[x]->Cells[0]->Value = name2;
+							int i = 0;
+
+							std::string amplitude = vect[j].amplitude;
+							std::string argument = vect[j].argument;
+
+							while (i < amplitude.size())
+							{
+								if (amplitude[i] == ',')
+								{
+									amplitude[i] = '.';
+								}
+								i++;
+							}
+							i = 0;
+							while (i < argument.size())
+							{
+								if (argument[i] == ',')
+								{
+									argument[i] = '.';
+								}
+								i++;
+							}
+
+							dataGridView1->Rows[x]->Cells[1]->Value = msclr::interop::marshal_as<String^>(amplitude);
+							dataGridView1->Rows[x]->Cells[2]->Value = msclr::interop::marshal_as<String^>(argument);
+							namebox->Text = "";
+							amplitudebox->Text = "";
+							argumentbox->Text = "";
+						}
+						delete harmonicFileStream;
+						harmonicFile.close();
+						richTextBox1->AppendText(coordinatesdeg1->Value + " " + coordinatesmin1->Value +
+							"\n" + coordinatesdeg2->Value + " " + coordinatesmin2->Value + "\n");
+
+						System::DateTime beginDate = begindate->Value;
+						System::DateTime beginTime = begintime->Value;
+						System::DateTime endDate = enddate->Value;
+						System::DateTime endTime = endtime->Value;
+						richTextBox1->AppendText(beginTime.Hour + " " + beginTime.Minute + " " + beginDate.Day + " " + beginDate.Month + " " + beginDate.Year + "\n");
+						richTextBox1->AppendText(endTime.Hour + " " + endTime.Minute + " " + endDate.Day + " " + endDate.Month + " " + endDate.Year + "\n");
+
+
+						for (int i = 0; i < dataGridView1->RowCount; ++i)
+						{
+							richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[0]->Value + " ");
+							richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + " ");
+							richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n");
+						}
 					}
-					i = 0;
-					while (i < argument.size())
+					catch (System::FormatException^ e)
 					{
-						if (argument[i] == ',')
-						{
-							argument[i] = '.';
-						}
-						i++;
+						std::cout << "Error de formato .hdf" << std::endl;
 					}
-
-					dataGridView1->Rows[x]->Cells[1]->Value = msclr::interop::marshal_as<String^>(amplitude);
-					dataGridView1->Rows[x]->Cells[2]->Value = msclr::interop::marshal_as<String^>(argument);
-					namebox->Text = "";
-					amplitudebox->Text = "";
-					argumentbox->Text = "";
 				}
-				delete harmonicFileStream;
-				harmonicFile.close();
-				richTextBox1->AppendText(coordinatesdeg1->Value + " " + coordinatesmin1->Value +
-					"\n" + coordinatesdeg2->Value + " " + coordinatesmin2->Value + "\n");
-
-				System::DateTime beginDate = begindate->Value;
-				System::DateTime beginTime = begintime->Value;
-				System::DateTime endDate = enddate->Value;
-				System::DateTime endTime = endtime->Value;
-				richTextBox1->AppendText(beginTime.Hour + " " + beginTime.Minute + " " + beginDate.Day + " " + beginDate.Month + " " + beginDate.Year + "\n");
-				richTextBox1->AppendText(endTime.Hour + " " + endTime.Minute + " " + endDate.Day + " " + endDate.Month + " " + endDate.Year + "\n");
-
-
-				for (int i = 0; i < dataGridView1->RowCount; ++i)
+				catch (System::Runtime::InteropServices::SEHException^ e)
 				{
-					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[0]->Value + " ");
-					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + " ");
-					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n");
+					std::cout << "Error de formato .hdf vacío" << std::endl;
 				}
-				
+
 			}
 		}
 	protected:
@@ -1107,68 +1108,70 @@ namespace Tidex2019 {
 			std::string outputPath = ssOutputFile.str();
 			std::string datePath = msclr::interop::marshal_as<std::string>(filename->ToString());
 
-			std::cout << ssExec.str() << " ---- " << ssAstroFile.str() << " ---- " << ssOutputFile.str() << " ---- " << std::endl;
-			std::cout << msclr::interop::marshal_as<std::string>(filename->ToString()) << std::endl;
-
 			spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
 			
 			std::filebuf finalFile, outputFile;
 
 			saveFileDialog2->ShowDialog();
-			if (!outputFile.open(outputPath.c_str(), std::ios::in) || !finalFile.open(msclr::interop::marshal_as<std::string>(saveFileDialog2->FileName), std::ios::out))
+			if (saveFileDialog2->FileName != "")
 			{
-				std::cout << "Error!" << std::endl;
-				exit(-1);
+				if (!outputFile.open(outputPath.c_str(), std::ios::in) || !finalFile.open(msclr::interop::marshal_as<std::string>(saveFileDialog2->FileName), std::ios::out))
+				{
+					
+					std::cout << "Error!" << std::endl;
+					exit(-1);
+				}
+				std::istream* outputFileStream = new std::istream(&outputFile);
+				std::ostream* finalFileStream = new std::ostream(&finalFile);
+				int lines;
+				*outputFileStream >> lines;
+				int i = 0;
+				while (i < lines)
+				{
+					std::string hour, minute, day, month, year, value;
+					int hourInt, minInt, dayInt, monthInt;
+					std::stringstream hourStream, minuteStream, dayStream, monthStream;
+
+					*outputFileStream >> hour >> minute >> day >> month >> year >> value;
+
+					hourInt = std::stoi(hour);
+					minInt = std::stoi(minute);
+					dayInt = std::stoi(day);
+					monthInt = std::stoi(month);
+
+					if (hourInt < 10)
+					{
+						hourStream << "0" << hour;
+						hour = hourStream.str();
+					}
+					if (minInt < 10)
+					{
+						minuteStream << "0" << minInt;
+						minute = minuteStream.str();
+					}
+					if (dayInt < 10)
+					{
+						dayStream << "0" << dayInt;
+						day = dayStream.str();
+					}
+					if (monthInt < 10)
+					{
+						monthStream << "0" << monthInt;
+						month = monthStream.str();
+					}
+
+					*finalFileStream << hour << ":" << minute << " " << day << " " << month << " " << year << "  " << value << "\n";
+					i++;
+				}
+				delete outputFileStream;
+				delete finalFileStream;
+				finalFile.close();
+				outputFile.close();
+				ChartForm^ chart = gcnew ChartForm(unitbox->Text, saveFileDialog2->FileName);
+				chart->Show();
+				this->Close();
 			}
-			std::istream* outputFileStream = new std::istream(&outputFile);
-			std::ostream* finalFileStream = new std::ostream(&finalFile);
-			int lines;
-			*outputFileStream >> lines;
-			int i = 0;
-			while (i < lines)
-			{
-				std::string hour, minute, day, month, year, value;
-				int hourInt, minInt, dayInt, monthInt;
-				std::stringstream hourStream, minuteStream, dayStream, monthStream;
-
-				*outputFileStream >> hour >> minute >> day >> month >> year >> value;
-
-				hourInt = std::stoi(hour);
-				minInt = std::stoi(minute);
-				dayInt = std::stoi(day);
-				monthInt = std::stoi(month);
-
-				if (hourInt < 10)
-				{
-					hourStream << "0" << hour;
-					hour = hourStream.str();
-				}
-				if (minInt < 10)
-				{
-					minuteStream << "0" << minInt;
-					minute = minuteStream.str();
-				}
-				if (dayInt < 10)
-				{
-					dayStream << "0" << dayInt;
-					day = dayStream.str();
-				}
-				if (monthInt < 10)
-				{
-					monthStream << "0" << monthInt;
-					month = monthStream.str();
-				}
-
-				*finalFileStream << hour << ":" << minute << " " << day << " " << month << " " << year << "  " << value << "\n";
-				i++;
-			}
-			delete outputFileStream;
-			delete finalFileStream;
-			finalFile.close();
-			outputFile.close();
-			ChartForm^ chart = gcnew ChartForm(unitbox->Text, saveFileDialog2->FileName);
-			chart->Show();
-			this->Close();
+			
 	
 	
 	}
@@ -1182,6 +1185,7 @@ private: System::Void Harmonicsavebutton_Click(System::Object^ sender, System::E
 	if (saveFileDialog1->FileName != "")
 	{
 		filename = saveFileDialog1->FileName;
+		richTextBox1->SaveFile(saveFileDialog1->FileName, System::Windows::Forms::RichTextBoxStreamType::PlainText);
 		acceptbutton->Visible = true;
 	}
 }

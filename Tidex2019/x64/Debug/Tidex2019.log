@@ -761,9 +761,10 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bi
   Nota: inclusión del archivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_startup.h
   Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\math.h
   Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\vcruntime_startup.h
-C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(1113,1): warning C4996:  'spawnl': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _spawnl. See online help for details.
-  UnitForm.cpp
-  Generando código...
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(148,38): warning C4101:  'e': variable local sin referencia
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(153,60): warning C4101:  'e': variable local sin referencia
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(1111,1): warning C4996:  'spawnl': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _spawnl. See online help for details.
+  NewForm.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message :  vea la declaración de 'spawnl'
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo:  C:\Users\Arantxa\Documents\TIDEX\Tidex2019\HelpForm.h
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo:  C:\Users\Arantxa\Documents\TIDEX\Tidex2019\UnitForm.h
@@ -1153,7 +1154,7 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303):
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\facades\system.servicemodel.nettcp.dll
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\facades\system.servicemodel.primitives.dll
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\facades\system.servicemodel.security.dll
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo: C:\Users\Arantxa\Documents\TIDEX\Tidex2019\UnitForm.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo: C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo:  C:\Users\Arantxa\Documents\TIDEX\Tidex2019\ChartForm.h
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\string
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\xstring
@@ -1469,5 +1470,14 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303):
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mcx.h
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\imm.h
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ime_cmodes.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_startup.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\math.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\vcruntime_startup.h
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(148,38): warning C4101:  'e': variable local sin referencia
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(153,60): warning C4101:  'e': variable local sin referencia
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(1111,1): warning C4996:  'spawnl': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _spawnl. See online help for details.
+  Generando código...
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message :  vea la declaración de 'spawnl'
   ChartForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   Tidex2019.vcxproj -> C:\Users\Arantxa\Documents\TIDEX\x64\Debug\Tidex2019.exe
