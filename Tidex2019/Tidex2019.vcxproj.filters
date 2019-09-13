@@ -33,9 +33,6 @@
     <ClCompile Include="IndexForm.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="PredictionDoneForm.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="UnitForm.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -54,9 +51,6 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="IndexForm.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="PredictionDoneForm.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="UnitForm.h">
@@ -99,6 +93,9 @@
     <None Include="@(CefSharpWinFormsBinaries32)" />
     <None Include="@(CefSharpWinFormsBinaries32)" />
     <None Include="@(CefSharpWinFormsBinaries32)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />

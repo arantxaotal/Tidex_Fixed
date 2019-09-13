@@ -1,5 +1,5 @@
+#include "ChartForm.h"
 #pragma once
-#include"PredictionDoneForm.h"
 namespace Tidex2019 {
 
 	using namespace System;
@@ -22,12 +22,12 @@ namespace Tidex2019 {
 			//TODO: agregar código de constructor aquí
 			//
 		}
-		UnitForm(OpenFileDialog^ filerout, const char* ext)
+		UnitForm(OpenFileDialog^ filerout)
 		{
 			InitializeComponent();
 			fileroute = gcnew OpenFileDialog();
 			fileroute = filerout;
-			extension = ext;
+			
 		}
 
 	protected:
@@ -42,7 +42,6 @@ namespace Tidex2019 {
 			}
 		}
 	private: OpenFileDialog^ fileroute;
-	private: const char* extension;
 	private: System::Windows::Forms::Label^ label1;
 	private: MaterialSkin::Controls::MaterialRaisedButton^ nextbutton;
 
@@ -138,20 +137,12 @@ namespace Tidex2019 {
 #pragma endregion
 	//se elige la unidad del .hdf y sigue con la predicción
 	private: System::Void Nextbutton_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (extension == "hdf")
-		{
-			PredictionDoneForm^ prediction = gcnew PredictionDoneForm(comboBox1->Text, fileroute);
-			prediction->Show();
-			this->Close();
-		}
-		else
-		{
+
 			//se genera gráfica con .dat ruta pasada
 			ChartForm^ chart = gcnew ChartForm(comboBox1->Text, fileroute->FileName); //se le pasa constructor la ruta del .dat elegida y las unidades y se muestra gráfica;
 			chart->Show();
 			this->Close();
 
-		}
 	}
 };
 }

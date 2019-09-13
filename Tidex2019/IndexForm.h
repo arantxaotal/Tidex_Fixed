@@ -370,7 +370,7 @@ private: System::Void OpenPredictionToolStripMenuItem_Click(System::Object^ send
 	//abre otro dialogo preguntando en qué unidades de amplitud esta la gráfica
 	if (openFileDialog2->FileName != "")
 	{
-		UnitForm^ unitform = gcnew UnitForm(openFileDialog2, "dat");
+		UnitForm^ unitform = gcnew UnitForm(openFileDialog2);
 		unitform->Show(this);
 	}
 

@@ -2,7 +2,6 @@
   Tidex2019.HelpForm.resources - Embedded, ContainedInManifestFile, 
   Tidex2019.IndexForm.resources - Embedded, ContainedInManifestFile, 
   Tidex2019.NewForm.resources - Embedded, ContainedInManifestFile, 
-  Tidex2019.PredictionDoneForm.resources - Embedded, ContainedInManifestFile, 
   Tidex2019.UnitForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Tidex2019, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
@@ -280,17 +279,13 @@ Class Tidex2019.ChartForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Tidex2019.HelpForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Tidex2019.PredictionDoneForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(System.String, System.Windows.Forms.OpenFileDialog): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Tidex2019.NewForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.String, SByte*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Tidex2019.UnitForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
-    Void .ctor(System.Windows.Forms.OpenFileDialog, SByte*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Windows.Forms.OpenFileDialog): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Tidex2019.IndexForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form

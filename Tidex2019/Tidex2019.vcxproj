@@ -203,7 +203,6 @@
     <ClCompile Include="HelpForm.cpp" />
     <ClCompile Include="IndexForm.cpp" />
     <ClCompile Include="NewForm.cpp" />
-    <ClCompile Include="PredictionDoneForm.cpp" />
     <ClCompile Include="UnitForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -218,9 +217,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="NewForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="PredictionDoneForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="UnitForm.h">
@@ -239,9 +235,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewForm.resx">
       <DependentUpon>NewForm.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PredictionDoneForm.resx">
-      <DependentUpon>PredictionDoneForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnitForm.resx">
       <DependentUpon>UnitForm.h</DependentUpon>

@@ -1,5 +1,5 @@
 #pragma once
-#include"PredictionDoneForm.h"
+#include "ChartForm.h"
 #include <fstream>
 #include <string>
 #include <iostream>
@@ -62,7 +62,7 @@ namespace Tidex2019 {
 
 				
 				std::vector<harmonicvariable>vect;
-			    std:string line;
+			    std::string line;
 				while (std::getline(*harmonicFileStream, line))
 				{
 					harmonicvariable h;
