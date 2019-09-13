@@ -279,6 +279,7 @@ namespace Tidex2019 {
 			// 
 			// openFileDialog2
 			// 
+			this->openFileDialog2->DefaultExt = L"dat";
 			this->openFileDialog2->Filter = L"Archivos de datos (*.dat)|*.dat";
 			this->openFileDialog2->InitialDirectory = L"C:\\Users";
 			this->openFileDialog2->Title = L"Open prediction";
@@ -367,8 +368,12 @@ private: System::Void TimerButton_Click(System::Object^  sender, System::EventAr
 private: System::Void OpenPredictionToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	openFileDialog2->ShowDialog();
 	//abre otro dialogo preguntando en qué unidades de amplitud esta la gráfica
-	UnitForm^ unitform = gcnew UnitForm(openFileDialog2,"dat");
-	unitform->Show(this);
+	if (openFileDialog2->FileName != "")
+	{
+		UnitForm^ unitform = gcnew UnitForm(openFileDialog2, "dat");
+		unitform->Show(this);
+	}
+
 }
 private: System::Void Predictionbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	OpenPredictionToolStripMenuItem_Click(sender, e);
