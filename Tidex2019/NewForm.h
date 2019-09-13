@@ -13,12 +13,17 @@ namespace Tidex2019 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+
 	/// <summary>
 	/// Resumen de NewForm
 	/// </summary>
+		 typedef struct
+		{
+			std::string name, amplitude, argument;
+		}harmonicvariable;
+
 	public ref class NewForm : public System::Windows::Forms::Form
 	{
-
 	public:
 		NewForm(void)
 		{
@@ -26,6 +31,130 @@ namespace Tidex2019 {
 			//
 			//TODO: agregar código de constructor aquí
 			//
+		}
+		NewForm(String^ filenam, char *buf)
+		{
+			InitializeComponent();
+			this->buf = buf;
+			std::cout << "Ruta: " << this->buf << std::endl;
+			filename = gcnew String(filenam);
+			if (filename =="")
+			{
+				acceptbutton->Visible= false;
+
+			}
+			else
+			{
+				std::string harmonicPath = msclr::interop::marshal_as<std::string>(filenam);
+				std::filebuf harmonicFile;
+				if (!harmonicFile.open(harmonicPath.c_str(), std::ios::in))
+				{
+						std::cout << "Error!" << std::endl;
+						exit(-1);
+				}
+				std::istream *harmonicFileStream = new std::istream(&harmonicFile);
+				std::string latitudedeg, latitudemin, lengthdeg, lengthmin;
+				std::string hour1, minute1, day1, month1, year1,hour2,minute2,day2,month2,year2;
+				*harmonicFileStream >> latitudedeg >> latitudemin;
+				*harmonicFileStream >> lengthdeg >> lengthmin;
+				*harmonicFileStream >> hour1 >> minute1 >> day1 >> month1 >> year1;
+				*harmonicFileStream >> hour2 >> minute2 >> day2 >> month2 >> year2;
+
+				
+				std::vector<harmonicvariable>vect;
+			    std:string line;
+				while (std::getline(*harmonicFileStream, line))
+				{
+					harmonicvariable h;
+					*harmonicFileStream >> h.name >> h.amplitude >> h.argument;
+					vect.push_back(h);
+				}
+
+				coordinatesdeg1->Value = stoi(latitudedeg);
+				coordinatesdeg2->Value = stoi(lengthdeg);
+				coordinatesmin1->Value = stoi(latitudemin);
+				coordinatesmin2->Value = stoi(lengthmin);
+
+				std::cout << latitudedeg << " " << latitudemin << std::endl;
+				std::cout << lengthdeg << " " << lengthmin << std::endl;
+				std::cout << hour1 << " " << minute1 << " " << day1 << " " << month1 << " " << year1 << std::endl;
+				std::cout << hour2 << " " << minute2 << " " << day2 << " " << month2 << " " << year2 << std::endl;
+
+				
+				std::string cad = day1 + "/" + month1 + "/" + year1+ " " +hour1+":"+minute1+":"+"00";
+				std::string cad3 = day2 + "/" + month2 + "/" + year2 + " " + hour2 + ":" + minute2 + ":" + "00";
+				String^ cad2 = gcnew String(cad.c_str());
+				String^ cad4 = gcnew String(cad3.c_str());
+				std::string cad5 = day1+"/"+month1+"/"+year1+" 00:00";
+				std::string cad6 = day2 + "/" + month2+"/" + year2 + " 00:00";
+				String^ cad7= gcnew String(cad5.c_str());
+				String^ cad8= gcnew String(cad6.c_str());
+				
+				begindate->Value = System::DateTime::Parse(cad7);
+				enddate->Value = System::DateTime::Parse(cad8);
+
+				begintime->Value = System::DateTime::Parse(cad2);
+				endtime->Value = System::DateTime::Parse(cad4);
+
+				std::cout << msclr::interop::marshal_as<std::string>(begindate->Value.ToString()) << std::endl;
+				std::cout << msclr::interop::marshal_as<std::string>(cad2) << std::endl;
+				for (int j = 0; j < vect.size()-1; j++)
+				{
+					//add nueva fila
+					int x = dataGridView1->Rows->Add();
+					//colocamos info
+					String^ name2 = gcnew String(vect[j].name.c_str());
+					dataGridView1->Rows[x]->Cells[0]->Value = name2;
+					int i = 0;
+
+					std::string amplitude = vect[j].amplitude;
+					std::string argument = vect[j].argument;
+
+					while (i < amplitude.size())
+					{
+						if (amplitude[i] == ',')
+						{
+							amplitude[i] = '.';
+						}
+						i++;
+					}
+					i = 0;
+					while (i < argument.size())
+					{
+						if (argument[i] == ',')
+						{
+							argument[i] = '.';
+						}
+						i++;
+					}
+
+					dataGridView1->Rows[x]->Cells[1]->Value = msclr::interop::marshal_as<String^>(amplitude);
+					dataGridView1->Rows[x]->Cells[2]->Value = msclr::interop::marshal_as<String^>(argument);
+					namebox->Text = "";
+					amplitudebox->Text = "";
+					argumentbox->Text = "";
+				}
+				delete harmonicFileStream;
+				harmonicFile.close();
+				richTextBox1->AppendText(coordinatesdeg1->Value + " " + coordinatesmin1->Value +
+					"\n" + coordinatesdeg2->Value + " " + coordinatesmin2->Value + "\n");
+
+				System::DateTime beginDate = begindate->Value;
+				System::DateTime beginTime = begintime->Value;
+				System::DateTime endDate = enddate->Value;
+				System::DateTime endTime = endtime->Value;
+				richTextBox1->AppendText(beginTime.Hour + " " + beginTime.Minute + " " + beginDate.Day + " " + beginDate.Month + " " + beginDate.Year + "\n");
+				richTextBox1->AppendText(endTime.Hour + " " + endTime.Minute + " " + endDate.Day + " " + endDate.Month + " " + endDate.Year + "\n");
+
+
+				for (int i = 0; i < dataGridView1->RowCount; ++i)
+				{
+					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[0]->Value + " ");
+					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + " ");
+					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n");
+				}
+				
+			}
 		}
 	protected:
 		/// <summary>
@@ -38,6 +167,8 @@ namespace Tidex2019 {
 				delete components;
 			}
 		}
+	private: String^ filename;
+	private: char *buf;
 	private: System::Windows::Forms::Label^ label1;
 	protected:
 	private: System::Windows::Forms::Label^ label2;
@@ -83,14 +214,16 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::DateTimePicker^ begintime;
 	private: System::Windows::Forms::DateTimePicker^ endtime;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
-
 	private: MaterialSkin::Controls::MaterialRaisedButton^ acceptbutton;
+	
 	private: MaterialSkin::Controls::MaterialRaisedButton^ cancelbutton;
 	private: System::Windows::Forms::RichTextBox^ richTextBox2;
 	private: System::Windows::Forms::ComboBox^ unitbox;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog2;
 
 	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+	private: MaterialSkin::Controls::MaterialRaisedButton^ harmonicsavebutton;
+
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -158,6 +291,7 @@ namespace Tidex2019 {
 				 this->unitbox = (gcnew System::Windows::Forms::ComboBox());
 				 this->saveFileDialog2 = (gcnew System::Windows::Forms::SaveFileDialog());
 				 this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+				 this->harmonicsavebutton = (gcnew MaterialSkin::Controls::MaterialRaisedButton());
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg2))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg1))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->depth))->BeginInit();
@@ -782,12 +916,27 @@ namespace Tidex2019 {
 				 this->richTextBox1->TabIndex = 92;
 				 this->richTextBox1->Text = L"";
 				 // 
+				 // harmonicsavebutton
+				 // 
+				 this->harmonicsavebutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+				 this->harmonicsavebutton->Depth = 0;
+				 this->harmonicsavebutton->Location = System::Drawing::Point(798, 682);
+				 this->harmonicsavebutton->MouseState = MaterialSkin::MouseState::HOVER;
+				 this->harmonicsavebutton->Name = L"harmonicsavebutton";
+				 this->harmonicsavebutton->Primary = true;
+				 this->harmonicsavebutton->Size = System::Drawing::Size(116, 36);
+				 this->harmonicsavebutton->TabIndex = 94;
+				 this->harmonicsavebutton->Text = L"save harmonic ";
+				 this->harmonicsavebutton->UseVisualStyleBackColor = true;
+				 this->harmonicsavebutton->Click += gcnew System::EventHandler(this, &NewForm::Harmonicsavebutton_Click);
+				 // 
 				 // NewForm
 				 // 
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->BackColor = System::Drawing::Color::PowderBlue;
 				 this->ClientSize = System::Drawing::Size(1171, 729);
+				 this->Controls->Add(this->harmonicsavebutton);
 				 this->Controls->Add(this->unitbox);
 				 this->Controls->Add(this->richTextBox2);
 				 this->Controls->Add(this->cancelbutton);
@@ -862,14 +1011,6 @@ namespace Tidex2019 {
 	 //Método que aplica los datos añadidos al cuadro de texto
 	private: System::Void updatebutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		richTextBox1->Clear();
-		//ChartForm^ chart = gcnew ChartForm();
-		//saveFileDialog1->ShowDialog();
-
-		//chart->Show(this);
-
-		//richTextBox1->AppendText(label19->Text + " : " + measuretime->Value+" min.\n");
-		//richTextBox1->AppendText(label1->Text + " : " + begindate->Value+" "+begintime->Value+"\n");
-		//richTextBox1->AppendText(label2->Text + " : " + enddate->Value+" "+endtime->Value+"\n");
 		richTextBox1->AppendText(coordinatesdeg1->Value + " " + coordinatesmin1->Value +
 			"\n" + coordinatesdeg2->Value + " " + coordinatesmin2->Value + "\n");
 
@@ -877,15 +1018,9 @@ namespace Tidex2019 {
 		System::DateTime beginTime = begintime->Value;
 		System::DateTime endDate = enddate->Value;
 		System::DateTime endTime = endtime->Value;
-
-		//helper.GetDay(msclr::interop::marshal_as<std::string>(begindate->Text), msclr::interop::marshal_as<std::string>(begintime->Text));
 		richTextBox1->AppendText(beginTime.Hour + " " + beginTime.Minute + " " + beginDate.Day + " " + beginDate.Month + " " + beginDate.Year + "\n");
 		richTextBox1->AppendText(endTime.Hour + " " + endTime.Minute + " " + endDate.Day + " " + endDate.Month + " " + endDate.Year + "\n");
 
-		//std::cout << dia.Day << " - " << dia.Month << " - " << dia.Year << std::endl;
-		//std::cout << msclr::interop::marshal_as<std::string>(begintime->Text) << std::endl;
-
-		//richTextBox1->AppendText(depth->Value+"\n");
 
 		for (int i = 0; i < dataGridView1->RowCount; ++i)
 		{
@@ -959,88 +1094,97 @@ namespace Tidex2019 {
 	//Método de botón de aceptar que abre ventana para guardar fichero predicción, lo guarda en .dat y muestra gráfica
 	private: System::Void acceptbutton_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+			richTextBox1->SaveFile(filename, System::Windows::Forms::RichTextBoxStreamType::PlainText);
+			std::stringstream ssExec, ssAstroFile, ssOutputFile, ssDateFile, ssFinalFile;
+			ssExec << buf << "\\long2000.exe";
+			ssAstroFile << buf << "\\Astro.dat";
+			ssOutputFile << buf << "\\Output.dat";
+			ssDateFile << buf << "\\calc.tmp";
 
-		char buf[256];
-		GetCurrentDirectoryA(256, buf);
-		saveFileDialog1->ShowDialog();
-		richTextBox1->SaveFile(saveFileDialog1->FileName, System::Windows::Forms::RichTextBoxStreamType::PlainText);
-		std::stringstream ssExec, ssAstroFile, ssOutputFile, ssDateFile, ssFinalFile;
-		ssExec << buf << "\\long2000.exe";
-		ssAstroFile << buf << "\\Astro.dat";
-		ssOutputFile << buf << "\\Output.dat";
-		ssDateFile << buf << "\\calc.tmp";
-		
-		//ssFinalFile << buf << "\\finalData.dat";
-		std::string execPath = ssExec.str();
-		std::string astroPath = ssAstroFile.str();
-		std::string outputPath = ssOutputFile.str();
-		std::string datePath = msclr::interop::marshal_as<std::string>(saveFileDialog1->FileName);
+			//ssFinalFile << buf << "\\finalData.dat";
+			std::string execPath = ssExec.str();
+			std::string astroPath = ssAstroFile.str();
+			std::string outputPath = ssOutputFile.str();
+			std::string datePath = msclr::interop::marshal_as<std::string>(filename->ToString());
 
-		spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
+			std::cout << ssExec.str() << " ---- " << ssAstroFile.str() << " ---- " << ssOutputFile.str() << " ---- " << std::endl;
+			std::cout << msclr::interop::marshal_as<std::string>(filename->ToString()) << std::endl;
 
-		std::filebuf finalFile, outputFile;
+			spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
+			
+			std::filebuf finalFile, outputFile;
 
-		saveFileDialog2->ShowDialog();
-		if (!outputFile.open(outputPath.c_str(), std::ios::in) || !finalFile.open(msclr::interop::marshal_as<std::string>(saveFileDialog2->FileName), std::ios::out))
-		{
-			std::cout << "Error!" << std::endl;
-			exit(-1);
-		}
-		std::istream* outputFileStream = new std::istream(&outputFile);
-		std::ostream* finalFileStream = new std::ostream(&finalFile);
-		int lines;
-		*outputFileStream >> lines;
-		int i = 0;
-		while (i < lines)
-		{
-			std::string hour, minute, day, month, year, value;
-			int hourInt, minInt, dayInt, monthInt;
-			std::stringstream hourStream, minuteStream, dayStream, monthStream;
-
-			*outputFileStream >> hour >> minute >> day >> month >> year >> value;
-
-			hourInt = std::stoi(hour);
-			minInt = std::stoi(minute);
-			dayInt = std::stoi(day);
-			monthInt = std::stoi(month);
-
-			if (hourInt < 10)
+			saveFileDialog2->ShowDialog();
+			if (!outputFile.open(outputPath.c_str(), std::ios::in) || !finalFile.open(msclr::interop::marshal_as<std::string>(saveFileDialog2->FileName), std::ios::out))
 			{
-				hourStream << "0" << hour;
-				hour = hourStream.str();
+				std::cout << "Error!" << std::endl;
+				exit(-1);
 			}
-			if (minInt < 10)
+			std::istream* outputFileStream = new std::istream(&outputFile);
+			std::ostream* finalFileStream = new std::ostream(&finalFile);
+			int lines;
+			*outputFileStream >> lines;
+			int i = 0;
+			while (i < lines)
 			{
-				minuteStream << "0" << minInt;
-				minute = minuteStream.str();
-			}
-			if (dayInt < 10)
-			{
-				dayStream << "0" << dayInt;
-				day = dayStream.str();
-			}
-			if (monthInt < 10)
-			{
-				monthStream << "0" << monthInt;
-				month = monthStream.str();
-			}
+				std::string hour, minute, day, month, year, value;
+				int hourInt, minInt, dayInt, monthInt;
+				std::stringstream hourStream, minuteStream, dayStream, monthStream;
 
-			*finalFileStream << hour << ":" << minute<< " " << day << " " << month << " " << year << "  " << value << "\n";
-			i++;
-		}
-		delete outputFileStream;
-		delete finalFileStream;
-		finalFile.close();
-		outputFile.close();
-		ChartForm^ chart = gcnew ChartForm(unitbox->Text, saveFileDialog2->FileName);
-		chart->Show();
-		this->Close();
+				*outputFileStream >> hour >> minute >> day >> month >> year >> value;
+
+				hourInt = std::stoi(hour);
+				minInt = std::stoi(minute);
+				dayInt = std::stoi(day);
+				monthInt = std::stoi(month);
+
+				if (hourInt < 10)
+				{
+					hourStream << "0" << hour;
+					hour = hourStream.str();
+				}
+				if (minInt < 10)
+				{
+					minuteStream << "0" << minInt;
+					minute = minuteStream.str();
+				}
+				if (dayInt < 10)
+				{
+					dayStream << "0" << dayInt;
+					day = dayStream.str();
+				}
+				if (monthInt < 10)
+				{
+					monthStream << "0" << monthInt;
+					month = monthStream.str();
+				}
+
+				*finalFileStream << hour << ":" << minute << " " << day << " " << month << " " << year << "  " << value << "\n";
+				i++;
+			}
+			delete outputFileStream;
+			delete finalFileStream;
+			finalFile.close();
+			outputFile.close();
+			ChartForm^ chart = gcnew ChartForm(unitbox->Text, saveFileDialog2->FileName);
+			chart->Show();
+			this->Close();
+	
+	
 	}
 	//Método de botón de cerrar ventana
 	private: System::Void cancelbutton_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
 
+private: System::Void Harmonicsavebutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	saveFileDialog1->ShowDialog();
+	if (saveFileDialog1->FileName != "")
+	{
+		filename = saveFileDialog1->FileName;
+		acceptbutton->Visible = true;
+	}
+}
 };
 }
 

@@ -2,6 +2,7 @@
 #include "HelpForm.h"
 #include "ChartForm.h"
 #include "UnitForm.h"
+#include "Helper.h"
 #pragma once
 
 
@@ -24,6 +25,9 @@ namespace Tidex2019 {
 		IndexForm(void)
 		{
 			InitializeComponent();
+			char *buf = new char[256];
+			GetCurrentDirectoryA(256, buf);
+			helper = gcnew Helper(buf);
 			//
 			//TODO: agregar código de constructor aquí
 			//
@@ -40,6 +44,7 @@ namespace Tidex2019 {
 				delete components;
 			}
 		}
+	private: Helper ^helper;
 	private: System::Windows::Forms::MenuStrip^  menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^  FILE;
 	protected:
@@ -312,7 +317,7 @@ namespace Tidex2019 {
 //Se abre dialogo para crear nuevo fichero de datos armónicos en menú
 	private: System::Void FILE_NEW_Click(System::Object^  sender, System::EventArgs^  e) {
 
-		NewForm^ newForm = gcnew NewForm();
+		NewForm^ newForm = gcnew NewForm("", helper->buf);
 		newForm->Show(this);
 	}
 private: System::Void toolStrip1_ItemClicked(System::Object^  sender, System::Windows::Forms::ToolStripItemClickedEventArgs^  e) {
@@ -328,11 +333,10 @@ private: System::Void NewButton_Click(System::Object^  sender, System::EventArgs
 //Abre nuevo fichero de datos armónicos en menú
 private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs^  e) {
 	openFileDialog1->ShowDialog();
-	//abre otro dialogo preguntando en qué unidades de amplitud esta la gráfica
 	if (openFileDialog1->FileName != "")
 	{
-		UnitForm^ unityform = gcnew UnitForm(openFileDialog1, "hdf");
-		unityform->Show();
+		NewForm^ newForm = gcnew NewForm(openFileDialog1->FileName, helper->buf);
+		newForm->Show(this);
 	}
 
 }
@@ -342,8 +346,12 @@ private: System::Void OpenButton_Click(System::Object^  sender, System::EventArg
 }
 //Método que abre dialogo para editar fichero armónico en menú
 private: System::Void EDIT_MODIFY_Click(System::Object^  sender, System::EventArgs^  e) {
-	NewForm^ newForm = gcnew NewForm();
-	newForm->Show(this);
+	openFileDialog1->ShowDialog();
+	if (openFileDialog1->FileName != "")
+	{
+		NewForm^ newForm = gcnew NewForm(openFileDialog1->FileName, helper->buf);
+		newForm->Show(this);
+	}
 }
 //Método que muestra la ventana Help en menú
 private: System::Void HELP_ABOUT_Click(System::Object^  sender, System::EventArgs^  e) {
