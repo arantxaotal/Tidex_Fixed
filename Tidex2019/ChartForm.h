@@ -375,11 +375,14 @@ namespace Tidex2019 {
 	// 
 		System::Void initChartViewer()
 		{
+			
 			winChartViewer1->setFullRange("x", 0, 1);
 			winChartViewer1->ViewPortWidth = 0.2;
 			winChartViewer1->ViewPortLeft = 1 - winChartViewer1->ViewPortWidth;
-			winChartViewer1->ZoomInWidthLimit = 10 / lines;
-
+			if (lines != 0)
+			{
+				winChartViewer1->ZoomInWidthLimit = 10 / lines;
+			}
 			winChartViewer1->MouseUsage = ChartDirector::WinChartMouseUsage::ScrollOnDrag;
 			winChartViewer1->MouseWheelZoomRatio = 1.1;
 		}

@@ -122,7 +122,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>Dependencias\lib64\chartdir60.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
@@ -145,7 +145,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
@@ -199,6 +199,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChartForm.cpp" />
+    <ClCompile Include="ErrorForm.cpp" />
     <ClCompile Include="Helper.cpp" />
     <ClCompile Include="HelpForm.cpp" />
     <ClCompile Include="IndexForm.cpp" />
@@ -207,6 +208,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChartForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ErrorForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Helper.h" />
@@ -226,6 +230,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ChartForm.resx">
       <DependentUpon>ChartForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorForm.resx">
+      <DependentUpon>ErrorForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HelpForm.resx">
       <DependentUpon>HelpForm.h</DependentUpon>

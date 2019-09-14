@@ -1,4 +1,5 @@
 #include "ChartForm.h"
+#include "ErrorForm.h"
 #pragma once
 namespace Tidex2019 {
 
@@ -137,11 +138,17 @@ namespace Tidex2019 {
 #pragma endregion
 	//se elige la unidad del .hdf y sigue con la predicción
 	private: System::Void Nextbutton_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		try {
 			//se genera gráfica con .dat ruta pasada
 			ChartForm^ chart = gcnew ChartForm(comboBox1->Text, fileroute->FileName); //se le pasa constructor la ruta del .dat elegida y las unidades y se muestra gráfica;
 			chart->Show();
-			this->Close();
+		}
+		catch (System::ArgumentNullException^ e)
+		{
+			ErrorForm^ error = gcnew ErrorForm();
+			error->Show();
+		}
+		this->Close();
 
 	}
 };

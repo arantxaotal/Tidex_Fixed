@@ -44,9 +44,8 @@ namespace Tidex2019 {
 			}
 			else
 			{
-				try {
-					try
-					{
+				
+					
 						std::string harmonicPath = msclr::interop::marshal_as<std::string>(filenam);
 						std::filebuf harmonicFile;
 						if (!harmonicFile.open(harmonicPath.c_str(), std::ios::in))
@@ -144,16 +143,6 @@ namespace Tidex2019 {
 							richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + " ");
 							richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n");
 						}
-					}
-					catch (System::FormatException^ e)
-					{
-						std::cout << "Error de formato .hdf" << std::endl;
-					}
-				}
-				catch (System::Runtime::InteropServices::SEHException^ e)
-				{
-					std::cout << "Error de formato .hdf vacío" << std::endl;
-				}
 
 			}
 		}
