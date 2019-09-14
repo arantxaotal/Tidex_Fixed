@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29230.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tidex2019", "Tidex2019\Tidex2019.vcxproj", "{8A9A91D2-9A21-4CD5-AFF1-0D7F53EB2080}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup2", "Setup2\Setup2.vdproj", "{74672031-BADB-4FE5-AB9E-576AB60C0130}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup3", "Setup3\Setup3.vdproj", "{AC56F0F2-DE1F-4C8F-9F83-579498D090C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{8A9A91D2-9A21-4CD5-AFF1-0D7F53EB2080}.Release|x64.Build.0 = Release|x64
 		{8A9A91D2-9A21-4CD5-AFF1-0D7F53EB2080}.Release|x86.ActiveCfg = Release|Win32
 		{8A9A91D2-9A21-4CD5-AFF1-0D7F53EB2080}.Release|x86.Build.0 = Release|Win32
-		{74672031-BADB-4FE5-AB9E-576AB60C0130}.Debug|x64.ActiveCfg = Debug
-		{74672031-BADB-4FE5-AB9E-576AB60C0130}.Debug|x86.ActiveCfg = Debug
-		{74672031-BADB-4FE5-AB9E-576AB60C0130}.Release|x64.ActiveCfg = Release
-		{74672031-BADB-4FE5-AB9E-576AB60C0130}.Release|x86.ActiveCfg = Release
+		{AC56F0F2-DE1F-4C8F-9F83-579498D090C7}.Debug|x64.ActiveCfg = Debug
+		{AC56F0F2-DE1F-4C8F-9F83-579498D090C7}.Debug|x86.ActiveCfg = Debug
+		{AC56F0F2-DE1F-4C8F-9F83-579498D090C7}.Release|x64.ActiveCfg = Release
+		{AC56F0F2-DE1F-4C8F-9F83-579498D090C7}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

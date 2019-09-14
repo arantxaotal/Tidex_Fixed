@@ -110,7 +110,7 @@ namespace Tidex2019 {
 			// 
 			// winChartViewer1
 			// 
-			this->winChartViewer1->Location = System::Drawing::Point(92, 22);
+			this->winChartViewer1->Location = System::Drawing::Point(121, 22);
 			this->winChartViewer1->Margin = System::Windows::Forms::Padding(2);
 			this->winChartViewer1->Name = L"winChartViewer1";
 			this->winChartViewer1->Size = System::Drawing::Size(672, 411);
@@ -253,7 +253,7 @@ namespace Tidex2019 {
 			this->topLabel->Location = System::Drawing::Point(90, 0);
 			this->topLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->topLabel->Name = L"topLabel";
-			this->topLabel->Size = System::Drawing::Size(674, 20);
+			this->topLabel->Size = System::Drawing::Size(703, 20);
 			this->topLabel->TabIndex = 92;
 			this->topLabel->Text = L"Tidex prediction chart";
 			this->topLabel->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -261,7 +261,7 @@ namespace Tidex2019 {
 			// viewPortControl1
 			// 
 			this->viewPortControl1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->viewPortControl1->Location = System::Drawing::Point(92, 433);
+			this->viewPortControl1->Location = System::Drawing::Point(121, 433);
 			this->viewPortControl1->Margin = System::Windows::Forms::Padding(2);
 			this->viewPortControl1->Name = L"viewPortControl1";
 			this->viewPortControl1->Size = System::Drawing::Size(672, 114);
@@ -279,7 +279,7 @@ namespace Tidex2019 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(764, 547);
+			this->ClientSize = System::Drawing::Size(793, 547);
 			this->Controls->Add(this->viewPortControl1);
 			this->Controls->Add(this->topLabel);
 			this->Controls->Add(this->leftPanel);
