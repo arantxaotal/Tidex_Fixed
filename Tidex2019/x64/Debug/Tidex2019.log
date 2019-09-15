@@ -3,8 +3,6 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bi
   ChartForm.cpp
   Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\mscorlib.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\cefsharp.winforms.75.1.142\cefsharp\x64\cefsharp.winforms.dll
-  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\crystaldecisions.windows.forms.dll
-  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\cyotek.windows.forms.colorpicker.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\kesoft.windows.forms.panels.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\materialskin.0.2.1\lib\materialskin.dll
   Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.visualbasic.compatibility.dll
@@ -598,8 +596,6 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bi
   ErrorForm.cpp
   Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\mscorlib.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\cefsharp.winforms.75.1.142\cefsharp\x64\cefsharp.winforms.dll
-  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\crystaldecisions.windows.forms.dll
-  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\cyotek.windows.forms.colorpicker.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\kesoft.windows.forms.panels.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\materialskin.0.2.1\lib\materialskin.dll
   Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.visualbasic.compatibility.dll
@@ -879,8 +875,6 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bi
   Helper.cpp
   Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\mscorlib.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\cefsharp.winforms.75.1.142\cefsharp\x64\cefsharp.winforms.dll
-  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\crystaldecisions.windows.forms.dll
-  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\cyotek.windows.forms.colorpicker.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\kesoft.windows.forms.panels.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\materialskin.0.2.1\lib\materialskin.dll
   Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.visualbasic.compatibility.dll
@@ -1259,8 +1253,6 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bi
   HelpForm.cpp
   Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\mscorlib.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\cefsharp.winforms.75.1.142\cefsharp\x64\cefsharp.winforms.dll
-  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\crystaldecisions.windows.forms.dll
-  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\cyotek.windows.forms.colorpicker.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\kesoft.windows.forms.panels.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\materialskin.0.2.1\lib\materialskin.dll
   Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.visualbasic.compatibility.dll
@@ -1540,8 +1532,6 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bi
   IndexForm.cpp
   Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\mscorlib.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\cefsharp.winforms.75.1.142\cefsharp\x64\cefsharp.winforms.dll
-  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\crystaldecisions.windows.forms.dll
-  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\cyotek.windows.forms.colorpicker.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\kesoft.windows.forms.panels.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\materialskin.0.2.1\lib\materialskin.dll
   Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.visualbasic.compatibility.dll
@@ -2150,8 +2140,6 @@ C:\Users\Arantxa\Documents\TIDEX\Tidex2019\IndexForm.h(345,36): warning C4101:  
 C:\Users\Arantxa\Documents\TIDEX\Tidex2019\IndexForm.h(351,58): warning C4101:  'e': variable local sin referencia
 C:\Users\Arantxa\Documents\TIDEX\Tidex2019\IndexForm.h(351,58): warning C4101: Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\mscorlib.dll
 C:\Users\Arantxa\Documents\TIDEX\Tidex2019\IndexForm.h(351,58): warning C4101: Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\cefsharp.winforms.75.1.142\cefsharp\x64\cefsharp.winforms.dll
-C:\Users\Arantxa\Documents\TIDEX\Tidex2019\IndexForm.h(351,58): warning C4101: Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\crystaldecisions.windows.forms.dll
-C:\Users\Arantxa\Documents\TIDEX\Tidex2019\IndexForm.h(351,58): warning C4101: Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\cyotek.windows.forms.colorpicker.dll
 C:\Users\Arantxa\Documents\TIDEX\Tidex2019\IndexForm.h(351,58): warning C4101: Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\kesoft.windows.forms.panels.dll
 C:\Users\Arantxa\Documents\TIDEX\Tidex2019\IndexForm.h(351,58): warning C4101: Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\materialskin.0.2.1\lib\materialskin.dll
 C:\Users\Arantxa\Documents\TIDEX\Tidex2019\IndexForm.h(351,58): warning C4101: Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.visualbasic.compatibility.dll
@@ -2752,8 +2740,6 @@ C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(1100,1): warning C4996:  's
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message :  vea la declaración de 'spawnl'
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\mscorlib.dll
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\cefsharp.winforms.75.1.142\cefsharp\x64\cefsharp.winforms.dll
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\crystaldecisions.windows.forms.dll
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\cyotek.windows.forms.colorpicker.dll
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\x64\debug\kesoft.windows.forms.panels.dll
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\materialskin.0.2.1\lib\materialskin.dll
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.visualbasic.compatibility.dll
@@ -3348,7 +3334,5 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303):
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo:  C:\Users\Arantxa\Documents\TIDEX\Tidex2019\ErrorForm.h
   Generando código...
 C:\Users\Arantxa\Documents\TIDEX\Tidex2019\UnitForm.h(146,41): warning C4101:  'e': variable local sin referencia
-  .NETFramework,Version=4.6.1.AssemblyAttributes.cpp
-  Nota: inclusión del archivo: c:\windows\microsoft.net\framework\v4.0.30319\mscorlib.dll
   ChartForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   Tidex2019.vcxproj -> C:\Users\Arantxa\Documents\TIDEX\x64\Debug\Tidex2019.exe

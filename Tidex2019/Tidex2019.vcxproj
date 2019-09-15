@@ -151,12 +151,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.Windows.Forms">
-      <HintPath>..\packages\CrystalDecisions.Windows.Forms.1.0.0\lib\CrystalDecisions.Windows.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="Cyotek.Windows.Forms.ColorPicker">
-      <HintPath>..\packages\Cyotek.Windows.Forms.ColorPicker.1.7.2\lib\net35\Cyotek.Windows.Forms.ColorPicker.dll</HintPath>
-    </Reference>
     <Reference Include="Kesoft.Windows.Forms.Panels">
       <HintPath>..\packages\Kesoft.Windows.Forms.Panels.1.1.4.0\lib\net20\Kesoft.Windows.Forms.Panels.dll</HintPath>
     </Reference>
