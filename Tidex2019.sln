@@ -5,10 +5,6 @@ VisualStudioVersion = 16.0.29230.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tidex2019", "Tidex2019\Tidex2019.vcxproj", "{8A9A91D2-9A21-4CD5-AFF1-0D7F53EB2080}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup3", "Setup3\Setup3.vdproj", "{3C67E342-6294-41E6-AF90-1FAFE0DDA265}"
-EndProject
-Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "Setup4", "Setup4\Setup4.aiproj", "{7B6FB9A5-C33F-41FC-B362-691437899C3C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		All|x64 = All|x64
@@ -31,26 +27,6 @@ Global
 		{8A9A91D2-9A21-4CD5-AFF1-0D7F53EB2080}.Release|x64.Build.0 = Release|x64
 		{8A9A91D2-9A21-4CD5-AFF1-0D7F53EB2080}.Release|x86.ActiveCfg = Release|Win32
 		{8A9A91D2-9A21-4CD5-AFF1-0D7F53EB2080}.Release|x86.Build.0 = Release|Win32
-		{3C67E342-6294-41E6-AF90-1FAFE0DDA265}.All|x64.ActiveCfg = Release
-		{3C67E342-6294-41E6-AF90-1FAFE0DDA265}.All|x64.Build.0 = Release
-		{3C67E342-6294-41E6-AF90-1FAFE0DDA265}.All|x86.ActiveCfg = Release
-		{3C67E342-6294-41E6-AF90-1FAFE0DDA265}.All|x86.Build.0 = Release
-		{3C67E342-6294-41E6-AF90-1FAFE0DDA265}.Debug|x64.ActiveCfg = Debug
-		{3C67E342-6294-41E6-AF90-1FAFE0DDA265}.Debug|x86.ActiveCfg = Debug
-		{3C67E342-6294-41E6-AF90-1FAFE0DDA265}.Release|x64.ActiveCfg = Release
-		{3C67E342-6294-41E6-AF90-1FAFE0DDA265}.Release|x86.ActiveCfg = Release
-		{7B6FB9A5-C33F-41FC-B362-691437899C3C}.All|x64.ActiveCfg = DefaultBuild
-		{7B6FB9A5-C33F-41FC-B362-691437899C3C}.All|x64.Build.0 = DefaultBuild
-		{7B6FB9A5-C33F-41FC-B362-691437899C3C}.All|x86.ActiveCfg = DefaultBuild
-		{7B6FB9A5-C33F-41FC-B362-691437899C3C}.All|x86.Build.0 = DefaultBuild
-		{7B6FB9A5-C33F-41FC-B362-691437899C3C}.Debug|x64.ActiveCfg = DefaultBuild
-		{7B6FB9A5-C33F-41FC-B362-691437899C3C}.Debug|x64.Build.0 = DefaultBuild
-		{7B6FB9A5-C33F-41FC-B362-691437899C3C}.Debug|x86.ActiveCfg = DefaultBuild
-		{7B6FB9A5-C33F-41FC-B362-691437899C3C}.Debug|x86.Build.0 = DefaultBuild
-		{7B6FB9A5-C33F-41FC-B362-691437899C3C}.Release|x64.ActiveCfg = DefaultBuild
-		{7B6FB9A5-C33F-41FC-B362-691437899C3C}.Release|x64.Build.0 = DefaultBuild
-		{7B6FB9A5-C33F-41FC-B362-691437899C3C}.Release|x86.ActiveCfg = DefaultBuild
-		{7B6FB9A5-C33F-41FC-B362-691437899C3C}.Release|x86.Build.0 = DefaultBuild
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
