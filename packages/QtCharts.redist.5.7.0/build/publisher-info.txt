@@ -1,2 +1,0 @@
-Package Created: 2017-08-07 오전 7:41:11
-CoApp tools version: 1.23.521.0
