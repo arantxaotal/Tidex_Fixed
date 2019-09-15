@@ -831,7 +831,6 @@ namespace Tidex2019 {
 				 // saveFileDialog1
 				 // 
 				 this->saveFileDialog1->DefaultExt = L"hdf";
-				 this->saveFileDialog1->FileName = L"untitled";
 				 this->saveFileDialog1->Filter = L"Archivos de datos (*.hdf)|*.hdf";
 				 this->saveFileDialog1->InitialDirectory = L"C:\\Users\\...\\Documents";
 				 this->saveFileDialog1->Title = L"Save harmonic file";
@@ -892,6 +891,7 @@ namespace Tidex2019 {
 				 // 
 				 this->saveFileDialog2->DefaultExt = L"dat";
 				 this->saveFileDialog2->Filter = L"Archivos de datos (*.dat)|*.dat";
+				 this->saveFileDialog2->InitialDirectory = L"C:\\Users\\...\\Documents";
 				 this->saveFileDialog2->Title = L"Save data file";
 				 // 
 				 // richTextBox1
