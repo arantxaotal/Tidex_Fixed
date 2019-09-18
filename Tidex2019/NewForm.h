@@ -24,127 +24,196 @@ namespace Tidex2019 {
 
 	public ref class NewForm : public System::Windows::Forms::Form
 	{
+	private: int buscaindice(std::string name)
+	{
+		int indice = 1;
+		for (int i = 0; i < dataGridView1->RowCount; ++i)
+		{
+
+			if (msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[0]->Value->ToString())
+				== name)
+			{
+				indice = i;
+				return indice;
+			}
+		}
+		return indice;
+	}
 	public:
+		//Método que devuelve el indice de la constante armónica de la tabla
+
 		NewForm(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: agregar código de constructor aquí
-			//
+			for (int j = 0; j < namebox->Items->Count; j++)
+			{
+				//add nueva fila
+				int x = dataGridView1->Rows->Add();
+				//colocamos info
+				String^ name2 = gcnew String(namebox->Items[j]->ToString());
+				dataGridView1->Rows[x]->Cells[0]->Value = name2;
+				int i = 0;
+
+				dataGridView1->Rows[x]->Cells[1]->Value = 0;
+				dataGridView1->Rows[x]->Cells[2]->Value = 0;
+
+			}
+			acceptbutton->Visible = false;
+			
 		}
 		NewForm(String^ filenam, char *buf)
 		{
 			InitializeComponent();
+			for (int j = 0; j < namebox->Items->Count; j++)
+			{
+				//add nueva fila
+				int x = dataGridView1->Rows->Add();
+				//colocamos info
+				String^ name2 = gcnew String(namebox->Items[j]->ToString());
+				dataGridView1->Rows[x]->Cells[0]->Value = name2;
+				int i = 0;
+
+				dataGridView1->Rows[x]->Cells[1]->Value = 0;
+				dataGridView1->Rows[x]->Cells[2]->Value = 0;
+
+			}
 			this->buf = buf;
 			filename = gcnew String(filenam);
-			if (filename == "")
+			std::string harmonicPath = msclr::interop::marshal_as<std::string>(filenam);
+			std::filebuf harmonicFile;
+			if (!harmonicFile.open(harmonicPath.c_str(), std::ios::in))
 			{
-				acceptbutton->Visible = false;
+				std::cout << "Error!" << std::endl;
+				exit(-1);
+			}
+			std::istream* harmonicFileStream = new std::istream(&harmonicFile);
+			std::string latitudedeg, latitudemin, lengthdeg, lengthmin,depth1;
+			*harmonicFileStream >> latitudedeg >> latitudemin;
+			*harmonicFileStream >> lengthdeg >> lengthmin;
+			*harmonicFileStream >> depth1;
 
+			std::vector<harmonicvariable>vect;
+			std::string line;
+			while (std::getline(*harmonicFileStream, line))
+			{
+				harmonicvariable h;
+				*harmonicFileStream >> h.name >> h.amplitude >> h.argument;
+				vect.push_back(h);
+			}
+			if (stoi(latitudedeg) < 0)
+			{
+				String^ s = "S";
+				nsbox->Text = s;
+				coordinatesdeg1->Value = (stoi(latitudedeg) - stoi(latitudedeg)) - stoi(latitudedeg);
+				
 			}
 			else
 			{
-				
-					
-						std::string harmonicPath = msclr::interop::marshal_as<std::string>(filenam);
-						std::filebuf harmonicFile;
-						if (!harmonicFile.open(harmonicPath.c_str(), std::ios::in))
-						{
-							std::cout << "Error!" << std::endl;
-							exit(-1);
-						}
-						std::istream* harmonicFileStream = new std::istream(&harmonicFile);
-						std::string latitudedeg, latitudemin, lengthdeg, lengthmin;
-						std::string hour1, minute1, day1, month1, year1, hour2, minute2, day2, month2, year2;
-						*harmonicFileStream >> latitudedeg >> latitudemin;
-						*harmonicFileStream >> lengthdeg >> lengthmin;
-						*harmonicFileStream >> hour1 >> minute1 >> day1 >> month1 >> year1;
-						*harmonicFileStream >> hour2 >> minute2 >> day2 >> month2 >> year2;
-
-
-						std::vector<harmonicvariable>vect;
-						std::string line;
-						while (std::getline(*harmonicFileStream, line))
-						{
-							harmonicvariable h;
-							*harmonicFileStream >> h.name >> h.amplitude >> h.argument;
-							vect.push_back(h);
-						}
-						coordinatesdeg1->Value = stoi(latitudedeg);
-						coordinatesdeg2->Value = stoi(lengthdeg);
-						coordinatesmin1->Value = stoi(latitudemin);
-						coordinatesmin2->Value = stoi(lengthmin);
-						std::string cad = day1 + "/" + month1 + "/" + year1 + " " + hour1 + ":" + minute1 + ":" + "00";
-						std::string cad3 = day2 + "/" + month2 + "/" + year2 + " " + hour2 + ":" + minute2 + ":" + "00";
-						String^ cad2 = gcnew String(cad.c_str());
-						String^ cad4 = gcnew String(cad3.c_str());
-						std::string cad5 = day1 + "/" + month1 + "/" + year1 + " 00:00";
-						std::string cad6 = day2 + "/" + month2 + "/" + year2 + " 00:00";
-						String^ cad7 = gcnew String(cad5.c_str());
-						String^ cad8 = gcnew String(cad6.c_str());
-
-						begindate->Value = System::DateTime::Parse(cad7);
-						enddate->Value = System::DateTime::Parse(cad8);
-
-						begintime->Value = System::DateTime::Parse(cad2);
-						endtime->Value = System::DateTime::Parse(cad4);
-						for (int j = 0; j < vect.size() - 1; j++)
-						{
-							//add nueva fila
-							int x = dataGridView1->Rows->Add();
-							//colocamos info
-							String^ name2 = gcnew String(vect[j].name.c_str());
-							dataGridView1->Rows[x]->Cells[0]->Value = name2;
-							int i = 0;
-
-							std::string amplitude = vect[j].amplitude;
-							std::string argument = vect[j].argument;
-
-							while (i < amplitude.size())
-							{
-								if (amplitude[i] == ',')
-								{
-									amplitude[i] = '.';
-								}
-								i++;
-							}
-							i = 0;
-							while (i < argument.size())
-							{
-								if (argument[i] == ',')
-								{
-									argument[i] = '.';
-								}
-								i++;
-							}
-
-							dataGridView1->Rows[x]->Cells[1]->Value = msclr::interop::marshal_as<String^>(amplitude);
-							dataGridView1->Rows[x]->Cells[2]->Value = msclr::interop::marshal_as<String^>(argument);
-							namebox->Text = "";
-							amplitudebox->Text = "";
-							argumentbox->Text = "";
-						}
-						delete harmonicFileStream;
-						harmonicFile.close();
-						richTextBox1->AppendText(coordinatesdeg1->Value + " " + coordinatesmin1->Value +
-							"\n" + coordinatesdeg2->Value + " " + coordinatesmin2->Value + "\n");
-
-						System::DateTime beginDate = begindate->Value;
-						System::DateTime beginTime = begintime->Value;
-						System::DateTime endDate = enddate->Value;
-						System::DateTime endTime = endtime->Value;
-						richTextBox1->AppendText(beginTime.Hour + " " + beginTime.Minute + " " + beginDate.Day + " " + beginDate.Month + " " + beginDate.Year + "\n");
-						richTextBox1->AppendText(endTime.Hour + " " + endTime.Minute + " " + endDate.Day + " " + endDate.Month + " " + endDate.Year + "\n");
-
-
-						for (int i = 0; i < dataGridView1->RowCount; ++i)
-						{
-							richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[0]->Value + " ");
-							richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + " ");
-							richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n");
-						}
-
+				coordinatesdeg1->Value = stoi(latitudedeg);
 			}
+			if (stoi(lengthdeg) < 0)
+			{
+				String^ w = "W";
+				ewbox->Text = w;
+				coordinatesdeg2->Value = (stoi(lengthdeg) - stoi(lengthdeg)) - stoi(lengthdeg);
+			}
+			else
+			{
+				coordinatesdeg2->Value = stoi(lengthdeg);
+			}
+			if (stoi(latitudemin) < 0)
+			{
+				String^ s = "S";
+				nsbox->Text = s;
+				coordinatesmin1->Value = (stoi(latitudemin) - stoi(latitudemin)) - stoi(latitudemin);
+			}
+			else
+			{
+				coordinatesmin1->Value = stoi(latitudemin);
+			}
+			if (stoi(lengthmin) < 0)
+			{
+				String^ w = "W";
+				ewbox->Text = w;
+				coordinatesmin2->Value = (stoi(lengthmin) - stoi(lengthmin)) - stoi(lengthmin);
+			}
+			else
+			{
+				coordinatesmin2->Value = stoi(lengthmin);
+			}
+			depth->Value = stoi(depth1);
+			for (int j = 0; j < vect.size() - 1; j++)
+			{
+				//add nueva fila
+				int x = buscaindice(vect[j].name);//dataGridView1->Rows->Add();
+				//colocamos info
+
+				int i = 0;
+
+				std::string amplitude = vect[j].amplitude;
+				std::string argument = vect[j].argument;
+
+				while (i < amplitude.size())
+				{
+					if (amplitude[i] == ',')
+					{
+						amplitude[i] = '.';
+					}
+					i++;
+				}
+				i = 0;
+				while (i < argument.size())
+				{
+					if (argument[i] == ',')
+					{
+						argument[i] = '.';
+					}
+					i++;
+				}
+
+				dataGridView1->Rows[x]->Cells[1]->Value = msclr::interop::marshal_as<String^>(amplitude);
+				dataGridView1->Rows[x]->Cells[2]->Value = msclr::interop::marshal_as<String^>(argument);
+				namebox->Text = "";
+				amplitudebox->Text = "";
+				argumentbox->Text = "";
+			}
+			delete harmonicFileStream;
+			harmonicFile.close();
+			String^ w = "W";
+			String^ s = "S";
+			Decimal^ coordinatesg1 = coordinatesdeg1->Value;
+			Decimal^ coordinatesg2 = coordinatesdeg2->Value;
+			Decimal^ coordinatesm1 = coordinatesmin1->Value;
+			Decimal^ coordinatesm2 = coordinatesmin2->Value;
+			if (nsbox->Text == s)
+			{
+				coordinatesg1 = -coordinatesdeg1->Value;
+				coordinatesm1 = -coordinatesmin1->Value;
+			}
+			if (ewbox->Text == w)
+			{
+				coordinatesg2 = -coordinatesdeg2->Value;
+				coordinatesm2 = -coordinatesmin2->Value;
+			}
+
+			richTextBox1->AppendText(coordinatesg1 + " " + coordinatesm1 +
+				"\n" + coordinatesg2 + " " + coordinatesm2 + "\n");
+			richTextBox1->AppendText(depth->Value + "\n");
+
+
+			for (int i = 0; i < dataGridView1->RowCount; ++i)
+			{
+
+				if (msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != "0"
+					|| msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "0")
+				{
+					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[0]->Value + " ");
+					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + " ");
+					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n");
+				}
+			}
+
+			
 		}
 	protected:
 		/// <summary>
@@ -186,9 +255,9 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::NumericUpDown^ amplitudebox;
 	private: System::Windows::Forms::NumericUpDown^ argumentbox;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Nombre;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Amplitude;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
+
+
+
 	private: System::Windows::Forms::ComboBox^ nsbox;
 	private:
 	private: System::Windows::Forms::Label^ label14;
@@ -213,6 +282,9 @@ namespace Tidex2019 {
 
 	private: System::Windows::Forms::RichTextBox^ richTextBox1;
 	private: MaterialSkin::Controls::MaterialRaisedButton^ harmonicsavebutton;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Nombre;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Amplitude;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -358,7 +430,6 @@ namespace Tidex2019 {
 				 // 
 				 // coordinatesdeg2
 				 // 
-				 this->coordinatesdeg2->DecimalPlaces = 3;
 				 this->coordinatesdeg2->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->coordinatesdeg2->Location = System::Drawing::Point(583, 154);
@@ -369,7 +440,6 @@ namespace Tidex2019 {
 				 // 
 				 // coordinatesdeg1
 				 // 
-				 this->coordinatesdeg1->DecimalPlaces = 3;
 				 this->coordinatesdeg1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->coordinatesdeg1->Location = System::Drawing::Point(297, 153);
@@ -386,9 +456,9 @@ namespace Tidex2019 {
 				 this->namebox->FormattingEnabled = true;
 				 this->namebox->Items->AddRange(gcnew cli::array< System::Object^  >(60) {
 					 L"Z0", L"SSA", L"MM", L"MSF", L"MF", L"ALP1", L"2Q1",
-						 L"SIG1", L"Q1", L"RH01", L"01", L"TAU1", L"BET1", L"N01", L"CHI1", L"P1", L"K1", L"PHI1", L"THE1", L"J1", L"S01", L"001", L"UPS1",
-						 L"OQ2", L"EPS2", L"2N2", L"MU2", L"N2", L"NU2", L"M2", L"MKS2", L"LDA2", L"L2", L"S2", L"K2", L"MSN2", L"ETA2", L"M03", L"M3",
-						 L"S03", L"MK3", L"SK3", L"MN4", L"M4", L"SN4", L"MS4", L"MK4", L"S4", L"SK4", L"2MK5", L"2SK5", L"2MN6", L"M6", L"2MS6", L"2MK6",
+						 L"SIG1", L"Q1", L"RHO1", L"O1", L"TAU1", L"BET1", L"NO1", L"CHI1", L"P1", L"K1", L"PHI1", L"THE1", L"J1", L"S01", L"OO1", L"UPS1",
+						 L"OQ2", L"EPS2", L"2N2", L"MU2", L"N2", L"NU2", L"M2", L"MKS2", L"LDA2", L"L2", L"S2", L"K2", L"MSN2", L"ETA2", L"MO3", L"M3",
+						 L"SO3", L"MK3", L"SK3", L"MN4", L"M4", L"SN4", L"MS4", L"MK4", L"S4", L"SK4", L"2MK5", L"2SK5", L"2MN6", L"M6", L"2MS6", L"2MK6",
 						 L"2SM6", L"MSK6", L"3MK7", L"M8", L"M10"
 				 });
 				 this->namebox->Location = System::Drawing::Point(548, 223);
@@ -404,6 +474,7 @@ namespace Tidex2019 {
 					 static_cast<System::Byte>(0)));
 				 this->depth->Location = System::Drawing::Point(103, 201);
 				 this->depth->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 11022, 0, 0, 0 });
+				 this->depth->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 11022, 0, 0, System::Int32::MinValue });
 				 this->depth->Name = L"depth";
 				 this->depth->Size = System::Drawing::Size(184, 29);
 				 this->depth->TabIndex = 37;
@@ -574,7 +645,6 @@ namespace Tidex2019 {
 				 this->Amplitude->HeaderText = L"Amplitude";
 				 this->Amplitude->MinimumWidth = 6;
 				 this->Amplitude->Name = L"Amplitude";
-				 this->Amplitude->ReadOnly = true;
 				 // 
 				 // Argument
 				 // 
@@ -583,7 +653,6 @@ namespace Tidex2019 {
 				 this->Argument->HeaderText = L"Argument";
 				 this->Argument->MinimumWidth = 6;
 				 this->Argument->Name = L"Argument";
-				 this->Argument->ReadOnly = true;
 				 // 
 				 // label5
 				 // 
@@ -631,17 +700,19 @@ namespace Tidex2019 {
 				 // amplitudebox
 				 // 
 				 this->amplitudebox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+				 this->amplitudebox->DecimalPlaces = 5;
 				 this->amplitudebox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->amplitudebox->Location = System::Drawing::Point(624, 222);
+				 this->amplitudebox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 900, 0, 0, 0 });
 				 this->amplitudebox->Name = L"amplitudebox";
-				 this->amplitudebox->Size = System::Drawing::Size(120, 29);
+				 this->amplitudebox->Size = System::Drawing::Size(137, 29);
 				 this->amplitudebox->TabIndex = 93;
 				 // 
 				 // argumentbox
 				 // 
 				 this->argumentbox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-				 this->argumentbox->DecimalPlaces = 2;
+				 this->argumentbox->DecimalPlaces = 5;
 				 this->argumentbox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->argumentbox->Location = System::Drawing::Point(830, 221);
@@ -880,12 +951,12 @@ namespace Tidex2019 {
 				 this->unitbox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->unitbox->FormattingEnabled = true;
-				 this->unitbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"cm/s", L"m", L"m/s" });
+				 this->unitbox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"cm", L"m", L"cm/s", L"m/s" });
 				 this->unitbox->Location = System::Drawing::Point(767, 222);
 				 this->unitbox->Name = L"unitbox";
 				 this->unitbox->Size = System::Drawing::Size(58, 28);
 				 this->unitbox->TabIndex = 91;
-				 this->unitbox->Text = L"m/s";
+				 this->unitbox->Text = L"cm";
 				 // 
 				 // saveFileDialog2
 				 // 
@@ -1001,22 +1072,38 @@ namespace Tidex2019 {
 	 //Método que aplica los datos añadidos al cuadro de texto
 	private: System::Void updatebutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		richTextBox1->Clear();
-		richTextBox1->AppendText(coordinatesdeg1->Value + " " + coordinatesmin1->Value +
-			"\n" + coordinatesdeg2->Value + " " + coordinatesmin2->Value + "\n");
-
-		System::DateTime beginDate = begindate->Value;
-		System::DateTime beginTime = begintime->Value;
-		System::DateTime endDate = enddate->Value;
-		System::DateTime endTime = endtime->Value;
-		richTextBox1->AppendText(beginTime.Hour + " " + beginTime.Minute + " " + beginDate.Day + " " + beginDate.Month + " " + beginDate.Year + "\n");
-		richTextBox1->AppendText(endTime.Hour + " " + endTime.Minute + " " + endDate.Day + " " + endDate.Month + " " + endDate.Year + "\n");
+		String^ w = "W";
+		String^ s = "S";
+		Decimal^ coordinatesg1 = coordinatesdeg1->Value;
+		Decimal^ coordinatesg2 = coordinatesdeg2->Value;
+		Decimal^ coordinatesm1 = coordinatesmin1->Value;
+		Decimal^ coordinatesm2 = coordinatesmin2->Value;
+		if (nsbox->Text == s)
+		{
+			coordinatesg1 = -coordinatesdeg1->Value;
+			coordinatesm1 = -coordinatesmin1->Value;
+		}
+		if (ewbox->Text == w)
+		{
+			coordinatesg2 = -coordinatesdeg2->Value;
+			coordinatesm2 = -coordinatesmin2->Value;
+		}
+		
+		richTextBox1->AppendText(coordinatesg1 + " " + coordinatesm1 +
+			"\n" + coordinatesg2 + " " + coordinatesm2 + "\n");
+		richTextBox1->AppendText(depth->Value + "\n");
 
 
 		for (int i = 0; i < dataGridView1->RowCount; ++i)
 		{
-			richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[0]->Value + " ");
-			richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + " ");
-			richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n");
+			
+			if (msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != "0" 
+				|| msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "0")
+			{
+				richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[0]->Value + " ");
+				richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + " ");
+				richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n");
+			}
 		}
 
 
@@ -1029,9 +1116,9 @@ namespace Tidex2019 {
 	//Método de añadir nueva fila a la tabla
 	private: System::Void addbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		//add nueva fila
-		int x = dataGridView1->Rows->Add();
+		int x = buscaindice(msclr::interop::marshal_as<std::string>(namebox->Text->ToString()));//dataGridView1->Rows->Add();
+
 		//colocamos info
-		dataGridView1->Rows[x]->Cells[0]->Value = namebox->Text;
 		int i = 0;
 
 		std::string amplitude = msclr::interop::marshal_as<std::string>(amplitudebox->Text);
@@ -1081,6 +1168,47 @@ namespace Tidex2019 {
 		openFileDialog1->ShowDialog();
 		richTextBox2->AppendText(openFileDialog1->FileName);
 	}
+	//Método que transforma fichero .hdf al formato correcto para ser leido y ejecutado en long2000.exe
+	private: System::Void transforma(std::string origen ,std::string destino,
+		std::filebuf& origenf,std::filebuf &destinof)
+	{
+		if (!origenf.open(origen.c_str(), std::ios::in) || !destinof.open(destino, std::ios::out))
+		{
+
+			std::cout << "Error!" << std::endl;
+			exit(-1);
+		}
+		std::istream* origenFileStream = new std::istream(&origenf);
+		std::ostream* destinoFileStream = new std::ostream(&destinof);
+		std::string latitudedeg, latitudemin, lengthdeg, lengthmin, depth1;
+		*origenFileStream >> latitudedeg >> latitudemin;
+		*origenFileStream >> lengthdeg >> lengthmin;
+		*origenFileStream >> depth1;
+
+		std::vector<harmonicvariable>vect;
+		std::string line;
+		while (std::getline(*origenFileStream, line))
+		{
+			harmonicvariable h;
+			*origenFileStream >> h.name >> h.amplitude >> h.argument;
+			vect.push_back(h);
+		}
+		*destinoFileStream << latitudedeg <<" "<< latitudemin<<"\n";
+		*destinoFileStream << lengthdeg <<" "<< lengthmin << "\n";
+		*destinoFileStream << begintime->Value.Hour << " " << begintime->Value.Minute << " " << begindate->Value.Day <<
+			" " << begindate->Value.Month << " " << begindate->Value.Year <<"\n";;
+		*destinoFileStream << " " << endtime->Value.Hour << " " << endtime->Value.Minute << " " << enddate->Value.Day <<
+			" " << enddate->Value.Month << " " << enddate->Value.Year << "\n";;
+		for (int i = 0; i < vect.size(); ++i)
+		{
+			*destinoFileStream << vect[i].name << " " << vect[i].amplitude << " " << vect[i].argument << "\n";;
+				
+		}
+		delete origenFileStream;
+		delete destinoFileStream;
+		origenf.close();
+		destinof.close();
+	}
 	//Método de botón de aceptar que abre ventana para guardar fichero predicción, lo guarda en .dat y muestra gráfica
 	private: System::Void acceptbutton_Click(System::Object^ sender, System::EventArgs^ e)
 	{
@@ -1090,13 +1218,15 @@ namespace Tidex2019 {
 			ssAstroFile << buf << "\\Astro.dat";
 			ssOutputFile << buf << "\\Output.dat";
 			ssDateFile << buf << "\\calc.tmp";
-
+			
 			//ssFinalFile << buf << "\\finalData.dat";
 			std::string execPath = ssExec.str();
 			std::string astroPath = ssAstroFile.str();
 			std::string outputPath = ssOutputFile.str();
-			std::string datePath = msclr::interop::marshal_as<std::string>(filename->ToString());
-
+			std::string datePath = ssDateFile.str();
+			std::filebuf calctemp,hdf;
+			transforma(msclr::interop::marshal_as<std::string>(filename->ToString()), datePath, hdf, calctemp);
+			
 			spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
 			
 			std::filebuf finalFile, outputFile;
@@ -1168,7 +1298,7 @@ namespace Tidex2019 {
 	private: System::Void cancelbutton_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-
+//Método que guarda un fichero .hdf
 private: System::Void Harmonicsavebutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	saveFileDialog1->ShowDialog();
 	if (saveFileDialog1->FileName != "")

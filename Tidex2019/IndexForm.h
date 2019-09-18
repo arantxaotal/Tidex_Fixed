@@ -319,7 +319,7 @@ namespace Tidex2019 {
 //Se abre dialogo para crear nuevo fichero de datos armónicos en menú
 	private: System::Void FILE_NEW_Click(System::Object^  sender, System::EventArgs^  e) {
 
-		NewForm^ newForm = gcnew NewForm("", helper->buf);
+		NewForm^ newForm = gcnew NewForm();
 		newForm->Show(this);
 	}
 private: System::Void toolStrip1_ItemClicked(System::Object^  sender, System::Windows::Forms::ToolStripItemClickedEventArgs^  e) {
@@ -337,22 +337,22 @@ private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs
 	openFileDialog1->ShowDialog();
 	if (openFileDialog1->FileName != "")
 	{
-		try {
-			try {
+		//try {
+			//try {
 				NewForm^ newForm = gcnew NewForm(openFileDialog1->FileName, helper->buf);
 				newForm->Show(this);
-			}
-			catch (System::FormatException^ e)
-			{
-				ErrorForm^ error = gcnew ErrorForm();
-				error->Show(this);
-			}
-		}
-		catch (System::Runtime::InteropServices::SEHException^ e)
-		{
-			ErrorForm^ error = gcnew ErrorForm();
-			error->Show(this);
-		}
+			//}
+		//	catch (System::FormatException^ e)
+		//	{
+		//		ErrorForm^ error = gcnew ErrorForm();
+		//		error->Show(this);
+		//	}
+		//}
+		//catch (System::Runtime::InteropServices::SEHException^ e)
+		//{
+		//	ErrorForm^ error = gcnew ErrorForm();
+		//	error->Show(this);
+		//}
 	}
 
 }

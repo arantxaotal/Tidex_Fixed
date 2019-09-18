@@ -439,7 +439,10 @@ namespace Tidex2019 {
 				}
 				else
 				{
-					c->yAxis()->setTitle("Velocidad m/s", "msjh.ttc", 10);
+					if (unit == "cm")
+					{
+						c->yAxis()->setTitle("Centímetros", "msjh.ttc", 10);
+					}else c->yAxis()->setTitle("Velocidad m/s", "msjh.ttc", 10);
 				}
 			}
 			c->xAxis()->setTitle("Tiempo", "msjh.ttc", 14, 0x555555);

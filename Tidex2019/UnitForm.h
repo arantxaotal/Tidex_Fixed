@@ -102,13 +102,13 @@ namespace Tidex2019 {
 			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"m/s", L"m", L"cm/s" });
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"cm", L"m", L"cm/s", L"m/s" });
 			this->comboBox1->Location = System::Drawing::Point(197, 66);
 			this->comboBox1->Margin = System::Windows::Forms::Padding(2);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(72, 32);
 			this->comboBox1->TabIndex = 92;
-			this->comboBox1->Text = L"m/s";
+			this->comboBox1->Text = L"cm";
 			// 
 			// openFileDialog1
 			// 
