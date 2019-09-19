@@ -45,6 +45,12 @@ namespace Tidex2019 {
 		NewForm(void)
 		{
 			InitializeComponent();
+
+			
+		}
+		NewForm(char* buf)
+		{
+			InitializeComponent();
 			for (int j = 0; j < namebox->Items->Count; j++)
 			{
 				//add nueva fila
@@ -59,7 +65,7 @@ namespace Tidex2019 {
 
 			}
 			acceptbutton->Visible = false;
-			
+			this->buf = buf;
 		}
 		NewForm(String^ filenam, char *buf)
 		{
@@ -1169,7 +1175,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 		richTextBox2->AppendText(openFileDialog1->FileName);
 	}
 	//Método que transforma fichero .hdf al formato correcto para ser leido y ejecutado en long2000.exe
-	private: System::Void transforma(std::string origen ,std::string destino,
+	private: System::Void transforma(std::string& origen ,std::string& destino,
 		std::filebuf& origenf,std::filebuf &destinof)
 	{
 		if (!origenf.open(origen.c_str(), std::ios::in) || !destinof.open(destino, std::ios::out))
@@ -1217,20 +1223,16 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 			ssExec << buf << "\\long2000.exe";
 			ssAstroFile << buf << "\\Astro.dat";
 			ssOutputFile << buf << "\\Output.dat";
-			ssDateFile << buf << "\\calc.tmp";
-			
-			//ssFinalFile << buf << "\\finalData.dat";
+			ssDateFile << buf << "\\Calc.tmp"; 
 			std::string execPath = ssExec.str();
 			std::string astroPath = ssAstroFile.str();
 			std::string outputPath = ssOutputFile.str();
 			std::string datePath = ssDateFile.str();
-			std::filebuf calctemp,hdf;
+			std::filebuf calctemp;
+			std::filebuf hdf;
 			transforma(msclr::interop::marshal_as<std::string>(filename->ToString()), datePath, hdf, calctemp);
-			
-			spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
-			
+			spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);	
 			std::filebuf finalFile, outputFile;
-
 			saveFileDialog2->ShowDialog();
 			if (saveFileDialog2->FileName != "")
 			{

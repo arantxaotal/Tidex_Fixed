@@ -319,7 +319,7 @@ namespace Tidex2019 {
 //Se abre dialogo para crear nuevo fichero de datos armónicos en menú
 	private: System::Void FILE_NEW_Click(System::Object^  sender, System::EventArgs^  e) {
 
-		NewForm^ newForm = gcnew NewForm();
+		NewForm^ newForm = gcnew NewForm(helper->buf);
 		newForm->Show(this);
 	}
 private: System::Void toolStrip1_ItemClicked(System::Object^  sender, System::Windows::Forms::ToolStripItemClickedEventArgs^  e) {
