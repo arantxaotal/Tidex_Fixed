@@ -1203,7 +1203,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 		*destinoFileStream << lengthdeg <<" "<< lengthmin << "\n";
 		*destinoFileStream << begintime->Value.Hour << " " << begintime->Value.Minute << " " << begindate->Value.Day <<
 			" " << begindate->Value.Month << " " << begindate->Value.Year <<"\n";;
-		*destinoFileStream << " " << endtime->Value.Hour << " " << endtime->Value.Minute << " " << enddate->Value.Day <<
+		*destinoFileStream << endtime->Value.Hour << " " << endtime->Value.Minute << " " << enddate->Value.Day <<
 			" " << enddate->Value.Month << " " << enddate->Value.Year << "\n";;
 		for (int i = 0; i < vect.size(); ++i)
 		{
