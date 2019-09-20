@@ -4,6 +4,7 @@
 #include "UnitForm.h"
 #include "Helper.h"
 #include "ErrorForm.h"
+#include "ErrorFormatForm.h"
 #pragma once
 
 
@@ -337,22 +338,29 @@ private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs
 	openFileDialog1->ShowDialog();
 	if (openFileDialog1->FileName != "")
 	{
-		//try {
-			//try {
-				NewForm^ newForm = gcnew NewForm(openFileDialog1->FileName, helper->buf);
-				newForm->Show(this);
-			//}
-		//	catch (System::FormatException^ e)
-		//	{
-		//		ErrorForm^ error = gcnew ErrorForm();
-		//		error->Show(this);
-		//	}
-		//}
-		//catch (System::Runtime::InteropServices::SEHException^ e)
-		//{
-		//	ErrorForm^ error = gcnew ErrorForm();
-		//	error->Show(this);
-		//}
+		try {
+			try {
+				try {
+					NewForm^ newForm = gcnew NewForm(openFileDialog1->FileName, helper->buf);
+					newForm->Show(this);
+				}
+				catch (System::FormatException^ e)
+				{
+					ErrorFormatForm^ error = gcnew ErrorFormatForm();
+					error->Show(this);
+				}
+			}
+			catch (System::Runtime::InteropServices::SEHException^ e)
+			{
+				ErrorForm^ error = gcnew ErrorForm();
+				error->Show(this);
+			}
+		}
+		catch (System::ArgumentOutOfRangeException^ e)
+		{
+			ErrorFormatForm^ error = gcnew ErrorFormatForm();
+			error->Show(this);
+		}
 	}
 
 }

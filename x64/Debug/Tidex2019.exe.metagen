@@ -1,5 +1,6 @@
   Tidex2019.ChartForm.resources - Embedded, ContainedInManifestFile, 
   Tidex2019.ErrorForm.resources - Embedded, ContainedInManifestFile, 
+  Tidex2019.ErrorFormatForm.resources - Embedded, ContainedInManifestFile, 
   Tidex2019.HelpForm.resources - Embedded, ContainedInManifestFile, 
   Tidex2019.IndexForm.resources - Embedded, ContainedInManifestFile, 
   Tidex2019.NewForm.resources - Embedded, ContainedInManifestFile, 
@@ -62,6 +63,9 @@ Class Tidex2019.ChartForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Tidex2019.ErrorForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Tidex2019.ErrorFormatForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Tidex2019.HelpForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

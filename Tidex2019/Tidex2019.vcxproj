@@ -123,7 +123,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>Dependencias\lib64\chartdir60.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
@@ -147,7 +147,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
@@ -196,6 +196,7 @@
   <ItemGroup>
     <ClCompile Include="ChartForm.cpp" />
     <ClCompile Include="ErrorForm.cpp" />
+    <ClCompile Include="ErrorFormatForm.cpp" />
     <ClCompile Include="Helper.cpp" />
     <ClCompile Include="HelpForm.cpp" />
     <ClCompile Include="IndexForm.cpp" />
@@ -207,6 +208,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ErrorForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ErrorFormatForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Helper.h" />
@@ -230,6 +234,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorForm.resx">
       <DependentUpon>ErrorForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorFormatForm.aa.resx">
+      <DependentUpon>ErrorFormatForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorFormatForm.resx">
+      <DependentUpon>ErrorFormatForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HelpForm.resx">
       <DependentUpon>HelpForm.h</DependentUpon>
