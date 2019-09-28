@@ -50,7 +50,7 @@ namespace Tidex2019 {
 	//
 	private: char* buf;
 	private:
-
+		String^ bo;
 		String^ filename;
 	private: System::Windows::Forms::Panel^ leftPanel;
 	private: System::Windows::Forms::Button^ savePB;
@@ -82,6 +82,7 @@ namespace Tidex2019 {
 				delete components;
 			}
 		}
+	private: ChartDirector::XYChart^ c;
 	private: String^ unit;
 	private: int lines;
 	private: array<double>^ result,^result2;
@@ -124,8 +125,8 @@ namespace Tidex2019 {
 			// 
 			// winChartViewer1
 			// 
-			this->winChartViewer1->Location = System::Drawing::Point(121, 22);
-			this->winChartViewer1->Margin = System::Windows::Forms::Padding(2);
+			this->winChartViewer1->Location = System::Drawing::Point(154, 21);
+			this->winChartViewer1->Margin = System::Windows::Forms::Padding(4);
 			this->winChartViewer1->Name = L"winChartViewer1";
 			this->winChartViewer1->Size = System::Drawing::Size(900, 600);
 			this->winChartViewer1->TabIndex = 90;
@@ -284,7 +285,7 @@ namespace Tidex2019 {
 			this->topLabel->Location = System::Drawing::Point(90, 0);
 			this->topLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->topLabel->Name = L"topLabel";
-			this->topLabel->Size = System::Drawing::Size(935, 20);
+			this->topLabel->Size = System::Drawing::Size(964, 20);
 			this->topLabel->TabIndex = 92;
 			this->topLabel->Text = L"Tidex prediction chart";
 			this->topLabel->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -292,7 +293,7 @@ namespace Tidex2019 {
 			// viewPortControl1
 			// 
 			this->viewPortControl1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->viewPortControl1->Location = System::Drawing::Point(121, 625);
+			this->viewPortControl1->Location = System::Drawing::Point(154, 625);
 			this->viewPortControl1->Margin = System::Windows::Forms::Padding(2);
 			this->viewPortControl1->Name = L"viewPortControl1";
 			this->viewPortControl1->Size = System::Drawing::Size(900, 92);
@@ -317,7 +318,7 @@ namespace Tidex2019 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(1025, 717);
+			this->ClientSize = System::Drawing::Size(1054, 717);
 			this->Controls->Add(this->viewPortControl1);
 			this->Controls->Add(this->topLabel);
 			this->Controls->Add(this->leftPanel);
@@ -438,6 +439,7 @@ namespace Tidex2019 {
 		}
 		System::Void drawChart()
 		{
+			c = gcnew ChartDirector::XYChart(900, 600);
 			double viewPortStartDate = winChartViewer1->getValueAtViewPort("x", winChartViewer1->ViewPortLeft);
 			double viewPortEndDate = winChartViewer1->getValueAtViewPort("x", winChartViewer1->ViewPortLeft +
 				winChartViewer1->ViewPortWidth);
@@ -455,13 +457,12 @@ namespace Tidex2019 {
 				result2[i] = result[i + startPoint];
 			}
 			//Chart size
-			ChartDirector::XYChart^ c = gcnew ChartDirector::XYChart(900,600);
+			
 			c->setPlotArea(55, 55, c->getWidth() - 80, c->getHeight() - 90, c->linearGradientColor(0, 55, 0, c->getHeight() - 35, 0xf0f6ff, 0x99F3DF), -1, ChartDirector::Chart::Transparent, 0xffffff, 0xffffff);
 			c->setClipping();
 			c->addTitle("Predicción de mareas", "msjh.ttc", 20, 0x555555);
 			c->getLegend()->setLineStyleKey();
 			c->getLegend()->setFontSize(10);
-
 			c->xAxis()->setColors(ChartDirector::Chart::Transparent, ChartDirector::Chart::TextColor, ChartDirector::Chart::TextColor, 0xaaaaaa);
 			c->yAxis()->setColors(ChartDirector::Chart::Transparent);
 			c->xAxis()->setLabelStyle("msjh.ttc", 10);
@@ -536,15 +537,14 @@ namespace Tidex2019 {
 					}
 				}
 			}
-
-			std::ostringstream legendText;
+			std::ostringstream legendtext;
 			int actualValue = (int)floor(xValue);
-			legendText << "<*block,maxWidth=" << plotArea->getWidth() << "*><*block*><*font=arialbd.ttf*>[" << msclr::interop::marshal_as<std::string>(c->xAxis()->getFormattedLabel(xValue, "mm/dd/yyyy")) << "][" << " Valor: " << result2[actualValue] << "]<*/*>";
+			legendtext << "<*block,maxWidth=" << plotArea->getWidth() << "*><*block*><*font=arialbd.ttf*>[" << msclr::interop::marshal_as<std::string>(c->xAxis()->getFormattedLabel(xValue, "mm/dd/yyyy")) << "][" << " Valor: " << result2[actualValue] << "]<*/*>";
 
 			for (int i = ((int)legendEntries.size()) - 1; i >= 0; --i)
-				legendText << "        " << legendEntries[i];
+				legendtext << "        " << legendEntries[i];
 
-			String^ bo = msclr::interop::marshal_as<String^>(legendText.str());
+			bo = msclr::interop::marshal_as<String^>(legendtext.str());
 			ChartDirector::TTFText^ t = d->text(bo, "arialbd.ttf", 10);
 			
 			t->draw(plotArea->getLeftX() + 5, plotArea->getTopY() - 3, 0x333333, ChartDirector::Chart::BottomLeft);
@@ -660,6 +660,11 @@ private: System::Void SavePB_Click_1(System::Object^ sender, System::EventArgs^ 
 	// Save the chart
 	if (nullptr != winChartViewer1->Chart)
 	{
+		ChartDirector::DrawArea^ d = c->initDynamicLayer();
+		ChartDirector::PlotArea^ plotArea = c->getPlotArea();
+		String^ b = " ";
+		ChartDirector::TTFText^ t = d->text(b, "arialbd.ttf", 10);
+		t->draw(plotArea->getLeftX() + 5, plotArea->getTopY() - 3, 0x333333, ChartDirector::Chart::BottomLeft);
 		winChartViewer1->Chart->makeChart(fileDlg->FileName);
 	}
 }
@@ -703,6 +708,11 @@ private: System::Void PrintDocument1_PrintPage(System::Object^ sender, System::D
 	System::Drawing::Point*point2 = new System::Drawing::Point(700,0);
 	System::Drawing::Point*point3 = new System::Drawing::Point(0,600);
 	array<System::Drawing::Point>^ points = gcnew array<System::Drawing::Point>{*point1, *point2,*point3};
+	ChartDirector::DrawArea^ d = c->initDynamicLayer();
+	ChartDirector::PlotArea^ plotArea = c->getPlotArea();
+	String^ b = " ";
+	ChartDirector::TTFText^ t = d->text(b, "arialbd.ttf", 10);
+	t->draw(plotArea->getLeftX() + 5, plotArea->getTopY() - 3, 0x333333, ChartDirector::Chart::BottomLeft);
 	e->Graphics->DrawImage(winChartViewer1->Chart->makeImage(), points);
 	e->HasMorePages = false;
 
