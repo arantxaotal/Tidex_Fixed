@@ -48,9 +48,20 @@ namespace Tidex2019 {
 
 			
 		}
-		NewForm(char* buf)
+		NewForm(char* buf, Form^ index)
 		{
 			InitializeComponent();
+			if (this->begintime->Value.Minute % 5 != 0)
+			{
+				int resto = this->begintime->Value.Minute % 5;
+				this->begintime->Value = this->begintime->Value.AddMinutes(5 - resto);
+			}
+			if (this->endtime->Value.Minute % 5 != 0)
+			{
+				int rest = this->endtime->Value.Minute % 5;
+				this->endtime->Value = this->endtime->Value.AddMinutes(5 - rest);
+			}
+			indexform = index;
 			for (int j = 0; j < namebox->Items->Count; j++)
 			{
 				//add nueva fila
@@ -67,9 +78,11 @@ namespace Tidex2019 {
 			acceptbutton->Visible = false;
 			this->buf = buf;
 		}
-		NewForm(String^ filenam, char *buf)
+
+		NewForm(String^ filenam, char* bufer, Form^ indexForm)
 		{
 			InitializeComponent();
+			indexform = indexForm;
 			for (int j = 0; j < namebox->Items->Count; j++)
 			{
 				//add nueva fila
@@ -83,7 +96,7 @@ namespace Tidex2019 {
 				dataGridView1->Rows[x]->Cells[2]->Value = 0;
 
 			}
-			this->buf = buf;
+			buf = bufer;
 			filename = gcnew String(filenam);
 			std::string harmonicPath = msclr::interop::marshal_as<std::string>(filenam);
 			std::filebuf harmonicFile;
@@ -93,7 +106,7 @@ namespace Tidex2019 {
 				exit(-1);
 			}
 			std::istream* harmonicFileStream = new std::istream(&harmonicFile);
-			std::string latitudedeg, latitudemin, lengthdeg, lengthmin,depth1;
+			std::string latitudedeg, latitudemin, lengthdeg, lengthmin, depth1;
 			*harmonicFileStream >> latitudedeg >> latitudemin;
 			*harmonicFileStream >> lengthdeg >> lengthmin;
 			*harmonicFileStream >> depth1;
@@ -111,7 +124,7 @@ namespace Tidex2019 {
 				String^ s = "S";
 				nsbox->Text = s;
 				coordinatesdeg1->Value = (stoi(latitudedeg) - stoi(latitudedeg)) - stoi(latitudedeg);
-				
+
 			}
 			else
 			{
@@ -232,6 +245,7 @@ namespace Tidex2019 {
 				delete components;
 			}
 		}
+	private: Form^ indexform;
 	private: String^ filename;
 	private: char *buf;
 	private: System::Windows::Forms::Label^ label1;
@@ -270,10 +284,10 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::Label^ label15;
 	private: MaterialSkin::Controls::MaterialFlatButton^ updatebutton;
 	private: MaterialSkin::Controls::MaterialFlatButton^ addbutton;
-	private: MaterialSkin::Controls::MaterialFlatButton^ erasebutton;
+
 	private: MaterialSkin::Controls::MaterialRaisedButton^ choosebutton;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
-	private: System::Windows::Forms::NumericUpDown^ measuretime;
+
 	private: System::Windows::Forms::Label^ label16;
 	private: System::Windows::Forms::Label^ label19;
 	private: System::Windows::Forms::DateTimePicker^ begintime;
@@ -291,6 +305,7 @@ namespace Tidex2019 {
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Nombre;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Amplitude;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
+private: System::Windows::Forms::ComboBox^ comboBox1;
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -344,10 +359,8 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->label15 = (gcnew System::Windows::Forms::Label());
 				 this->updatebutton = (gcnew MaterialSkin::Controls::MaterialFlatButton());
 				 this->addbutton = (gcnew MaterialSkin::Controls::MaterialFlatButton());
-				 this->erasebutton = (gcnew MaterialSkin::Controls::MaterialFlatButton());
 				 this->choosebutton = (gcnew MaterialSkin::Controls::MaterialRaisedButton());
 				 this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
-				 this->measuretime = (gcnew System::Windows::Forms::NumericUpDown());
 				 this->label16 = (gcnew System::Windows::Forms::Label());
 				 this->label19 = (gcnew System::Windows::Forms::Label());
 				 this->begintime = (gcnew System::Windows::Forms::DateTimePicker());
@@ -360,6 +373,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->saveFileDialog2 = (gcnew System::Windows::Forms::SaveFileDialog());
 				 this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 				 this->harmonicsavebutton = (gcnew MaterialSkin::Controls::MaterialRaisedButton());
+				 this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg2))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg1))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->depth))->BeginInit();
@@ -368,7 +382,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->amplitudebox))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->argumentbox))->BeginInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->measuretime))->BeginInit();
 				 this->SuspendLayout();
 				 // 
 				 // label1
@@ -467,7 +480,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 						 L"SO3", L"MK3", L"SK3", L"MN4", L"M4", L"SN4", L"MS4", L"MK4", L"S4", L"SK4", L"2MK5", L"2SK5", L"2MN6", L"M6", L"2MS6", L"2MK6",
 						 L"2SM6", L"MSK6", L"3MK7", L"M8", L"M10"
 				 });
-				 this->namebox->Location = System::Drawing::Point(548, 223);
+				 this->namebox->Location = System::Drawing::Point(655, 227);
 				 this->namebox->Name = L"namebox";
 				 this->namebox->Size = System::Drawing::Size(71, 28);
 				 this->namebox->TabIndex = 36;
@@ -584,9 +597,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->label18->Size = System::Drawing::Size(24, 20);
 				 this->label18->TabIndex = 58;
 				 this->label18->Text = L"m";
-				 // 
+				 //
 				 // begindate
-				 // 
+				 //
 				 this->begindate->CalendarTitleBackColor = System::Drawing::Color::SteelBlue;
 				 this->begindate->CustomFormat = L"";
 				 this->begindate->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -595,9 +608,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->begindate->Name = L"begindate";
 				 this->begindate->Size = System::Drawing::Size(402, 29);
 				 this->begindate->TabIndex = 59;
-				 // 
+				 //
 				 // enddate
-				 // 
+				 //
 				 this->enddate->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->enddate->Location = System::Drawing::Point(296, 86);
@@ -629,10 +642,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 					 this->Nombre,
 						 this->Amplitude, this->Argument
 				 });
-				 this->dataGridView1->Location = System::Drawing::Point(45, 260);
+				 this->dataGridView1->Location = System::Drawing::Point(44, 260);
 				 this->dataGridView1->Name = L"dataGridView1";
 				 this->dataGridView1->RowHeadersWidth = 51;
-				 this->dataGridView1->Size = System::Drawing::Size(1016, 172);
+				 this->dataGridView1->Size = System::Drawing::Size(1057, 172);
 				 this->dataGridView1->TabIndex = 62;
 				 this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &NewForm::dataGridView1_CellContentClick);
 				 // 
@@ -669,7 +682,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label5->ForeColor = System::Drawing::Color::Black;
-				 this->label5->Location = System::Drawing::Point(544, 198);
+				 this->label5->Location = System::Drawing::Point(651, 202);
 				 this->label5->Name = L"label5";
 				 this->label5->Size = System::Drawing::Size(55, 20);
 				 this->label5->TabIndex = 63;
@@ -683,7 +696,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label6->ForeColor = System::Drawing::Color::Black;
-				 this->label6->Location = System::Drawing::Point(620, 201);
+				 this->label6->Location = System::Drawing::Point(727, 205);
 				 this->label6->Name = L"label6";
 				 this->label6->Size = System::Drawing::Size(88, 20);
 				 this->label6->TabIndex = 64;
@@ -697,7 +710,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label7->ForeColor = System::Drawing::Color::Black;
-				 this->label7->Location = System::Drawing::Point(828, 198);
+				 this->label7->Location = System::Drawing::Point(935, 202);
 				 this->label7->Name = L"label7";
 				 this->label7->Size = System::Drawing::Size(86, 20);
 				 this->label7->TabIndex = 65;
@@ -709,7 +722,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->amplitudebox->DecimalPlaces = 5;
 				 this->amplitudebox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->amplitudebox->Location = System::Drawing::Point(624, 222);
+				 this->amplitudebox->Location = System::Drawing::Point(731, 226);
 				 this->amplitudebox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 900, 0, 0, 0 });
 				 this->amplitudebox->Name = L"amplitudebox";
 				 this->amplitudebox->Size = System::Drawing::Size(137, 29);
@@ -721,7 +734,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->argumentbox->DecimalPlaces = 5;
 				 this->argumentbox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->argumentbox->Location = System::Drawing::Point(830, 221);
+				 this->argumentbox->Location = System::Drawing::Point(937, 225);
 				 this->argumentbox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 360, 0, 0, 0 });
 				 this->argumentbox->Name = L"argumentbox";
 				 this->argumentbox->Size = System::Drawing::Size(137, 29);
@@ -772,7 +785,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->updatebutton->BackColor = System::Drawing::Color::DeepSkyBlue;
 				 this->updatebutton->Depth = 0;
 				 this->updatebutton->ForeColor = System::Drawing::SystemColors::ControlText;
-				 this->updatebutton->Location = System::Drawing::Point(946, 434);
+				 this->updatebutton->Location = System::Drawing::Point(980, 439);
 				 this->updatebutton->Margin = System::Windows::Forms::Padding(4, 6, 4, 6);
 				 this->updatebutton->MouseState = MaterialSkin::MouseState::HOVER;
 				 this->updatebutton->Name = L"updatebutton";
@@ -791,7 +804,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->addbutton->Depth = 0;
 				 this->addbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->addbutton->Location = System::Drawing::Point(973, 219);
+				 this->addbutton->Location = System::Drawing::Point(1080, 223);
 				 this->addbutton->Margin = System::Windows::Forms::Padding(4, 6, 4, 6);
 				 this->addbutton->MouseState = MaterialSkin::MouseState::HOVER;
 				 this->addbutton->Name = L"addbutton";
@@ -801,24 +814,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->addbutton->Text = L"+";
 				 this->addbutton->UseVisualStyleBackColor = true;
 				 this->addbutton->Click += gcnew System::EventHandler(this, &NewForm::addbutton_Click);
-				 // 
-				 // erasebutton
-				 // 
-				 this->erasebutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-				 this->erasebutton->AutoSize = true;
-				 this->erasebutton->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-				 this->erasebutton->Depth = 0;
-				 this->erasebutton->ForeColor = System::Drawing::SystemColors::ControlText;
-				 this->erasebutton->Location = System::Drawing::Point(1012, 219);
-				 this->erasebutton->Margin = System::Windows::Forms::Padding(4, 6, 4, 6);
-				 this->erasebutton->MouseState = MaterialSkin::MouseState::HOVER;
-				 this->erasebutton->Name = L"erasebutton";
-				 this->erasebutton->Primary = false;
-				 this->erasebutton->Size = System::Drawing::Size(53, 36);
-				 this->erasebutton->TabIndex = 79;
-				 this->erasebutton->Text = L"erase";
-				 this->erasebutton->UseVisualStyleBackColor = true;
-				 this->erasebutton->Click += gcnew System::EventHandler(this, &NewForm::erasebutton_Click);
 				 // 
 				 // choosebutton
 				 // 
@@ -843,16 +838,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->openFileDialog1->Multiselect = true;
 				 this->openFileDialog1->RestoreDirectory = true;
 				 // 
-				 // measuretime
-				 // 
-				 this->measuretime->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-					 static_cast<System::Byte>(0)));
-				 this->measuretime->Location = System::Drawing::Point(296, 16);
-				 this->measuretime->Name = L"measuretime";
-				 this->measuretime->Size = System::Drawing::Size(75, 29);
-				 this->measuretime->TabIndex = 81;
-				 this->measuretime->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 15, 0, 0, 0 });
-				 // 
 				 // label16
 				 // 
 				 this->label16->AutoSize = true;
@@ -860,7 +845,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label16->ForeColor = System::Drawing::Color::Black;
-				 this->label16->Location = System::Drawing::Point(377, 25);
+				 this->label16->Location = System::Drawing::Point(370, 25);
 				 this->label16->Name = L"label16";
 				 this->label16->Size = System::Drawing::Size(38, 20);
 				 this->label16->TabIndex = 82;
@@ -882,27 +867,27 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 // begintime
 				 // 
 				 this->begintime->CalendarTitleBackColor = System::Drawing::Color::SteelBlue;
-				 this->begintime->CustomFormat = L"";
+				 this->begintime->CustomFormat = L"hh:mm";
 				 this->begintime->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->begintime->Format = System::Windows::Forms::DateTimePickerFormat::Time;
+				 this->begintime->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 				 this->begintime->Location = System::Drawing::Point(709, 50);
 				 this->begintime->Name = L"begintime";
 				 this->begintime->ShowUpDown = true;
-				 this->begintime->Size = System::Drawing::Size(98, 29);
+				 this->begintime->Size = System::Drawing::Size(82, 29);
 				 this->begintime->TabIndex = 84;
 				 // 
 				 // endtime
 				 // 
 				 this->endtime->CalendarTitleBackColor = System::Drawing::Color::SteelBlue;
-				 this->endtime->CustomFormat = L"";
+				 this->endtime->CustomFormat = L"hh:mm";
 				 this->endtime->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->endtime->Format = System::Windows::Forms::DateTimePickerFormat::Time;
+				 this->endtime->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 				 this->endtime->Location = System::Drawing::Point(709, 86);
 				 this->endtime->Name = L"endtime";
 				 this->endtime->ShowUpDown = true;
-				 this->endtime->Size = System::Drawing::Size(98, 29);
+				 this->endtime->Size = System::Drawing::Size(82, 29);
 				 this->endtime->TabIndex = 85;
 				 // 
 				 // saveFileDialog1
@@ -916,7 +901,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 // 
 				 this->acceptbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 				 this->acceptbutton->Depth = 0;
-				 this->acceptbutton->Location = System::Drawing::Point(919, 681);
+				 this->acceptbutton->Location = System::Drawing::Point(863, 681);
 				 this->acceptbutton->MouseState = MaterialSkin::MouseState::HOVER;
 				 this->acceptbutton->Name = L"acceptbutton";
 				 this->acceptbutton->Primary = true;
@@ -930,7 +915,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 // 
 				 this->cancelbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 				 this->cancelbutton->Depth = 0;
-				 this->cancelbutton->Location = System::Drawing::Point(1041, 681);
+				 this->cancelbutton->Location = System::Drawing::Point(985, 681);
 				 this->cancelbutton->MouseState = MaterialSkin::MouseState::HOVER;
 				 this->cancelbutton->Name = L"cancelbutton";
 				 this->cancelbutton->Primary = true;
@@ -958,7 +943,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 					 static_cast<System::Byte>(0)));
 				 this->unitbox->FormattingEnabled = true;
 				 this->unitbox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"cm", L"m", L"cm/s", L"m/s" });
-				 this->unitbox->Location = System::Drawing::Point(767, 222);
+				 this->unitbox->Location = System::Drawing::Point(874, 226);
 				 this->unitbox->Name = L"unitbox";
 				 this->unitbox->Size = System::Drawing::Size(58, 28);
 				 this->unitbox->TabIndex = 91;
@@ -987,7 +972,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 // 
 				 this->harmonicsavebutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 				 this->harmonicsavebutton->Depth = 0;
-				 this->harmonicsavebutton->Location = System::Drawing::Point(798, 682);
+				 this->harmonicsavebutton->Location = System::Drawing::Point(742, 682);
 				 this->harmonicsavebutton->MouseState = MaterialSkin::MouseState::HOVER;
 				 this->harmonicsavebutton->Name = L"harmonicsavebutton";
 				 this->harmonicsavebutton->Primary = true;
@@ -997,12 +982,28 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->harmonicsavebutton->UseVisualStyleBackColor = true;
 				 this->harmonicsavebutton->Click += gcnew System::EventHandler(this, &NewForm::Harmonicsavebutton_Click);
 				 // 
+				 // comboBox1
+				 // 
+				 this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+					 static_cast<System::Byte>(0)));
+				 this->comboBox1->FormattingEnabled = true;
+				 this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(10) {
+					 L"15", L"20", L"25", L"30", L"35", L"40", L"45",
+						 L"50", L"55", L"60"
+				 });
+				 this->comboBox1->Location = System::Drawing::Point(296, 17);
+				 this->comboBox1->Name = L"comboBox1";
+				 this->comboBox1->Size = System::Drawing::Size(68, 28);
+				 this->comboBox1->TabIndex = 95;
+				 this->comboBox1->Text = L"15";
+				 // 
 				 // NewForm
 				 // 
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->BackColor = System::Drawing::Color::PowderBlue;
-				 this->ClientSize = System::Drawing::Size(1171, 729);
+				 this->ClientSize = System::Drawing::Size(1115, 729);
+				 this->Controls->Add(this->comboBox1);
 				 this->Controls->Add(this->harmonicsavebutton);
 				 this->Controls->Add(this->unitbox);
 				 this->Controls->Add(this->richTextBox2);
@@ -1013,9 +1014,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->Controls->Add(this->begintime);
 				 this->Controls->Add(this->label19);
 				 this->Controls->Add(this->label16);
-				 this->Controls->Add(this->measuretime);
 				 this->Controls->Add(this->choosebutton);
-				 this->Controls->Add(this->erasebutton);
 				 this->Controls->Add(this->addbutton);
 				 this->Controls->Add(this->updatebutton);
 				 this->Controls->Add(this->label15);
@@ -1048,11 +1047,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 this->Controls->Add(this->label2);
 				 this->Controls->Add(this->label1);
 				 this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-				 this->MinimumSize = System::Drawing::Size(1187, 768);
+				 this->MinimumSize = System::Drawing::Size(1131, 768);
 				 this->Name = L"NewForm";
 				 this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 				 this->Text = L"Data for prediction";
-				 this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg2))->EndInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg1))->EndInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->depth))->EndInit();
@@ -1061,7 +1059,6 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->amplitudebox))->EndInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->argumentbox))->EndInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->measuretime))->EndInit();
 				 this->ResumeLayout(false);
 				 this->PerformLayout();
 

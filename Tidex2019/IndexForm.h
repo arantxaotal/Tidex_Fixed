@@ -294,7 +294,6 @@ namespace Tidex2019 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->AutoScroll = true;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::PowderBlue;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
@@ -304,6 +303,7 @@ namespace Tidex2019 {
 			this->Controls->Add(this->menuStrip1);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->IsMdiContainer = true;
 			this->Name = L"IndexForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Tidex 2019";
@@ -319,9 +319,9 @@ namespace Tidex2019 {
 #pragma endregion
 //Se abre dialogo para crear nuevo fichero de datos armónicos en menú
 	private: System::Void FILE_NEW_Click(System::Object^  sender, System::EventArgs^  e) {
-
-		NewForm^ newForm = gcnew NewForm(helper->buf);
-		newForm->Show(this);
+		NewForm^ newForm = gcnew NewForm(helper->buf, this);
+		newForm->MdiParent = this;
+		newForm->Show();
 	}
 private: System::Void toolStrip1_ItemClicked(System::Object^  sender, System::Windows::Forms::ToolStripItemClickedEventArgs^  e) {
 }
@@ -341,25 +341,29 @@ private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs
 		try {
 			try {
 				try {
-					NewForm^ newForm = gcnew NewForm(openFileDialog1->FileName, helper->buf);
-					newForm->Show(this);
+					NewForm^ newForm = gcnew NewForm(openFileDialog1->FileName, helper->buf, this);
+					newForm->MdiParent = this;
+					newForm->Show();
 				}
 				catch (System::FormatException^ e)
 				{
 					ErrorFormatForm^ error = gcnew ErrorFormatForm();
-					error->Show(this);
+					error->MdiParent = this;
+					error->Show();
 				}
 			}
 			catch (System::Runtime::InteropServices::SEHException^ e)
 			{
 				ErrorForm^ error = gcnew ErrorForm();
-				error->Show(this);
+				error->MdiParent = this;
+				error->Show();
 			}
 		}
 		catch (System::ArgumentOutOfRangeException^ e)
 		{
 			ErrorFormatForm^ error = gcnew ErrorFormatForm();
-			error->Show(this);
+			error->MdiParent = this;
+			error->Show();
 		}
 	}
 
@@ -373,14 +377,15 @@ private: System::Void EDIT_MODIFY_Click(System::Object^  sender, System::EventAr
 	openFileDialog1->ShowDialog();
 	if (openFileDialog1->FileName != "")
 	{
-		NewForm^ newForm = gcnew NewForm(openFileDialog1->FileName, helper->buf);
+		NewForm^ newForm = gcnew NewForm(openFileDialog1->FileName, helper->buf,this);
 		newForm->Show(this);
 	}
 }
 //Método que muestra la ventana Help en menú
 private: System::Void HELP_ABOUT_Click(System::Object^  sender, System::EventArgs^  e) {
 	HelpForm^ help = gcnew HelpForm();
-	help->Show(this);
+	help->MdiParent = this;
+	help->Show();
 }
 
 //Boton de editar fichero armónico
@@ -393,8 +398,9 @@ private: System::Void OpenPredictionToolStripMenuItem_Click(System::Object^ send
 	//abre otro dialogo preguntando en qué unidades de amplitud esta la gráfica
 	if (openFileDialog2->FileName != "")
 	{
-		UnitForm^ unitform = gcnew UnitForm(openFileDialog2);
-		unitform->Show(this);
+		UnitForm^ unitform = gcnew UnitForm(openFileDialog2, this);
+		unitform->MdiParent = this;
+		unitform->Show();
 	}
 
 }

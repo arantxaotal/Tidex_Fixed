@@ -23,7 +23,7 @@ namespace Tidex2019 {
 			//TODO: agregar código de constructor aquí
 			//
 		}
-		UnitForm(OpenFileDialog^ filerout)
+		UnitForm(OpenFileDialog^ filerout, Form^indexform)
 		{
 			InitializeComponent();
 			fileroute = gcnew OpenFileDialog();
