@@ -1296,7 +1296,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 			finalFile.close();
 			outputFile.close();
 			String^ tempPath = gcnew String(tempPredictionPath.c_str());
-			ChartForm^ chart = gcnew ChartForm(unitbox->Text, tempPath, buf);
+			ChartForm^ chart = gcnew ChartForm(unitbox->Text, tempPath,buf);
 			chart->MdiParent = indexform;
 			chart->Show();
 
