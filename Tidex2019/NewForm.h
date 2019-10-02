@@ -61,6 +61,7 @@ namespace Tidex2019 {
 				int rest = this->endtime->Value.Minute % 5;
 				this->endtime->Value = this->endtime->Value.AddMinutes(5 - rest);
 			}
+			this->enddate->Value = this->enddate->Value.AddDays(1);
 			indexform = index;
 			for (int j = 0; j < namebox->Items->Count; j++)
 			{
@@ -82,6 +83,17 @@ namespace Tidex2019 {
 		NewForm(String^ filenam, char* bufer, Form^ indexForm)
 		{
 			InitializeComponent();
+			if (this->begintime->Value.Minute % 5 != 0)
+			{
+				int resto = this->begintime->Value.Minute % 5;
+				this->begintime->Value = this->begintime->Value.AddMinutes(5 - resto);
+			}
+			if (this->endtime->Value.Minute % 5 != 0)
+			{
+				int rest = this->endtime->Value.Minute % 5;
+				this->endtime->Value = this->endtime->Value.AddMinutes(5 - rest);
+			}
+			this->enddate->Value = this->enddate->Value.AddDays(1);
 			indexform = indexForm;
 			for (int j = 0; j < namebox->Items->Count; j++)
 			{
@@ -316,8 +328,8 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 		/// </summary>
 
 #pragma region Windows Form Designer generated code
-			 /// <summary>
 			 /// Método necesario para admitir el Diseñador. No se puede modificar
+			 /// <summary>
 			 /// el contenido de este método con el editor de código.
 			 /// </summary>
 			 void InitializeComponent(void)
@@ -616,7 +628,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->enddate->Location = System::Drawing::Point(296, 86);
 				 this->enddate->Name = L"enddate";
 				 this->enddate->Size = System::Drawing::Size(402, 29);
-				 this->enddate->TabIndex = 60;
+				 this->enddate->TabIndex = 60; 
 				 // 
 				 // coordinatesmin1
 				 // 
