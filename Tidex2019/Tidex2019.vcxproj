@@ -123,7 +123,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>Dependencias\lib64\chartdir60.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>

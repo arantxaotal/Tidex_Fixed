@@ -1310,7 +1310,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 		String^ temppath = gcnew String(tempPredictionPath.c_str());
 		ChartForm^ chart = gcnew ChartForm(unitbox->Text,temppath,buf);
 		chart->Show();
-		this->Close();
+		
 
 	
 	
