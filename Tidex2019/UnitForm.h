@@ -1,6 +1,5 @@
 #include "ChartForm.h"
 #include "ErrorForm.h"
-//#include "IndexForm.h"
 #pragma once
 namespace Tidex2019 {
 
@@ -24,12 +23,11 @@ namespace Tidex2019 {
 			//TODO: agregar código de constructor aquí
 			//
 		}
-		UnitForm(OpenFileDialog^ filerout,Form^ indexform)
+		UnitForm(OpenFileDialog^ filerout)
 		{
 			InitializeComponent();
 			fileroute = gcnew OpenFileDialog();
 			fileroute = filerout;
-			indexForm = indexform;
 			
 		}
 
@@ -47,7 +45,7 @@ namespace Tidex2019 {
 	private: OpenFileDialog^ fileroute;
 	private: System::Windows::Forms::Label^ label1;
 	private: MaterialSkin::Controls::MaterialRaisedButton^ nextbutton;
-	private: Form^ indexForm;
+
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
 
@@ -142,14 +140,12 @@ namespace Tidex2019 {
 	private: System::Void Nextbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
 			//se genera gráfica con .dat ruta pasada
-			ChartForm^ chart = gcnew ChartForm(comboBox1->Text, fileroute->FileName,nullptr); //se le pasa constructor la ruta del .dat elegida y las unidades y se muestra gráfica;
-			chart->MdiParent = indexForm;
+			ChartForm^ chart = gcnew ChartForm(comboBox1->Text, fileroute->FileName); //se le pasa constructor la ruta del .dat elegida y las unidades y se muestra gráfica;
 			chart->Show();
 		}
 		catch (System::ArgumentNullException^ e)
 		{
 			ErrorForm^ error = gcnew ErrorForm();
-			error->MdiParent = indexForm;
 			error->Show();
 		}
 		this->Close();

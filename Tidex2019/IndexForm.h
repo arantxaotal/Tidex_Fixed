@@ -62,11 +62,18 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::ToolStripButton^  TimerButton;
 	private: System::Windows::Forms::ToolStripMenuItem^  FILE_EXIT;
     private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
+
+
+
+
+
 	private: System::ComponentModel::BackgroundWorker^  backgroundWorker1;
 	private: System::Windows::Forms::ToolStripMenuItem^ openPredictionToolStripMenuItem;
+
 	private: System::Windows::Forms::ToolStripButton^ predictionbutton;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog2;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
+
 	private: System::ComponentModel::IContainer^ components;
 	private:
 		/// <summary>
@@ -287,6 +294,7 @@ namespace Tidex2019 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScroll = true;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::PowderBlue;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
@@ -296,10 +304,9 @@ namespace Tidex2019 {
 			this->Controls->Add(this->menuStrip1);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->IsMdiContainer = true;
 			this->Name = L"IndexForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Tidex ";
+			this->Text = L"Tidex 2019";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
@@ -313,9 +320,8 @@ namespace Tidex2019 {
 //Se abre dialogo para crear nuevo fichero de datos armónicos en menú
 	private: System::Void FILE_NEW_Click(System::Object^  sender, System::EventArgs^  e) {
 
-		NewForm^ newForm = gcnew NewForm(helper->buf,this);
-		newForm->MdiParent = this;
-		newForm->Show();
+		NewForm^ newForm = gcnew NewForm(helper->buf);
+		newForm->Show(this);
 	}
 private: System::Void toolStrip1_ItemClicked(System::Object^  sender, System::Windows::Forms::ToolStripItemClickedEventArgs^  e) {
 }
@@ -335,29 +341,25 @@ private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs
 		try {
 			try {
 				try {
-					NewForm^ newForm = gcnew NewForm(openFileDialog1->FileName, helper->buf,this);
-					newForm->MdiParent = this;
-					newForm->Show();
+					NewForm^ newForm = gcnew NewForm(openFileDialog1->FileName, helper->buf);
+					newForm->Show(this);
 				}
 				catch (System::FormatException^ e)
 				{
 					ErrorFormatForm^ error = gcnew ErrorFormatForm();
-					error->MdiParent = this;
-					error->Show();
+					error->Show(this);
 				}
 			}
 			catch (System::Runtime::InteropServices::SEHException^ e)
 			{
 				ErrorForm^ error = gcnew ErrorForm();
-				error->MdiParent = this;
-				error->Show();
+				error->Show(this);
 			}
 		}
 		catch (System::ArgumentOutOfRangeException^ e)
 		{
 			ErrorFormatForm^ error = gcnew ErrorFormatForm();
-			error->MdiParent = this;
-			error->Show();
+			error->Show(this);
 		}
 	}
 
@@ -368,13 +370,17 @@ private: System::Void OpenButton_Click(System::Object^  sender, System::EventArg
 }
 //Método que abre dialogo para editar fichero armónico en menú
 private: System::Void EDIT_MODIFY_Click(System::Object^  sender, System::EventArgs^  e) {
-	FILE_OPEN_Click(sender, e);
+	openFileDialog1->ShowDialog();
+	if (openFileDialog1->FileName != "")
+	{
+		NewForm^ newForm = gcnew NewForm(openFileDialog1->FileName, helper->buf);
+		newForm->Show(this);
+	}
 }
 //Método que muestra la ventana Help en menú
 private: System::Void HELP_ABOUT_Click(System::Object^  sender, System::EventArgs^  e) {
 	HelpForm^ help = gcnew HelpForm();
-	help->MdiParent = this;
-	help->Show();
+	help->Show(this);
 }
 
 //Boton de editar fichero armónico
@@ -387,9 +393,8 @@ private: System::Void OpenPredictionToolStripMenuItem_Click(System::Object^ send
 	//abre otro dialogo preguntando en qué unidades de amplitud esta la gráfica
 	if (openFileDialog2->FileName != "")
 	{
-		UnitForm^ unitform = gcnew UnitForm(openFileDialog2,this);
-		unitform->MdiParent = this;
-		unitform->Show();
+		UnitForm^ unitform = gcnew UnitForm(openFileDialog2);
+		unitform->Show(this);
 	}
 
 }

@@ -5,7 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <msclr/marshal_cppstd.h>
-#include <filesystem>
+
 namespace Tidex2019 {
 
 	using namespace System;
@@ -29,14 +29,9 @@ namespace Tidex2019 {
 			//TODO: agregar código de constructor aquí
 		}
 
-		ChartForm(String^u,String ^ f,char*buf)
+		ChartForm(String^u,String ^ f)
 		{
 			InitializeComponent();
-			if (buf == nullptr)
-			{
-				savedatabutton->Visible = false;
-			}
-			this->buf = buf;
 			unit = u;
 			filename = f;
 			loadData();
@@ -48,7 +43,6 @@ namespace Tidex2019 {
 		//
 	// Load the data
 	//
-	private: char* buf;
 	private:
 
 		String^ filename;
@@ -62,12 +56,6 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::Button^ printPB;
 	private: System::Drawing::Printing::PrintDocument^ printDocument1;
 	private: System::Windows::Forms::PrintDialog^ printDialog1;
-	private: System::Windows::Forms::Button^ savedatabutton;
-	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog2;
-
-
-
-
 
 
 	private: ChartDirector::WinViewPortControl^ viewPortControl1;
@@ -105,7 +93,6 @@ namespace Tidex2019 {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ChartForm::typeid));
 			this->winChartViewer1 = (gcnew ChartDirector::WinChartViewer());
 			this->leftPanel = (gcnew System::Windows::Forms::Panel());
-			this->savedatabutton = (gcnew System::Windows::Forms::Button());
 			this->printPB = (gcnew System::Windows::Forms::Button());
 			this->savePB = (gcnew System::Windows::Forms::Button());
 			this->separatorLine = (gcnew System::Windows::Forms::Label());
@@ -116,7 +103,6 @@ namespace Tidex2019 {
 			this->viewPortControl1 = (gcnew ChartDirector::WinViewPortControl(this->components));
 			this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
 			this->printDialog1 = (gcnew System::Windows::Forms::PrintDialog());
-			this->saveFileDialog2 = (gcnew System::Windows::Forms::SaveFileDialog());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->winChartViewer1))->BeginInit();
 			this->leftPanel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->viewPortControl1))->BeginInit();
@@ -136,7 +122,6 @@ namespace Tidex2019 {
 			// leftPanel
 			// 
 			this->leftPanel->BackColor = System::Drawing::Color::PaleTurquoise;
-			this->leftPanel->Controls->Add(this->savedatabutton);
 			this->leftPanel->Controls->Add(this->printPB);
 			this->leftPanel->Controls->Add(this->savePB);
 			this->leftPanel->Controls->Add(this->separatorLine);
@@ -152,23 +137,6 @@ namespace Tidex2019 {
 			this->leftPanel->Size = System::Drawing::Size(90, 717);
 			this->leftPanel->TabIndex = 91;
 			// 
-			// savedatabutton
-			// 
-			this->savedatabutton->BackColor = System::Drawing::Color::Azure;
-			this->savedatabutton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->savedatabutton->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.07563F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->savedatabutton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"savedatabutton.Image")));
-			this->savedatabutton->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->savedatabutton->Location = System::Drawing::Point(0, 134);
-			this->savedatabutton->Margin = System::Windows::Forms::Padding(2);
-			this->savedatabutton->Name = L"savedatabutton";
-			this->savedatabutton->Size = System::Drawing::Size(90, 48);
-			this->savedatabutton->TabIndex = 38;
-			this->savedatabutton->Text = L"       Save         Data";
-			this->savedatabutton->UseVisualStyleBackColor = false;
-			this->savedatabutton->Click += gcnew System::EventHandler(this, &ChartForm::Savedatabutton_Click);
-			// 
 			// printPB
 			// 
 			this->printPB->BackColor = System::Drawing::Color::Azure;
@@ -177,7 +145,7 @@ namespace Tidex2019 {
 				static_cast<System::Byte>(0)));
 			this->printPB->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"printPB.Image")));
 			this->printPB->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->printPB->Location = System::Drawing::Point(0, 196);
+			this->printPB->Location = System::Drawing::Point(0, 116);
 			this->printPB->Margin = System::Windows::Forms::Padding(2);
 			this->printPB->Name = L"printPB";
 			this->printPB->Size = System::Drawing::Size(90, 23);
@@ -195,12 +163,13 @@ namespace Tidex2019 {
 				static_cast<System::Byte>(0)));
 			this->savePB->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"savePB.Image")));
 			this->savePB->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->savePB->Location = System::Drawing::Point(0, 82);
+			this->savePB->Location = System::Drawing::Point(0, 89);
 			this->savePB->Margin = System::Windows::Forms::Padding(2);
 			this->savePB->Name = L"savePB";
-			this->savePB->Size = System::Drawing::Size(90, 48);
+			this->savePB->Size = System::Drawing::Size(90, 23);
 			this->savePB->TabIndex = 36;
-			this->savePB->Text = L"        Save           Chart";
+			this->savePB->Text = L"        Save";
+			this->savePB->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->savePB->UseVisualStyleBackColor = false;
 			this->savePB->Click += gcnew System::EventHandler(this, &ChartForm::SavePB_Click_1);
 			// 
@@ -303,13 +272,6 @@ namespace Tidex2019 {
 			// printDialog1
 			// 
 			this->printDialog1->UseEXDialog = true;
-			// 
-			// saveFileDialog2
-			// 
-			this->saveFileDialog2->DefaultExt = L"dat";
-			this->saveFileDialog2->Filter = L"Archivos de datos (*.dat)|*.dat";
-			this->saveFileDialog2->InitialDirectory = L"C:\\Users\\...\\Documents";
-			this->saveFileDialog2->Title = L"Save prediction";
 			// 
 			// ChartForm
 			// 
@@ -546,7 +508,6 @@ namespace Tidex2019 {
 
 			String^ bo = msclr::interop::marshal_as<String^>(legendText.str());
 			ChartDirector::TTFText^ t = d->text(bo, "arialbd.ttf", 10);
-			
 			t->draw(plotArea->getLeftX() + 5, plotArea->getTopY() - 3, 0x333333, ChartDirector::Chart::BottomLeft);
 		}
 		System::Void WinChartViewer1_MouseMovePlotArea(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
@@ -659,9 +620,7 @@ private: System::Void SavePB_Click_1(System::Object^ sender, System::EventArgs^ 
 
 	// Save the chart
 	if (nullptr != winChartViewer1->Chart)
-	{
 		winChartViewer1->Chart->makeChart(fileDlg->FileName);
-	}
 }
 //
  // Zoom out button event handler
@@ -708,20 +667,6 @@ private: System::Void PrintDocument1_PrintPage(System::Object^ sender, System::D
 
 }
 
-//Método que guarda la predicción .dat
-private: System::Void Savedatabutton_Click(System::Object^ sender, System::EventArgs^ e) {
-	saveFileDialog2->ShowDialog();
-	if (saveFileDialog2->FileName != "")
-	{
-		std::stringstream sTempPredicction;
-		sTempPredicction << buf << "\\TempPredicction.dat";
-		std::string TempPredicctionPath=sTempPredicction.str();
-		const std::filesystem::path pd = msclr::interop::marshal_as<std::string>(saveFileDialog2->FileName).c_str();
-		std::cout << pd <<std:: endl;
-		std::filesystem::copy_file(TempPredicctionPath.c_str(),pd, std::filesystem::copy_options::overwrite_existing);
-		
-	}
-}
 };
 	
 }
