@@ -1103,7 +1103,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 			coordinatesg2 = -coordinatesdeg2->Value;
 			coordinatesm2 = -coordinatesmin2->Value;
 		}
-		
+
 		richTextBox1->AppendText(coordinatesg1 + " " + coordinatesm1 +
 			"\n" + coordinatesg2 + " " + coordinatesm2 + "\n");
 		richTextBox1->AppendText(depth->Value + "\n");
@@ -1111,15 +1111,27 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 
 		for (int i = 0; i < dataGridView1->RowCount; ++i)
 		{
-			
-			if (msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != "0" 
-				|| msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "0")
+			try
 			{
-				richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[0]->Value + " ");
-				richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + " ");
-				richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n");
+				int valor2 = stoi(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()));
+				int valor1 = stoi(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()));
+				if ((msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != "0"
+					|| msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "0")
+					&& (msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != ""
+						|| msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != ""))
+				{
+					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[0]->Value + " ");
+					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + " ");
+					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n");
+				}
+			}
+			catch (System::Exception^ e)
+			{
+				dataGridView1->Rows[i]->Cells[1]->Value = "Insert numeric value";
+				dataGridView1->Rows[i]->Cells[2]->Value = "Insert numeric value";
 			}
 		}
+
 
 
 	}
