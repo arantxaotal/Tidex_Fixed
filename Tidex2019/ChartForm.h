@@ -79,6 +79,7 @@ namespace Tidex2019 {
 				delete components;
 			}
 		}
+	private: ChartDirector::XYChart^ c;
 	private: String^ unit;
 	private: int lines;
 	private: array<double>^ result,^result2;
@@ -456,7 +457,7 @@ namespace Tidex2019 {
 				result2[i] = result[i + startPoint];
 			}
 			//Chart size
-			ChartDirector::XYChart^ c = gcnew ChartDirector::XYChart(900,600);
+			c = gcnew ChartDirector::XYChart(900,600);
 			c->setPlotArea(55, 55, c->getWidth() - 80, c->getHeight() - 90, c->linearGradientColor(0, 55, 0, c->getHeight() - 35, 0xf0f6ff, 0x99F3DF), -1, ChartDirector::Chart::Transparent, 0xffffff, 0xffffff);
 			c->setClipping();
 			c->addTitle("Predicción de mareas", "msjh.ttc", 20, 0x555555);
@@ -656,7 +657,10 @@ private: System::Void SavePB_Click_1(System::Object^ sender, System::EventArgs^ 
 	fileDlg->FileName = "chartname";
 	if (fileDlg->ShowDialog() != System::Windows::Forms::DialogResult::OK)
 		return;
-
+	ChartDirector::DrawArea^ d = c->initDynamicLayer();
+	ChartDirector::PlotArea^ plotArea = c->getPlotArea();
+	String^ b = " ";
+	ChartDirector::TTFText^ t = d->text(b, "arialbd.ttf", 10);
 	// Save the chart
 	if (nullptr != winChartViewer1->Chart)
 		winChartViewer1->Chart->makeChart(fileDlg->FileName);
@@ -697,10 +701,15 @@ private: System::Void PrintPB_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void PrintDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e)
 {
 
-	System::Drawing::Point*point1 = new System::Drawing::Point(0,0);
-	System::Drawing::Point*point2 = new System::Drawing::Point(700,0);
-	System::Drawing::Point*point3 = new System::Drawing::Point(0,600);
-	array<System::Drawing::Point>^ points = gcnew array<System::Drawing::Point>{*point1, *point2,*point3};
+	System::Drawing::Point* point1 = new System::Drawing::Point(0, 0);
+	System::Drawing::Point* point2 = new System::Drawing::Point(700, 0);
+	System::Drawing::Point* point3 = new System::Drawing::Point(0, 600);
+	array<System::Drawing::Point>^ points = gcnew array<System::Drawing::Point>{*point1, * point2, * point3};
+	ChartDirector::DrawArea^ d = c->initDynamicLayer();
+	ChartDirector::PlotArea^ plotArea = c->getPlotArea();
+	String^ b = " ";
+	ChartDirector::TTFText^ t = d->text(b, "arialbd.ttf", 10);
+	t->draw(plotArea->getLeftX() + 5, plotArea->getTopY() - 3, 0x333333, ChartDirector::Chart::BottomLeft);
 	e->Graphics->DrawImage(winChartViewer1->Chart->makeImage(), points);
 	e->HasMorePages = false;
 
@@ -712,10 +721,10 @@ private: System::Void Savedatabutton_Click(System::Object^ sender, System::Event
 	{
 		std::stringstream sTempPredicction;
 		sTempPredicction << buf << "\\TempPredicction.dat";
-		std::string TempPredicctionPath = sTempPredicction.str();
+		std::string TempPredicctionPath=sTempPredicction.str();
 		const std::filesystem::path pd = msclr::interop::marshal_as<std::string>(saveFileDialog2->FileName).c_str();
-		std::cout << pd << std::endl;
-		std::filesystem::copy_file(TempPredicctionPath.c_str(), pd, std::filesystem::copy_options::overwrite_existing);
+		std::cout << pd <<std:: endl;
+		std::filesystem::copy_file(TempPredicctionPath.c_str(),pd, std::filesystem::copy_options::overwrite_existing);
 
 	}
 }
