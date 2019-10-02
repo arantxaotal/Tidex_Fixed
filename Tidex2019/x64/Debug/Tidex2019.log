@@ -597,16 +597,34 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bi
   Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mcx.h
   Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\imm.h
   Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ime_cmodes.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\filesystem
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\experimental/filesystem
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\chrono
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\ratio
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\thr/xtimec.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\codecvt
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\locale
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\xlocbuf
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\xlocmes
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\xlocmon
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\xloctime
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\ctime
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\list
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iomanip
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\string_view
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\xfilesystem_abi.h
   Nota: inclusión del archivo:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h
   Nota: inclusión del archivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_startup.h
   Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\math.h
   Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\vcruntime_startup.h
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(74,1): warning C4965:  conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
 C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(75,1): warning C4965:  conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
-C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(76,1): warning C4965:  conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(106,1): warning C4965:  conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
 C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(107,1): warning C4965:  conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
-C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(108,1): warning C4965:  conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
-C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(1128,30): warning C4101:  'e': variable local sin referencia
-C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(1255,1): warning C4996:  'spawnl': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _spawnl. See online help for details.
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(1127,30): warning C4101:  'e': variable local sin referencia
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(1256,1): warning C4996:  'spawnl': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _spawnl. See online help for details.
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message :  vea la declaración de 'spawnl'
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo:  C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\HelpForm.h
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : Nota: inclusión del archivo:  C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\UnitForm.h
@@ -1213,16 +1231,34 @@ C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C410
 C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mcx.h
 C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\imm.h
 C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ime_cmodes.h
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\filesystem
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\experimental/filesystem
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\chrono
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\ratio
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\thr/xtimec.h
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\codecvt
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\locale
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\xlocbuf
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\xlocmes
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\xlocmon
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\xloctime
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\ctime
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\list
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iomanip
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\string_view
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\xfilesystem_abi.h
 C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h
 C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_startup.h
 C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\math.h
 C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\IndexForm.h(362,47): warning C4101: Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\vcruntime_startup.h
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(74,1): warning C4965:  conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
 C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(75,1): warning C4965:  conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
-C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(76,1): warning C4965:  conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(106,1): warning C4965:  conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
 C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(107,1): warning C4965:  conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
-C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(108,1): warning C4965:  conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
-C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(1128,30): warning C4101:  'e': variable local sin referencia
-C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(1255,1): warning C4996:  'spawnl': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _spawnl. See online help for details.
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(1127,30): warning C4101:  'e': variable local sin referencia
+C:\Users\Arantxa\Documents\Tidex2019\Tidex2019\NewForm.h(1256,1): warning C4996:  'spawnl': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _spawnl. See online help for details.
   Generando código...
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message :  vea la declaración de 'spawnl'
   ChartForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo

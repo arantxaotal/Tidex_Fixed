@@ -4,8 +4,7 @@
 #include <string>
 #include <iostream>
 #include <process.h>
-
-
+#include <msclr/marshal.h>
 namespace Tidex2019 {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -13,7 +12,7 @@ namespace Tidex2019 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace msclr::interop;
 	/// <summary>
 	/// Resumen de NewForm
 	/// </summary>
@@ -609,9 +608,9 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->label18->Size = System::Drawing::Size(24, 20);
 				 this->label18->TabIndex = 58;
 				 this->label18->Text = L"m";
-				 //
+				 // 
 				 // begindate
-				 //
+				 // 
 				 this->begindate->CalendarTitleBackColor = System::Drawing::Color::SteelBlue;
 				 this->begindate->CustomFormat = L"";
 				 this->begindate->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -620,15 +619,15 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->begindate->Name = L"begindate";
 				 this->begindate->Size = System::Drawing::Size(402, 29);
 				 this->begindate->TabIndex = 59;
-				 //
+				 // 
 				 // enddate
-				 //
+				 // 
 				 this->enddate->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->enddate->Location = System::Drawing::Point(296, 86);
 				 this->enddate->Name = L"enddate";
 				 this->enddate->Size = System::Drawing::Size(402, 29);
-				 this->enddate->TabIndex = 60; 
+				 this->enddate->TabIndex = 60;
 				 // 
 				 // coordinatesmin1
 				 // 
@@ -919,7 +918,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->acceptbutton->Primary = true;
 				 this->acceptbutton->Size = System::Drawing::Size(116, 36);
 				 this->acceptbutton->TabIndex = 87;
-				 this->acceptbutton->Text = L"SAVE PREDICTION";
+				 this->acceptbutton->Text = L"SHOW PREDICTION";
 				 this->acceptbutton->UseVisualStyleBackColor = true;
 				 this->acceptbutton->Click += gcnew System::EventHandler(this, &NewForm::acceptbutton_Click);
 				 // 
@@ -1220,16 +1219,16 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 			*origenFileStream >> h.name >> h.amplitude >> h.argument;
 			vect.push_back(h);
 		}
-		*destinoFileStream << latitudedeg <<" "<< latitudemin<<"\n";
-		*destinoFileStream << lengthdeg <<" "<< lengthmin << "\n";
+		*destinoFileStream << latitudedeg << " " << latitudemin << "\n";
+		*destinoFileStream << lengthdeg << " " << lengthmin << "\n";
 		*destinoFileStream << begintime->Value.Hour << " " << begintime->Value.Minute << " " << begindate->Value.Day <<
-			" " << begindate->Value.Month << " " << begindate->Value.Year <<"\n";;
+			" " << begindate->Value.Month << " " << begindate->Value.Year << "\n";;
 		*destinoFileStream << endtime->Value.Hour << " " << endtime->Value.Minute << " " << enddate->Value.Day <<
 			" " << enddate->Value.Month << " " << enddate->Value.Year << "\n";;
 		for (int i = 0; i < vect.size(); ++i)
 		{
 			*destinoFileStream << vect[i].name << " " << vect[i].amplitude << " " << vect[i].argument << "\n";;
-				
+
 		}
 		delete origenFileStream;
 		delete destinoFileStream;
@@ -1239,81 +1238,82 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 	//Método de botón de aceptar que abre ventana para guardar fichero predicción, lo guarda en .dat y muestra gráfica
 	private: System::Void acceptbutton_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-			richTextBox1->SaveFile(filename, System::Windows::Forms::RichTextBoxStreamType::PlainText);
-			std::stringstream ssExec, ssAstroFile, ssOutputFile, ssDateFile, ssFinalFile;
-			ssExec << buf << "\\long2000.exe";
-			ssAstroFile << buf << "\\Astro.dat";
-			ssOutputFile << buf << "\\Output.dat";
-			ssDateFile << buf << "\\Calc.tmp"; 
-			std::string execPath = ssExec.str();
-			std::string astroPath = ssAstroFile.str();
-			std::string outputPath = ssOutputFile.str();
-			std::string datePath = ssDateFile.str();
-			std::filebuf calctemp;
-			std::filebuf hdf;
-			transforma(msclr::interop::marshal_as<std::string>(filename->ToString()), datePath, hdf, calctemp);
-			spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);	
-			std::filebuf finalFile, outputFile;
-			saveFileDialog2->ShowDialog();
-			if (saveFileDialog2->FileName != "")
+		richTextBox1->SaveFile(filename, System::Windows::Forms::RichTextBoxStreamType::PlainText);
+		std::stringstream ssExec, ssAstroFile, ssOutputFile, ssDateFile, ssFinalFile, ssTempPredicction;
+		ssExec << buf << "\\long2000.exe";
+		ssAstroFile << buf << "\\Astro.dat";
+		ssOutputFile << buf << "\\Output.dat";
+		ssDateFile << buf << "\\Calc.tmp";
+		ssTempPredicction << buf << "\\TempPredicction.dat";
+		std::string execPath = ssExec.str();
+		std::string astroPath = ssAstroFile.str();
+		std::string outputPath = ssOutputFile.str();
+		std::string datePath = ssDateFile.str();
+		std::string tempPredictionPath = ssTempPredicction.str();
+		std::filebuf calctemp;
+		std::filebuf hdf;
+		transforma(msclr::interop::marshal_as<std::string>(filename->ToString()), datePath, hdf, calctemp);
+		spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
+		std::cout << tempPredictionPath.c_str();
+		std::cout << msclr::interop::marshal_as<std::string>(filename->ToString());
+		std::filebuf finalFile, outputFile;
+		if (!outputFile.open(outputPath.c_str(), std::ios::in) || !finalFile.open(tempPredictionPath, std::ios::out))
+		{
+
+			std::cout << "Error!" << std::endl;
+			exit(-1);
+		}
+		std::istream* outputFileStream = new std::istream(&outputFile);
+		std::ostream* finalFileStream = new std::ostream(&finalFile);
+		int lines;
+		*outputFileStream >> lines;
+		int i = 0;
+		while (i < lines)
+		{
+			std::string hour, minute, day, month, year, value;
+			int hourInt, minInt, dayInt, monthInt;
+			std::stringstream hourStream, minuteStream, dayStream, monthStream;
+
+			*outputFileStream >> hour >> minute >> day >> month >> year >> value;
+
+			hourInt = std::stoi(hour);
+			minInt = std::stoi(minute);
+			dayInt = std::stoi(day);
+			monthInt = std::stoi(month);
+
+			if (hourInt < 10)
 			{
-				if (!outputFile.open(outputPath.c_str(), std::ios::in) || !finalFile.open(msclr::interop::marshal_as<std::string>(saveFileDialog2->FileName), std::ios::out))
-				{
-					
-					std::cout << "Error!" << std::endl;
-					exit(-1);
-				}
-				std::istream* outputFileStream = new std::istream(&outputFile);
-				std::ostream* finalFileStream = new std::ostream(&finalFile);
-				int lines;
-				*outputFileStream >> lines;
-				int i = 0;
-				while (i < lines)
-				{
-					std::string hour, minute, day, month, year, value;
-					int hourInt, minInt, dayInt, monthInt;
-					std::stringstream hourStream, minuteStream, dayStream, monthStream;
-
-					*outputFileStream >> hour >> minute >> day >> month >> year >> value;
-
-					hourInt = std::stoi(hour);
-					minInt = std::stoi(minute);
-					dayInt = std::stoi(day);
-					monthInt = std::stoi(month);
-
-					if (hourInt < 10)
-					{
-						hourStream << "0" << hour;
-						hour = hourStream.str();
-					}
-					if (minInt < 10)
-					{
-						minuteStream << "0" << minInt;
-						minute = minuteStream.str();
-					}
-					if (dayInt < 10)
-					{
-						dayStream << "0" << dayInt;
-						day = dayStream.str();
-					}
-					if (monthInt < 10)
-					{
-						monthStream << "0" << monthInt;
-						month = monthStream.str();
-					}
-
-					*finalFileStream << hour << ":" << minute << " " << day << " " << month << " " << year << "  " << value << "\n";
-					i++;
-				}
-				delete outputFileStream;
-				delete finalFileStream;
-				finalFile.close();
-				outputFile.close();
-				ChartForm^ chart = gcnew ChartForm(unitbox->Text, saveFileDialog2->FileName);
-				chart->Show();
-				this->Close();
+				hourStream << "0" << hour;
+				hour = hourStream.str();
 			}
-			
+			if (minInt < 10)
+			{
+				minuteStream << "0" << minInt;
+				minute = minuteStream.str();
+			}
+			if (dayInt < 10)
+			{
+				dayStream << "0" << dayInt;
+				day = dayStream.str();
+			}
+			if (monthInt < 10)
+			{
+				monthStream << "0" << monthInt;
+				month = monthStream.str();
+			}
+
+			*finalFileStream << hour << ":" << minute << " " << day << " " << month << " " << year << "  " << value << "\n";
+			i++;
+		}
+		delete outputFileStream;
+		delete finalFileStream;
+		finalFile.close();
+		outputFile.close();
+		String^ temppath = gcnew String(tempPredictionPath.c_str());
+		ChartForm^ chart = gcnew ChartForm(unitbox->Text,temppath,buf);
+		chart->Show();
+		this->Close();
+
 	
 	
 	}

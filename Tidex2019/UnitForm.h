@@ -140,7 +140,7 @@ namespace Tidex2019 {
 	private: System::Void Nextbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
 			//se genera gráfica con .dat ruta pasada
-			ChartForm^ chart = gcnew ChartForm(comboBox1->Text, fileroute->FileName); //se le pasa constructor la ruta del .dat elegida y las unidades y se muestra gráfica;
+			ChartForm^ chart = gcnew ChartForm(comboBox1->Text, fileroute->FileName,nullptr); //se le pasa constructor la ruta del .dat elegida y las unidades y se muestra gráfica;
 			chart->Show();
 		}
 		catch (System::ArgumentNullException^ e)
