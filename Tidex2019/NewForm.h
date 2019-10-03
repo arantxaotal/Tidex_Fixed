@@ -1083,6 +1083,20 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 		int n = e->RowIndex;
 
 	}
+	private: bool is_number(const std::string& s)
+	{
+		int punto = 0;
+		std::string::const_iterator it = s.begin();
+		while (it != s.end() && (std::isdigit(*it)||*it=='.') &&punto<2)
+		{
+			if (*it == '.')
+			{
+				punto++;
+			}
+			++it;
+		}
+		return !s.empty() && it == s.end();			
+	}
 	 //Método que aplica los datos añadidos al cuadro de texto
 	private: System::Void updatebutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		richTextBox1->Clear();
@@ -1110,25 +1124,23 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 
 		for (int i = 0; i < dataGridView1->RowCount; ++i)
 		{
-			try
-			{
-				int valor2 = stoi(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()));
-				int valor1 = stoi(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()));
-				if ((msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != "0"
+			
+			if ((msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != "0"
 					|| msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "0")
 					&& (msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != ""
-						|| msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != ""))
-				{
+						|| msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "")&&
+					is_number(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()))&&
+						is_number(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()))&&
+				(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != "."||
+				(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "."
+				)))
+			{
 					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[0]->Value + " ");
 					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + " ");
 					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n");
-				}
 			}
-			catch (System::Exception^ e)
-			{
-				dataGridView1->Rows[i]->Cells[1]->Value = "Insert numeric value";
-				dataGridView1->Rows[i]->Cells[2]->Value = "Insert numeric value";
-			}
+			
+			
 		}
 
 
