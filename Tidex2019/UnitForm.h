@@ -23,11 +23,12 @@ namespace Tidex2019 {
 			//TODO: agregar código de constructor aquí
 			//
 		}
-		UnitForm(OpenFileDialog^ filerout, Form^indexform)
+		UnitForm(OpenFileDialog^ filerout, Form^index)
 		{
 			InitializeComponent();
 			fileroute = gcnew OpenFileDialog();
 			fileroute = filerout;
+			indexform = index;
 			
 		}
 
@@ -42,6 +43,7 @@ namespace Tidex2019 {
 				delete components;
 			}
 		}
+	private: Form^ indexform;
 	private: OpenFileDialog^ fileroute;
 	private: System::Windows::Forms::Label^ label1;
 	private: MaterialSkin::Controls::MaterialRaisedButton^ nextbutton;
@@ -141,6 +143,7 @@ namespace Tidex2019 {
 		try {
 			//se genera gráfica con .dat ruta pasada
 			ChartForm^ chart = gcnew ChartForm(comboBox1->Text, fileroute->FileName,nullptr); //se le pasa constructor la ruta del .dat elegida y las unidades y se muestra gráfica;
+			chart->MdiParent = indexform;
 			chart->Show();
 		}
 		catch (System::ArgumentNullException^ e)

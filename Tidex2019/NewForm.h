@@ -1321,6 +1321,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 		outputFile.close();
 		String^ temppath = gcnew String(tempPredictionPath.c_str());
 		ChartForm^ chart = gcnew ChartForm(unitbox->Text,temppath,buf);
+		chart->MdiParent = indexform;
 		chart->Show();
 		
 
