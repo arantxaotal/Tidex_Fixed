@@ -41,6 +41,7 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::LinkLabel^ linkLabel1;
 	private: System::Windows::Forms::LinkLabel^ linkLabel2;
 	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart1;
 
 
 
@@ -60,6 +61,9 @@ namespace Tidex2019 {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(HelpForm::typeid));
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -67,7 +71,9 @@ namespace Tidex2019 {
 			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel2 = (gcnew System::Windows::Forms::LinkLabel());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -159,13 +165,30 @@ namespace Tidex2019 {
 			this->label4->TabIndex = 7;
 			this->label4->Text = L"All rights reserved.";
 			// 
+			// chart1
+			// 
+			chartArea1->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea1);
+			legend1->Name = L"Legend1";
+			this->chart1->Legends->Add(legend1);
+			this->chart1->Location = System::Drawing::Point(848, 60);
+			this->chart1->Name = L"chart1";
+			series1->ChartArea = L"ChartArea1";
+			series1->Legend = L"Legend1";
+			series1->Name = L"Series1";
+			this->chart1->Series->Add(series1);
+			this->chart1->Size = System::Drawing::Size(450, 353);
+			this->chart1->TabIndex = 8;
+			this->chart1->Text = L"chart1";
+			// 
 			// HelpForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::Color::DarkSlateGray;
-			this->ClientSize = System::Drawing::Size(780, 547);
+			this->ClientSize = System::Drawing::Size(1376, 547);
+			this->Controls->Add(this->chart1);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->linkLabel2);
 			this->Controls->Add(this->linkLabel1);
@@ -179,6 +202,7 @@ namespace Tidex2019 {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"About";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

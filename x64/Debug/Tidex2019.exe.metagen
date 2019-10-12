@@ -12,15 +12,11 @@ Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934
 	hash=None, flags=None
 Assembly CefSharp.WinForms, Version=75.1.142.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138: 
 	hash=None, flags=None
-Assembly Kesoft.Windows.Forms.Panels, Version=1.1.*, Culture=Todos los idiomas (todos los países): 
-	hash=None, flags=None
 Assembly MaterialSkin, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
 	hash=None, flags=None
 Assembly Microsoft.VisualBasic.Compatibility, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
 	hash=None, flags=None
 Assembly Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
-	hash=None, flags=None
-Assembly netchartdir, Version=6.3.*, Culture=Todos los idiomas (todos los países): 
 	hash=None, flags=None
 Assembly netchartdir_cp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=2db5fc05de12e204: 
 	hash=None, flags=None
@@ -30,13 +26,9 @@ Assembly PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf
 	hash=None, flags=None
 Assembly PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35: 
 	hash=None, flags=None
-Assembly Simplify.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76e7d56d397d79b9: 
-	hash=None, flags=None
 Assembly stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
 	hash=None, flags=None
 Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
-	hash=None, flags=None
-Assembly System.Data.CData.Box, Version=18.0.0.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf: 
 	hash=None, flags=None
 Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
@@ -62,6 +54,8 @@ Class Tidex2019.ChartForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.String, System.String, SByte*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Savedatabutton_Click(Object, EventArgs): PrivateScope, Public, HideBySig
 Class Tidex2019.ErrorForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -71,15 +65,19 @@ Class Tidex2019.ErrorFormatForm: AutoLayout, AnsiClass, Class, Public, BeforeFie
 Class Tidex2019.HelpForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Tidex2019.UnitForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.OpenFileDialog, System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Tidex2019.NewForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.String, SByte*, System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(SByte*, System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Tidex2019.UnitForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(System.Windows.Forms.OpenFileDialog, System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Harmonicsavebutton_Click(Object, EventArgs): PrivateScope, Public, HideBySig
 Class Tidex2019.IndexForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.ToolStripButton ClockButton : Public

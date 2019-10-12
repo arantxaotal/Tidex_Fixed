@@ -171,7 +171,7 @@ namespace Tidex2019 {
 			{
 				coordinatesmin2->Value = stoi(lengthmin);
 			}
-			depth->Value = stoi(depth1);
+			//int depth = stoi(depth1);
 			for (int j = 0; j < vect.size() - 1; j++)
 			{
 				//add nueva fila
@@ -228,7 +228,7 @@ namespace Tidex2019 {
 
 			richTextBox1->AppendText(coordinatesg1 + " " + coordinatesm1 +
 				"\n" + coordinatesg2 + " " + coordinatesm2 + "\n");
-			richTextBox1->AppendText(depth->Value + "\n");
+			richTextBox1->AppendText(0 + "\n");
 
 
 			for (int i = 0; i < dataGridView1->RowCount; ++i)
@@ -255,7 +255,9 @@ namespace Tidex2019 {
 			{
 				delete components;
 			}
+			
 		}
+		  	   
 	private: Form^ indexform;
 	private: String^ filename;
 	private: char *buf;
@@ -263,12 +265,12 @@ namespace Tidex2019 {
 	protected:
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label4;
+
 	private: System::Windows::Forms::ComboBox^ ewbox;
 	private: System::Windows::Forms::NumericUpDown^ coordinatesdeg2;
 	private: System::Windows::Forms::NumericUpDown^ coordinatesdeg1;
 	private: System::Windows::Forms::ComboBox^ namebox;
-	private: System::Windows::Forms::NumericUpDown^ depth;
+
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Label^ label11;
@@ -276,7 +278,7 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::NumericUpDown^ coordinatesmin2;
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::Label^ label17;
-	private: System::Windows::Forms::Label^ label18;
+
 	private: System::Windows::Forms::DateTimePicker^ begindate;
 	private: System::Windows::Forms::DateTimePicker^ enddate;
 	private: System::Windows::Forms::NumericUpDown^ coordinatesmin1;
@@ -339,12 +341,10 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->label1 = (gcnew System::Windows::Forms::Label());
 				 this->label2 = (gcnew System::Windows::Forms::Label());
 				 this->label3 = (gcnew System::Windows::Forms::Label());
-				 this->label4 = (gcnew System::Windows::Forms::Label());
 				 this->ewbox = (gcnew System::Windows::Forms::ComboBox());
 				 this->coordinatesdeg2 = (gcnew System::Windows::Forms::NumericUpDown());
 				 this->coordinatesdeg1 = (gcnew System::Windows::Forms::NumericUpDown());
 				 this->namebox = (gcnew System::Windows::Forms::ComboBox());
-				 this->depth = (gcnew System::Windows::Forms::NumericUpDown());
 				 this->label8 = (gcnew System::Windows::Forms::Label());
 				 this->label10 = (gcnew System::Windows::Forms::Label());
 				 this->label11 = (gcnew System::Windows::Forms::Label());
@@ -352,7 +352,6 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->coordinatesmin2 = (gcnew System::Windows::Forms::NumericUpDown());
 				 this->label13 = (gcnew System::Windows::Forms::Label());
 				 this->label17 = (gcnew System::Windows::Forms::Label());
-				 this->label18 = (gcnew System::Windows::Forms::Label());
 				 this->begindate = (gcnew System::Windows::Forms::DateTimePicker());
 				 this->enddate = (gcnew System::Windows::Forms::DateTimePicker());
 				 this->coordinatesmin1 = (gcnew System::Windows::Forms::NumericUpDown());
@@ -387,7 +386,6 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg2))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg1))->BeginInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->depth))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesmin2))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesmin1))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -434,19 +432,6 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->label3->TabIndex = 2;
 				 this->label3->Text = L"Coordinates";
 				 // 
-				 // label4
-				 // 
-				 this->label4->AutoSize = true;
-				 this->label4->BackColor = System::Drawing::Color::Transparent;
-				 this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-					 static_cast<System::Byte>(0)));
-				 this->label4->ForeColor = System::Drawing::Color::Black;
-				 this->label4->Location = System::Drawing::Point(41, 210);
-				 this->label4->Name = L"label4";
-				 this->label4->Size = System::Drawing::Size(56, 20);
-				 this->label4->TabIndex = 3;
-				 this->label4->Text = L"Depth";
-				 // 
 				 // ewbox
 				 // 
 				 this->ewbox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -491,23 +476,11 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 						 L"SO3", L"MK3", L"SK3", L"MN4", L"M4", L"SN4", L"MS4", L"MK4", L"S4", L"SK4", L"2MK5", L"2SK5", L"2MN6", L"M6", L"2MS6", L"2MK6",
 						 L"2SM6", L"MSK6", L"3MK7", L"M8", L"M10"
 				 });
-				 this->namebox->Location = System::Drawing::Point(655, 227);
+				 this->namebox->Location = System::Drawing::Point(662, 227);
 				 this->namebox->Name = L"namebox";
 				 this->namebox->Size = System::Drawing::Size(71, 28);
 				 this->namebox->TabIndex = 36;
 				 this->namebox->Text = L"Z0";
-				 // 
-				 // depth
-				 // 
-				 this->depth->DecimalPlaces = 4;
-				 this->depth->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-					 static_cast<System::Byte>(0)));
-				 this->depth->Location = System::Drawing::Point(103, 201);
-				 this->depth->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 11022, 0, 0, 0 });
-				 this->depth->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 11022, 0, 0, System::Int32::MinValue });
-				 this->depth->Name = L"depth";
-				 this->depth->Size = System::Drawing::Size(184, 29);
-				 this->depth->TabIndex = 37;
 				 // 
 				 // label8
 				 // 
@@ -516,7 +489,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label8->ForeColor = System::Drawing::Color::Black;
-				 this->label8->Location = System::Drawing::Point(704, 21);
+				 this->label8->Location = System::Drawing::Point(444, 25);
 				 this->label8->Name = L"label8";
 				 this->label8->Size = System::Drawing::Size(47, 20);
 				 this->label8->TabIndex = 41;
@@ -598,35 +571,26 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->label17->TabIndex = 53;
 				 this->label17->Text = L"Data File for Assimilation";
 				 // 
-				 // label18
-				 // 
-				 this->label18->AutoSize = true;
-				 this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-					 static_cast<System::Byte>(0)));
-				 this->label18->Location = System::Drawing::Point(292, 210);
-				 this->label18->Name = L"label18";
-				 this->label18->Size = System::Drawing::Size(24, 20);
-				 this->label18->TabIndex = 58;
-				 this->label18->Text = L"m";
-				 // 
 				 // begindate
 				 // 
 				 this->begindate->CalendarTitleBackColor = System::Drawing::Color::SteelBlue;
 				 this->begindate->CustomFormat = L"";
 				 this->begindate->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
+				 this->begindate->Format = System::Windows::Forms::DateTimePickerFormat::Short;
 				 this->begindate->Location = System::Drawing::Point(296, 51);
 				 this->begindate->Name = L"begindate";
-				 this->begindate->Size = System::Drawing::Size(402, 29);
+				 this->begindate->Size = System::Drawing::Size(146, 29);
 				 this->begindate->TabIndex = 59;
 				 // 
 				 // enddate
 				 // 
 				 this->enddate->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
+				 this->enddate->Format = System::Windows::Forms::DateTimePickerFormat::Short;
 				 this->enddate->Location = System::Drawing::Point(296, 86);
 				 this->enddate->Name = L"enddate";
-				 this->enddate->Size = System::Drawing::Size(402, 29);
+				 this->enddate->Size = System::Drawing::Size(146, 29);
 				 this->enddate->TabIndex = 60;
 				 // 
 				 // coordinatesmin1
@@ -656,7 +620,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->dataGridView1->Location = System::Drawing::Point(44, 260);
 				 this->dataGridView1->Name = L"dataGridView1";
 				 this->dataGridView1->RowHeadersWidth = 51;
-				 this->dataGridView1->Size = System::Drawing::Size(1057, 172);
+				 this->dataGridView1->Size = System::Drawing::Size(1064, 172);
 				 this->dataGridView1->TabIndex = 62;
 				 this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &NewForm::dataGridView1_CellContentClick);
 				 // 
@@ -693,7 +657,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label5->ForeColor = System::Drawing::Color::Black;
-				 this->label5->Location = System::Drawing::Point(651, 202);
+				 this->label5->Location = System::Drawing::Point(658, 202);
 				 this->label5->Name = L"label5";
 				 this->label5->Size = System::Drawing::Size(55, 20);
 				 this->label5->TabIndex = 63;
@@ -707,7 +671,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label6->ForeColor = System::Drawing::Color::Black;
-				 this->label6->Location = System::Drawing::Point(727, 205);
+				 this->label6->Location = System::Drawing::Point(734, 205);
 				 this->label6->Name = L"label6";
 				 this->label6->Size = System::Drawing::Size(88, 20);
 				 this->label6->TabIndex = 64;
@@ -721,7 +685,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label7->ForeColor = System::Drawing::Color::Black;
-				 this->label7->Location = System::Drawing::Point(935, 202);
+				 this->label7->Location = System::Drawing::Point(942, 202);
 				 this->label7->Name = L"label7";
 				 this->label7->Size = System::Drawing::Size(86, 20);
 				 this->label7->TabIndex = 65;
@@ -730,10 +694,10 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 // amplitudebox
 				 // 
 				 this->amplitudebox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-				 this->amplitudebox->DecimalPlaces = 5;
+				 this->amplitudebox->DecimalPlaces = 4;
 				 this->amplitudebox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->amplitudebox->Location = System::Drawing::Point(731, 226);
+				 this->amplitudebox->Location = System::Drawing::Point(738, 226);
 				 this->amplitudebox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 900, 0, 0, 0 });
 				 this->amplitudebox->Name = L"amplitudebox";
 				 this->amplitudebox->Size = System::Drawing::Size(137, 29);
@@ -742,14 +706,15 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 // argumentbox
 				 // 
 				 this->argumentbox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-				 this->argumentbox->DecimalPlaces = 5;
+				 this->argumentbox->DecimalPlaces = 4;
 				 this->argumentbox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->argumentbox->Location = System::Drawing::Point(937, 225);
+				 this->argumentbox->Location = System::Drawing::Point(944, 225);
 				 this->argumentbox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 360, 0, 0, 0 });
 				 this->argumentbox->Name = L"argumentbox";
 				 this->argumentbox->Size = System::Drawing::Size(137, 29);
 				 this->argumentbox->TabIndex = 67;
+				 this->argumentbox->TabStop = false;
 				 // 
 				 // nsbox
 				 // 
@@ -796,7 +761,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->updatebutton->BackColor = System::Drawing::Color::DeepSkyBlue;
 				 this->updatebutton->Depth = 0;
 				 this->updatebutton->ForeColor = System::Drawing::SystemColors::ControlText;
-				 this->updatebutton->Location = System::Drawing::Point(980, 439);
+				 this->updatebutton->Location = System::Drawing::Point(987, 439);
 				 this->updatebutton->Margin = System::Windows::Forms::Padding(4, 6, 4, 6);
 				 this->updatebutton->MouseState = MaterialSkin::MouseState::HOVER;
 				 this->updatebutton->Name = L"updatebutton";
@@ -815,7 +780,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->addbutton->Depth = 0;
 				 this->addbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->addbutton->Location = System::Drawing::Point(1080, 223);
+				 this->addbutton->Location = System::Drawing::Point(1087, 223);
 				 this->addbutton->Margin = System::Windows::Forms::Padding(4, 6, 4, 6);
 				 this->addbutton->MouseState = MaterialSkin::MouseState::HOVER;
 				 this->addbutton->Name = L"addbutton";
@@ -882,7 +847,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->begintime->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->begintime->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-				 this->begintime->Location = System::Drawing::Point(709, 50);
+				 this->begintime->Location = System::Drawing::Point(448, 51);
 				 this->begintime->Name = L"begintime";
 				 this->begintime->ShowUpDown = true;
 				 this->begintime->Size = System::Drawing::Size(82, 29);
@@ -895,7 +860,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->endtime->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->endtime->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-				 this->endtime->Location = System::Drawing::Point(709, 86);
+				 this->endtime->Location = System::Drawing::Point(448, 86);
 				 this->endtime->Name = L"endtime";
 				 this->endtime->ShowUpDown = true;
 				 this->endtime->Size = System::Drawing::Size(82, 29);
@@ -912,7 +877,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 // 
 				 this->acceptbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 				 this->acceptbutton->Depth = 0;
-				 this->acceptbutton->Location = System::Drawing::Point(863, 681);
+				 this->acceptbutton->Location = System::Drawing::Point(748, 682);
 				 this->acceptbutton->MouseState = MaterialSkin::MouseState::HOVER;
 				 this->acceptbutton->Name = L"acceptbutton";
 				 this->acceptbutton->Primary = true;
@@ -926,7 +891,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 // 
 				 this->cancelbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 				 this->cancelbutton->Depth = 0;
-				 this->cancelbutton->Location = System::Drawing::Point(985, 681);
+				 this->cancelbutton->Location = System::Drawing::Point(992, 681);
 				 this->cancelbutton->MouseState = MaterialSkin::MouseState::HOVER;
 				 this->cancelbutton->Name = L"cancelbutton";
 				 this->cancelbutton->Primary = true;
@@ -954,7 +919,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 					 static_cast<System::Byte>(0)));
 				 this->unitbox->FormattingEnabled = true;
 				 this->unitbox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"cm", L"m", L"cm/s", L"m/s" });
-				 this->unitbox->Location = System::Drawing::Point(874, 226);
+				 this->unitbox->Location = System::Drawing::Point(881, 226);
 				 this->unitbox->Name = L"unitbox";
 				 this->unitbox->Size = System::Drawing::Size(58, 28);
 				 this->unitbox->TabIndex = 91;
@@ -983,7 +948,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 // 
 				 this->harmonicsavebutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 				 this->harmonicsavebutton->Depth = 0;
-				 this->harmonicsavebutton->Location = System::Drawing::Point(742, 682);
+				 this->harmonicsavebutton->Location = System::Drawing::Point(870, 682);
 				 this->harmonicsavebutton->MouseState = MaterialSkin::MouseState::HOVER;
 				 this->harmonicsavebutton->Name = L"harmonicsavebutton";
 				 this->harmonicsavebutton->Primary = true;
@@ -1013,7 +978,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->BackColor = System::Drawing::Color::PowderBlue;
-				 this->ClientSize = System::Drawing::Size(1115, 729);
+				 this->ClientSize = System::Drawing::Size(1122, 729);
 				 this->Controls->Add(this->comboBox1);
 				 this->Controls->Add(this->harmonicsavebutton);
 				 this->Controls->Add(this->unitbox);
@@ -1040,7 +1005,6 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->Controls->Add(this->coordinatesmin1);
 				 this->Controls->Add(this->enddate);
 				 this->Controls->Add(this->begindate);
-				 this->Controls->Add(this->label18);
 				 this->Controls->Add(this->label17);
 				 this->Controls->Add(this->label13);
 				 this->Controls->Add(this->coordinatesmin2);
@@ -1048,12 +1012,10 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->Controls->Add(this->label11);
 				 this->Controls->Add(this->label10);
 				 this->Controls->Add(this->label8);
-				 this->Controls->Add(this->depth);
 				 this->Controls->Add(this->namebox);
 				 this->Controls->Add(this->coordinatesdeg2);
 				 this->Controls->Add(this->coordinatesdeg1);
 				 this->Controls->Add(this->ewbox);
-				 this->Controls->Add(this->label4);
 				 this->Controls->Add(this->label3);
 				 this->Controls->Add(this->label2);
 				 this->Controls->Add(this->label1);
@@ -1064,7 +1026,6 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->Text = L"Data for prediction";
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg2))->EndInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg1))->EndInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->depth))->EndInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesmin2))->EndInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesmin1))->EndInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
@@ -1119,7 +1080,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 
 		richTextBox1->AppendText(coordinatesg1 + " " + coordinatesm1 +
 			"\n" + coordinatesg2 + " " + coordinatesm2 + "\n");
-		richTextBox1->AppendText(depth->Value + "\n");
+		richTextBox1->AppendText(0 + "\n");
 
 
 		for (int i = 0; i < dataGridView1->RowCount; ++i)
@@ -1179,6 +1140,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 			}
 			i++;
 		}
+		
 
 		dataGridView1->Rows[x]->Cells[1]->Value = msclr::interop::marshal_as<String^>(amplitude);
 		dataGridView1->Rows[x]->Cells[2]->Value = msclr::interop::marshal_as<String^>(argument);
@@ -1323,7 +1285,6 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 		ChartForm^ chart = gcnew ChartForm(unitbox->Text,temppath,buf);
 		chart->MdiParent = indexform;
 		chart->Show();
-		
 
 	
 	
@@ -1331,16 +1292,20 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 	//Método de botón de cerrar ventana
 	private: System::Void cancelbutton_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
+
 	}
 //Método que guarda un fichero .hdf
-private: System::Void Harmonicsavebutton_Click(System::Object^ sender, System::EventArgs^ e) {
-	saveFileDialog1->ShowDialog();
+public: System::Void Harmonicsavebutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	try { saveFileDialog1->ShowDialog(); 
 	if (saveFileDialog1->FileName != "")
 	{
 		filename = saveFileDialog1->FileName;
 		richTextBox1->SaveFile(saveFileDialog1->FileName, System::Windows::Forms::RichTextBoxStreamType::PlainText);
 		acceptbutton->Visible = true;
 	}
+	}
+	catch (Exception ^ e) {};
+
 }
 };
 }

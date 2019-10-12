@@ -1,1 +1,47 @@
-﻿
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2106,5): warning MSB3245: No se pudo resolver esta referencia. No se encuentra el ensamblado "Kesoft.Windows.Forms.Panels". Compruebe si el ensamblado existe en el disco. Si el código necesita esta referencia, podrían producirse errores de compilación.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2106,5): warning MSB3245: No se pudo resolver esta referencia. No se encuentra el ensamblado "netchartdir". Compruebe si el ensamblado existe en el disco. Si el código necesita esta referencia, podrían producirse errores de compilación.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2106,5): warning MSB3245: No se pudo resolver esta referencia. No se encuentra el ensamblado "Simplify.Windows.Forms". Compruebe si el ensamblado existe en el disco. Si el código necesita esta referencia, podrían producirse errores de compilación.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2106,5): warning MSB3245: No se pudo resolver esta referencia. No se encuentra el ensamblado "System.Data.CData.Box". Compruebe si el ensamblado existe en el disco. Si el código necesita esta referencia, podrían producirse errores de compilación.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2726,5): warning MSB3284: No se puede obtener la ruta de acceso del archivo para la biblioteca de tipos "f5ff9341-a330-4f55-a3c1-d319b6803906", versión 19.0. Biblioteca no registrada. (Excepción de HRESULT: 0x8002801D (TYPE_E_LIBNOTREGISTERED))
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2726,5): warning MSB3284: No se puede obtener la ruta de acceso del archivo para la biblioteca de tipos "8af7b5a5-6781-4bb0-9c5d-9707a4564166", versión 19.0. Biblioteca no registrada. (Excepción de HRESULT: 0x8002801D (TYPE_E_LIBNOTREGISTERED))
+  ChartForm.cpp
+  ErrorForm.cpp
+  ErrorFormatForm.cpp
+  Helper.cpp
+  HelpForm.cpp
+  IndexForm.cpp
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(74,1): warning C4965: conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(75,1): warning C4965: conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(106,1): warning C4965: conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(107,1): warning C4965: conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(175,22): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(186,14): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(195,14): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(1165,12): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(1174,12): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(1240,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(1268,1): warning C4996: 'spawnl': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _spawnl. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : vea la declaración de 'spawnl'
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\UnitForm.h(149,41): warning C4101: 'e': variable local sin referencia
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\IndexForm.h(348,37): warning C4101: 'e': variable local sin referencia
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\IndexForm.h(355,59): warning C4101: 'e': variable local sin referencia
+  NewForm.cpp
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\IndexForm.h(362,47): warning C4101: 'e': variable local sin referencia
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(74,1): warning C4965: conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(75,1): warning C4965: conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(106,1): warning C4965: conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(107,1): warning C4965: conversión boxing implícita de entero 0; utilice nullptr o conversión explícita
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(175,22): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(186,14): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(195,14): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(1165,12): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(1174,12): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(1240,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\NewForm.h(1268,1): warning C4996: 'spawnl': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _spawnl. See online help for details.
+  UnitForm.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h(303): message : vea la declaración de 'spawnl'
+  Generando código...
+C:\Users\Arantxa\Documents\TIDEX\Tidex2019\UnitForm.h(149,41): warning C4101: 'e': variable local sin referencia
+  .NETFramework,Version=4.6.1.AssemblyAttributes.cpp
+  ChartForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  Tidex2019.vcxproj -> C:\Users\Arantxa\Documents\TIDEX\Debug\Tidex2019.exe

@@ -49,9 +49,7 @@ namespace Tidex2019 {
 	// Load the data
 	//
 	private: char* buf;
-	private:
-
-		String^ filename;
+	private:	String^ filename;
 	private: System::Windows::Forms::Panel^ leftPanel;
 	private: System::Windows::Forms::Button^ savePB;
 	private: System::Windows::Forms::Label^ separatorLine;
@@ -64,6 +62,7 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::PrintDialog^ printDialog1;
 	private: System::Windows::Forms::Button^ savedatabutton;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog2;
+
 
 
 
@@ -153,18 +152,20 @@ namespace Tidex2019 {
 			// savedatabutton
 			// 
 			this->savedatabutton->BackColor = System::Drawing::Color::Azure;
+			this->savedatabutton->Cursor = System::Windows::Forms::Cursors::Default;
 			this->savedatabutton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->savedatabutton->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.07563F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->savedatabutton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"savedatabutton.Image")));
-			this->savedatabutton->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->savedatabutton->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
 			this->savedatabutton->Location = System::Drawing::Point(0, 135);
 			this->savedatabutton->Margin = System::Windows::Forms::Padding(2);
 			this->savedatabutton->Name = L"savedatabutton";
+			this->savedatabutton->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->savedatabutton->Size = System::Drawing::Size(90, 51);
 			this->savedatabutton->TabIndex = 39;
-			this->savedatabutton->Text = L"        Save Data";
-			this->savedatabutton->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->savedatabutton->Text = L"Save  \r\nPrediction";
+			this->savedatabutton->TextAlign = System::Drawing::ContentAlignment::BottomRight;
 			this->savedatabutton->UseMnemonic = false;
 			this->savedatabutton->UseVisualStyleBackColor = false;
 			this->savedatabutton->Click += gcnew System::EventHandler(this, &ChartForm::Savedatabutton_Click);
@@ -301,6 +302,7 @@ namespace Tidex2019 {
 			this->viewPortControl1->TabIndex = 93;
 			this->viewPortControl1->TabStop = false;
 			this->viewPortControl1->Viewer = this->winChartViewer1;
+			this->viewPortControl1->Visible = false;
 			// 
 			// printDialog1
 			// 
@@ -460,33 +462,32 @@ namespace Tidex2019 {
 			c = gcnew ChartDirector::XYChart(900,600);
 			c->setPlotArea(55, 55, c->getWidth() - 80, c->getHeight() - 90, c->linearGradientColor(0, 55, 0, c->getHeight() - 35, 0xf0f6ff, 0x99F3DF), -1, ChartDirector::Chart::Transparent, 0xffffff, 0xffffff);
 			c->setClipping();
-			c->addTitle("Predicción de mareas", "msjh.ttc", 20, 0x555555);
+			c->addTitle("Tide Prediction", "msjh.ttc", 20, 0x555555);
 			c->getLegend()->setLineStyleKey();
 			c->getLegend()->setFontSize(10);
-
 			c->xAxis()->setColors(ChartDirector::Chart::Transparent, ChartDirector::Chart::TextColor, ChartDirector::Chart::TextColor, 0xaaaaaa);
 			c->yAxis()->setColors(ChartDirector::Chart::Transparent);
 			c->xAxis()->setLabelStyle("msjh.ttc", 10);
 			c->yAxis()->setLabelStyle("msjh.ttc", 10);
 			if (unit == "cm/s")
 			{
-				c->yAxis()->setTitle("Velocidad cm/s", "msjh.ttc", 10);
+				c->yAxis()->setTitle("Velocity (cm/s)", "msjh.ttc", 10);
 			}
 			else
 			{
 				if (unit == "m")
 				{
-					c->yAxis()->setTitle("Metros", "msjh.ttc", 10);
+					c->yAxis()->setTitle("Sea Level (m)", "msjh.ttc", 10);
 				}
 				else
 				{
 					if (unit == "cm")
 					{
-						c->yAxis()->setTitle("Centímetros", "msjh.ttc", 10);
-					}else c->yAxis()->setTitle("Velocidad m/s", "msjh.ttc", 10);
+						c->yAxis()->setTitle("Sea Level (cm)", "msjh.ttc", 10);
+					}else c->yAxis()->setTitle("Velocity (m/s)", "msjh.ttc", 10);
 				}
 			}
-			c->xAxis()->setTitle("Tiempo", "msjh.ttc", 14, 0x555555);
+			c->xAxis()->setTitle("Time", "msjh.ttc", 14, 0x555555);
 
 			c->addLineLayer(result2);
 			c->xAxis()->setLabels(labels2);
@@ -541,7 +542,7 @@ namespace Tidex2019 {
 
 			std::ostringstream legendText;
 			int actualValue = (int)floor(xValue);
-			legendText << "<*block,maxWidth=" << plotArea->getWidth() << "*><*block*><*font=arialbd.ttf*>[" << msclr::interop::marshal_as<std::string>(c->xAxis()->getFormattedLabel(xValue, "mm/dd/yyyy")) << "][" << " Valor: " << result2[actualValue] << "]<*/*>";
+			legendText << "<*block,maxWidth=" << plotArea->getWidth() << "*><*block*><*font=arialbd.ttf*>[" << msclr::interop::marshal_as<std::string>(c->xAxis()->getFormattedLabel(xValue, "mm/dd/yyyy")) << "][" << " Value: " << result2[actualValue] << "]<*/*>";
 
 			for (int i = ((int)legendEntries.size()) - 1; i >= 0; --i)
 				legendText << "        " << legendEntries[i];
@@ -715,7 +716,7 @@ private: System::Void PrintDocument1_PrintPage(System::Object^ sender, System::D
 
 }
 
-private: System::Void Savedatabutton_Click(System::Object^ sender, System::EventArgs^ e) {
+public: System::Void Savedatabutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	saveFileDialog2->ShowDialog();
 	if (saveFileDialog2->FileName != "")
 	{

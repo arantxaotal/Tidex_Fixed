@@ -1,4 +1,4 @@
-#include "ChartForm.h"
+#include"ChartForm.h"
 #include "ErrorForm.h"
 #pragma once
 namespace Tidex2019 {
