@@ -328,6 +328,8 @@ namespace Tidex2019 {
 			this->Controls->Add(this->winChartViewer1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
+			this->MaximumSize = System::Drawing::Size(1041, 756);
+			this->MinimumSize = System::Drawing::Size(1041, 756);
 			this->Name = L"ChartForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Chart view ";
