@@ -400,6 +400,7 @@ private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs
 					ErrorFormatForm^ error = gcnew ErrorFormatForm();
 					error->MdiParent = this;
 					error->Show();
+
 				}
 			}
 			catch (System::Runtime::InteropServices::SEHException^ e)
