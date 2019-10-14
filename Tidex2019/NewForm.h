@@ -1,10 +1,10 @@
 #pragma once
-#include "ChartForm.h"
 #include <fstream>
 #include <string>
 #include <iostream>
 #include <process.h>
 #include <msclr/marshal.h>
+#include "ChartForm.h"
 namespace Tidex2019 {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -23,6 +23,7 @@ namespace Tidex2019 {
 
 	public ref class NewForm : public System::Windows::Forms::Form
 	{
+
 	private: int buscaindice(std::string name)
 	{
 		int indice = 1;
@@ -257,7 +258,8 @@ namespace Tidex2019 {
 			}
 			
 		}
-		  	   
+	public:
+
 	private: Form^ indexform;
 	private: String^ filename;
 	private: char *buf;
@@ -812,7 +814,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 // begintime
 				 // 
 				 this->begintime->CalendarTitleBackColor = System::Drawing::Color::SteelBlue;
-				 this->begintime->CustomFormat = L"hh:mm";
+				 this->begintime->CustomFormat = L"HH:mm";
 				 this->begintime->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->begintime->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
@@ -825,7 +827,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 // endtime
 				 // 
 				 this->endtime->CalendarTitleBackColor = System::Drawing::Color::SteelBlue;
-				 this->endtime->CustomFormat = L"hh:mm";
+				 this->endtime->CustomFormat = L"HH:mm";
 				 this->endtime->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->endtime->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
@@ -1036,7 +1038,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 		richTextBox1->AppendText(coordinatesg1 + " " + coordinatesm1 +
 			"\n" + coordinatesg2 + " " + coordinatesm2 + "\n");
 		richTextBox1->AppendText(0 + "\n");
-
+		
 
 		for (int i = 0; i < dataGridView1->RowCount; ++i)
 		{
@@ -1178,7 +1180,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 		std::filebuf calctemp;
 		std::filebuf hdf;
 		transforma(msclr::interop::marshal_as<std::string>(filename->ToString()), datePath, hdf, calctemp);
-		spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
+		_spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
 		std::filebuf finalFile, outputFile;
 		if (!outputFile.open(outputPath.c_str(), std::ios::in) || !finalFile.open(tempPredictionPath, std::ios::out))
 		{
@@ -1232,12 +1234,11 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 		delete finalFileStream;
 		finalFile.close();
 		outputFile.close();
+		//RelationHelper^ relation = gcnew RelationHelper(this);
 		String^ temppath = gcnew String(tempPredictionPath.c_str());
 		ChartForm^ chart = gcnew ChartForm(unitbox->Text,temppath,buf);
 		chart->MdiParent = indexform;
 		chart->Show();
-
-	
 	
 	}
 	//Método de botón de cerrar ventana
@@ -1255,7 +1256,7 @@ public: System::Void Harmonicsavebutton_Click(System::Object^ sender, System::Ev
 		acceptbutton->Visible = true;
 	}
 	}
-	catch (Exception ^ e) {};
+	catch (System::Exception ^ e) {};
 
 }
 };

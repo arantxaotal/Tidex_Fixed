@@ -47,7 +47,6 @@ namespace Tidex2019 {
 				delete components;
 			}
 		}
-	private: NewForm^ newForm;
 	private: Helper ^helper;
 	private: System::Windows::Forms::MenuStrip^  menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^  FILE;
@@ -304,6 +303,7 @@ namespace Tidex2019 {
 			this->ClockButton->Size = System::Drawing::Size(36, 36);
 			this->ClockButton->Text = L"modify";
 			this->ClockButton->ToolTipText = L"Modify hdf";
+			this->ClockButton->Click += gcnew System::EventHandler(this, &IndexForm::ClockButton_Click);
 			// 
 			// openFileDialog1
 			// 
@@ -360,6 +360,7 @@ namespace Tidex2019 {
 			NewForm^ newForm = gcnew NewForm(helper->buf, this);
 			newForm->MdiParent = this;
 			newForm->Show();
+			
 
 	}
 		   // FormClosed event
@@ -468,5 +469,8 @@ private: System::Void SavedattoolStripMenuItem_Click(System::Object^ sender, Sys
 private: System::Void SaveCharttoolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 
+private: System::Void ClockButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+}
 };
 }

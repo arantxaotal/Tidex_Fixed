@@ -157,17 +157,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Reference Include="Kesoft.Windows.Forms.Panels">
-      <HintPath>..\packages\Kesoft.Windows.Forms.Panels.1.1.4.0\lib\net20\Kesoft.Windows.Forms.Panels.dll</HintPath>
-    </Reference>
     <Reference Include="MaterialSkin">
       <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Microsoft.Build.Conversion.v4.0" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.Compatibility" />
-    <Reference Include="netchartdir">
-      <HintPath>..\packages\ChartDirector\NetMvcCharts\bin\netchartdir.dll</HintPath>
-    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility.Data" />
+    <Reference Include="Microsoft.VisualStudio.VC.Interfaces, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.VCCodeModel, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.VCProject, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.VCProjectEngine, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="netchartdir_cp">
       <HintPath>..\packages\ChartDirector\lib\signed_client_profile\netchartdir_cp.dll</HintPath>
     </Reference>
@@ -176,18 +179,12 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="Simplify.Windows.Forms">
-      <HintPath>..\packages\Simplify.Windows.Forms.1.0.0\lib\net40\Simplify.Windows.Forms.dll</HintPath>
-    </Reference>
     <Reference Include="stdole">
       <HintPath>stdole</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.CData.Box">
-      <HintPath>..\packages\CData.Box.18.0.6883\lib\netstandard2.0\System.Data.CData.Box.dll</HintPath>
-    </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -205,6 +202,7 @@
     <ClCompile Include="HelpForm.cpp" />
     <ClCompile Include="IndexForm.cpp" />
     <ClCompile Include="NewForm.cpp" />
+    <ClCompile Include="RelationHelper.cpp" />
     <ClCompile Include="UnitForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -227,6 +225,7 @@
     <ClInclude Include="NewForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="RelationHelper.h" />
     <ClInclude Include="resource1.h" />
     <ClInclude Include="UnitForm.h">
       <FileType>CppForm</FileType>
@@ -263,24 +262,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="SampleCode\WinFormApplicationVersionSampleCode.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="VFProjExtLib.19.0.dll">
-      <Guid>f5ff9341-a330-4f55-a3c1-d319b6803906</Guid>
-      <VersionMajor>19</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>false</Isolated>
-    </COMReference>
-    <COMReference Include="VFProjPKGLib.19.0.dll">
-      <Guid>8af7b5a5-6781-4bb0-9c5d-9707a4564166</Guid>
-      <VersionMajor>19</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>false</Isolated>
-    </COMReference>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Tidex20191.rc" />

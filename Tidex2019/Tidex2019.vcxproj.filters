@@ -45,6 +45,9 @@
     <ClCompile Include="ErrorFormatForm.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="RelationHelper.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NewForm.h">
@@ -72,6 +75,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="ErrorFormatForm.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="RelationHelper.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
@@ -106,6 +112,12 @@
     <None Include="@(CefSharpWinFormsBinaries32)" />
     <None Include="@(CefSharpWinFormsBinaries32)" />
     <None Include="@(CefSharpWinFormsBinaries32)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />
