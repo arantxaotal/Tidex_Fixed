@@ -396,6 +396,7 @@ private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs
 				}
 				catch (System::FormatException^ e)
 				{
+					e->Message;
 					ErrorFormatForm^ error = gcnew ErrorFormatForm();
 					error->MdiParent = this;
 					error->Show();
@@ -403,6 +404,7 @@ private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs
 			}
 			catch (System::Runtime::InteropServices::SEHException^ e)
 			{
+				e->Message;
 				ErrorForm^ error = gcnew ErrorForm();
 				error->MdiParent = this;
 				error->Show();
@@ -410,6 +412,7 @@ private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs
 		}
 		catch (System::ArgumentOutOfRangeException^ e)
 		{
+			e->Message;
 			ErrorFormatForm^ error = gcnew ErrorFormatForm();
 			error->MdiParent = this;
 			error->Show();

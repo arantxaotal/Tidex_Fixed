@@ -72,8 +72,8 @@ namespace Tidex2019 {
 				dataGridView1->Rows[x]->Cells[0]->Value = name2;
 				int i = 0;
 
-				dataGridView1->Rows[x]->Cells[1]->Value = 0;
-				dataGridView1->Rows[x]->Cells[2]->Value = 0;
+				dataGridView1->Rows[x]->Cells[1]->Value = safe_cast<System::Object^>(0);
+				dataGridView1->Rows[x]->Cells[2]->Value = safe_cast<System::Object^>(0);
 
 			}
 			acceptbutton->Visible = false;
@@ -104,8 +104,8 @@ namespace Tidex2019 {
 				dataGridView1->Rows[x]->Cells[0]->Value = name2;
 				int i = 0;
 
-				dataGridView1->Rows[x]->Cells[1]->Value = 0;
-				dataGridView1->Rows[x]->Cells[2]->Value = 0;
+				dataGridView1->Rows[x]->Cells[1]->Value = safe_cast<System::Object^>(0);
+				dataGridView1->Rows[x]->Cells[2]->Value = safe_cast<System::Object^>(0);
 
 			}
 			buf = bufer;
@@ -229,7 +229,7 @@ namespace Tidex2019 {
 
 			richTextBox1->AppendText(coordinatesg1 + " " + coordinatesm1 +
 				"\n" + coordinatesg2 + " " + coordinatesm2 + "\n");
-			richTextBox1->AppendText(0 + "\n");
+			richTextBox1->AppendText("0" + "\n");
 
 
 			for (int i = 0; i < dataGridView1->RowCount; ++i)
@@ -1037,7 +1037,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 
 		richTextBox1->AppendText(coordinatesg1 + " " + coordinatesm1 +
 			"\n" + coordinatesg2 + " " + coordinatesm2 + "\n");
-		richTextBox1->AppendText(0 + "\n");
+		richTextBox1->AppendText("0" + "\n");
 		
 
 		for (int i = 0; i < dataGridView1->RowCount; ++i)
@@ -1248,6 +1248,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 	}
 //Método que guarda un fichero .hdf
 public: System::Void Harmonicsavebutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 	try { saveFileDialog1->ShowDialog(); 
 	if (saveFileDialog1->FileName != "")
 	{
@@ -1256,7 +1257,7 @@ public: System::Void Harmonicsavebutton_Click(System::Object^ sender, System::Ev
 		acceptbutton->Visible = true;
 	}
 	}
-	catch (System::Exception ^ e) {};
+	catch (System::Exception ^ e) { e->Message; };
 
 }
 };

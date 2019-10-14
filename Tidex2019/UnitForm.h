@@ -146,8 +146,9 @@ namespace Tidex2019 {
 			chart->MdiParent = indexform;
 			chart->Show();
 		}
-		catch (System::ArgumentNullException^ e)
+		catch ( System::ArgumentNullException^ e)
 		{
+			e->Message;
 			ErrorForm^ error = gcnew ErrorForm();
 			error->Show();
 		}
