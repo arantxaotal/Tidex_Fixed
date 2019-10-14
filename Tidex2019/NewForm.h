@@ -1180,7 +1180,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 		std::filebuf calctemp;
 		std::filebuf hdf;
 		transforma(msclr::interop::marshal_as<std::string>(filename->ToString()), datePath, hdf, calctemp);
-		_spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
+		spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
 		std::filebuf finalFile, outputFile;
 		if (!outputFile.open(outputPath.c_str(), std::ios::in) || !finalFile.open(tempPredictionPath, std::ios::out))
 		{
