@@ -37,8 +37,7 @@ namespace Tidex2019 {
 				return indice;
 			}
 		}
-		return indice;
-	}
+		return indice;	}
 	public:
 		//Método que devuelve el indice de la constante armónica de la tabla
 
@@ -51,16 +50,8 @@ namespace Tidex2019 {
 		NewForm(char* buf, Form^ index)
 		{
 			InitializeComponent();
-			if (this->begintime->Value.Minute % 5 != 0)
-			{
-				int resto = this->begintime->Value.Minute % 5;
-				this->begintime->Value = this->begintime->Value.AddMinutes(5 - resto);
-			}
-			if (this->endtime->Value.Minute % 5 != 0)
-			{
-				int rest = this->endtime->Value.Minute % 5;
-				this->endtime->Value = this->endtime->Value.AddMinutes(5 - rest);
-			}
+			this->begintime->Value = this->begintime->Value.AddMinutes(-this->begintime->Value.Minute);
+			this->endtime->Value = this->endtime->Value.AddMinutes(-this->endtime->Value.Minute);
 			this->enddate->Value = this->enddate->Value.AddDays(1);
 			indexform = index;
 			for (int j = 0; j < namebox->Items->Count; j++)
@@ -83,16 +74,8 @@ namespace Tidex2019 {
 		NewForm(String^ filenam, char* bufer, Form^ indexForm)
 		{
 			InitializeComponent();
-			if (this->begintime->Value.Minute % 5 != 0)
-			{
-				int resto = this->begintime->Value.Minute % 5;
-				this->begintime->Value = this->begintime->Value.AddMinutes(5 - resto);
-			}
-			if (this->endtime->Value.Minute % 5 != 0)
-			{
-				int rest = this->endtime->Value.Minute % 5;
-				this->endtime->Value = this->endtime->Value.AddMinutes(5 - rest);
-			}
+			this->begintime->Value = this->begintime->Value.AddMinutes(-this->begintime->Value.Minute);
+			this->endtime->Value = this->endtime->Value.AddMinutes(-this->endtime->Value.Minute);
 			this->enddate->Value = this->enddate->Value.AddDays(1);
 			indexform = indexForm;
 			for (int j = 0; j < namebox->Items->Count; j++)
@@ -273,7 +256,7 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::NumericUpDown^ coordinatesdeg1;
 	private: System::Windows::Forms::ComboBox^ namebox;
 
-	private: System::Windows::Forms::Label^ label8;
+
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Label^ label12;
@@ -303,7 +286,7 @@ namespace Tidex2019 {
 
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
 
-	private: System::Windows::Forms::Label^ label16;
+
 	private: System::Windows::Forms::Label^ label19;
 	private: System::Windows::Forms::DateTimePicker^ begintime;
 	private: System::Windows::Forms::DateTimePicker^ endtime;
@@ -347,7 +330,6 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->coordinatesdeg2 = (gcnew System::Windows::Forms::NumericUpDown());
 				 this->coordinatesdeg1 = (gcnew System::Windows::Forms::NumericUpDown());
 				 this->namebox = (gcnew System::Windows::Forms::ComboBox());
-				 this->label8 = (gcnew System::Windows::Forms::Label());
 				 this->label10 = (gcnew System::Windows::Forms::Label());
 				 this->label11 = (gcnew System::Windows::Forms::Label());
 				 this->label12 = (gcnew System::Windows::Forms::Label());
@@ -371,7 +353,6 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->updatebutton = (gcnew MaterialSkin::Controls::MaterialFlatButton());
 				 this->addbutton = (gcnew MaterialSkin::Controls::MaterialFlatButton());
 				 this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
-				 this->label16 = (gcnew System::Windows::Forms::Label());
 				 this->label19 = (gcnew System::Windows::Forms::Label());
 				 this->begintime = (gcnew System::Windows::Forms::DateTimePicker());
 				 this->endtime = (gcnew System::Windows::Forms::DateTimePicker());
@@ -401,9 +382,9 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->label1->ForeColor = System::Drawing::Color::Black;
 				 this->label1->Location = System::Drawing::Point(41, 57);
 				 this->label1->Name = L"label1";
-				 this->label1->Size = System::Drawing::Size(196, 20);
+				 this->label1->Size = System::Drawing::Size(334, 20);
 				 this->label1->TabIndex = 0;
-				 this->label1->Text = L"Begin time for prediction";
+				 this->label1->Text = L"Begin time for prediction (day/month/year)";
 				 // 
 				 // label2
 				 // 
@@ -414,9 +395,9 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->label2->ForeColor = System::Drawing::Color::Black;
 				 this->label2->Location = System::Drawing::Point(40, 92);
 				 this->label2->Name = L"label2";
-				 this->label2->Size = System::Drawing::Size(182, 20);
+				 this->label2->Size = System::Drawing::Size(320, 20);
 				 this->label2->TabIndex = 1;
-				 this->label2->Text = L"End time for prediction";
+				 this->label2->Text = L"End time for prediction (day/month/year)";
 				 // 
 				 // label3
 				 // 
@@ -480,19 +461,6 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->namebox->Size = System::Drawing::Size(71, 28);
 				 this->namebox->TabIndex = 36;
 				 this->namebox->Text = L"Z0";
-				 // 
-				 // label8
-				 // 
-				 this->label8->AutoSize = true;
-				 this->label8->BackColor = System::Drawing::Color::Transparent;
-				 this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-					 static_cast<System::Byte>(0)));
-				 this->label8->ForeColor = System::Drawing::Color::Black;
-				 this->label8->Location = System::Drawing::Point(444, 25);
-				 this->label8->Name = L"label8";
-				 this->label8->Size = System::Drawing::Size(47, 20);
-				 this->label8->TabIndex = 41;
-				 this->label8->Text = L"Hour";
 				 // 
 				 // label10
 				 // 
@@ -563,7 +531,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->begindate->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->begindate->Format = System::Windows::Forms::DateTimePickerFormat::Short;
-				 this->begindate->Location = System::Drawing::Point(296, 51);
+				 this->begindate->Location = System::Drawing::Point(405, 48);
 				 this->begindate->Name = L"begindate";
 				 this->begindate->Size = System::Drawing::Size(146, 29);
 				 this->begindate->TabIndex = 59;
@@ -573,7 +541,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->enddate->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->enddate->Format = System::Windows::Forms::DateTimePickerFormat::Short;
-				 this->enddate->Location = System::Drawing::Point(296, 86);
+				 this->enddate->Location = System::Drawing::Point(405, 83);
 				 this->enddate->Name = L"enddate";
 				 this->enddate->Size = System::Drawing::Size(146, 29);
 				 this->enddate->TabIndex = 60;
@@ -785,19 +753,6 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->openFileDialog1->Multiselect = true;
 				 this->openFileDialog1->RestoreDirectory = true;
 				 // 
-				 // label16
-				 // 
-				 this->label16->AutoSize = true;
-				 this->label16->BackColor = System::Drawing::Color::Transparent;
-				 this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-					 static_cast<System::Byte>(0)));
-				 this->label16->ForeColor = System::Drawing::Color::Black;
-				 this->label16->Location = System::Drawing::Point(370, 25);
-				 this->label16->Name = L"label16";
-				 this->label16->Size = System::Drawing::Size(38, 20);
-				 this->label16->TabIndex = 82;
-				 this->label16->Text = L"Min";
-				 // 
 				 // label19
 				 // 
 				 this->label19->AutoSize = true;
@@ -807,9 +762,9 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->label19->ForeColor = System::Drawing::Color::Black;
 				 this->label19->Location = System::Drawing::Point(40, 25);
 				 this->label19->Name = L"label19";
-				 this->label19->Size = System::Drawing::Size(159, 20);
+				 this->label19->Size = System::Drawing::Size(230, 20);
 				 this->label19->TabIndex = 83;
-				 this->label19->Text = L"Measurement Time ";
+				 this->label19->Text = L"Measurement Time (minutes)";
 				 // 
 				 // begintime
 				 // 
@@ -818,7 +773,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->begintime->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->begintime->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-				 this->begintime->Location = System::Drawing::Point(448, 51);
+				 this->begintime->Location = System::Drawing::Point(557, 48);
 				 this->begintime->Name = L"begintime";
 				 this->begintime->ShowUpDown = true;
 				 this->begintime->Size = System::Drawing::Size(82, 29);
@@ -831,7 +786,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->endtime->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->endtime->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-				 this->endtime->Location = System::Drawing::Point(448, 86);
+				 this->endtime->Location = System::Drawing::Point(557, 83);
 				 this->endtime->Name = L"endtime";
 				 this->endtime->ShowUpDown = true;
 				 this->endtime->Size = System::Drawing::Size(82, 29);
@@ -927,7 +882,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 					 L"15", L"20", L"25", L"30", L"35", L"40", L"45",
 						 L"50", L"55", L"60"
 				 });
-				 this->comboBox1->Location = System::Drawing::Point(296, 17);
+				 this->comboBox1->Location = System::Drawing::Point(405, 12);
 				 this->comboBox1->Name = L"comboBox1";
 				 this->comboBox1->Size = System::Drawing::Size(68, 28);
 				 this->comboBox1->TabIndex = 95;
@@ -948,7 +903,6 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->Controls->Add(this->endtime);
 				 this->Controls->Add(this->begintime);
 				 this->Controls->Add(this->label19);
-				 this->Controls->Add(this->label16);
 				 this->Controls->Add(this->addbutton);
 				 this->Controls->Add(this->updatebutton);
 				 this->Controls->Add(this->label15);
@@ -968,7 +922,6 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->Controls->Add(this->label12);
 				 this->Controls->Add(this->label11);
 				 this->Controls->Add(this->label10);
-				 this->Controls->Add(this->label8);
 				 this->Controls->Add(this->namebox);
 				 this->Controls->Add(this->coordinatesdeg2);
 				 this->Controls->Add(this->coordinatesdeg1);
@@ -1260,6 +1213,7 @@ public: System::Void Harmonicsavebutton_Click(System::Object^ sender, System::Ev
 	catch (System::Exception ^ e) { e->Message; };
 
 }
+
 };
 }
 
