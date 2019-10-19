@@ -64,7 +64,7 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::PrintDialog^ printDialog1;
 	private: System::Windows::Forms::Button^ savedatabutton;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog2;
-	private: System::Windows::Forms::Button^ clockbutton;
+
 	private: ChartDirector::WinViewPortControl^ viewPortControl1;
 	protected:
 		/// <summary>
@@ -101,7 +101,6 @@ namespace Tidex2019 {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ChartForm::typeid));
 			this->winChartViewer1 = (gcnew ChartDirector::WinChartViewer());
 			this->leftPanel = (gcnew System::Windows::Forms::Panel());
-			this->clockbutton = (gcnew System::Windows::Forms::Button());
 			this->savedatabutton = (gcnew System::Windows::Forms::Button());
 			this->printPB = (gcnew System::Windows::Forms::Button());
 			this->savePB = (gcnew System::Windows::Forms::Button());
@@ -133,7 +132,6 @@ namespace Tidex2019 {
 			// leftPanel
 			// 
 			this->leftPanel->BackColor = System::Drawing::Color::PaleTurquoise;
-			this->leftPanel->Controls->Add(this->clockbutton);
 			this->leftPanel->Controls->Add(this->savedatabutton);
 			this->leftPanel->Controls->Add(this->printPB);
 			this->leftPanel->Controls->Add(this->savePB);
@@ -149,25 +147,6 @@ namespace Tidex2019 {
 			this->leftPanel->Name = L"leftPanel";
 			this->leftPanel->Size = System::Drawing::Size(90, 717);
 			this->leftPanel->TabIndex = 91;
-			// 
-			// clockbutton
-			// 
-			this->clockbutton->BackColor = System::Drawing::Color::Azure;
-			this->clockbutton->Cursor = System::Windows::Forms::Cursors::Default;
-			this->clockbutton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->clockbutton->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.07563F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->clockbutton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"clockbutton.Image")));
-			this->clockbutton->Location = System::Drawing::Point(0, 315);
-			this->clockbutton->Margin = System::Windows::Forms::Padding(2);
-			this->clockbutton->Name = L"clockbutton";
-			this->clockbutton->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->clockbutton->Size = System::Drawing::Size(90, 51);
-			this->clockbutton->TabIndex = 40;
-			this->clockbutton->TextAlign = System::Drawing::ContentAlignment::BottomRight;
-			this->clockbutton->UseMnemonic = false;
-			this->clockbutton->UseVisualStyleBackColor = false;
-			this->clockbutton->Click += gcnew System::EventHandler(this, &ChartForm::clockbutton_Click);
 			// 
 			// savedatabutton
 			// 

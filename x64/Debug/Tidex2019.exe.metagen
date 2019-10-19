@@ -97,8 +97,6 @@ Class Tidex2019.NewForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Tidex2019.IndexForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    System.Windows.Forms.ToolStripButton ClockButton : Public
 Class RelationHelper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Interfaces:
