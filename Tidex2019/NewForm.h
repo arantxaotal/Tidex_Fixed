@@ -21,8 +21,9 @@ namespace Tidex2019 {
 			std::string name, amplitude, argument;
 		}harmonicvariable;
 
-	public ref class NewForm : public System::Windows::Forms::Form
+	public ref class NewForm : public System::Windows::Forms::Form 
 	{
+
 
 	private: int buscaindice(std::string name)
 	{
@@ -74,6 +75,7 @@ namespace Tidex2019 {
 		NewForm(String^ filenam, char* bufer, Form^ indexForm)
 		{
 			InitializeComponent();
+			
 			this->begintime->Value = this->begintime->Value.AddMinutes(-this->begintime->Value.Minute);
 			this->endtime->Value = this->endtime->Value.AddMinutes(-this->endtime->Value.Minute);
 			this->enddate->Value = this->enddate->Value.AddDays(1);
@@ -93,6 +95,7 @@ namespace Tidex2019 {
 			}
 			buf = bufer;
 			filename = gcnew String(filenam);
+			this->Text = filename;
 			std::string harmonicPath = msclr::interop::marshal_as<std::string>(filenam);
 			std::filebuf harmonicFile;
 			if (!harmonicFile.open(harmonicPath.c_str(), std::ios::in))
@@ -101,10 +104,10 @@ namespace Tidex2019 {
 				exit(-1);
 			}
 			std::istream* harmonicFileStream = new std::istream(&harmonicFile);
-			std::string latitudedeg, latitudemin, lengthdeg, lengthmin, depth1;
+			std::string latitudedeg, latitudemin, lengthdeg, lengthmin, measurementtime1;
 			*harmonicFileStream >> latitudedeg >> latitudemin;
 			*harmonicFileStream >> lengthdeg >> lengthmin;
-			*harmonicFileStream >> depth1;
+			*harmonicFileStream >> measurementtime1;
 
 			std::vector<harmonicvariable>vect;
 			std::string line;
@@ -155,7 +158,8 @@ namespace Tidex2019 {
 			{
 				coordinatesmin2->Value = stoi(lengthmin);
 			}
-			//int depth = stoi(depth1);
+			measurementtimebox->Text = msclr::interop::marshal_as<String^>(measurementtime1);
+			int measurementtime2 = stoi(measurementtime1);
 			for (int j = 0; j < vect.size() - 1; j++)
 			{
 				//add nueva fila
@@ -212,7 +216,7 @@ namespace Tidex2019 {
 
 			richTextBox1->AppendText(coordinatesg1 + " " + coordinatesm1 +
 				"\n" + coordinatesg2 + " " + coordinatesm2 + "\n");
-			richTextBox1->AppendText("0" + "\n");
+			richTextBox1->AppendText(measurementtime2 + "\n");
 
 
 			for (int i = 0; i < dataGridView1->RowCount; ++i)
@@ -242,7 +246,7 @@ namespace Tidex2019 {
 			
 		}
 	public:
-
+	private:ChartForm^ chart;
 	private: Form^ indexform;
 	private: String^ filename;
 	private: char *buf;
@@ -303,7 +307,10 @@ namespace Tidex2019 {
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Nombre;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Amplitude;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
-private: System::Windows::Forms::ComboBox^ comboBox1;
+private: System::Windows::Forms::ComboBox^ measurementtimebox;
+
+private: System::Windows::Forms::Label^ label4;
+
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -363,7 +370,8 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->saveFileDialog2 = (gcnew System::Windows::Forms::SaveFileDialog());
 				 this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 				 this->harmonicsavebutton = (gcnew MaterialSkin::Controls::MaterialRaisedButton());
-				 this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+				 this->measurementtimebox = (gcnew System::Windows::Forms::ComboBox());
+				 this->label4 = (gcnew System::Windows::Forms::Label());
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg2))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg1))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesmin2))->BeginInit();
@@ -380,7 +388,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label1->ForeColor = System::Drawing::Color::Black;
-				 this->label1->Location = System::Drawing::Point(41, 57);
+				 this->label1->Location = System::Drawing::Point(42, 28);
 				 this->label1->Name = L"label1";
 				 this->label1->Size = System::Drawing::Size(334, 20);
 				 this->label1->TabIndex = 0;
@@ -393,7 +401,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label2->ForeColor = System::Drawing::Color::Black;
-				 this->label2->Location = System::Drawing::Point(40, 92);
+				 this->label2->Location = System::Drawing::Point(40, 63);
 				 this->label2->Name = L"label2";
 				 this->label2->Size = System::Drawing::Size(320, 20);
 				 this->label2->TabIndex = 1;
@@ -531,7 +539,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->begindate->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->begindate->Format = System::Windows::Forms::DateTimePickerFormat::Short;
-				 this->begindate->Location = System::Drawing::Point(405, 48);
+				 this->begindate->Location = System::Drawing::Point(405, 22);
 				 this->begindate->Name = L"begindate";
 				 this->begindate->Size = System::Drawing::Size(146, 29);
 				 this->begindate->TabIndex = 59;
@@ -541,7 +549,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->enddate->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->enddate->Format = System::Windows::Forms::DateTimePickerFormat::Short;
-				 this->enddate->Location = System::Drawing::Point(405, 83);
+				 this->enddate->Location = System::Drawing::Point(405, 57);
 				 this->enddate->Name = L"enddate";
 				 this->enddate->Size = System::Drawing::Size(146, 29);
 				 this->enddate->TabIndex = 60;
@@ -760,7 +768,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->label19->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label19->ForeColor = System::Drawing::Color::Black;
-				 this->label19->Location = System::Drawing::Point(40, 25);
+				 this->label19->Location = System::Drawing::Point(40, 95);
 				 this->label19->Name = L"label19";
 				 this->label19->Size = System::Drawing::Size(230, 20);
 				 this->label19->TabIndex = 83;
@@ -773,7 +781,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->begintime->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->begintime->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-				 this->begintime->Location = System::Drawing::Point(557, 48);
+				 this->begintime->Location = System::Drawing::Point(557, 22);
 				 this->begintime->Name = L"begintime";
 				 this->begintime->ShowUpDown = true;
 				 this->begintime->Size = System::Drawing::Size(82, 29);
@@ -786,7 +794,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->endtime->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->endtime->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-				 this->endtime->Location = System::Drawing::Point(557, 83);
+				 this->endtime->Location = System::Drawing::Point(557, 57);
 				 this->endtime->Name = L"endtime";
 				 this->endtime->ShowUpDown = true;
 				 this->endtime->Size = System::Drawing::Size(82, 29);
@@ -873,20 +881,30 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->harmonicsavebutton->UseVisualStyleBackColor = true;
 				 this->harmonicsavebutton->Click += gcnew System::EventHandler(this, &NewForm::Harmonicsavebutton_Click);
 				 // 
-				 // comboBox1
+				 // measurementtimebox
 				 // 
-				 this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				 this->measurementtimebox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->comboBox1->FormattingEnabled = true;
-				 this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(10) {
-					 L"15", L"20", L"25", L"30", L"35", L"40", L"45",
-						 L"50", L"55", L"60"
-				 });
-				 this->comboBox1->Location = System::Drawing::Point(405, 12);
-				 this->comboBox1->Name = L"comboBox1";
-				 this->comboBox1->Size = System::Drawing::Size(68, 28);
-				 this->comboBox1->TabIndex = 95;
-				 this->comboBox1->Text = L"15";
+				 this->measurementtimebox->FormattingEnabled = true;
+				 this->measurementtimebox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"10", L"15", L"60" });
+				 this->measurementtimebox->Location = System::Drawing::Point(405, 92);
+				 this->measurementtimebox->Name = L"measurementtimebox";
+				 this->measurementtimebox->Size = System::Drawing::Size(68, 28);
+				 this->measurementtimebox->TabIndex = 95;
+				 this->measurementtimebox->Text = L"15";
+				 // 
+				 // label4
+				 // 
+				 this->label4->AutoSize = true;
+				 this->label4->BackColor = System::Drawing::Color::Transparent;
+				 this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+					 static_cast<System::Byte>(0)));
+				 this->label4->ForeColor = System::Drawing::Color::Black;
+				 this->label4->Location = System::Drawing::Point(554, 4);
+				 this->label4->Name = L"label4";
+				 this->label4->Size = System::Drawing::Size(85, 15);
+				 this->label4->TabIndex = 96;
+				 this->label4->Text = L"Hour : Minutes";
 				 // 
 				 // NewForm
 				 // 
@@ -894,7 +912,8 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->BackColor = System::Drawing::Color::PowderBlue;
 				 this->ClientSize = System::Drawing::Size(784, 729);
-				 this->Controls->Add(this->comboBox1);
+				 this->Controls->Add(this->label4);
+				 this->Controls->Add(this->measurementtimebox);
 				 this->Controls->Add(this->harmonicsavebutton);
 				 this->Controls->Add(this->unitbox);
 				 this->Controls->Add(this->cancelbutton);
@@ -977,6 +996,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 		Decimal^ coordinatesg2 = coordinatesdeg2->Value;
 		Decimal^ coordinatesm1 = coordinatesmin1->Value;
 		Decimal^ coordinatesm2 = coordinatesmin2->Value;
+		String^ measurementtime = measurementtimebox->Text;
 		if (nsbox->Text == s)
 		{
 			coordinatesg1 = -coordinatesdeg1->Value;
@@ -990,7 +1010,7 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 
 		richTextBox1->AppendText(coordinatesg1 + " " + coordinatesm1 +
 			"\n" + coordinatesg2 + " " + coordinatesm2 + "\n");
-		richTextBox1->AppendText("0" + "\n");
+		richTextBox1->AppendText(measurementtime + "\n");
 		
 
 		for (int i = 0; i < dataGridView1->RowCount; ++i)
@@ -1086,10 +1106,10 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 		}
 		std::istream* origenFileStream = new std::istream(&origenf);
 		std::ostream* destinoFileStream = new std::ostream(&destinof);
-		std::string latitudedeg, latitudemin, lengthdeg, lengthmin, depth1;
+		std::string latitudedeg, latitudemin, lengthdeg, lengthmin, measurementtime;
 		*origenFileStream >> latitudedeg >> latitudemin;
 		*origenFileStream >> lengthdeg >> lengthmin;
-		*origenFileStream >> depth1;
+		*origenFileStream >> measurementtime;
 
 		std::vector<harmonicvariable>vect;
 		std::string line;
@@ -1105,6 +1125,8 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 			" " << begindate->Value.Month << " " << begindate->Value.Year << "\n";;
 		*destinoFileStream << endtime->Value.Hour << " " << endtime->Value.Minute << " " << enddate->Value.Day <<
 			" " << enddate->Value.Month << " " << enddate->Value.Year << "\n";;
+		//Añadir aquí cuando se modifique lo de DT Fortran lo siguiente:
+		//*destinoFileStream << measurementtime << "\n";
 		for (int i = 0; i < vect.size(); ++i)
 		{
 			*destinoFileStream << vect[i].name << " " << vect[i].amplitude << " " << vect[i].argument << "\n";;
@@ -1114,6 +1136,10 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 		delete destinoFileStream;
 		origenf.close();
 		destinof.close();
+	}
+	private: System::Void chart_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e)
+	{
+			   chart = nullptr;
 	}
 	//Método de botón de aceptar que abre ventana para guardar fichero predicción, lo guarda en .dat y muestra gráfica
 	private: System::Void acceptbutton_Click(System::Object^ sender, System::EventArgs^ e)
@@ -1187,13 +1213,28 @@ private: System::Windows::Forms::ComboBox^ comboBox1;
 		delete finalFileStream;
 		finalFile.close();
 		outputFile.close();
-		//RelationHelper^ relation = gcnew RelationHelper(this);
 		String^ temppath = gcnew String(tempPredictionPath.c_str());
-		ChartForm^ chart = gcnew ChartForm(unitbox->Text,temppath,buf);
-		chart->MdiParent = indexform;
-		chart->Show();
+		
+		if (chart== nullptr)
+		{
+			chart = gcnew ChartForm(unitbox->Text, temppath, buf,filename);
+			chart->MdiParent = indexform;
+			chart->FormClosed += gcnew FormClosedEventHandler(this,&Tidex2019::NewForm::chart_FormClosed);
+			chart->Show();
+		}
+		else
+		{
+			chart->Close();
+			chart = gcnew ChartForm(unitbox->Text, temppath, buf,filename);
+			chart->MdiParent = indexform;
+			chart->FormClosed += gcnew FormClosedEventHandler(this, &Tidex2019::NewForm::chart_FormClosed);
+			chart->Show();
+		}
 	
 	}
+
+
+
 	//Método de botón de cerrar ventana
 	private: System::Void cancelbutton_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
@@ -1208,6 +1249,7 @@ public: System::Void Harmonicsavebutton_Click(System::Object^ sender, System::Ev
 		filename = saveFileDialog1->FileName;
 		richTextBox1->SaveFile(saveFileDialog1->FileName, System::Windows::Forms::RichTextBoxStreamType::PlainText);
 		acceptbutton->Visible = true;
+		this->Text = filename;
 	}
 	}
 	catch (System::Exception ^ e) { e->Message; };

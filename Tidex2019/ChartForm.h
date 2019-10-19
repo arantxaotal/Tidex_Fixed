@@ -29,13 +29,14 @@ namespace Tidex2019 {
 			//TODO: agregar código de constructor aquí
 		}
 
-		ChartForm(String^u,String ^ f, char* buf)
+		ChartForm(String^u,String ^ f, char* buf,String^filenamehdf)
 		{
 			InitializeComponent();
 			if (buf == nullptr)
 			{
 				savedatabutton->Visible = false;
 			}
+			this->Text = filenamehdf;
 			this->buf = buf;
 			unit = u;
 			filename = f;

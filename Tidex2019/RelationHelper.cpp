@@ -1,5 +1,5 @@
 #include "RelationHelper.h"
-RelationHelper::RelationHelper(NewForm^ newf)
+RelationHelper::RelationHelper(Form^ newf)
 {
 	newform = newf;
 }
