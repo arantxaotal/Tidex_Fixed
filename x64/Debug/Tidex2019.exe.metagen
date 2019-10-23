@@ -70,10 +70,14 @@ Assembly WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856a
 	hash=None, flags=None
 Class Tidex2019.ChartForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
+    Void .ctor(Tidex2019.ChartForm): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(System.String, System.String, SByte*, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
+    SavePB_Click_1(Object, EventArgs): PrivateScope, Public, HideBySig
+    PrintPB_Click(Object, EventArgs): PrivateScope, Public, HideBySig
     Savedatabutton_Click(Object, EventArgs): PrivateScope, Public, HideBySig
+    button1_Click(Object, EventArgs): PrivateScope, Public, HideBySig
 Class Tidex2019.ErrorForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -91,6 +95,7 @@ Class Tidex2019.NewForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.String, SByte*, System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(SByte*, System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Tidex2019.NewForm): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     Harmonicsavebutton_Click(Object, EventArgs): PrivateScope, Public, HideBySig

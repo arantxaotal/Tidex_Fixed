@@ -32,6 +32,9 @@ namespace Tidex2019 {
 		ChartForm(String^u,String ^ f, char* buf,String^filenamehdf)
 		{
 			InitializeComponent();
+			richTextBox1->LoadFile(f, System::Windows::Forms::RichTextBoxStreamType::PlainText);
+			richTextBox1->Visible = false;
+			button1->Visible = false;
 			if (buf == nullptr)
 			{
 				savedatabutton->Visible = false;
@@ -45,6 +48,13 @@ namespace Tidex2019 {
 			winChartViewer1->updateViewPort(true, true);
 			drawFullChart();
 			viewPortControl1->Viewer = winChartViewer1;
+		}
+		ChartForm(const ChartForm^ chart)
+		{
+			InitializeComponent();
+			richTextBox1 = chart->richTextBox1;
+			winChartViewer1 = chart->winChartViewer1;
+			c = chart->c;
 		}
 
 		//
@@ -64,6 +74,8 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::PrintDialog^ printDialog1;
 	private: System::Windows::Forms::Button^ savedatabutton;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog2;
+	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+	private: System::Windows::Forms::Button^ button1;
 
 	private: ChartDirector::WinViewPortControl^ viewPortControl1;
 	protected:
@@ -101,6 +113,8 @@ namespace Tidex2019 {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ChartForm::typeid));
 			this->winChartViewer1 = (gcnew ChartDirector::WinChartViewer());
 			this->leftPanel = (gcnew System::Windows::Forms::Panel());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->savedatabutton = (gcnew System::Windows::Forms::Button());
 			this->printPB = (gcnew System::Windows::Forms::Button());
 			this->savePB = (gcnew System::Windows::Forms::Button());
@@ -132,6 +146,8 @@ namespace Tidex2019 {
 			// leftPanel
 			// 
 			this->leftPanel->BackColor = System::Drawing::Color::PaleTurquoise;
+			this->leftPanel->Controls->Add(this->button1);
+			this->leftPanel->Controls->Add(this->richTextBox1);
 			this->leftPanel->Controls->Add(this->savedatabutton);
 			this->leftPanel->Controls->Add(this->printPB);
 			this->leftPanel->Controls->Add(this->savePB);
@@ -147,6 +163,34 @@ namespace Tidex2019 {
 			this->leftPanel->Name = L"leftPanel";
 			this->leftPanel->Size = System::Drawing::Size(90, 717);
 			this->leftPanel->TabIndex = 91;
+			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::Azure;
+			this->button1->Cursor = System::Windows::Forms::Cursors::Default;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.07563F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
+			this->button1->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
+			this->button1->Location = System::Drawing::Point(0, 420);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
+			this->button1->Name = L"button1";
+			this->button1->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->button1->Size = System::Drawing::Size(90, 52);
+			this->button1->TabIndex = 95;
+			this->button1->Text = L"         Save  \r\nPrediction";
+			this->button1->TextAlign = System::Drawing::ContentAlignment::BottomRight;
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &ChartForm::button1_Click);
+			// 
+			// richTextBox1
+			// 
+			this->richTextBox1->Location = System::Drawing::Point(0, 319);
+			this->richTextBox1->Name = L"richTextBox1";
+			this->richTextBox1->Size = System::Drawing::Size(90, 96);
+			this->richTextBox1->TabIndex = 94;
+			this->richTextBox1->Text = L"";
 			// 
 			// savedatabutton
 			// 
@@ -643,7 +687,7 @@ namespace Tidex2019 {
 //
 // Save button event handler
 //
-private: System::Void SavePB_Click_1(System::Object^ sender, System::EventArgs^ e) {
+public: System::Void SavePB_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	// The standard Save File dialog
 	SaveFileDialog^ fileDlg = gcnew SaveFileDialog();
 	fileDlg->Filter = "PNG (*.png)|*.png|JPG (*.jpg)|*.jpg|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|" +
@@ -681,7 +725,7 @@ private: System::Void PointerPB_CheckedChanged_1(System::Object^ sender, System:
 		winChartViewer1->MouseUsage = WinChartMouseUsage::ScrollOnDrag;
 }
 //Boton para imprimir el trozo de grafica que se muestra por pantalla
-private: System::Void PrintPB_Click(System::Object^ sender, System::EventArgs^ e)
+public: System::Void PrintPB_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	printDialog1->Document = printDocument1;
 	//Call ShowDialog
@@ -726,6 +770,14 @@ private: System::Void clockbutton_Click(System::Object^ sender, System::EventArg
 	
 }
 	
+public: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	saveFileDialog2->ShowDialog();
+	if (saveFileDialog2->FileName != "")
+	{
+		richTextBox1->SaveFile(saveFileDialog2->FileName, System::Windows::Forms::RichTextBoxStreamType::PlainText);
+
+	}
+}
 };
 	
 }

@@ -85,6 +85,7 @@ namespace Tidex2019 {
 
 	private: System::Windows::Forms::ToolStripMenuItem^ arrangeicons;
 	private: System::Windows::Forms::ToolStripMenuItem^ tileh;
+	private: System::Windows::Forms::ToolStripMenuItem^ PrinttoolStripMenuItem1;
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -110,11 +111,11 @@ namespace Tidex2019 {
 			this->SaveCharttoolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->FILE_EXIT = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->EDIT = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->tilev = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->EDIT_MODIFY = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->cascade = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->arrangeicons = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tileh = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->EDIT_MODIFY = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->tilev = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->HELP = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->HELP_ABOUT = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
@@ -124,6 +125,7 @@ namespace Tidex2019 {
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->openFileDialog2 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
+			this->PrinttoolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -145,10 +147,10 @@ namespace Tidex2019 {
 			// FILE
 			// 
 			this->FILE->BackColor = System::Drawing::Color::Transparent;
-			this->FILE->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(7) {
+			this->FILE->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(8) {
 				this->FILE_NEW, this->FILE_OPEN,
 					this->openPredictionToolStripMenuItem, this->SavehdftoolStripMenuItem, this->SavedattoolStripMenuItem, this->SaveCharttoolStripMenuItem,
-					this->FILE_EXIT
+					this->PrinttoolStripMenuItem1, this->FILE_EXIT
 			});
 			this->FILE->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 14.25F));
 			this->FILE->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
@@ -234,14 +236,14 @@ namespace Tidex2019 {
 			this->EDIT->Size = System::Drawing::Size(56, 29);
 			this->EDIT->Text = L"Edit";
 			// 
-			// tilev
+			// EDIT_MODIFY
 			// 
-			this->tilev->BackColor = System::Drawing::Color::DarkCyan;
-			this->tilev->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->tilev->Name = L"tilev";
-			this->tilev->Size = System::Drawing::Size(207, 30);
-			this->tilev->Text = L"Tile Vertical";
-			this->tilev->Click += gcnew System::EventHandler(this, &IndexForm::tilev_Click);
+			this->EDIT_MODIFY->BackColor = System::Drawing::Color::DarkCyan;
+			this->EDIT_MODIFY->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->EDIT_MODIFY->Name = L"EDIT_MODIFY";
+			this->EDIT_MODIFY->Size = System::Drawing::Size(207, 30);
+			this->EDIT_MODIFY->Text = L"Modify Data";
+			this->EDIT_MODIFY->Click += gcnew System::EventHandler(this, &IndexForm::EDIT_MODIFY_Click);
 			// 
 			// cascade
 			// 
@@ -270,14 +272,14 @@ namespace Tidex2019 {
 			this->tileh->Text = L"Tile Horizontal";
 			this->tileh->Click += gcnew System::EventHandler(this, &IndexForm::tileh_Click);
 			// 
-			// EDIT_MODIFY
+			// tilev
 			// 
-			this->EDIT_MODIFY->BackColor = System::Drawing::Color::DarkCyan;
-			this->EDIT_MODIFY->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->EDIT_MODIFY->Name = L"EDIT_MODIFY";
-			this->EDIT_MODIFY->Size = System::Drawing::Size(207, 30);
-			this->EDIT_MODIFY->Text = L"Modify Data";
-			this->EDIT_MODIFY->Click += gcnew System::EventHandler(this, &IndexForm::EDIT_MODIFY_Click);
+			this->tilev->BackColor = System::Drawing::Color::DarkCyan;
+			this->tilev->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->tilev->Name = L"tilev";
+			this->tilev->Size = System::Drawing::Size(207, 30);
+			this->tilev->Text = L"Tile Vertical";
+			this->tilev->Click += gcnew System::EventHandler(this, &IndexForm::tilev_Click);
 			// 
 			// HELP
 			// 
@@ -364,6 +366,16 @@ namespace Tidex2019 {
 			// saveFileDialog1
 			// 
 			this->saveFileDialog1->Filter = L" Archivos de datos (*.dat)|*.dat";
+			// 
+			// PrinttoolStripMenuItem1
+			// 
+			this->PrinttoolStripMenuItem1->BackColor = System::Drawing::Color::DarkCyan;
+			this->PrinttoolStripMenuItem1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->PrinttoolStripMenuItem1->Name = L"PrinttoolStripMenuItem1";
+			this->PrinttoolStripMenuItem1->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->PrinttoolStripMenuItem1->Size = System::Drawing::Size(251, 30);
+			this->PrinttoolStripMenuItem1->Text = L"Print Chart";
+			this->PrinttoolStripMenuItem1->Click += gcnew System::EventHandler(this, &IndexForm::PrinttoolStripMenuItem1_Click);
 			// 
 			// IndexForm
 			// 
@@ -504,22 +516,43 @@ private: System::Void Predictionbutton_Click(System::Object^ sender, System::Eve
 }
 private: System::Void SavehdftoolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	if (this->ActiveMdiChild->GetType()->ToString() == "Tidex2019.NewForm")
+	try
 	{
-		//this->ActiveMdiChild->InvokeOnClick(this->ActiveMdiChild->GetChildAtPoint(System::Drawing::Point(487, 681)), e));
+		if (this->ActiveMdiChild->GetType()->ToString() == "Tidex2019.NewForm")
+		{
+			NewForm^ newf = (NewForm^)this->ActiveMdiChild;
+			newf = gcnew NewForm(newf);
+			newf->Harmonicsavebutton_Click(sender, e);
+
+		}
 	}
+	catch (System::NullReferenceException ^ e) { e->Message; };
+	
 }
 private: System::Void SavedattoolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	try
+	{
 	if (this->ActiveMdiChild->GetType()->ToString() == "Tidex2019.ChartForm")
 	{
-
+		ChartForm^ chartf = (ChartForm^)this->ActiveMdiChild;
+		chartf = gcnew ChartForm(chartf);
+		chartf->button1_Click(sender, e);
 	}
+	}
+	catch (System::NullReferenceException ^ e) { e->Message; };
+
 }
 private: System::Void SaveCharttoolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	try
+	{
 	if (this->ActiveMdiChild->GetType()->ToString() == "Tidex2019.ChartForm")
 	{
-
+		ChartForm^ chartf = (ChartForm^)this->ActiveMdiChild;
+		chartf = gcnew ChartForm(chartf);
+		chartf->SavePB_Click_1(sender, e);
 	}
+	}
+	catch (System::NullReferenceException ^ e) { e->Message; };
 }
 
 
@@ -537,6 +570,19 @@ private: System::Void tileh_Click(System::Object^ sender, System::EventArgs^ e) 
 private: System::Void tilev_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	this->LayoutMdi(System::Windows::Forms::MdiLayout::TileVertical);
+}
+private: System::Void PrinttoolStripMenuItem1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	try
+	{ 
+	if (this->ActiveMdiChild->GetType()->ToString() == "Tidex2019.ChartForm")
+	{
+		ChartForm^ chartf = (ChartForm^)this->ActiveMdiChild;
+		chartf = gcnew ChartForm(chartf);
+		chartf->PrintPB_Click(sender, e);
+	}
+	}
+	catch (System::NullReferenceException ^ e) { e->Message; };
 }
 };
 }

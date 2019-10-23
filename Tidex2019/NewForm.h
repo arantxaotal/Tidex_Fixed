@@ -45,8 +45,11 @@ namespace Tidex2019 {
 		NewForm(void)
 		{
 			InitializeComponent();
-
-			
+		}
+		NewForm(const NewForm^n)
+		{
+			InitializeComponent();
+			this->richTextBox1 = n->richTextBox1;
 		}
 		NewForm(char* buf, Form^ index)
 		{
@@ -1159,7 +1162,7 @@ private: System::Windows::Forms::Label^ label4;
 		std::filebuf calctemp;
 		std::filebuf hdf;
 		transforma(msclr::interop::marshal_as<std::string>(filename->ToString()), datePath, hdf, calctemp);
-		spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
+		_spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
 		std::filebuf finalFile, outputFile;
 		if (!outputFile.open(outputPath.c_str(), std::ios::in) || !finalFile.open(tempPredictionPath, std::ios::out))
 		{
