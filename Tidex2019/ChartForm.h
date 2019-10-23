@@ -145,7 +145,7 @@ namespace Tidex2019 {
 			// 
 			// leftPanel
 			// 
-			this->leftPanel->BackColor = System::Drawing::Color::PaleTurquoise;
+			this->leftPanel->BackColor = System::Drawing::Color::Teal;
 			this->leftPanel->Controls->Add(this->button1);
 			this->leftPanel->Controls->Add(this->richTextBox1);
 			this->leftPanel->Controls->Add(this->savedatabutton);
@@ -158,6 +158,7 @@ namespace Tidex2019 {
 			this->leftPanel->Dock = System::Windows::Forms::DockStyle::Left;
 			this->leftPanel->Font = (gcnew System::Drawing::Font(L"Arial", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->leftPanel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->leftPanel->Location = System::Drawing::Point(0, 0);
 			this->leftPanel->Margin = System::Windows::Forms::Padding(2);
 			this->leftPanel->Name = L"leftPanel";
@@ -166,9 +167,9 @@ namespace Tidex2019 {
 			// 
 			// button1
 			// 
-			this->button1->BackColor = System::Drawing::Color::Azure;
+			this->button1->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->button1->Cursor = System::Windows::Forms::Cursors::Default;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.07563F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
@@ -177,7 +178,7 @@ namespace Tidex2019 {
 			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->button1->Size = System::Drawing::Size(90, 52);
+			this->button1->Size = System::Drawing::Size(90, 63);
 			this->button1->TabIndex = 95;
 			this->button1->Text = L"         Save  \r\nPrediction";
 			this->button1->TextAlign = System::Drawing::ContentAlignment::BottomRight;
@@ -186,59 +187,62 @@ namespace Tidex2019 {
 			// 
 			// richTextBox1
 			// 
-			this->richTextBox1->Location = System::Drawing::Point(0, 319);
+			this->richTextBox1->Location = System::Drawing::Point(0, 356);
 			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(90, 96);
+			this->richTextBox1->Size = System::Drawing::Size(90, 59);
 			this->richTextBox1->TabIndex = 94;
 			this->richTextBox1->Text = L"";
 			// 
 			// savedatabutton
 			// 
-			this->savedatabutton->BackColor = System::Drawing::Color::Azure;
+			this->savedatabutton->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->savedatabutton->Cursor = System::Windows::Forms::Cursors::Default;
-			this->savedatabutton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->savedatabutton->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.07563F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->savedatabutton->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->savedatabutton->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->savedatabutton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->savedatabutton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"savedatabutton.Image")));
-			this->savedatabutton->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
-			this->savedatabutton->Location = System::Drawing::Point(0, 200);
+			this->savedatabutton->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->savedatabutton->Location = System::Drawing::Point(0, 217);
 			this->savedatabutton->Margin = System::Windows::Forms::Padding(2);
 			this->savedatabutton->Name = L"savedatabutton";
 			this->savedatabutton->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->savedatabutton->Size = System::Drawing::Size(90, 52);
+			this->savedatabutton->Size = System::Drawing::Size(90, 78);
 			this->savedatabutton->TabIndex = 39;
-			this->savedatabutton->Text = L"         Save  \r\nPrediction";
+			this->savedatabutton->Text = L"Save Prediction";
 			this->savedatabutton->TextAlign = System::Drawing::ContentAlignment::BottomRight;
 			this->savedatabutton->UseVisualStyleBackColor = false;
 			this->savedatabutton->Click += gcnew System::EventHandler(this, &ChartForm::Savedatabutton_Click);
 			// 
 			// printPB
 			// 
-			this->printPB->BackColor = System::Drawing::Color::Azure;
-			this->printPB->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->printPB->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->printPB->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->printPB->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.07563F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->printPB->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->printPB->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"printPB.Image")));
 			this->printPB->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->printPB->Location = System::Drawing::Point(0, 256);
+			this->printPB->Location = System::Drawing::Point(0, 309);
 			this->printPB->Margin = System::Windows::Forms::Padding(2);
 			this->printPB->Name = L"printPB";
 			this->printPB->Size = System::Drawing::Size(90, 42);
 			this->printPB->TabIndex = 37;
-			this->printPB->Text = L"        Print";
+			this->printPB->Text = L"             Print";
 			this->printPB->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->printPB->UseVisualStyleBackColor = false;
 			this->printPB->Click += gcnew System::EventHandler(this, &ChartForm::PrintPB_Click);
 			// 
 			// savePB
 			// 
-			this->savePB->BackColor = System::Drawing::Color::Azure;
-			this->savePB->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->savePB->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->savePB->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->savePB->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.07563F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->savePB->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->savePB->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"savePB.Image")));
 			this->savePB->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->savePB->Location = System::Drawing::Point(0, 152);
+			this->savePB->Location = System::Drawing::Point(0, 169);
 			this->savePB->Margin = System::Windows::Forms::Padding(2);
 			this->savePB->Name = L"savePB";
 			this->savePB->Size = System::Drawing::Size(90, 44);
@@ -262,34 +266,36 @@ namespace Tidex2019 {
 			// pointerPB
 			// 
 			this->pointerPB->Appearance = System::Windows::Forms::Appearance::Button;
-			this->pointerPB->BackColor = System::Drawing::Color::Azure;
+			this->pointerPB->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->pointerPB->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->pointerPB->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->pointerPB->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->pointerPB->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.07563F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->pointerPB->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->pointerPB->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pointerPB.Image")));
-			this->pointerPB->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->pointerPB->Location = System::Drawing::Point(0, 0);
+			this->pointerPB->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
+			this->pointerPB->Location = System::Drawing::Point(0, 11);
 			this->pointerPB->Margin = System::Windows::Forms::Padding(2);
 			this->pointerPB->Name = L"pointerPB";
-			this->pointerPB->Size = System::Drawing::Size(90, 23);
+			this->pointerPB->Size = System::Drawing::Size(90, 58);
 			this->pointerPB->TabIndex = 0;
-			this->pointerPB->Text = L"       Pointer";
+			this->pointerPB->Text = L"         Pointer";
 			this->pointerPB->UseVisualStyleBackColor = false;
 			this->pointerPB->CheckedChanged += gcnew System::EventHandler(this, &ChartForm::PointerPB_CheckedChanged_1);
 			// 
 			// zoomInPB
 			// 
 			this->zoomInPB->Appearance = System::Windows::Forms::Appearance::Button;
-			this->zoomInPB->BackColor = System::Drawing::Color::Azure;
+			this->zoomInPB->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->zoomInPB->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->zoomInPB->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->zoomInPB->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->zoomInPB->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->zoomInPB->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->zoomInPB->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"zoomInPB.Image")));
-			this->zoomInPB->Location = System::Drawing::Point(0, 27);
+			this->zoomInPB->Location = System::Drawing::Point(0, 73);
 			this->zoomInPB->Margin = System::Windows::Forms::Padding(2);
 			this->zoomInPB->Name = L"zoomInPB";
 			this->zoomInPB->Size = System::Drawing::Size(90, 43);
@@ -301,14 +307,15 @@ namespace Tidex2019 {
 			// zoomOutPB
 			// 
 			this->zoomOutPB->Appearance = System::Windows::Forms::Appearance::Button;
-			this->zoomOutPB->BackColor = System::Drawing::Color::Azure;
+			this->zoomOutPB->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->zoomOutPB->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->zoomOutPB->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->zoomOutPB->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->zoomOutPB->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->zoomOutPB->ForeColor = System::Drawing::SystemColors::ControlLight;
 			this->zoomOutPB->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"zoomOutPB.Image")));
-			this->zoomOutPB->Location = System::Drawing::Point(0, 74);
+			this->zoomOutPB->Location = System::Drawing::Point(0, 120);
 			this->zoomOutPB->Margin = System::Windows::Forms::Padding(2);
 			this->zoomOutPB->Name = L"zoomOutPB";
 			this->zoomOutPB->Size = System::Drawing::Size(90, 45);
