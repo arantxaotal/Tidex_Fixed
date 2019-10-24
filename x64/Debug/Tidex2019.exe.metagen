@@ -98,15 +98,8 @@ Class Tidex2019.NewForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(Tidex2019.NewForm): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
+    updatebutton_Click(Object, EventArgs): PrivateScope, Public, HideBySig
     Harmonicsavebutton_Click(Object, EventArgs): PrivateScope, Public, HideBySig
 Class Tidex2019.IndexForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class RelationHelper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Interfaces:
-    System.IDisposable
-  Fields:
-    System.Windows.Forms.Form newform : Public
-  Methods:
-    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig

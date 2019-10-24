@@ -124,7 +124,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>Dependencias\lib64\chartdir60.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
@@ -202,7 +202,6 @@
     <ClCompile Include="HelpForm.cpp" />
     <ClCompile Include="IndexForm.cpp" />
     <ClCompile Include="NewForm.cpp" />
-    <ClCompile Include="RelationHelper.cpp" />
     <ClCompile Include="UnitForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -225,7 +224,6 @@
     <ClInclude Include="NewForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="RelationHelper.h" />
     <ClInclude Include="resource1.h" />
     <ClInclude Include="UnitForm.h">
       <FileType>CppForm</FileType>

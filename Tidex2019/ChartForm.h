@@ -759,7 +759,7 @@ private: System::Void PrintDocument1_PrintPage(System::Object^ sender, System::D
 	e->HasMorePages = false;
 
 }
-
+//Método que guarda la predicción en un fichero temporal .dat
 public: System::Void Savedatabutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	saveFileDialog2->ShowDialog();
 	if (saveFileDialog2->FileName != "")
@@ -773,10 +773,7 @@ public: System::Void Savedatabutton_Click(System::Object^ sender, System::EventA
 
 	}
 }
-private: System::Void clockbutton_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-}
-	
+//Método que guarda predicción .dat en un lugar indicado por el usuario
 public: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	saveFileDialog2->ShowDialog();
 	if (saveFileDialog2->FileName != "")

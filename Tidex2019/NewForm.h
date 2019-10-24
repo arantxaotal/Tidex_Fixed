@@ -49,6 +49,14 @@ namespace Tidex2019 {
 		NewForm(const NewForm^n)
 		{
 			InitializeComponent();
+			this->nsbox = n->nsbox;
+			this->ewbox = n->ewbox;
+			this->coordinatesdeg1 = n->coordinatesdeg1;
+			this->coordinatesdeg2 = n->coordinatesdeg2;
+			this->coordinatesmin1 = n->coordinatesmin1;
+			this->coordinatesmin2 = n->coordinatesmin2;
+			this->measurementtimebox = n->measurementtimebox;
+			this->dataGridView1 = n->dataGridView1;
 			this->richTextBox1 = n->richTextBox1;
 		}
 		NewForm(char* buf, Form^ index)
@@ -288,7 +296,7 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::Label^ label14;
 	private: System::Windows::Forms::Label^ label15;
 	private: MaterialSkin::Controls::MaterialFlatButton^ updatebutton;
-	private: MaterialSkin::Controls::MaterialFlatButton^ addbutton;
+
 
 
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
@@ -313,6 +321,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Argument;
 private: System::Windows::Forms::ComboBox^ measurementtimebox;
 
 private: System::Windows::Forms::Label^ label4;
+private: System::Windows::Forms::Button^ addbutton;
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -361,7 +370,6 @@ private: System::Windows::Forms::Label^ label4;
 				 this->label14 = (gcnew System::Windows::Forms::Label());
 				 this->label15 = (gcnew System::Windows::Forms::Label());
 				 this->updatebutton = (gcnew MaterialSkin::Controls::MaterialFlatButton());
-				 this->addbutton = (gcnew MaterialSkin::Controls::MaterialFlatButton());
 				 this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 				 this->label19 = (gcnew System::Windows::Forms::Label());
 				 this->begintime = (gcnew System::Windows::Forms::DateTimePicker());
@@ -375,6 +383,7 @@ private: System::Windows::Forms::Label^ label4;
 				 this->harmonicsavebutton = (gcnew MaterialSkin::Controls::MaterialRaisedButton());
 				 this->measurementtimebox = (gcnew System::Windows::Forms::ComboBox());
 				 this->label4 = (gcnew System::Windows::Forms::Label());
+				 this->addbutton = (gcnew System::Windows::Forms::Button());
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg2))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg1))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesmin2))->BeginInit();
@@ -467,7 +476,7 @@ private: System::Windows::Forms::Label^ label4;
 						 L"SO3", L"MK3", L"SK3", L"MN4", L"M4", L"SN4", L"MS4", L"MK4", L"S4", L"SK4", L"2MK5", L"2SK5", L"2MN6", L"M6", L"2MS6", L"2MK6",
 						 L"2SM6", L"MSK6", L"3MK7", L"M8", L"M10"
 				 });
-				 this->namebox->Location = System::Drawing::Point(286, 226);
+				 this->namebox->Location = System::Drawing::Point(266, 227);
 				 this->namebox->Name = L"namebox";
 				 this->namebox->Size = System::Drawing::Size(71, 28);
 				 this->namebox->TabIndex = 36;
@@ -621,7 +630,7 @@ private: System::Windows::Forms::Label^ label4;
 				 this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label5->ForeColor = System::Drawing::Color::Black;
-				 this->label5->Location = System::Drawing::Point(282, 204);
+				 this->label5->Location = System::Drawing::Point(262, 205);
 				 this->label5->Name = L"label5";
 				 this->label5->Size = System::Drawing::Size(55, 20);
 				 this->label5->TabIndex = 63;
@@ -635,7 +644,7 @@ private: System::Windows::Forms::Label^ label4;
 				 this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label6->ForeColor = System::Drawing::Color::Black;
-				 this->label6->Location = System::Drawing::Point(358, 204);
+				 this->label6->Location = System::Drawing::Point(338, 205);
 				 this->label6->Name = L"label6";
 				 this->label6->Size = System::Drawing::Size(88, 20);
 				 this->label6->TabIndex = 64;
@@ -649,7 +658,7 @@ private: System::Windows::Forms::Label^ label4;
 				 this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label7->ForeColor = System::Drawing::Color::Black;
-				 this->label7->Location = System::Drawing::Point(566, 201);
+				 this->label7->Location = System::Drawing::Point(546, 202);
 				 this->label7->Name = L"label7";
 				 this->label7->Size = System::Drawing::Size(86, 20);
 				 this->label7->TabIndex = 65;
@@ -661,7 +670,7 @@ private: System::Windows::Forms::Label^ label4;
 				 this->amplitudebox->DecimalPlaces = 4;
 				 this->amplitudebox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->amplitudebox->Location = System::Drawing::Point(362, 225);
+				 this->amplitudebox->Location = System::Drawing::Point(342, 226);
 				 this->amplitudebox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 900, 0, 0, 0 });
 				 this->amplitudebox->Name = L"amplitudebox";
 				 this->amplitudebox->Size = System::Drawing::Size(137, 29);
@@ -673,7 +682,7 @@ private: System::Windows::Forms::Label^ label4;
 				 this->argumentbox->DecimalPlaces = 4;
 				 this->argumentbox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->argumentbox->Location = System::Drawing::Point(568, 224);
+				 this->argumentbox->Location = System::Drawing::Point(548, 225);
 				 this->argumentbox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 360, 0, 0, 0 });
 				 this->argumentbox->Name = L"argumentbox";
 				 this->argumentbox->Size = System::Drawing::Size(137, 29);
@@ -735,25 +744,6 @@ private: System::Windows::Forms::Label^ label4;
 				 this->updatebutton->Text = L"Apply Changes";
 				 this->updatebutton->UseVisualStyleBackColor = false;
 				 this->updatebutton->Click += gcnew System::EventHandler(this, &NewForm::updatebutton_Click);
-				 // 
-				 // addbutton
-				 // 
-				 this->addbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-				 this->addbutton->AutoSize = true;
-				 this->addbutton->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-				 this->addbutton->Depth = 0;
-				 this->addbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-					 static_cast<System::Byte>(0)));
-				 this->addbutton->Location = System::Drawing::Point(711, 222);
-				 this->addbutton->Margin = System::Windows::Forms::Padding(4, 6, 4, 6);
-				 this->addbutton->MouseState = MaterialSkin::MouseState::HOVER;
-				 this->addbutton->Name = L"addbutton";
-				 this->addbutton->Primary = false;
-				 this->addbutton->Size = System::Drawing::Size(20, 36);
-				 this->addbutton->TabIndex = 78;
-				 this->addbutton->Text = L"+";
-				 this->addbutton->UseVisualStyleBackColor = true;
-				 this->addbutton->Click += gcnew System::EventHandler(this, &NewForm::addbutton_Click);
 				 // 
 				 // openFileDialog1
 				 // 
@@ -845,7 +835,7 @@ private: System::Windows::Forms::Label^ label4;
 					 static_cast<System::Byte>(0)));
 				 this->unitbox->FormattingEnabled = true;
 				 this->unitbox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"cm", L"m", L"cm/s", L"m/s" });
-				 this->unitbox->Location = System::Drawing::Point(505, 225);
+				 this->unitbox->Location = System::Drawing::Point(485, 226);
 				 this->unitbox->Name = L"unitbox";
 				 this->unitbox->Size = System::Drawing::Size(58, 28);
 				 this->unitbox->TabIndex = 91;
@@ -909,12 +899,26 @@ private: System::Windows::Forms::Label^ label4;
 				 this->label4->TabIndex = 96;
 				 this->label4->Text = L"Hour : Minutes";
 				 // 
+				 // addbutton
+				 // 
+				 this->addbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+				 this->addbutton->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+					 static_cast<System::Byte>(0)));
+				 this->addbutton->Location = System::Drawing::Point(691, 225);
+				 this->addbutton->Name = L"addbutton";
+				 this->addbutton->Size = System::Drawing::Size(32, 29);
+				 this->addbutton->TabIndex = 97;
+				 this->addbutton->Text = L"+";
+				 this->addbutton->UseVisualStyleBackColor = true;
+				 this->addbutton->Click += gcnew System::EventHandler(this, &NewForm::addbutton_Click);
+				 // 
 				 // NewForm
 				 // 
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->BackColor = System::Drawing::Color::PowderBlue;
 				 this->ClientSize = System::Drawing::Size(784, 729);
+				 this->Controls->Add(this->addbutton);
 				 this->Controls->Add(this->label4);
 				 this->Controls->Add(this->measurementtimebox);
 				 this->Controls->Add(this->harmonicsavebutton);
@@ -925,7 +929,6 @@ private: System::Windows::Forms::Label^ label4;
 				 this->Controls->Add(this->endtime);
 				 this->Controls->Add(this->begintime);
 				 this->Controls->Add(this->label19);
-				 this->Controls->Add(this->addbutton);
 				 this->Controls->Add(this->updatebutton);
 				 this->Controls->Add(this->label15);
 				 this->Controls->Add(this->label14);
@@ -971,11 +974,12 @@ private: System::Windows::Forms::Label^ label4;
 	private: System::Void cancel_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-
+	
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		int n = e->RowIndex;
 
 	}
+	//método que determina si un string es un número
 	private: bool is_number(const std::string& s)
 	{
 		int punto = 0;
@@ -991,7 +995,7 @@ private: System::Windows::Forms::Label^ label4;
 		return !s.empty() && it == s.end();			
 	}
 	 //Método que aplica los datos añadidos al cuadro de texto
-	private: System::Void updatebutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	public: System::Void updatebutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		richTextBox1->Clear();
 		String^ w = "W";
 		String^ s = "S";
@@ -1045,43 +1049,7 @@ private: System::Windows::Forms::Label^ label4;
 		this->Close();
 	}
 
-	//Método de añadir nueva fila a la tabla
-	private: System::Void addbutton_Click(System::Object^ sender, System::EventArgs^ e) {
-		//add nueva fila
-		int x = buscaindice(msclr::interop::marshal_as<std::string>(namebox->Text->ToString()));//dataGridView1->Rows->Add();
 
-		//colocamos info
-		int i = 0;
-
-		std::string amplitude = msclr::interop::marshal_as<std::string>(amplitudebox->Text);
-		std::string argument = msclr::interop::marshal_as<std::string>(argumentbox->Text);
-
-		while (i < amplitude.size())
-		{
-			if (amplitude[i] == ',')
-			{
-				amplitude[i] = '.';
-			}
-			i++;
-		}
-		i = 0;
-		while (i < argument.size())
-		{
-			if (argument[i] == ',')
-			{
-				argument[i] = '.';
-			}
-			i++;
-		}
-		
-
-		dataGridView1->Rows[x]->Cells[1]->Value = msclr::interop::marshal_as<String^>(amplitude);
-		dataGridView1->Rows[x]->Cells[2]->Value = msclr::interop::marshal_as<String^>(argument);
-		namebox->Text = "";
-		amplitudebox->Text = "";
-		argumentbox->Text = "";
-
-	}
 	//Método de borrar una fila de la tabla
 	private: System::Void erasebutton_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -1258,8 +1226,42 @@ public: System::Void Harmonicsavebutton_Click(System::Object^ sender, System::Ev
 	catch (System::Exception ^ e) { e->Message; };
 
 }
+//Método que añade valores a la tabla de armónicos
+private: System::Void addbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	//add nueva fila
+	int x = buscaindice(msclr::interop::marshal_as<std::string>(namebox->Text->ToString()));//dataGridView1->Rows->Add();
+
+	//colocamos info
+	int i = 0;
+
+	std::string amplitude = msclr::interop::marshal_as<std::string>(amplitudebox->Text);
+	std::string argument = msclr::interop::marshal_as<std::string>(argumentbox->Text);
+
+	while (i < amplitude.size())
+	{
+		if (amplitude[i] == ',')
+		{
+			amplitude[i] = '.';
+		}
+		i++;
+	}
+	i = 0;
+	while (i < argument.size())
+	{
+		if (argument[i] == ',')
+		{
+			argument[i] = '.';
+		}
+		i++;
+	}
 
 
+	dataGridView1->Rows[x]->Cells[1]->Value = msclr::interop::marshal_as<String^>(amplitude);
+	dataGridView1->Rows[x]->Cells[2]->Value = msclr::interop::marshal_as<String^>(argument);
+	namebox->Text = "";
+	amplitudebox->Text = "";
+	argumentbox->Text = "";
+}
 };
 }
 

@@ -587,6 +587,7 @@ private: System::Void SavehdftoolStripMenuItem_Click(System::Object^ sender, Sys
 		{
 			NewForm^ newf = (NewForm^)this->ActiveMdiChild;
 			newf = gcnew NewForm(newf);
+			newf->updatebutton_Click(sender, e);
 			newf->Harmonicsavebutton_Click(sender, e);
 
 		}
