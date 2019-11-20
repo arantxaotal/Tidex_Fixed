@@ -50,29 +50,19 @@ namespace Tidex2019 {
 	private: Helper ^helper;
 	private: System::Windows::Forms::MenuStrip^  menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^  FILE;
-	protected:
 	private: System::Windows::Forms::ToolStripMenuItem^  FILE_NEW;
 	private: System::Windows::Forms::ToolStripMenuItem^  EDIT;
 	private: System::Windows::Forms::ToolStripMenuItem^  HELP;
 	private: System::Windows::Forms::ToolStripMenuItem^  HELP_ABOUT;
 	private: System::Windows::Forms::ToolStripMenuItem^  FILE_OPEN;
 	private: System::Windows::Forms::ToolStripMenuItem^ EDIT_MODIFY;
-
-
 	private: System::Windows::Forms::ToolStrip^  toolStrip1;
 	private: System::Windows::Forms::ToolStripButton^  NewButton;
 	private: System::Windows::Forms::ToolStripButton^  OpenButton;
-
 	private: System::Windows::Forms::ToolStripMenuItem^  FILE_EXIT;
     private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
-
-
-
-
-
 	private: System::ComponentModel::BackgroundWorker^  backgroundWorker1;
 	private: System::Windows::Forms::ToolStripMenuItem^ openPredictionToolStripMenuItem;
-
 	private: System::Windows::Forms::ToolStripButton^ predictionbutton;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog2;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
@@ -80,9 +70,7 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::ToolStripMenuItem^ SavedattoolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ SaveCharttoolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ tilev;
-
 	private: System::Windows::Forms::ToolStripMenuItem^ cascade;
-
 	private: System::Windows::Forms::ToolStripMenuItem^ arrangeicons;
 	private: System::Windows::Forms::ToolStripMenuItem^ tileh;
 	private: System::Windows::Forms::ToolStripMenuItem^ PrinttoolStripMenuItem1;
@@ -90,13 +78,6 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::ToolStripButton^ savepredictiontoolStripButton2;
 	private: System::Windows::Forms::ToolStripButton^ savecharttoolStripButton3;
 	private: System::Windows::Forms::ToolStripButton^ printtoolStripButton4;
-
-
-
-
-
-
-
 	private: System::ComponentModel::IContainer^ components;
 	private:
 		/// <summary>
@@ -651,7 +632,7 @@ private: System::Void PrinttoolStripMenuItem1_Click(System::Object^ sender, Syst
 	catch (System::NullReferenceException ^ e) { e->Message; };
 }
 private: System::Void savehdftoolStripButton1_Click(System::Object^ sender, System::EventArgs^ e) {
-	savehdftoolStripButton1_Click(sender, e);
+	SavehdftoolStripMenuItem_Click(sender, e);
 }
 private: System::Void savepredictiontoolStripButton2_Click(System::Object^ sender, System::EventArgs^ e) {
 	SavedattoolStripMenuItem_Click(sender, e);

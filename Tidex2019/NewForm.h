@@ -679,7 +679,7 @@ private: System::Windows::Forms::Button^ addbutton;
 				 // argumentbox
 				 // 
 				 this->argumentbox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-				 this->argumentbox->DecimalPlaces = 4;
+				 this->argumentbox->DecimalPlaces = 2;
 				 this->argumentbox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->argumentbox->Location = System::Drawing::Point(548, 225);
@@ -879,7 +879,7 @@ private: System::Windows::Forms::Button^ addbutton;
 				 this->measurementtimebox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->measurementtimebox->FormattingEnabled = true;
-				 this->measurementtimebox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"10", L"15", L"60" });
+				 this->measurementtimebox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"15", L"30", L"60" });
 				 this->measurementtimebox->Location = System::Drawing::Point(405, 92);
 				 this->measurementtimebox->Name = L"measurementtimebox";
 				 this->measurementtimebox->Size = System::Drawing::Size(68, 28);
@@ -1067,7 +1067,7 @@ private: System::Windows::Forms::Button^ addbutton;
 
 	//Método que transforma fichero .hdf al formato correcto para ser leido y ejecutado en long2000.exe
 	private: System::Void transforma(std::string& origen ,std::string& destino,
-		std::filebuf& origenf,std::filebuf &destinof)
+		std::filebuf& origenf,std::filebuf &destinof,String^num)
 	{
 		if (!origenf.open(origen.c_str(), std::ios::in) || !destinof.open(destino, std::ios::out))
 		{
@@ -1077,11 +1077,10 @@ private: System::Windows::Forms::Button^ addbutton;
 		}
 		std::istream* origenFileStream = new std::istream(&origenf);
 		std::ostream* destinoFileStream = new std::ostream(&destinof);
-		std::string latitudedeg, latitudemin, lengthdeg, lengthmin, measurementtime;
+		std::string latitudedeg, latitudemin, lengthdeg, lengthmin,depth;
 		*origenFileStream >> latitudedeg >> latitudemin;
 		*origenFileStream >> lengthdeg >> lengthmin;
-		*origenFileStream >> measurementtime;
-
+		*origenFileStream >> depth;
 		std::vector<harmonicvariable>vect;
 		std::string line;
 		while (std::getline(*origenFileStream, line))
@@ -1097,7 +1096,8 @@ private: System::Windows::Forms::Button^ addbutton;
 		*destinoFileStream << endtime->Value.Hour << " " << endtime->Value.Minute << " " << enddate->Value.Day <<
 			" " << enddate->Value.Month << " " << enddate->Value.Year << "\n";;
 		//Añadir aquí cuando se modifique lo de DT Fortran lo siguiente:
-		//*destinoFileStream << measurementtime << "\n";
+		
+		*destinoFileStream << msclr::interop::marshal_as<std::string>(num) << "\n";
 		for (int i = 0; i < vect.size(); ++i)
 		{
 			*destinoFileStream << vect[i].name << " " << vect[i].amplitude << " " << vect[i].argument << "\n";;
@@ -1112,12 +1112,27 @@ private: System::Windows::Forms::Button^ addbutton;
 	{
 			   chart = nullptr;
 	}
+	private: System::String^ transformanum(System::String^ num)
+	{
+		if (num == "15")
+		{
+			return "0.25";
+		}
+		if (num == "30")
+		{
+			return "0.5";
+		}
+		if (num == "60")
+		{
+			return "1";
+		}
+	}
 	//Método de botón de aceptar que abre ventana para guardar fichero predicción, lo guarda en .dat y muestra gráfica
 	private: System::Void acceptbutton_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		richTextBox1->SaveFile(filename, System::Windows::Forms::RichTextBoxStreamType::PlainText);
 		std::stringstream ssExec, ssAstroFile, ssOutputFile, ssDateFile, ssFinalFile, ssTempPredicction;
-		ssExec << buf << "\\long2000.exe";
+		ssExec << buf << "\\long2000_.exe";
 		ssAstroFile << buf << "\\Astro.dat";
 		ssOutputFile << buf << "\\Output.dat";
 		ssDateFile << buf << "\\Calc.tmp";
@@ -1129,8 +1144,10 @@ private: System::Windows::Forms::Button^ addbutton;
 		std::string tempPredictionPath = ssTempPredicction.str();
 		std::filebuf calctemp;
 		std::filebuf hdf;
-		transforma(msclr::interop::marshal_as<std::string>(filename->ToString()), datePath, hdf, calctemp);
-		_spawnl(P_WAIT, execPath.c_str(), execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
+		String^ num = measurementtimebox->Text;
+		num = transformanum(num);
+		transforma(msclr::interop::marshal_as<std::string>(filename->ToString()), datePath, hdf, calctemp,num);
+		_spawnl(P_WAIT, execPath.c_str(),execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
 		std::filebuf finalFile, outputFile;
 		if (!outputFile.open(outputPath.c_str(), std::ios::in) || !finalFile.open(tempPredictionPath, std::ios::out))
 		{
