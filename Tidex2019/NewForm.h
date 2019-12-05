@@ -1132,7 +1132,7 @@ private: System::Windows::Forms::Button^ addbutton;
 	{
 		richTextBox1->SaveFile(filename, System::Windows::Forms::RichTextBoxStreamType::PlainText);
 		std::stringstream ssExec, ssAstroFile, ssOutputFile, ssDateFile, ssFinalFile, ssTempPredicction;
-		ssExec << buf << "\\long2000_.exe";
+		ssExec << buf << "\\long2019.exe";
 		ssAstroFile << buf << "\\Astro.dat";
 		ssOutputFile << buf << "\\Output.dat";
 		ssDateFile << buf << "\\Calc.tmp";
