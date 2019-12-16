@@ -745,5 +745,7 @@
   Generando código...
 C:\Users\Arantxa\Documents\Tidex\Tidex2019\NewForm.h(1129): warning C4715: 'Tidex2019::NewForm::transformanum': no todas las rutas de acceso de control devuelven un valor
 C:\Users\Arantxa\Documents\Tidex\Tidex2019\NewForm.h(1129): warning C4715: 'Tidex2019::NewForm::transformanum': no todas las rutas de acceso de control devuelven un valor
+  .NETFramework,Version=4.6.1.AssemblyAttributes.cpp
+  Nota: inclusión del archivo: c:\windows\microsoft.net\framework\v4.0.30319\mscorlib.dll
   ChartForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  Tidex2019.vcxproj -> C:\Users\Arantxa\Documents\Tidex\x64\Debug\Tidex2019.exe
+  Tidex2019.vcxproj -> C:\Users\Arantxa\Documents\TIDEX\x64\Debug\Tidex2019.exe

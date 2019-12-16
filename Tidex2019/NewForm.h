@@ -437,9 +437,9 @@ private: System::Windows::Forms::Button^ addbutton;
 				 this->ewbox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ewbox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"E", L"W" });
-				 this->ewbox->Location = System::Drawing::Point(667, 155);
+				 this->ewbox->Location = System::Drawing::Point(685, 155);
 				 this->ewbox->Name = L"ewbox";
-				 this->ewbox->Size = System::Drawing::Size(58, 28);
+				 this->ewbox->Size = System::Drawing::Size(37, 28);
 				 this->ewbox->TabIndex = 18;
 				 this->ewbox->Text = L"E";
 				 // 
@@ -447,7 +447,7 @@ private: System::Windows::Forms::Button^ addbutton;
 				 // 
 				 this->coordinatesdeg2->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->coordinatesdeg2->Location = System::Drawing::Point(517, 155);
+				 this->coordinatesdeg2->Location = System::Drawing::Point(535, 155);
 				 this->coordinatesdeg2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 180, 0, 0, 0 });
 				 this->coordinatesdeg2->Name = L"coordinatesdeg2";
 				 this->coordinatesdeg2->Size = System::Drawing::Size(82, 29);
@@ -457,7 +457,7 @@ private: System::Windows::Forms::Button^ addbutton;
 				 // 
 				 this->coordinatesdeg1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->coordinatesdeg1->Location = System::Drawing::Point(231, 154);
+				 this->coordinatesdeg1->Location = System::Drawing::Point(240, 154);
 				 this->coordinatesdeg1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 90, 0, 0, 0 });
 				 this->coordinatesdeg1->Name = L"coordinatesdeg1";
 				 this->coordinatesdeg1->Size = System::Drawing::Size(82, 29);
@@ -489,7 +489,7 @@ private: System::Windows::Forms::Button^ addbutton;
 				 this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label10->ForeColor = System::Drawing::Color::Black;
-				 this->label10->Location = System::Drawing::Point(227, 133);
+				 this->label10->Location = System::Drawing::Point(236, 133);
 				 this->label10->Name = L"label10";
 				 this->label10->Size = System::Drawing::Size(71, 20);
 				 this->label10->TabIndex = 43;
@@ -502,7 +502,7 @@ private: System::Windows::Forms::Button^ addbutton;
 				 this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label11->ForeColor = System::Drawing::Color::Black;
-				 this->label11->Location = System::Drawing::Point(319, 133);
+				 this->label11->Location = System::Drawing::Point(328, 133);
 				 this->label11->Name = L"label11";
 				 this->label11->Size = System::Drawing::Size(38, 20);
 				 this->label11->TabIndex = 44;
@@ -515,7 +515,7 @@ private: System::Windows::Forms::Button^ addbutton;
 				 this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label12->ForeColor = System::Drawing::Color::Black;
-				 this->label12->Location = System::Drawing::Point(513, 133);
+				 this->label12->Location = System::Drawing::Point(531, 133);
 				 this->label12->Name = L"label12";
 				 this->label12->Size = System::Drawing::Size(71, 20);
 				 this->label12->TabIndex = 45;
@@ -525,7 +525,7 @@ private: System::Windows::Forms::Button^ addbutton;
 				 // 
 				 this->coordinatesmin2->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->coordinatesmin2->Location = System::Drawing::Point(605, 155);
+				 this->coordinatesmin2->Location = System::Drawing::Point(623, 155);
 				 this->coordinatesmin2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 59, 0, 0, 0 });
 				 this->coordinatesmin2->Name = L"coordinatesmin2";
 				 this->coordinatesmin2->Size = System::Drawing::Size(57, 29);
@@ -538,7 +538,7 @@ private: System::Windows::Forms::Button^ addbutton;
 				 this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label13->ForeColor = System::Drawing::Color::Black;
-				 this->label13->Location = System::Drawing::Point(601, 133);
+				 this->label13->Location = System::Drawing::Point(619, 133);
 				 this->label13->Name = L"label13";
 				 this->label13->Size = System::Drawing::Size(38, 20);
 				 this->label13->TabIndex = 47;
@@ -570,7 +570,7 @@ private: System::Windows::Forms::Button^ addbutton;
 				 // 
 				 this->coordinatesmin1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->coordinatesmin1->Location = System::Drawing::Point(319, 154);
+				 this->coordinatesmin1->Location = System::Drawing::Point(328, 154);
 				 this->coordinatesmin1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 59, 0, 0, 0 });
 				 this->coordinatesmin1->Name = L"coordinatesmin1";
 				 this->coordinatesmin1->Size = System::Drawing::Size(57, 29);
@@ -694,9 +694,9 @@ private: System::Windows::Forms::Button^ addbutton;
 				 this->nsbox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->nsbox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"N", L"S" });
-				 this->nsbox->Location = System::Drawing::Point(382, 155);
+				 this->nsbox->Location = System::Drawing::Point(391, 155);
 				 this->nsbox->Name = L"nsbox";
-				 this->nsbox->Size = System::Drawing::Size(58, 28);
+				 this->nsbox->Size = System::Drawing::Size(37, 28);
 				 this->nsbox->TabIndex = 70;
 				 this->nsbox->Text = L"N";
 				 // 
@@ -707,7 +707,7 @@ private: System::Windows::Forms::Button^ addbutton;
 				 this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label14->ForeColor = System::Drawing::Color::Black;
-				 this->label14->Location = System::Drawing::Point(154, 164);
+				 this->label14->Location = System::Drawing::Point(163, 164);
 				 this->label14->Name = L"label14";
 				 this->label14->Size = System::Drawing::Size(71, 20);
 				 this->label14->TabIndex = 71;
@@ -720,11 +720,11 @@ private: System::Windows::Forms::Button^ addbutton;
 				 this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label15->ForeColor = System::Drawing::Color::Black;
-				 this->label15->Location = System::Drawing::Point(449, 163);
+				 this->label15->Location = System::Drawing::Point(443, 163);
 				 this->label15->Name = L"label15";
-				 this->label15->Size = System::Drawing::Size(62, 20);
+				 this->label15->Size = System::Drawing::Size(86, 20);
 				 this->label15->TabIndex = 72;
-				 this->label15->Text = L"Length";
+				 this->label15->Text = L"Longitude";
 				 // 
 				 // updatebutton
 				 // 
