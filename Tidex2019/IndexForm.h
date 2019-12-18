@@ -47,6 +47,7 @@ namespace Tidex2019 {
 				delete components;
 			}
 		}
+	private:HelpForm^ help;
 	private: Helper ^helper;
 	private: System::Windows::Forms::MenuStrip^  menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^  FILE;
@@ -536,9 +537,19 @@ private: System::Void EDIT_MODIFY_Click(System::Object^  sender, System::EventAr
 }
 //Método que muestra la ventana Help en menú
 private: System::Void HELP_ABOUT_Click(System::Object^  sender, System::EventArgs^  e) {
-	HelpForm^ help = gcnew HelpForm();
-	help->MdiParent = this;
-	help->Show();
+	
+	if (help == nullptr) {
+		help = gcnew HelpForm();
+		help->MdiParent = this;
+		help->Show();
+	}
+	else
+	{
+		help->Close();
+		help = gcnew HelpForm();
+		help->MdiParent = this;
+		help->Show();
+	}
 }
 
 //Boton de editar fichero armónico

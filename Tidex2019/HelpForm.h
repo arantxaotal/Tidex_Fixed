@@ -110,9 +110,9 @@ namespace Tidex2019 {
 			// pictureBox2
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(239, 28);
+			this->pictureBox2->Location = System::Drawing::Point(237, 12);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(499, 414);
+			this->pictureBox2->Size = System::Drawing::Size(499, 517);
 			this->pictureBox2->TabIndex = 4;
 			this->pictureBox2->TabStop = false;
 			// 
@@ -122,8 +122,7 @@ namespace Tidex2019 {
 			this->linkLabel1->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->linkLabel1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei Light", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->linkLabel1->LinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->linkLabel1->LinkColor = System::Drawing::Color::Aqua;
 			this->linkLabel1->Location = System::Drawing::Point(26, 481);
 			this->linkLabel1->Name = L"linkLabel1";
 			this->linkLabel1->Size = System::Drawing::Size(245, 20);
@@ -138,8 +137,7 @@ namespace Tidex2019 {
 			this->linkLabel2->DisabledLinkColor = System::Drawing::Color::DarkSlateGray;
 			this->linkLabel2->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei Light", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->linkLabel2->LinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->linkLabel2->LinkColor = System::Drawing::Color::Cyan;
 			this->linkLabel2->Location = System::Drawing::Point(26, 509);
 			this->linkLabel2->Name = L"linkLabel2";
 			this->linkLabel2->Size = System::Drawing::Size(345, 20);
