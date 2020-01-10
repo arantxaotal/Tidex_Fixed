@@ -439,7 +439,7 @@ private: System::Windows::Forms::Button^ addbutton;
 				 this->ewbox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"E", L"W" });
 				 this->ewbox->Location = System::Drawing::Point(685, 155);
 				 this->ewbox->Name = L"ewbox";
-				 this->ewbox->Size = System::Drawing::Size(37, 28);
+				 this->ewbox->Size = System::Drawing::Size(40, 28);
 				 this->ewbox->TabIndex = 18;
 				 this->ewbox->Text = L"E";
 				 // 
@@ -696,7 +696,7 @@ private: System::Windows::Forms::Button^ addbutton;
 				 this->nsbox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"N", L"S" });
 				 this->nsbox->Location = System::Drawing::Point(391, 155);
 				 this->nsbox->Name = L"nsbox";
-				 this->nsbox->Size = System::Drawing::Size(37, 28);
+				 this->nsbox->Size = System::Drawing::Size(46, 28);
 				 this->nsbox->TabIndex = 70;
 				 this->nsbox->Text = L"N";
 				 // 
