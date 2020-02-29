@@ -27,7 +27,7 @@ namespace Tidex2019 {
 
 	private: int buscaindice(std::string name)
 	{
-		int indice = 1;
+		int indice = -1;
 		for (int i = 0; i < dataGridView1->RowCount; ++i)
 		{
 
@@ -236,9 +236,11 @@ namespace Tidex2019 {
 				if (msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != "0"
 					|| msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "0")
 				{
-					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[0]->Value + " ");
-					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + " ");
-					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n");
+					//System::String^ cad= gcnew String(cad->Format("\n {0}    {1}    {2}\n\n",dataGridView1->Rows[i]->Cells[0]->Value, dataGridView1->Rows[i]->Cells[1]->Value, dataGridView1->Rows[i]->Cells[2]->Value));
+					//cad->Format("{0}  {1}  {2}\n",dataGridView1->Rows[i]->Cells[0]->Value, dataGridView1->Rows[i]->Cells[1]->Value, dataGridView1->Rows[i]->Cells[2]->Value);
+					richTextBox1->AppendText("\n"+dataGridView1->Rows[i]->Cells[0]->Value + "   ");
+					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + "   ");
+					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n\n");
 				}
 			}
 
@@ -269,7 +271,7 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::ComboBox^ ewbox;
 	private: System::Windows::Forms::NumericUpDown^ coordinatesdeg2;
 	private: System::Windows::Forms::NumericUpDown^ coordinatesdeg1;
-	private: System::Windows::Forms::ComboBox^ namebox;
+
 
 
 	private: System::Windows::Forms::Label^ label10;
@@ -322,6 +324,7 @@ private: System::Windows::Forms::ComboBox^ measurementtimebox;
 
 private: System::Windows::Forms::Label^ label4;
 private: System::Windows::Forms::Button^ addbutton;
+private: System::Windows::Forms::ComboBox^ namebox;
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -469,12 +472,12 @@ private: System::Windows::Forms::Button^ addbutton;
 				 this->namebox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->namebox->FormattingEnabled = true;
-				 this->namebox->Items->AddRange(gcnew cli::array< System::Object^  >(60) {
+				 this->namebox->Items->AddRange(gcnew cli::array< System::Object^  >(61) {
 					 L"Z0", L"SSA", L"MM", L"MSF", L"MF", L"ALP1", L"2Q1",
 						 L"SIG1", L"Q1", L"RHO1", L"O1", L"TAU1", L"BET1", L"NO1", L"CHI1", L"P1", L"K1", L"PHI1", L"THE1", L"J1", L"S01", L"OO1", L"UPS1",
-						 L"OQ2", L"EPS2", L"2N2", L"MU2", L"N2", L"NU2", L"M2", L"MKS2", L"LDA2", L"L2", L"S2", L"K2", L"MSN2", L"ETA2", L"MO3", L"M3",
-						 L"SO3", L"MK3", L"SK3", L"MN4", L"M4", L"SN4", L"MS4", L"MK4", L"S4", L"SK4", L"2MK5", L"2SK5", L"2MN6", L"M6", L"2MS6", L"2MK6",
-						 L"2SM6", L"MSK6", L"3MK7", L"M8", L"M10"
+						 L"OQ2", L"EPS2", L"2N2", L"MU2", L"N2", L"NU2", L"M2", L"MKS2", L"LDA2", L"L2", L"T2", L"S2", L"K2", L"MSN2", L"ETA2", L"MO3",
+						 L"M3", L"SO3", L"MK3", L"SK3", L"MN4", L"M4", L"SN4", L"MS4", L"MK4", L"S4", L"SK4", L"2MK5", L"2SK5", L"2MN6", L"M6", L"2MS6",
+						 L"2MK6", L"2SM6", L"MSK6", L"3MK7", L"M8", L"M10"
 				 });
 				 this->namebox->Location = System::Drawing::Point(266, 227);
 				 this->namebox->Name = L"namebox";
@@ -1033,9 +1036,9 @@ private: System::Windows::Forms::Button^ addbutton;
 				(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "."
 				)))
 			{
-					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[0]->Value + " ");
-					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + " ");
-					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n");
+					richTextBox1->AppendText("\n" + dataGridView1->Rows[i]->Cells[0]->Value + "   ");
+					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + "   ");
+					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n\n");
 			}
 			
 			
@@ -1130,7 +1133,10 @@ private: System::Windows::Forms::Button^ addbutton;
 	//Método de botón de aceptar que abre ventana para guardar fichero predicción, lo guarda en .dat y muestra gráfica
 	private: System::Void acceptbutton_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		richTextBox1->SaveFile(filename, System::Windows::Forms::RichTextBoxStreamType::PlainText);
+		std::stringstream guardadotemporal;
+		guardadotemporal<< buf<<"\\ficherotemporal.hdf";
+		std::string guardadoPath = guardadotemporal.str();
+		richTextBox1->SaveFile(msclr::interop::marshal_as<String^>(guardadotemporal.str()), System::Windows::Forms::RichTextBoxStreamType::PlainText);
 		std::stringstream ssExec, ssAstroFile, ssOutputFile, ssDateFile, ssFinalFile, ssTempPredicction;
 		ssExec << buf << "\\long2019.exe";
 		ssAstroFile << buf << "\\Astro.dat";
@@ -1146,7 +1152,7 @@ private: System::Windows::Forms::Button^ addbutton;
 		std::filebuf hdf;
 		String^ num = measurementtimebox->Text;
 		num = transformanum(num);
-		transforma(msclr::interop::marshal_as<std::string>(filename->ToString()), datePath, hdf, calctemp,num);
+		transforma(guardadotemporal.str(), datePath, hdf, calctemp,num);
 		_spawnl(P_WAIT, execPath.c_str(),execPath.c_str(), astroPath.c_str(), outputPath.c_str(), datePath.c_str(), NULL);
 		std::filebuf finalFile, outputFile;
 		if (!outputFile.open(outputPath.c_str(), std::ios::in) || !finalFile.open(tempPredictionPath, std::ios::out))
@@ -1205,7 +1211,7 @@ private: System::Windows::Forms::Button^ addbutton;
 		
 		if (chart== nullptr)
 		{
-			chart = gcnew ChartForm(unitbox->Text, temppath, buf,filename);
+			chart = gcnew ChartForm(unitbox->Text, temppath, buf, msclr::interop::marshal_as<String^>(guardadotemporal.str()));
 			chart->MdiParent = indexform;
 			chart->FormClosed += gcnew FormClosedEventHandler(this,&Tidex2019::NewForm::chart_FormClosed);
 			chart->Show();
@@ -1213,7 +1219,7 @@ private: System::Windows::Forms::Button^ addbutton;
 		else
 		{
 			chart->Close();
-			chart = gcnew ChartForm(unitbox->Text, temppath, buf,filename);
+			chart = gcnew ChartForm(unitbox->Text, temppath, buf, msclr::interop::marshal_as<String^>(guardadotemporal.str()));
 			chart->MdiParent = indexform;
 			chart->FormClosed += gcnew FormClosedEventHandler(this, &Tidex2019::NewForm::chart_FormClosed);
 			chart->Show();
@@ -1272,9 +1278,12 @@ private: System::Void addbutton_Click(System::Object^ sender, System::EventArgs^
 		i++;
 	}
 
+	if(x!=-1)
+	{
+		dataGridView1->Rows[x]->Cells[1]->Value = msclr::interop::marshal_as<String^>(amplitude);
+		dataGridView1->Rows[x]->Cells[2]->Value = msclr::interop::marshal_as<String^>(argument);
+	}
 
-	dataGridView1->Rows[x]->Cells[1]->Value = msclr::interop::marshal_as<String^>(amplitude);
-	dataGridView1->Rows[x]->Cells[2]->Value = msclr::interop::marshal_as<String^>(argument);
 	namebox->Text = "";
 	amplitudebox->Text = "";
 	argumentbox->Text = "";
