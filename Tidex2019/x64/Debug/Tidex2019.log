@@ -1,4 +1,370 @@
-﻿  IndexForm.cpp
+﻿  ChartForm.cpp
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\mscorlib.dll
+  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\cefsharp.winforms.75.1.142\cefsharp\x64\cefsharp.winforms.dll
+  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\materialskin.0.2.1\lib\materialskin.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.build.conversion.v4.0.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.build.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.build.framework.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.build.utilities.v4.0.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.visualbasic.compatibility.data.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.visualbasic.compatibility.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.visualbasic.dll
+  Nota: inclusión del archivo: c:\program files (x86)\microsoft visual studio\2019\community\common7\ide\publicassemblies\microsoft.visualstudio.vc.interfaces.dll
+  Nota: inclusión del archivo: c:\program files (x86)\microsoft visual studio\2019\community\common7\ide\publicassemblies\microsoft.visualstudio.vccodemodel.dll
+  Nota: inclusión del archivo: c:\program files (x86)\microsoft visual studio\2019\community\common7\ide\publicassemblies\microsoft.visualstudio.vcproject.dll
+  Nota: inclusión del archivo: c:\program files (x86)\microsoft visual studio\2019\community\common7\ide\publicassemblies\microsoft.visualstudio.vcprojectengine.dll
+  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\chartdirector\lib\signed_client_profile\netchartdir_cp.dll
+  Nota: inclusión del archivo: c:\windows\microsoft.net\assembly\gac_msil\netstandard\v4.0_2.0.0.0__cc7b13ffcd2ddd51\netstandard.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\presentationcore.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\presentationframework.dll
+  Nota: inclusión del archivo: c:\program files (x86)\microsoft visual studio\2019\community\common7\ide\publicassemblies\stdole.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.core.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.data.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.design.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.drawing.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.web.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.windows.forms.datavisualization.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.windows.forms.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.xaml.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.xml.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\windowsbase.dll
+  Nota: inclusión del archivo: C:\Users\Arantxa\Documents\Tidex\Tidex2019\ChartForm.h
+  Nota: inclusión del archivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\string
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\yvals_core.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\sal.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\concurrencysal.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vadefs.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xkeycheck.h
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iosfwd
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\yvals.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_new_debug.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_new.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\crtdefs.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\use_ansi.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstdio
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstdio.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_stdio_config.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstring
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_memory.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_memcpy_s.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\errno.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_string.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstring.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cwchar
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\wchar.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wconio.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wctype.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wdirect.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wio.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_share.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wprocess.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstdlib.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wtime.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\sys/stat.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\sys/types.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstddef
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstddef
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stddef.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xtr1common
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstdlib
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\math.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_math.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdlib.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_malloc.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_search.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\limits.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\initializer_list
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstdint
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\stdint.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\limits
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cfloat
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\float.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\climits
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\new
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\exception
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\type_traits
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_exception.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\eh.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_terminate.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xatomic.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\intrin0.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xutility
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\utility
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xpolymorphic_allocator.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\tuple
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cctype
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\ctype.h
+  Nota: inclusión del archivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iostream
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\istream
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ostream
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ios
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocnum
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iterator
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\streambuf
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xiosbase
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\share.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\system_error
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\__msvc_system_error_abi.hpp
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cerrno
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\stdexcept
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xcall_once.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xerrc.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\atomic
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocale
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\memory
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\typeinfo
+  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_typeinfo.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xfacet
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocinfo
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocinfo.h
+  Nota: inclusión del archivo:            C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\locale.h
+  Nota: inclusión del archivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\fstream
+  Nota: inclusión del archivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\sstream
+  Nota: inclusión del archivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\msclr/marshal_cppstd.h
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vector
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcclr.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\gcroot.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\msclr/gcroot.h
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\msclr\marshal.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winapifamily.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winpackagefamily.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\sdkddkver.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\excpt.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\stdarg.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\windef.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\specstrings.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\specstrings_strict.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\specstrings_undef.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\driverspecs.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\sdv_driverspecs.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winnt.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\kernelspecs.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\basetsd.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\guiddef.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\apiset.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\ktmtypes.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winbase.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\apisetcconv.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\minwinbase.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\apiquery2.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\processenv.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\fileapifromapp.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\fileapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\debugapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\utilapiset.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\handleapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\errhandlingapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\fibersapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\namedpipeapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\profileapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\heapapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ioapiset.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\synchapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\interlockedapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\processthreadsapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\sysinfoapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\memoryapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\enclaveapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\threadpoollegacyapiset.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\threadpoolapiset.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\jobapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\jobapi2.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wow64apiset.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\libloaderapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\securitybaseapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\namespaceapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\systemtopologyapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\processtopologyapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\securityappcontainer.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\realtimeapiset.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winerror.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\timezoneapi.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wingdi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winuser.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\tvout.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winnls.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\datetimeapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\stringapiset.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winnls.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wincon.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wincontypes.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\consoleapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\consoleapi2.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\consoleapi3.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winver.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\verrsrc.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winreg.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\reason.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winnetwk.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\wnnc.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\cderr.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dde.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ddeml.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dlgs.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\lzexpand.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsystem.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mciapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmiscapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmiscapi2.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\playsoundapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmeapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\timeapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\joystickapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\nb30.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpc.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcdce.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcdcep.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\rpcnsi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcnterr.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcasync.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\shellapi.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winperf.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winsock.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\inaddr.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wincrypt.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\bcrypt.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ncrypt.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dpapi.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winefs.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winscard.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\wtypes.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcndr.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\rpcnsip.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcsal.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\wtypesbase.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\guiddef.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winsmcrd.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winspool.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\prsht.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ole2.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\objbase.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\combaseapi.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\unknwnbase.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\objidlbase.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\guiddef.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\cguid.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\coml2api.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\objidl.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\unknwn.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\propidlbase.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oaidl.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\urlmon.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oleidl.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\servprov.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\msxml.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\propidl.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oleauto.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\commdlg.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\prsht.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\stralign.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winsvc.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mcx.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\imm.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ime_cmodes.h
+  Nota: inclusión del archivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\filesystem
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\algorithm
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\chrono
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ratio
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xtimec.h
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iomanip
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocmon
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xloctime
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ctime
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\list
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\locale
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocbuf
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocmes
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\string_view
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xfilesystem_abi.h
+  IndexForm.cpp
   Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\mscorlib.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\cefsharp.winforms.75.1.142\cefsharp\x64\cefsharp.winforms.dll
   Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\materialskin.0.2.1\lib\materialskin.dll
@@ -32,34 +398,34 @@
   Nota: inclusión del archivo: C:\Users\Arantxa\Documents\Tidex\Tidex2019\IndexForm.h
   Nota: inclusión del archivo:  C:\Users\Arantxa\Documents\Tidex\Tidex2019\HelpForm.h
   Nota: inclusión del archivo:  C:\Users\Arantxa\Documents\Tidex\Tidex2019\ChartForm.h
-  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\string
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\yvals_core.h
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\crtdefs.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime.h
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\sal.h
-  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\concurrencysal.h
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vadefs.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt.h
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xkeycheck.h
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\iosfwd
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\yvals.h
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\string
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\yvals_core.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\sal.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\concurrencysal.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vadefs.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xkeycheck.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iosfwd
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\yvals.h
   Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h
-  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_new_debug.h
-  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_new.h
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\use_ansi.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cstdio
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_new_debug.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_new.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\crtdefs.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\use_ansi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstdio
   Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h
   Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstdio.h
   Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_stdio_config.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cstring
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstring
   Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h
   Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_memory.h
   Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_memcpy_s.h
   Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\errno.h
-  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_string.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_string.h
   Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstring.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cwchar
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cwchar
   Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\wchar.h
   Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wconio.h
   Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wctype.h
@@ -71,77 +437,79 @@
   Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wtime.h
   Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\sys/stat.h
   Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\sys/types.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstddef
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cstddef
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstddef
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstddef
   Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stddef.h
-  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xtr1common
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cstdlib
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xtr1common
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstdlib
   Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\math.h
   Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_math.h
   Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdlib.h
   Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_malloc.h
   Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_search.h
-  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\limits.h
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\initializer_list
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cstdint
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\limits
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cfloat
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\limits.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\initializer_list
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstdint
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\stdint.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\limits
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cfloat
   Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\float.h
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\climits
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\new
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\exception
-  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\type_traits
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\climits
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\new
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\exception
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\type_traits
   Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h
-  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h
-  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\eh.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_exception.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\eh.h
   Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_terminate.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xatomic.h
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\intrin0.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xutility
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\utility
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xpolymorphic_allocator.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\tuple
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cctype
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xatomic.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\intrin0.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xutility
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\utility
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xpolymorphic_allocator.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\tuple
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cctype
   Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\ctype.h
-  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\iostream
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\istream
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\ostream
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\ios
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xlocnum
-  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cmath
-  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xtgmath.h
-  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\streambuf
-  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xiosbase
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iostream
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\istream
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ostream
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ios
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocnum
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iterator
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\streambuf
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xiosbase
   Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\share.h
-  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\system_error
-  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cerrno
-  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdexcept
-  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xcall_once.h
-  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xerrc.h
-  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xlocale
-  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory
-  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\typeinfo
-  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_typeinfo.h
-  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xfacet
-  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xlocinfo
-  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xlocinfo.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\system_error
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\__msvc_system_error_abi.hpp
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cerrno
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\stdexcept
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xcall_once.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xerrc.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\atomic
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocale
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\memory
+  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\typeinfo
+  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_typeinfo.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xfacet
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocinfo
+  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocinfo.h
   Nota: inclusión del archivo:             C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\locale.h
-  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\fstream
-  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\sstream
-  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\msclr/marshal_cppstd.h
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcclr.h
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\gcroot.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\msclr/gcroot.h
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\msclr\marshal.h
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\fstream
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\sstream
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\msclr/marshal_cppstd.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vector
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcclr.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\gcroot.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\msclr/gcroot.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\msclr\marshal.h
   Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h
   Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winapifamily.h
   Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winpackagefamily.h
   Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\sdkddkver.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\excpt.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdarg.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\excpt.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\stdarg.h
   Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\windef.h
   Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h
   Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\specstrings.h
@@ -348,29 +716,29 @@
   Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mcx.h
   Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\imm.h
   Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ime_cmodes.h
-  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\filesystem
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\chrono
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\ratio
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\thr/xtimec.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\iomanip
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xlocmon
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xloctime
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\ctime
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\list
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\locale
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xlocbuf
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xlocmes
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\string_view
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xfilesystem_abi.h
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\filesystem
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\algorithm
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\chrono
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ratio
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xtimec.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iomanip
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocmon
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xloctime
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ctime
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\list
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\locale
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocbuf
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocmes
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\string_view
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xfilesystem_abi.h
   Nota: inclusión del archivo:  C:\Users\Arantxa\Documents\Tidex\Tidex2019\UnitForm.h
   Nota: inclusión del archivo:   C:\Users\Arantxa\Documents\Tidex\Tidex2019\ErrorForm.h
   Nota: inclusión del archivo:  C:\Users\Arantxa\Documents\Tidex\Tidex2019\Helper.h
   Nota: inclusión del archivo:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h
   Nota: inclusión del archivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_startup.h
   Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\math.h
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_startup.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_startup.h
   Nota: inclusión del archivo:  C:\Users\Arantxa\Documents\Tidex\Tidex2019\ErrorFormatForm.h
   Nota: inclusión del archivo:  C:\Users\Arantxa\Documents\Tidex\Tidex2019\NewForm.h
   NewForm.cpp
@@ -405,28 +773,28 @@
   Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.xml.dll
   Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\windowsbase.dll
   Nota: inclusión del archivo: C:\Users\Arantxa\Documents\Tidex\Tidex2019\NewForm.h
-  Nota: inclusión del archivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\fstream
-  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\yvals_core.h
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\crtdefs.h
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\sal.h
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\concurrencysal.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vadefs.h
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt.h
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xkeycheck.h
-  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\istream
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\ostream
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\ios
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xlocnum
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\climits
-  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\limits.h
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cmath
-  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\yvals.h
+  Nota: inclusión del archivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\fstream
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\yvals_core.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\sal.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\concurrencysal.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vadefs.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xkeycheck.h
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\istream
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ostream
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ios
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocnum
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\climits
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\limits.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\yvals.h
   Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h
-  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_new_debug.h
-  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_new.h
-  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\use_ansi.h
-  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cstdlib
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_new_debug.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_new.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\crtdefs.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\use_ansi.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstdlib
   Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\math.h
   Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_math.h
   Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdlib.h
@@ -434,85 +802,87 @@
   Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_search.h
   Nota: inclusión del archivo:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stddef.h
   Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstdlib.h
-  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xtgmath.h
-  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xtr1common
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cstdio
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xtr1common
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstdio
   Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h
   Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstdio.h
   Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_stdio_config.h
-  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\streambuf
-  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xiosbase
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iterator
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iosfwd
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstring
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_memory.h
+  Nota: inclusión del archivo:            C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_memcpy_s.h
+  Nota: inclusión del archivo:             C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\errno.h
+  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_string.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstring.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cwchar
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\wchar.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wconio.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wctype.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wdirect.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wio.h
+  Nota: inclusión del archivo:            C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_share.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wprocess.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wtime.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\sys/stat.h
+  Nota: inclusión del archivo:            C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\sys/types.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstddef
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstddef
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\initializer_list
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xutility
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\utility
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\type_traits
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\streambuf
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xiosbase
   Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\share.h
-  Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_share.h
-  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\system_error
-  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cerrno
-  Nota: inclusión del archivo:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\errno.h
-  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdexcept
-  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\exception
-  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\type_traits
-  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstddef
-  Nota: inclusión del archivo:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cstddef
-  Nota: inclusión del archivo:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\initializer_list
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\system_error
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\__msvc_system_error_abi.hpp
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cerrno
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\stdexcept
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\exception
   Nota: inclusión del archivo:            C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h
-  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_exception.h
-  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\eh.h
+  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_exception.h
+  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\eh.h
   Nota: inclusión del archivo:              C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_terminate.h
-  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring
-  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\iosfwd
-  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cstring
-  Nota: inclusión del archivo:              C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h
-  Nota: inclusión del archivo:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_memory.h
-  Nota: inclusión del archivo:                C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_memcpy_s.h
-  Nota: inclusión del archivo:                 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_string.h
-  Nota: inclusión del archivo:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstring.h
-  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cwchar
-  Nota: inclusión del archivo:              C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\wchar.h
-  Nota: inclusión del archivo:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wconio.h
-  Nota: inclusión del archivo:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wctype.h
-  Nota: inclusión del archivo:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wdirect.h
-  Nota: inclusión del archivo:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wio.h
-  Nota: inclusión del archivo:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wprocess.h
-  Nota: inclusión del archivo:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wtime.h
-  Nota: inclusión del archivo:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\sys/stat.h
-  Nota: inclusión del archivo:                C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\sys/types.h
-  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory
-  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cstdint
-  Nota: inclusión del archivo:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdint.h
-  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\limits
-  Nota: inclusión del archivo:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cfloat
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring
+  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstdint
+  Nota: inclusión del archivo:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\stdint.h
+  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\limits
+  Nota: inclusión del archivo:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cfloat
   Nota: inclusión del archivo:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\float.h
-  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\new
-  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xatomic.h
-  Nota: inclusión del archivo:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\intrin0.h
-  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xutility
-  Nota: inclusión del archivo:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\utility
-  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xpolymorphic_allocator.h
-  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\tuple
-  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xcall_once.h
-  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xerrc.h
-  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xlocale
-  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory
-  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\typeinfo
-  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_typeinfo.h
-  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xfacet
-  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xlocinfo
-  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xlocinfo.h
+  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\new
+  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xatomic.h
+  Nota: inclusión del archivo:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\intrin0.h
+  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xpolymorphic_allocator.h
+  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\tuple
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xcall_once.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xerrc.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\atomic
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocale
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\memory
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\typeinfo
+  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_typeinfo.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xfacet
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocinfo
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocinfo.h
   Nota: inclusión del archivo:            C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\ctype.h
   Nota: inclusión del archivo:            C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\locale.h
-  Nota: inclusión del archivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\string
-  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\cctype
-  Nota: inclusión del archivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\iostream
+  Nota: inclusión del archivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\string
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cctype
+  Nota: inclusión del archivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iostream
   Nota: inclusión del archivo:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\process.h
   Nota: inclusión del archivo:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_startup.h
   Nota: inclusión del archivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\math.h
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcruntime_startup.h
-  Nota: inclusión del archivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\msclr/marshal.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_startup.h
+  Nota: inclusión del archivo:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\msclr/marshal.h
   Nota: inclusión del archivo:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h
   Nota: inclusión del archivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winapifamily.h
   Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winpackagefamily.h
   Nota: inclusión del archivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\sdkddkver.h
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\excpt.h
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdarg.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\excpt.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\stdarg.h
   Nota: inclusión del archivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\windef.h
   Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h
   Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\specstrings.h
@@ -719,29 +1089,397 @@
   Nota: inclusión del archivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mcx.h
   Nota: inclusión del archivo:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\imm.h
   Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ime_cmodes.h
-  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vcclr.h
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\gcroot.h
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\msclr/gcroot.h
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcclr.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\gcroot.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\msclr/gcroot.h
   Nota: inclusión del archivo:  C:\Users\Arantxa\Documents\Tidex\Tidex2019\ChartForm.h
-  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\sstream
-  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\msclr/marshal_cppstd.h
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector
-  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\filesystem
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\algorithm
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\chrono
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\ratio
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\thr/xtimec.h
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\iomanip
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xlocmon
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xloctime
-  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\ctime
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\list
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\locale
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xlocbuf
-  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xlocmes
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\string_view
-  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xfilesystem_abi.h
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\sstream
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\msclr/marshal_cppstd.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vector
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\filesystem
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\algorithm
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\chrono
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ratio
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xtimec.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iomanip
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocmon
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xloctime
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ctime
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\list
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\locale
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocbuf
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocmes
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\string_view
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xfilesystem_abi.h
+  UnitForm.cpp
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\mscorlib.dll
+  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\cefsharp.winforms.75.1.142\cefsharp\x64\cefsharp.winforms.dll
+  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\materialskin.0.2.1\lib\materialskin.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.build.conversion.v4.0.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.build.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.build.framework.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.build.utilities.v4.0.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.visualbasic.compatibility.data.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.visualbasic.compatibility.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\microsoft.visualbasic.dll
+  Nota: inclusión del archivo: c:\program files (x86)\microsoft visual studio\2019\community\common7\ide\publicassemblies\microsoft.visualstudio.vc.interfaces.dll
+  Nota: inclusión del archivo: c:\program files (x86)\microsoft visual studio\2019\community\common7\ide\publicassemblies\microsoft.visualstudio.vccodemodel.dll
+  Nota: inclusión del archivo: c:\program files (x86)\microsoft visual studio\2019\community\common7\ide\publicassemblies\microsoft.visualstudio.vcproject.dll
+  Nota: inclusión del archivo: c:\program files (x86)\microsoft visual studio\2019\community\common7\ide\publicassemblies\microsoft.visualstudio.vcprojectengine.dll
+  Nota: inclusión del archivo: c:\users\arantxa\documents\tidex\packages\chartdirector\lib\signed_client_profile\netchartdir_cp.dll
+  Nota: inclusión del archivo: c:\windows\microsoft.net\assembly\gac_msil\netstandard\v4.0_2.0.0.0__cc7b13ffcd2ddd51\netstandard.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\presentationcore.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\presentationframework.dll
+  Nota: inclusión del archivo: c:\program files (x86)\microsoft visual studio\2019\community\common7\ide\publicassemblies\stdole.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.core.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.data.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.design.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.drawing.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.web.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.windows.forms.datavisualization.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.windows.forms.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.xaml.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\system.xml.dll
+  Nota: inclusión del archivo: c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.6.1\windowsbase.dll
+  Nota: inclusión del archivo: C:\Users\Arantxa\Documents\Tidex\Tidex2019\UnitForm.h
+  Nota: inclusión del archivo:  C:\Users\Arantxa\Documents\Tidex\Tidex2019\ChartForm.h
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\string
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\yvals_core.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\sal.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\concurrencysal.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vadefs.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xkeycheck.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iosfwd
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\yvals.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_new_debug.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_new.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\crtdefs.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\use_ansi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstdio
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstdio.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_stdio_config.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstring
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_memory.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_memcpy_s.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\errno.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_string.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstring.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cwchar
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\wchar.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wconio.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wctype.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wdirect.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wio.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_share.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wprocess.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstdlib.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wtime.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\sys/stat.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\sys/types.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstddef
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstddef
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stddef.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xtr1common
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstdlib
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\math.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_math.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdlib.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_malloc.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_search.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\limits.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\initializer_list
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cstdint
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\stdint.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\limits
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cfloat
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\float.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\climits
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\new
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\exception
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\type_traits
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_exception.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\eh.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_terminate.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xatomic.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\intrin0.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xutility
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\utility
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xpolymorphic_allocator.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\tuple
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cctype
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\ctype.h
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iostream
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\istream
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ostream
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ios
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocnum
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iterator
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\streambuf
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xiosbase
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\share.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\system_error
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\__msvc_system_error_abi.hpp
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cerrno
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\stdexcept
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xcall_once.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xerrc.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\atomic
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocale
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\memory
+  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\typeinfo
+  Nota: inclusión del archivo:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_typeinfo.h
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xfacet
+  Nota: inclusión del archivo:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocinfo
+  Nota: inclusión del archivo:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocinfo.h
+  Nota: inclusión del archivo:             C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\locale.h
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\fstream
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\sstream
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\msclr/marshal_cppstd.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vector
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcclr.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\gcroot.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\msclr/gcroot.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\msclr\marshal.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Windows.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winapifamily.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winpackagefamily.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\sdkddkver.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\excpt.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\stdarg.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\windef.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\specstrings.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\specstrings_strict.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\specstrings_undef.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\driverspecs.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\sdv_driverspecs.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winnt.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\kernelspecs.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\basetsd.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\guiddef.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\apiset.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\ktmtypes.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winbase.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\apisetcconv.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\minwinbase.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\apiquery2.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\processenv.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\fileapifromapp.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\fileapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\debugapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\utilapiset.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\handleapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\errhandlingapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\fibersapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\namedpipeapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\profileapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\heapapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ioapiset.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\synchapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\interlockedapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\processthreadsapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\sysinfoapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\memoryapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\enclaveapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\threadpoollegacyapiset.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\threadpoolapiset.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\jobapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\jobapi2.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wow64apiset.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\libloaderapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\securitybaseapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\namespaceapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\systemtopologyapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\processtopologyapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\securityappcontainer.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\realtimeapiset.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winerror.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\timezoneapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wingdi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack4.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winuser.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack2.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\tvout.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winnls.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\datetimeapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\stringapiset.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winnls.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wincon.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wincontypes.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\consoleapi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\consoleapi2.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\consoleapi3.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winver.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\verrsrc.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winreg.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\reason.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winnetwk.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\wnnc.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\cderr.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dde.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ddeml.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dlgs.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\lzexpand.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsystem.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mciapi.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmiscapi.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmiscapi2.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\playsoundapi.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmeapi.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\timeapi.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\joystickapi.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmsyscom.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\nb30.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpc.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcdce.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcdcep.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\rpcnsi.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcnterr.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcasync.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\shellapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winperf.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winsock.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\inaddr.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wincrypt.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\bcrypt.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ncrypt.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dpapi.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winefs.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winscard.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\wtypes.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcndr.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\rpcnsip.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\rpcsal.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\wtypesbase.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\guiddef.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack1.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\winsmcrd.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winspool.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\prsht.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ole2.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\objbase.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\combaseapi.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\unknwnbase.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\objidlbase.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\guiddef.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\cguid.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\coml2api.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\objidl.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\unknwn.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\propidlbase.h
+  Nota: inclusión del archivo:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oaidl.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\urlmon.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oleidl.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\servprov.h
+  Nota: inclusión del archivo:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\msxml.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\propidl.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\oleauto.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\pshpack8.h
+  Nota: inclusión del archivo:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\poppack.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\commdlg.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\prsht.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\stralign.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winsvc.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mcx.h
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\imm.h
+  Nota: inclusión del archivo:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ime_cmodes.h
+  Nota: inclusión del archivo:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\filesystem
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\algorithm
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\chrono
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ratio
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xtimec.h
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\iomanip
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocmon
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xloctime
+  Nota: inclusión del archivo:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\ctime
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\list
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\locale
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocbuf
+  Nota: inclusión del archivo:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xlocmes
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\string_view
+  Nota: inclusión del archivo:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xfilesystem_abi.h
+  Nota: inclusión del archivo:  C:\Users\Arantxa\Documents\Tidex\Tidex2019\ErrorForm.h
   Generando código...
 C:\Users\Arantxa\Documents\Tidex\Tidex2019\NewForm.h(1132): warning C4715: 'Tidex2019::NewForm::transformanum': no todas las rutas de acceso de control devuelven un valor
 C:\Users\Arantxa\Documents\Tidex\Tidex2019\NewForm.h(1132): warning C4715: 'Tidex2019::NewForm::transformanum': no todas las rutas de acceso de control devuelven un valor

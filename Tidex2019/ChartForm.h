@@ -134,7 +134,7 @@ namespace Tidex2019 {
 			// 
 			// winChartViewer1
 			// 
-			this->winChartViewer1->Location = System::Drawing::Point(121, 22);
+			this->winChartViewer1->Location = System::Drawing::Point(122, 21);
 			this->winChartViewer1->Margin = System::Windows::Forms::Padding(2);
 			this->winChartViewer1->Name = L"winChartViewer1";
 			this->winChartViewer1->Size = System::Drawing::Size(900, 600);
@@ -341,7 +341,7 @@ namespace Tidex2019 {
 			// viewPortControl1
 			// 
 			this->viewPortControl1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->viewPortControl1->Location = System::Drawing::Point(121, 625);
+			this->viewPortControl1->Location = System::Drawing::Point(122, 625);
 			this->viewPortControl1->Margin = System::Windows::Forms::Padding(2);
 			this->viewPortControl1->Name = L"viewPortControl1";
 			this->viewPortControl1->Size = System::Drawing::Size(900, 92);
