@@ -475,7 +475,7 @@ private: System::Windows::Forms::ComboBox^ namebox;
 				 this->namebox->Items->AddRange(gcnew cli::array< System::Object^  >(70) {
 					 L"Z0", L"SA", L"SSA", L"MSM", L"MM", L"MSF", L"MF",
 						 L"ALP1", L"2Q1", L"SIG1", L"Q1", L"RHO1", L"O1", L"TAU1", L"BET1", L"NO1", L"CHI1", L"PI1", L"P1", L"S1", L"K1", L"PSI1", L"PHI1",
-						 L"THE1", L"J1", L"S01", L"OO1", L"UPS1", L"OQ2", L"EPS2", L"2N2", L"MU2", L"N2", L"NU2", L"GAM1", L"H1", L"M2", L"H2", L"MKS2",
+						 L"THE1", L"J1", L"S01", L"OO1", L"UPS1", L"OQ2", L"EPS2", L"2N2", L"MU2", L"N2", L"NU2", L"GAM2", L"H1", L"M2", L"H2", L"MKS2",
 						 L"LDA2", L"L2", L"T2", L"S2", L"R2", L"K2", L"MSN2", L"ETA2", L"MO3", L"M3", L"SO3", L"MK3", L"SK3", L"MN4", L"M4", L"SN4", L"MS4",
 						 L"MK4", L"S4", L"SK4", L"2MK5", L"2SK5", L"2MN6", L"M6", L"2MS6", L"2MK6", L"2SM6", L"MSK6", L"3MK7", L"M8", L"M10"
 				 });
