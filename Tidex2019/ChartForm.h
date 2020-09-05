@@ -536,7 +536,8 @@ namespace Tidex2019 {
 			c->xAxis()->setTitle("Time", "msjh.ttc", 14, 0x555555);
 			c->addLineLayer(result2);
 			c->xAxis()->setLabels(labels2);
-
+			c->xAxis()->setLabelStep(labels2->Length/4);
+			c->xAxis()->setLabelAlignment(1);
 			c->yAxis()->setTickDensity(30);
 
 			if (!winChartViewer1->IsInMouseMoveEvent)
@@ -610,14 +611,14 @@ namespace Tidex2019 {
 			chart->xAxis()->setColors(ChartDirector::Chart::Transparent);
 			chart->xAxis()->setLabelStyle("Arial", 10);
 
-			chart->xAxis()->setLabelGap(-1);
+			chart->xAxis()->setLabelGap(-10);
 			chart->xAxis()->setLabelAlignment(1);
 
 			chart->yAxis()->setColors(ChartDirector::Chart::Transparent, ChartDirector::Chart::Transparent);
 
 			chart->addLineLayer(result);
 			chart->xAxis()->setLabels(labels);
-
+			chart->xAxis()->setLabelStep(labels->Length/4);
 			chart->xAxis()->setTickDensity(75);
 			chart->yAxis()->setRounding(false, false);
 

@@ -79,6 +79,9 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::ToolStripButton^ savepredictiontoolStripButton2;
 	private: System::Windows::Forms::ToolStripButton^ savecharttoolStripButton3;
 	private: System::Windows::Forms::ToolStripButton^ printtoolStripButton4;
+	private: System::ComponentModel::BackgroundWorker^ backgroundWorker2;
+
+
 	private: System::ComponentModel::IContainer^ components;
 	private:
 		/// <summary>
@@ -121,6 +124,7 @@ namespace Tidex2019 {
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->openFileDialog2 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
+			this->backgroundWorker2 = (gcnew System::ComponentModel::BackgroundWorker());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -436,11 +440,13 @@ namespace Tidex2019 {
 			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->menuStrip1);
 			this->DoubleBuffered = true;
+			this->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->IsMdiContainer = true;
 			this->Name = L"IndexForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"TIDEX2020";
+			this->TransparencyKey = System::Drawing::Color::Transparent;
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();

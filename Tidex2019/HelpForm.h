@@ -40,7 +40,7 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::LinkLabel^ linkLabel1;
 	private: System::Windows::Forms::LinkLabel^ linkLabel2;
-	private: System::Windows::Forms::Label^ label4;
+
 
 
 
@@ -67,7 +67,6 @@ namespace Tidex2019 {
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel2 = (gcnew System::Windows::Forms::LinkLabel());
-			this->label4 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -91,9 +90,9 @@ namespace Tidex2019 {
 			this->label2->ForeColor = System::Drawing::Color::White;
 			this->label2->Location = System::Drawing::Point(25, 60);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(173, 20);
+			this->label2->Size = System::Drawing::Size(174, 20);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"Tidex 2019 version 2.0";
+			this->label2->Text = L"TIDEX2020 version 1.0";
 			// 
 			// label3
 			// 
@@ -103,9 +102,9 @@ namespace Tidex2019 {
 			this->label3->ForeColor = System::Drawing::Color::White;
 			this->label3->Location = System::Drawing::Point(25, 90);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(151, 20);
+			this->label3->Size = System::Drawing::Size(171, 20);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"Copyright © 2019. ";
+			this->label3->Text = L"Licencia GNU CPL V3.";
 			// 
 			// pictureBox2
 			// 
@@ -125,10 +124,10 @@ namespace Tidex2019 {
 			this->linkLabel1->LinkColor = System::Drawing::Color::Aqua;
 			this->linkLabel1->Location = System::Drawing::Point(26, 481);
 			this->linkLabel1->Name = L"linkLabel1";
-			this->linkLabel1->Size = System::Drawing::Size(245, 20);
+			this->linkLabel1->Size = System::Drawing::Size(281, 20);
 			this->linkLabel1->TabIndex = 5;
 			this->linkLabel1->TabStop = true;
-			this->linkLabel1->Text = L"https://ucatidex.wordpress.com/";
+			this->linkLabel1->Text = L"https://ucatidex2020.wordpress.com/";
 			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &HelpForm::LinkLabel1_LinkClicked);
 			// 
 			// linkLabel2
@@ -146,18 +145,6 @@ namespace Tidex2019 {
 			this->linkLabel2->Text = L"https://github.com/arantxaotal/Tidex_Fixed.git";
 			this->linkLabel2->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &HelpForm::LinkLabel2_LinkClicked);
 			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::Color::White;
-			this->label4->Location = System::Drawing::Point(25, 123);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(147, 20);
-			this->label4->TabIndex = 7;
-			this->label4->Text = L"All rights reserved.";
-			// 
 			// HelpForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -165,7 +152,6 @@ namespace Tidex2019 {
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->ClientSize = System::Drawing::Size(812, 547);
-			this->Controls->Add(this->label4);
 			this->Controls->Add(this->linkLabel2);
 			this->Controls->Add(this->linkLabel1);
 			this->Controls->Add(this->pictureBox2);
