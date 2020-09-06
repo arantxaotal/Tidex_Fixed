@@ -240,7 +240,7 @@ namespace Tidex2019 {
 					//cad->Format("{0}  {1}  {2}\n",dataGridView1->Rows[i]->Cells[0]->Value, dataGridView1->Rows[i]->Cells[1]->Value, dataGridView1->Rows[i]->Cells[2]->Value);
 					richTextBox1->AppendText("\n"+dataGridView1->Rows[i]->Cells[0]->Value + "   ");
 					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + "   ");
-					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n\n");
+					richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n");
 				}
 			}
 
@@ -297,7 +297,7 @@ namespace Tidex2019 {
 	private:
 	private: System::Windows::Forms::Label^ label14;
 	private: System::Windows::Forms::Label^ label15;
-	private: MaterialSkin::Controls::MaterialFlatButton^ updatebutton;
+
 
 
 
@@ -325,6 +325,8 @@ private: System::Windows::Forms::ComboBox^ measurementtimebox;
 private: System::Windows::Forms::Label^ label4;
 private: System::Windows::Forms::Button^ addbutton;
 private: System::Windows::Forms::ComboBox^ namebox;
+private: System::Windows::Forms::Button^ updatebutton;
+
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -372,7 +374,6 @@ private: System::Windows::Forms::ComboBox^ namebox;
 				 this->nsbox = (gcnew System::Windows::Forms::ComboBox());
 				 this->label14 = (gcnew System::Windows::Forms::Label());
 				 this->label15 = (gcnew System::Windows::Forms::Label());
-				 this->updatebutton = (gcnew MaterialSkin::Controls::MaterialFlatButton());
 				 this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 				 this->label19 = (gcnew System::Windows::Forms::Label());
 				 this->begintime = (gcnew System::Windows::Forms::DateTimePicker());
@@ -387,6 +388,7 @@ private: System::Windows::Forms::ComboBox^ namebox;
 				 this->measurementtimebox = (gcnew System::Windows::Forms::ComboBox());
 				 this->label4 = (gcnew System::Windows::Forms::Label());
 				 this->addbutton = (gcnew System::Windows::Forms::Button());
+				 this->updatebutton = (gcnew System::Windows::Forms::Button());
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg2))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesdeg1))->BeginInit();
 				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coordinatesmin2))->BeginInit();
@@ -729,25 +731,6 @@ private: System::Windows::Forms::ComboBox^ namebox;
 				 this->label15->TabIndex = 72;
 				 this->label15->Text = L"Longitude";
 				 // 
-				 // updatebutton
-				 // 
-				 this->updatebutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-				 this->updatebutton->AutoSize = true;
-				 this->updatebutton->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-				 this->updatebutton->BackColor = System::Drawing::Color::DeepSkyBlue;
-				 this->updatebutton->Depth = 0;
-				 this->updatebutton->ForeColor = System::Drawing::SystemColors::ControlText;
-				 this->updatebutton->Location = System::Drawing::Point(604, 441);
-				 this->updatebutton->Margin = System::Windows::Forms::Padding(4, 6, 4, 6);
-				 this->updatebutton->MouseState = MaterialSkin::MouseState::HOVER;
-				 this->updatebutton->Name = L"updatebutton";
-				 this->updatebutton->Primary = false;
-				 this->updatebutton->Size = System::Drawing::Size(121, 36);
-				 this->updatebutton->TabIndex = 76;
-				 this->updatebutton->Text = L"Apply Changes";
-				 this->updatebutton->UseVisualStyleBackColor = false;
-				 this->updatebutton->Click += gcnew System::EventHandler(this, &NewForm::updatebutton_Click);
-				 // 
 				 // openFileDialog1
 				 // 
 				 this->openFileDialog1->DefaultExt = L"odf";
@@ -916,12 +899,26 @@ private: System::Windows::Forms::ComboBox^ namebox;
 				 this->addbutton->UseVisualStyleBackColor = true;
 				 this->addbutton->Click += gcnew System::EventHandler(this, &NewForm::addbutton_Click);
 				 // 
+				 // updatebutton
+				 // 
+				 this->updatebutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+				 this->updatebutton->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+					 static_cast<System::Byte>(0)));
+				 this->updatebutton->Location = System::Drawing::Point(546, 441);
+				 this->updatebutton->Name = L"updatebutton";
+				 this->updatebutton->Size = System::Drawing::Size(179, 31);
+				 this->updatebutton->TabIndex = 99;
+				 this->updatebutton->Text = L"APPLY CHANGES";
+				 this->updatebutton->UseVisualStyleBackColor = true;
+				 this->updatebutton->Click += gcnew System::EventHandler(this, &NewForm::updatebutton_Click_1);
+				 // 
 				 // NewForm
 				 // 
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->BackColor = System::Drawing::Color::PowderBlue;
 				 this->ClientSize = System::Drawing::Size(784, 729);
+				 this->Controls->Add(this->updatebutton);
 				 this->Controls->Add(this->addbutton);
 				 this->Controls->Add(this->label4);
 				 this->Controls->Add(this->measurementtimebox);
@@ -933,7 +930,6 @@ private: System::Windows::Forms::ComboBox^ namebox;
 				 this->Controls->Add(this->endtime);
 				 this->Controls->Add(this->begintime);
 				 this->Controls->Add(this->label19);
-				 this->Controls->Add(this->updatebutton);
 				 this->Controls->Add(this->label15);
 				 this->Controls->Add(this->label14);
 				 this->Controls->Add(this->nsbox);
@@ -1302,6 +1298,53 @@ private: System::Void begintime_ValueChanged(System::Object^ sender, System::Eve
 	}
 	return;
 
+}
+	   //Método que aplica los datos añadidos al cuadro de texto
+private: System::Void updatebutton_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	richTextBox1->Clear();
+	String^ w = "W";
+	String^ s = "S";
+	Decimal^ coordinatesg1 = coordinatesdeg1->Value;
+	Decimal^ coordinatesg2 = coordinatesdeg2->Value;
+	Decimal^ coordinatesm1 = coordinatesmin1->Value;
+	Decimal^ coordinatesm2 = coordinatesmin2->Value;
+	String^ measurementtime = measurementtimebox->Text;
+	if (nsbox->Text == s)
+	{
+		coordinatesg1 = -coordinatesdeg1->Value;
+		coordinatesm1 = -coordinatesmin1->Value;
+	}
+	if (ewbox->Text == w)
+	{
+		coordinatesg2 = -coordinatesdeg2->Value;
+		coordinatesm2 = -coordinatesmin2->Value;
+	}
+
+	richTextBox1->AppendText(coordinatesg1 + " " + coordinatesm1 +
+		"\n" + coordinatesg2 + " " + coordinatesm2 + "\n");
+	richTextBox1->AppendText(measurementtime + "\n");
+
+
+	for (int i = 0; i < dataGridView1->RowCount; ++i)
+	{
+
+		if ((msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != "0"
+			|| msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "0")
+			&& (msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != ""
+				|| msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "") &&
+			is_number(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString())) &&
+			is_number(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString())) &&
+			(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != "." ||
+				(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "."
+					)))
+		{
+			richTextBox1->AppendText("\n" + dataGridView1->Rows[i]->Cells[0]->Value + "   ");
+			richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[1]->Value + "   ");
+			richTextBox1->AppendText(dataGridView1->Rows[i]->Cells[2]->Value + "\n");
+		}
+
+
+	}
 }
 };
 }
