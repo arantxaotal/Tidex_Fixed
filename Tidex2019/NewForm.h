@@ -782,6 +782,7 @@ private: System::Windows::Forms::ComboBox^ namebox;
 				 this->begintime->ShowUpDown = true;
 				 this->begintime->Size = System::Drawing::Size(82, 29);
 				 this->begintime->TabIndex = 84;
+				 this->begintime->ValueChanged += gcnew System::EventHandler(this, &NewForm::begintime_ValueChanged);
 				 // 
 				 // endtime
 				 // 
@@ -1130,6 +1131,7 @@ private: System::Windows::Forms::ComboBox^ namebox;
 			return "1";
 		}
 	}
+
 	//Método de botón de aceptar que abre ventana para guardar fichero predicción, lo guarda en .dat y muestra gráfica
 	private: System::Void acceptbutton_Click(System::Object^ sender, System::EventArgs^ e)
 	{
@@ -1211,7 +1213,7 @@ private: System::Windows::Forms::ComboBox^ namebox;
 		
 		if (chart== nullptr)
 		{
-			chart = gcnew ChartForm(unitbox->Text, temppath, buf, msclr::interop::marshal_as<String^>(guardadotemporal.str()));
+			chart = gcnew ChartForm(unitbox->Text, temppath, buf, filename);
 			chart->MdiParent = indexform;
 			chart->FormClosed += gcnew FormClosedEventHandler(this,&Tidex2019::NewForm::chart_FormClosed);
 			chart->Show();
@@ -1219,7 +1221,7 @@ private: System::Windows::Forms::ComboBox^ namebox;
 		else
 		{
 			chart->Close();
-			chart = gcnew ChartForm(unitbox->Text, temppath, buf, msclr::interop::marshal_as<String^>(guardadotemporal.str()));
+			chart = gcnew ChartForm(unitbox->Text, temppath, buf, filename);
 			chart->MdiParent = indexform;
 			chart->FormClosed += gcnew FormClosedEventHandler(this, &Tidex2019::NewForm::chart_FormClosed);
 			chart->Show();
@@ -1237,11 +1239,12 @@ private: System::Windows::Forms::ComboBox^ namebox;
 //Método que guarda un fichero .hdf
 public: System::Void Harmonicsavebutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	
-	try { saveFileDialog1->ShowDialog(); 
+	try { 
+		saveFileDialog1->ShowDialog(); 
 	if (saveFileDialog1->FileName != "")
 	{
-		filename = saveFileDialog1->FileName;
 		richTextBox1->SaveFile(saveFileDialog1->FileName, System::Windows::Forms::RichTextBoxStreamType::PlainText);
+		filename = gcnew String(saveFileDialog1->FileName);
 		acceptbutton->Visible = true;
 		this->Text = filename;
 	}
@@ -1287,6 +1290,18 @@ private: System::Void addbutton_Click(System::Object^ sender, System::EventArgs^
 	namebox->Text = "";
 	amplitudebox->Text = "";
 	argumentbox->Text = "";
+}
+private: System::Void begintime_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (begintime->Value.Hour == 0 && begintime->Value.Minute == 00)
+	{
+		MessageBox::Show("Begin hour:min can not be 0:00!","Warning", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Exclamation);
+		begintime->Value = DateTime::Now;
+
+
+	}
+	return;
+
 }
 };
 }
