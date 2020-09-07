@@ -19,7 +19,7 @@ namespace Tidex2019 {
 	/// <summary>
 	/// Resumen de ChartForm
 	/// </summary>
-	public ref class ChartForm : public System::Windows::Forms::Form 
+	public ref class ChartForm : public System::Windows::Forms::Form
 	{
 	public:
 		ChartForm(void)
@@ -29,7 +29,7 @@ namespace Tidex2019 {
 			//TODO: agregar código de constructor aquí
 		}
 
-		ChartForm(String^u,String ^ f, char* buf,String^filenamehdf)
+		ChartForm(String^ u, String^ f, char* buf, String^ filenamehdf)
 		{
 			InitializeComponent();
 			richTextBox1->LoadFile(f, System::Windows::Forms::RichTextBoxStreamType::PlainText);
@@ -92,8 +92,8 @@ namespace Tidex2019 {
 	private: ChartDirector::XYChart^ c;
 	private: String^ unit;
 	private: int lines;
-	private: array<double>^ result,^result2;
-	private: array<System::String^, 1>^ labels,^labels2;
+	private: array<double>^ result, ^ result2;
+	private: array<System::String^, 1>^ labels, ^ labels2;
 	private: ChartDirector::WinChartViewer^ winChartViewer1;
 	protected:
 	private: System::ComponentModel::IContainer^ components;
@@ -386,7 +386,7 @@ namespace Tidex2019 {
 		}
 #pragma endregion
 
-//CHART DIRECTOR CONFIGURACIÓN 
+		//CHART DIRECTOR CONFIGURACIÓN 
 	private:
 		//cargar datos fichero .dat
 		System::Void loadData()
@@ -459,12 +459,12 @@ namespace Tidex2019 {
 
 			}
 		}
-	//
-	// Initialize the WinChartViewer
-	// 
+		//
+		// Initialize the WinChartViewer
+		// 
 		System::Void initChartViewer()
 		{
-			
+
 			winChartViewer1->setFullRange("x", 0, 1);
 			winChartViewer1->ViewPortWidth = 0.2;
 			winChartViewer1->ViewPortLeft = 1 - winChartViewer1->ViewPortWidth;
@@ -476,16 +476,16 @@ namespace Tidex2019 {
 			winChartViewer1->MouseWheelZoomRatio = 1.1;
 		}
 
- // The ViewPortChanged event handler. This event occurs if the user scrolls or zooms in
- // or out the chart by dragging or clicking on the chart. It can also be triggered by
- // calling WinChartViewer.updateViewPort.
- //
+		// The ViewPortChanged event handler. This event occurs if the user scrolls or zooms in
+		// or out the chart by dragging or clicking on the chart. It can also be triggered by
+		// calling WinChartViewer.updateViewPort.
+		//
 		System::Void winChartViewer1_ViewPortChanged(System::Object^ sender, WinViewPortEventArgs^ e)
 		{
-				if (e->NeedUpdateChart)
-				{
-					drawChart();
-				}	
+			if (e->NeedUpdateChart)
+			{
+				drawChart();
+			}
 		}
 		System::Void drawChart()
 		{
@@ -501,11 +501,11 @@ namespace Tidex2019 {
 			result2 = gcnew array<double>(totalPoints);
 			for (int i = 0; i < totalPoints; i++)
 			{
-				labels2[i] = labels[i  +startPoint];
+				labels2[i] = labels[i + startPoint];
 				result2[i] = result[i + startPoint];
 			}
 			//Chart size
-			c = gcnew ChartDirector::XYChart(900,600);
+			c = gcnew ChartDirector::XYChart(900, 600);
 			c->setPlotArea(55, 55, c->getWidth() - 80, c->getHeight() - 90, c->linearGradientColor(0, 55, 0, c->getHeight() - 35, 0xf0f6ff, 0x99F3DF), -1, ChartDirector::Chart::Transparent, 0xffffff, 0xffffff);
 			c->setClipping();
 			c->addTitle("Tide Prediction", "msjh.ttc", 20, 0x555555);
@@ -530,13 +530,14 @@ namespace Tidex2019 {
 					if (unit == "cm")
 					{
 						c->yAxis()->setTitle("Sea Level (cm)", "msjh.ttc", 10);
-					}else c->yAxis()->setTitle("Velocity (m/s)", "msjh.ttc", 10);
+					}
+					else c->yAxis()->setTitle("Velocity (m/s)", "msjh.ttc", 10);
 				}
 			}
 			c->xAxis()->setTitle("Time", "msjh.ttc", 14, 0x555555);
 			c->addLineLayer(result2);
 			c->xAxis()->setLabels(labels2);
-			c->xAxis()->setLabelStep(labels2->Length/4);
+			c->xAxis()->setLabelStep(labels2->Length / 4);
 			c->xAxis()->setLabelAlignment(1);
 			c->yAxis()->setTickDensity(30);
 
@@ -618,7 +619,7 @@ namespace Tidex2019 {
 
 			chart->addLineLayer(result);
 			chart->xAxis()->setLabels(labels);
-			chart->xAxis()->setLabelStep(labels->Length/4);
+			chart->xAxis()->setLabelStep(labels->Length / 4);
 			chart->xAxis()->setTickDensity(75);
 			chart->yAxis()->setRounding(false, false);
 
@@ -689,100 +690,100 @@ namespace Tidex2019 {
 					"        ", (String^)legendEntries->ToString()) + "<*/*>";
 
 			// Display the legend on the top of the plot area
-			TTFText ^t = d->text(legendText, "Arial Bold", 10);
+			TTFText^ t = d->text(legendText, "Arial Bold", 10);
 			t->draw(plotArea->getLeftX() + 5, plotArea->getTopY() - 3, 0x000000, Chart::BottomLeft);
 		}
-//
-// Save button event handler
-//
-public: System::Void SavePB_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	// The standard Save File dialog
-	SaveFileDialog^ fileDlg = gcnew SaveFileDialog();
-	fileDlg->Filter = "PNG (*.png)|*.png|JPG (*.jpg)|*.jpg|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|" +
-		"SVG (*.svg)|*.svg|PDF (*.pdf)|*.pdf";
-	fileDlg->FileName = "chartname";
-	if (fileDlg->ShowDialog() != System::Windows::Forms::DialogResult::OK)
-		return;
-	ChartDirector::DrawArea^ d = c->initDynamicLayer();
-	ChartDirector::PlotArea^ plotArea = c->getPlotArea();
-	String^ b = " ";
-	ChartDirector::TTFText^ t = d->text(b, "arialbd.ttf", 10);
-	// Save the chart
-	if (nullptr != winChartViewer1->Chart)
-		winChartViewer1->Chart->makeChart(fileDlg->FileName);
-}
-//
- // Zoom out button event handler
- //
-private: System::Void ZoomOutPB_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (zoomOutPB->Checked)
-		winChartViewer1->MouseUsage = WinChartMouseUsage::ZoomOut;
-}
-//
-// Zoom in button event handler
-//
-private: System::Void ZoomInPB_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (zoomInPB->Checked)
-		winChartViewer1->MouseUsage = WinChartMouseUsage::ZoomIn;
-}
-//
-// Pointer (Drag to Scroll) button event handler
-//
-private: System::Void PointerPB_CheckedChanged_1(System::Object^ sender, System::EventArgs^ e) {
-	if (pointerPB->Checked)
-		winChartViewer1->MouseUsage = WinChartMouseUsage::ScrollOnDrag;
-}
-//Boton para imprimir el trozo de grafica que se muestra por pantalla
-public: System::Void PrintPB_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	printDialog1->Document = printDocument1;
-	//Call ShowDialog
-	if (printDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
-	{
-		printDocument1->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &ChartForm::PrintDocument1_PrintPage);
-		printDocument1->Print();
+		//
+		// Save button event handler
+		//
+	public: System::Void SavePB_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		// The standard Save File dialog
+		SaveFileDialog^ fileDlg = gcnew SaveFileDialog();
+		fileDlg->Filter = "PNG (*.png)|*.png|JPG (*.jpg)|*.jpg|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|" +
+			"SVG (*.svg)|*.svg|PDF (*.pdf)|*.pdf";
+		fileDlg->FileName = "chartname";
+		if (fileDlg->ShowDialog() != System::Windows::Forms::DialogResult::OK)
+			return;
+		ChartDirector::DrawArea^ d = c->initDynamicLayer();
+		ChartDirector::PlotArea^ plotArea = c->getPlotArea();
+		String^ b = " ";
+		ChartDirector::TTFText^ t = d->text(b, "arialbd.ttf", 10);
+		// Save the chart
+		if (nullptr != winChartViewer1->Chart)
+			winChartViewer1->Chart->makeChart(fileDlg->FileName);
 	}
-}
-//Metodo que imprime gráfica
-private: System::Void PrintDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e)
-{
-
-	System::Drawing::Point* point1 = new System::Drawing::Point(0, 0);
-	System::Drawing::Point* point2 = new System::Drawing::Point(700, 0);
-	System::Drawing::Point* point3 = new System::Drawing::Point(0, 600);
-	array<System::Drawing::Point>^ points = gcnew array<System::Drawing::Point>{*point1, * point2, * point3};
-	ChartDirector::DrawArea^ d = c->initDynamicLayer();
-	ChartDirector::PlotArea^ plotArea = c->getPlotArea();
-	String^ b = " ";
-	ChartDirector::TTFText^ t = d->text(b, "arialbd.ttf", 10);
-	t->draw(plotArea->getLeftX() + 5, plotArea->getTopY() - 3, 0x333333, ChartDirector::Chart::BottomLeft);
-	e->Graphics->DrawImage(winChartViewer1->Chart->makeImage(), points);
-	e->HasMorePages = false;
-
-}
-//Método que guarda la predicción en un fichero temporal .dat
-public: System::Void Savedatabutton_Click(System::Object^ sender, System::EventArgs^ e) {
-	saveFileDialog2->ShowDialog();
-	if (saveFileDialog2->FileName != "")
+		  //
+		   // Zoom out button event handler
+		   //
+	private: System::Void ZoomOutPB_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (zoomOutPB->Checked)
+			winChartViewer1->MouseUsage = WinChartMouseUsage::ZoomOut;
+	}
+		   //
+		   // Zoom in button event handler
+		   //
+	private: System::Void ZoomInPB_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (zoomInPB->Checked)
+			winChartViewer1->MouseUsage = WinChartMouseUsage::ZoomIn;
+	}
+		   //
+		   // Pointer (Drag to Scroll) button event handler
+		   //
+	private: System::Void PointerPB_CheckedChanged_1(System::Object^ sender, System::EventArgs^ e) {
+		if (pointerPB->Checked)
+			winChartViewer1->MouseUsage = WinChartMouseUsage::ScrollOnDrag;
+	}
+		   //Boton para imprimir el trozo de grafica que se muestra por pantalla
+	public: System::Void PrintPB_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		std::stringstream sTempPredicction;
-		sTempPredicction << buf << "\\TempPredicction.dat";
-		std::string TempPredicctionPath=sTempPredicction.str();
-		const std::filesystem::path pd = msclr::interop::marshal_as<std::string>(saveFileDialog2->FileName).c_str();
-		std::cout << pd <<std:: endl;
-		std::filesystem::copy_file(TempPredicctionPath.c_str(),pd, std::filesystem::copy_options::overwrite_existing);
+		printDialog1->Document = printDocument1;
+		//Call ShowDialog
+		if (printDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+		{
+			printDocument1->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &ChartForm::PrintDocument1_PrintPage);
+			printDocument1->Print();
+		}
+	}
+		  //Metodo que imprime gráfica
+	private: System::Void PrintDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e)
+	{
+
+		System::Drawing::Point* point1 = new System::Drawing::Point(0, 0);
+		System::Drawing::Point* point2 = new System::Drawing::Point(700, 0);
+		System::Drawing::Point* point3 = new System::Drawing::Point(0, 600);
+		array<System::Drawing::Point>^ points = gcnew array<System::Drawing::Point>{*point1, * point2, * point3};
+		ChartDirector::DrawArea^ d = c->initDynamicLayer();
+		ChartDirector::PlotArea^ plotArea = c->getPlotArea();
+		String^ b = " ";
+		ChartDirector::TTFText^ t = d->text(b, "arialbd.ttf", 10);
+		t->draw(plotArea->getLeftX() + 5, plotArea->getTopY() - 3, 0x333333, ChartDirector::Chart::BottomLeft);
+		e->Graphics->DrawImage(winChartViewer1->Chart->makeImage(), points);
+		e->HasMorePages = false;
 
 	}
-}
-//Método que guarda predicción .dat en un lugar indicado por el usuario
-public: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	saveFileDialog2->ShowDialog();
-	if (saveFileDialog2->FileName != "")
-	{
-		richTextBox1->SaveFile(saveFileDialog2->FileName, System::Windows::Forms::RichTextBoxStreamType::PlainText);
+		   //Método que guarda la predicción en un fichero temporal .dat
+	public: System::Void Savedatabutton_Click(System::Object^ sender, System::EventArgs^ e) {
+		saveFileDialog2->ShowDialog();
+		if (saveFileDialog2->FileName != "")
+		{
+			std::stringstream sTempPredicction;
+			sTempPredicction << buf << "\\TempPredicction.dat";
+			std::string TempPredicctionPath = sTempPredicction.str();
+			const std::filesystem::path pd = msclr::interop::marshal_as<std::string>(saveFileDialog2->FileName).c_str();
+			std::cout << pd << std::endl;
+			std::filesystem::copy_file(TempPredicctionPath.c_str(), pd, std::filesystem::copy_options::overwrite_existing);
 
+		}
 	}
-}
-};
-	
+		  //Método que guarda predicción .dat en un lugar indicado por el usuario
+	public: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		saveFileDialog2->ShowDialog();
+		if (saveFileDialog2->FileName != "")
+		{
+			richTextBox1->SaveFile(saveFileDialog2->FileName, System::Windows::Forms::RichTextBoxStreamType::PlainText);
+
+		}
+	}
+	};
+
 }

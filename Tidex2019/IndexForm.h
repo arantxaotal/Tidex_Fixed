@@ -70,19 +70,24 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::ToolStripMenuItem^ SavehdftoolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ SavedattoolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ SaveCharttoolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ tilev;
 
 
-	private: System::Windows::Forms::ToolStripMenuItem^ cascade;
 
-	private: System::Windows::Forms::ToolStripMenuItem^ tileh;
+
+
+
 	private: System::Windows::Forms::ToolStripMenuItem^ PrinttoolStripMenuItem1;
 	private: System::Windows::Forms::ToolStripButton^ savehdftoolStripButton1;
 	private: System::Windows::Forms::ToolStripButton^ savepredictiontoolStripButton2;
 	private: System::Windows::Forms::ToolStripButton^ savecharttoolStripButton3;
 	private: System::Windows::Forms::ToolStripButton^ printtoolStripButton4;
 	private: System::ComponentModel::BackgroundWorker^ backgroundWorker2;
+	private: System::Windows::Forms::ToolStripMenuItem^ VIEW;
+	private: System::Windows::Forms::ToolStripMenuItem^ cascade;
+	private: System::Windows::Forms::ToolStripMenuItem^ tilev;
+	private: System::Windows::Forms::ToolStripMenuItem^ tileh;
 	private: System::Windows::Forms::ToolStripMenuItem^ closeall;
+
 
 
 
@@ -112,9 +117,10 @@ namespace Tidex2019 {
 			this->FILE_EXIT = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->EDIT = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->EDIT_MODIFY = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->VIEW = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->cascade = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->tileh = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tilev = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->tileh = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->closeall = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->HELP = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->HELP_ABOUT = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -138,9 +144,9 @@ namespace Tidex2019 {
 			// 
 			this->menuStrip1->BackColor = System::Drawing::Color::DarkCyan;
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->FILE, this->EDIT,
-					this->HELP
+					this->VIEW, this->HELP
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -249,10 +255,7 @@ namespace Tidex2019 {
 			// EDIT
 			// 
 			this->EDIT->BackColor = System::Drawing::Color::Transparent;
-			this->EDIT->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
-				this->EDIT_MODIFY, this->cascade,
-					this->tileh, this->tilev, this->closeall
-			});
+			this->EDIT->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->EDIT_MODIFY });
 			this->EDIT->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->EDIT->Name = L"EDIT";
@@ -265,43 +268,56 @@ namespace Tidex2019 {
 			this->EDIT_MODIFY->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->EDIT_MODIFY->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"EDIT_MODIFY.Image")));
 			this->EDIT_MODIFY->Name = L"EDIT_MODIFY";
-			this->EDIT_MODIFY->Size = System::Drawing::Size(211, 30);
+			this->EDIT_MODIFY->Size = System::Drawing::Size(187, 30);
 			this->EDIT_MODIFY->Text = L"Modify Data";
 			this->EDIT_MODIFY->Click += gcnew System::EventHandler(this, &IndexForm::EDIT_MODIFY_Click);
+			// 
+			// VIEW
+			// 
+			this->VIEW->BackColor = System::Drawing::Color::Transparent;
+			this->VIEW->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+				this->cascade, this->tilev,
+					this->tileh, this->closeall
+			});
+			this->VIEW->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->VIEW->Name = L"VIEW";
+			this->VIEW->Size = System::Drawing::Size(65, 29);
+			this->VIEW->Text = L"View";
 			// 
 			// cascade
 			// 
 			this->cascade->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->cascade->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->cascade->Name = L"cascade";
-			this->cascade->Size = System::Drawing::Size(211, 30);
+			this->cascade->Size = System::Drawing::Size(207, 30);
 			this->cascade->Text = L"Cascade";
 			this->cascade->Click += gcnew System::EventHandler(this, &IndexForm::cascade_Click);
-			// 
-			// tileh
-			// 
-			this->tileh->BackColor = System::Drawing::Color::DarkSlateGray;
-			this->tileh->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->tileh->Name = L"tileh";
-			this->tileh->Size = System::Drawing::Size(211, 30);
-			this->tileh->Text = L"Tile Horizontal";
-			this->tileh->Click += gcnew System::EventHandler(this, &IndexForm::tileh_Click);
 			// 
 			// tilev
 			// 
 			this->tilev->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->tilev->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->tilev->Name = L"tilev";
-			this->tilev->Size = System::Drawing::Size(211, 30);
+			this->tilev->Size = System::Drawing::Size(207, 30);
 			this->tilev->Text = L"Tile Vertical";
 			this->tilev->Click += gcnew System::EventHandler(this, &IndexForm::tilev_Click);
+			// 
+			// tileh
+			// 
+			this->tileh->BackColor = System::Drawing::Color::DarkSlateGray;
+			this->tileh->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->tileh->Name = L"tileh";
+			this->tileh->Size = System::Drawing::Size(207, 30);
+			this->tileh->Text = L"Tile Horizontal";
+			this->tileh->Click += gcnew System::EventHandler(this, &IndexForm::tileh_Click);
 			// 
 			// closeall
 			// 
 			this->closeall->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->closeall->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->closeall->Name = L"closeall";
-			this->closeall->Size = System::Drawing::Size(211, 30);
+			this->closeall->Size = System::Drawing::Size(207, 30);
 			this->closeall->Text = L"Close All";
 			this->closeall->Click += gcnew System::EventHandler(this, &IndexForm::closeall_Click);
 			// 
@@ -625,22 +641,6 @@ private: System::Void SaveCharttoolStripMenuItem_Click(System::Object^ sender, S
 	catch (System::NullReferenceException ^ e) { e->Message; };
 }
 
-
-private: System::Void cascade_Click(System::Object^ sender, System::EventArgs^ e) {
-
-		this->LayoutMdi(System::Windows::Forms::MdiLayout::Cascade);	
-}
-private: System::Void arrangeicons_Click(System::Object^ sender, System::EventArgs^ e) {
-
-		this->LayoutMdi(System::Windows::Forms::MdiLayout::ArrangeIcons);
-}
-private: System::Void tileh_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->LayoutMdi(System::Windows::Forms::MdiLayout::TileHorizontal);
-}
-private: System::Void tilev_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	this->LayoutMdi(System::Windows::Forms::MdiLayout::TileVertical);
-}
 private: System::Void PrinttoolStripMenuItem1_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	try
@@ -666,9 +666,19 @@ private: System::Void savecharttoolStripButton3_Click(System::Object^ sender, Sy
 private: System::Void printtoolStripButton4_Click(System::Object^ sender, System::EventArgs^ e) {
 	PrinttoolStripMenuItem1_Click(sender, e);
 }
+private: System::Void cascade_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->LayoutMdi(System::Windows::Forms::MdiLayout::Cascade);
+}
+	   
+private: System::Void tilev_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->LayoutMdi(System::Windows::Forms::MdiLayout::TileVertical);
+}
+private: System::Void tileh_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->LayoutMdi(System::Windows::Forms::MdiLayout::TileHorizontal);
+}
 private: System::Void closeall_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	while (ActiveMdiChild!=nullptr)
+	while (ActiveMdiChild != nullptr)
 	{
 		ActiveMdiChild->Close();
 	}
