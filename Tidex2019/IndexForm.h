@@ -87,6 +87,8 @@ namespace Tidex2019 {
 	private: System::Windows::Forms::ToolStripMenuItem^ tilev;
 	private: System::Windows::Forms::ToolStripMenuItem^ tileh;
 	private: System::Windows::Forms::ToolStripMenuItem^ closeall;
+	private: System::Windows::Forms::OpenFileDialog^ openFileDialog3;
+
 
 
 
@@ -136,6 +138,7 @@ namespace Tidex2019 {
 			this->openFileDialog2 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->backgroundWorker2 = (gcnew System::ComponentModel::BackgroundWorker());
+			this->openFileDialog3 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -176,7 +179,7 @@ namespace Tidex2019 {
 			this->FILE_NEW->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_NEW->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"FILE_NEW.Image")));
 			this->FILE_NEW->Name = L"FILE_NEW";
-			this->FILE_NEW->Size = System::Drawing::Size(251, 30);
+			this->FILE_NEW->Size = System::Drawing::Size(255, 30);
 			this->FILE_NEW->Text = L"New";
 			this->FILE_NEW->Click += gcnew System::EventHandler(this, &IndexForm::FILE_NEW_Click);
 			// 
@@ -186,7 +189,7 @@ namespace Tidex2019 {
 			this->FILE_OPEN->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_OPEN->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"FILE_OPEN.Image")));
 			this->FILE_OPEN->Name = L"FILE_OPEN";
-			this->FILE_OPEN->Size = System::Drawing::Size(251, 30);
+			this->FILE_OPEN->Size = System::Drawing::Size(255, 30);
 			this->FILE_OPEN->Text = L"Open Harmonic File";
 			this->FILE_OPEN->Click += gcnew System::EventHandler(this, &IndexForm::FILE_OPEN_Click);
 			// 
@@ -196,7 +199,7 @@ namespace Tidex2019 {
 			this->openPredictionToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->openPredictionToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"openPredictionToolStripMenuItem.Image")));
 			this->openPredictionToolStripMenuItem->Name = L"openPredictionToolStripMenuItem";
-			this->openPredictionToolStripMenuItem->Size = System::Drawing::Size(251, 30);
+			this->openPredictionToolStripMenuItem->Size = System::Drawing::Size(255, 30);
 			this->openPredictionToolStripMenuItem->Text = L"Open Prediction";
 			this->openPredictionToolStripMenuItem->Click += gcnew System::EventHandler(this, &IndexForm::OpenPredictionToolStripMenuItem_Click);
 			// 
@@ -206,7 +209,7 @@ namespace Tidex2019 {
 			this->SavehdftoolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->SavehdftoolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"SavehdftoolStripMenuItem.Image")));
 			this->SavehdftoolStripMenuItem->Name = L"SavehdftoolStripMenuItem";
-			this->SavehdftoolStripMenuItem->Size = System::Drawing::Size(251, 30);
+			this->SavehdftoolStripMenuItem->Size = System::Drawing::Size(255, 30);
 			this->SavehdftoolStripMenuItem->Text = L"Save Harmonic File";
 			this->SavehdftoolStripMenuItem->Click += gcnew System::EventHandler(this, &IndexForm::SavehdftoolStripMenuItem_Click);
 			// 
@@ -216,7 +219,7 @@ namespace Tidex2019 {
 			this->SavedattoolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->SavedattoolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"SavedattoolStripMenuItem.Image")));
 			this->SavedattoolStripMenuItem->Name = L"SavedattoolStripMenuItem";
-			this->SavedattoolStripMenuItem->Size = System::Drawing::Size(251, 30);
+			this->SavedattoolStripMenuItem->Size = System::Drawing::Size(255, 30);
 			this->SavedattoolStripMenuItem->Text = L"Save Prediction";
 			this->SavedattoolStripMenuItem->Click += gcnew System::EventHandler(this, &IndexForm::SavedattoolStripMenuItem_Click);
 			// 
@@ -227,7 +230,7 @@ namespace Tidex2019 {
 			this->SaveCharttoolStripMenuItem->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->SaveCharttoolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"SaveCharttoolStripMenuItem.Image")));
 			this->SaveCharttoolStripMenuItem->Name = L"SaveCharttoolStripMenuItem";
-			this->SaveCharttoolStripMenuItem->Size = System::Drawing::Size(251, 30);
+			this->SaveCharttoolStripMenuItem->Size = System::Drawing::Size(255, 30);
 			this->SaveCharttoolStripMenuItem->Text = L"Save Chart";
 			this->SaveCharttoolStripMenuItem->Click += gcnew System::EventHandler(this, &IndexForm::SaveCharttoolStripMenuItem_Click);
 			// 
@@ -238,7 +241,7 @@ namespace Tidex2019 {
 			this->PrinttoolStripMenuItem1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"PrinttoolStripMenuItem1.Image")));
 			this->PrinttoolStripMenuItem1->Name = L"PrinttoolStripMenuItem1";
 			this->PrinttoolStripMenuItem1->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->PrinttoolStripMenuItem1->Size = System::Drawing::Size(251, 30);
+			this->PrinttoolStripMenuItem1->Size = System::Drawing::Size(255, 30);
 			this->PrinttoolStripMenuItem1->Text = L"Print Chart";
 			this->PrinttoolStripMenuItem1->Click += gcnew System::EventHandler(this, &IndexForm::PrinttoolStripMenuItem1_Click);
 			// 
@@ -248,7 +251,7 @@ namespace Tidex2019 {
 			this->FILE_EXIT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->FILE_EXIT->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"FILE_EXIT.Image")));
 			this->FILE_EXIT->Name = L"FILE_EXIT";
-			this->FILE_EXIT->Size = System::Drawing::Size(251, 30);
+			this->FILE_EXIT->Size = System::Drawing::Size(255, 30);
 			this->FILE_EXIT->Text = L"Exit";
 			this->FILE_EXIT->Click += gcnew System::EventHandler(this, &IndexForm::FILE_EXIT_Click);
 			// 
@@ -268,7 +271,7 @@ namespace Tidex2019 {
 			this->EDIT_MODIFY->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->EDIT_MODIFY->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"EDIT_MODIFY.Image")));
 			this->EDIT_MODIFY->Name = L"EDIT_MODIFY";
-			this->EDIT_MODIFY->Size = System::Drawing::Size(187, 30);
+			this->EDIT_MODIFY->Size = System::Drawing::Size(191, 30);
 			this->EDIT_MODIFY->Text = L"Modify Data";
 			this->EDIT_MODIFY->Click += gcnew System::EventHandler(this, &IndexForm::EDIT_MODIFY_Click);
 			// 
@@ -449,6 +452,10 @@ namespace Tidex2019 {
 			// 
 			this->saveFileDialog1->Filter = L" Archivos de datos (*.dat)|*.dat";
 			// 
+			// openFileDialog3
+			// 
+			this->openFileDialog3->FileName = L"openFileDialog3";
+			// 
 			// IndexForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -544,7 +551,7 @@ private: System::Void FILE_OPEN_Click(System::Object^  sender, System::EventArgs
 			error->Show();
 		}
 	}
-
+	openFileDialog1->FileName = "";
 }
 //Abre nuevo fichero de datos armónicos en botón
 private: System::Void OpenButton_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -552,16 +559,55 @@ private: System::Void OpenButton_Click(System::Object^  sender, System::EventArg
 }
 //Método que abre dialogo para editar fichero armónico en menú
 private: System::Void EDIT_MODIFY_Click(System::Object^  sender, System::EventArgs^  e) {
-	openFileDialog1->ShowDialog();
-	if (openFileDialog1->FileName != "")
+	try
 	{
-			
-			NewForm^newForm = gcnew NewForm(openFileDialog1->FileName, helper->buf, this);
-			newForm->MdiParent = this;
-			newForm->Show();
+		if (this->ActiveMdiChild->GetType()->ToString() == "Tidex2019.ChartForm")
+		{
+			ChartForm^ chartf = (ChartForm^)this->ActiveMdiChild;
+			openFileDialog3->FileName = chartf->Text;
+			if (openFileDialog3->FileName != "")
+			{
+				try {
+					try {
+						try {
+
+							NewForm^ newForm = gcnew NewForm(openFileDialog3->FileName, helper->buf, this);
+							newForm->MdiParent = this;
+							newForm->Show();
 
 
+						}
+						catch (System::FormatException^ e)
+						{
+							e->Message;
+							ErrorFormatForm^ error = gcnew ErrorFormatForm();
+							error->MdiParent = this;
+							error->Show();
+
+						}
+					}
+					catch (System::Runtime::InteropServices::SEHException^ e)
+					{
+						e->Message;
+						ErrorForm^ error = gcnew ErrorForm();
+						error->MdiParent = this;
+						error->Show();
+					}
+				}
+				catch (System::ArgumentOutOfRangeException^ e)
+				{
+					e->Message;
+					ErrorFormatForm^ error = gcnew ErrorFormatForm();
+					error->MdiParent = this;
+					error->Show();
+				}
+			}
+
+		}
 	}
+	catch (System::NullReferenceException^ e) {
+		MessageBox::Show("There is no prediction file selected to modify!", "Warning", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Exclamation);
+	};
 }
 //Método que muestra la ventana Help en menú
 private: System::Void HELP_ABOUT_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -594,6 +640,7 @@ private: System::Void OpenPredictionToolStripMenuItem_Click(System::Object^ send
 		unitform->MdiParent = this;
 		unitform->Show();
 	}
+
 
 }
 private: System::Void Predictionbutton_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -685,5 +732,6 @@ private: System::Void closeall_Click(System::Object^ sender, System::EventArgs^ 
 
 	return;
 }
+
 };
 }
