@@ -45,6 +45,7 @@ namespace Tidex2019 {
 
 
 
+
 	protected:
 
 	private:
@@ -176,7 +177,7 @@ private: System::Void LinkLabel1_LinkClicked(System::Object^ sender, System::Win
 	this->linkLabel1->LinkVisited = true;
 
 	// Navigate to a URL.
-	System::Diagnostics::Process::Start("https://ucatidex.wordpress.com/");
+	System::Diagnostics::Process::Start("https://ucatidex2020.wordpress.com/");
 }
 private: System::Void LinkLabel2_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 	// Specify that the link was visited.
