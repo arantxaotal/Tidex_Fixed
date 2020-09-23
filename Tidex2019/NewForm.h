@@ -1261,6 +1261,7 @@ private: System::Windows::Forms::Button^ updatebutton;
 			chart->FormClosed += gcnew FormClosedEventHandler(this, &Tidex2019::NewForm::chart_FormClosed);
 			chart->Show();
 		}
+		this->Close();
 	
 	}
 
