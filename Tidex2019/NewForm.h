@@ -477,7 +477,7 @@ private: System::Windows::Forms::Button^ updatebutton;
 				 this->namebox->Items->AddRange(gcnew cli::array< System::Object^  >(70) {
 					 L"Z0", L"SA", L"SSA", L"MSM", L"MM", L"MSF", L"MF",
 						 L"ALP1", L"2Q1", L"SIG1", L"Q1", L"RHO1", L"O1", L"TAU1", L"BET1", L"NO1", L"CHI1", L"PI1", L"P1", L"S1", L"K1", L"PSI1", L"PHI1",
-						 L"THE1", L"J1", L"S01", L"OO1", L"UPS1", L"OQ2", L"EPS2", L"2N2", L"MU2", L"N2", L"NU2", L"GAM2", L"H1", L"M2", L"H2", L"MKS2",
+						 L"THE1", L"J1", L"SO1", L"OO1", L"UPS1", L"OQ2", L"EPS2", L"2N2", L"MU2", L"N2", L"NU2", L"GAM2", L"H1", L"M2", L"H2", L"MKS2",
 						 L"LDA2", L"L2", L"T2", L"S2", L"R2", L"K2", L"MSN2", L"ETA2", L"MO3", L"M3", L"SO3", L"MK3", L"SK3", L"MN4", L"M4", L"SN4", L"MS4",
 						 L"MK4", L"S4", L"SK4", L"2MK5", L"2SK5", L"2MN6", L"M6", L"2MS6", L"2MK6", L"2SM6", L"MSK6", L"3MK7", L"M8", L"M10"
 				 });
@@ -866,7 +866,10 @@ private: System::Windows::Forms::Button^ updatebutton;
 				 this->measurementtimebox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->measurementtimebox->FormattingEnabled = true;
-				 this->measurementtimebox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"15", L"30", L"60" });
+				 this->measurementtimebox->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
+					 L"5", L"10", L"15", L"20", L"25", L"30",
+						 L"35", L"40", L"45", L"50", L"55", L"60"
+				 });
 				 this->measurementtimebox->Location = System::Drawing::Point(405, 92);
 				 this->measurementtimebox->Name = L"measurementtimebox";
 				 this->measurementtimebox->Size = System::Drawing::Size(68, 28);
@@ -1114,13 +1117,49 @@ private: System::Windows::Forms::Button^ updatebutton;
 	}
 	private: System::String^ transformanum(System::String^ num)
 	{
+		if (num == "5")
+		{
+			return "0.0833333333";
+		}
+		if (num == "10")
+		{
+			return "0.16666667";
+		}
 		if (num == "15")
 		{
 			return "0.25";
 		}
+		if (num == "20")
+		{
+			return "0.333333333";
+		}
+		if (num == "25")
+		{
+			return "0.416666667";
+		}
 		if (num == "30")
 		{
 			return "0.5";
+		}
+		if (num == "35")
+		{
+			return "0.583333333";
+		}
+		if (num == "40")
+		{
+			return "0.666666667";
+		}
+		if (num == "45")
+		{
+			return "0.75";
+		}
+		if (num == "50")
+		{
+			return "0.8333333333";
+		}
+		if (num == "55")
+		{
+			return "0.916666667";
 		}
 		if (num == "60")
 		{
