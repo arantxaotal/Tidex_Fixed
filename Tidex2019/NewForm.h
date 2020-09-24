@@ -481,7 +481,7 @@ private: System::Windows::Forms::Button^ updatebutton;
 						 L"LDA2", L"L2", L"T2", L"S2", L"R2", L"K2", L"MSN2", L"ETA2", L"MO3", L"M3", L"SO3", L"MK3", L"SK3", L"MN4", L"M4", L"SN4", L"MS4",
 						 L"MK4", L"S4", L"SK4", L"2MK5", L"2SK5", L"2MN6", L"M6", L"2MS6", L"2MK6", L"2SM6", L"MSK6", L"3MK7", L"M8", L"M10"
 				 });
-				 this->namebox->Location = System::Drawing::Point(266, 227);
+				 this->namebox->Location = System::Drawing::Point(306, 227);
 				 this->namebox->Name = L"namebox";
 				 this->namebox->Size = System::Drawing::Size(71, 28);
 				 this->namebox->TabIndex = 36;
@@ -598,7 +598,7 @@ private: System::Windows::Forms::Button^ updatebutton;
 				 this->dataGridView1->Location = System::Drawing::Point(44, 260);
 				 this->dataGridView1->Name = L"dataGridView1";
 				 this->dataGridView1->RowHeadersWidth = 51;
-				 this->dataGridView1->Size = System::Drawing::Size(681, 172);
+				 this->dataGridView1->Size = System::Drawing::Size(721, 175);
 				 this->dataGridView1->TabIndex = 62;
 				 this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &NewForm::dataGridView1_CellContentClick);
 				 // 
@@ -635,7 +635,7 @@ private: System::Windows::Forms::Button^ updatebutton;
 				 this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label5->ForeColor = System::Drawing::Color::Black;
-				 this->label5->Location = System::Drawing::Point(262, 205);
+				 this->label5->Location = System::Drawing::Point(302, 205);
 				 this->label5->Name = L"label5";
 				 this->label5->Size = System::Drawing::Size(55, 20);
 				 this->label5->TabIndex = 63;
@@ -649,7 +649,7 @@ private: System::Windows::Forms::Button^ updatebutton;
 				 this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label6->ForeColor = System::Drawing::Color::Black;
-				 this->label6->Location = System::Drawing::Point(338, 205);
+				 this->label6->Location = System::Drawing::Point(378, 205);
 				 this->label6->Name = L"label6";
 				 this->label6->Size = System::Drawing::Size(88, 20);
 				 this->label6->TabIndex = 64;
@@ -663,7 +663,7 @@ private: System::Windows::Forms::Button^ updatebutton;
 				 this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label7->ForeColor = System::Drawing::Color::Black;
-				 this->label7->Location = System::Drawing::Point(546, 202);
+				 this->label7->Location = System::Drawing::Point(586, 202);
 				 this->label7->Name = L"label7";
 				 this->label7->Size = System::Drawing::Size(86, 20);
 				 this->label7->TabIndex = 65;
@@ -675,7 +675,7 @@ private: System::Windows::Forms::Button^ updatebutton;
 				 this->amplitudebox->DecimalPlaces = 4;
 				 this->amplitudebox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->amplitudebox->Location = System::Drawing::Point(342, 226);
+				 this->amplitudebox->Location = System::Drawing::Point(382, 226);
 				 this->amplitudebox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 900, 0, 0, 0 });
 				 this->amplitudebox->Name = L"amplitudebox";
 				 this->amplitudebox->Size = System::Drawing::Size(137, 29);
@@ -687,7 +687,7 @@ private: System::Windows::Forms::Button^ updatebutton;
 				 this->argumentbox->DecimalPlaces = 2;
 				 this->argumentbox->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->argumentbox->Location = System::Drawing::Point(548, 225);
+				 this->argumentbox->Location = System::Drawing::Point(588, 225);
 				 this->argumentbox->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 360, 0, 0, 0 });
 				 this->argumentbox->Name = L"argumentbox";
 				 this->argumentbox->Size = System::Drawing::Size(137, 29);
@@ -789,9 +789,9 @@ private: System::Windows::Forms::Button^ updatebutton;
 				 // 
 				 // acceptbutton
 				 // 
-				 this->acceptbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+				 this->acceptbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 				 this->acceptbutton->Depth = 0;
-				 this->acceptbutton->Location = System::Drawing::Point(365, 681);
+				 this->acceptbutton->Location = System::Drawing::Point(696, 10);
 				 this->acceptbutton->MouseState = MaterialSkin::MouseState::HOVER;
 				 this->acceptbutton->Name = L"acceptbutton";
 				 this->acceptbutton->Primary = true;
@@ -803,9 +803,9 @@ private: System::Windows::Forms::Button^ updatebutton;
 				 // 
 				 // cancelbutton
 				 // 
-				 this->cancelbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+				 this->cancelbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 				 this->cancelbutton->Depth = 0;
-				 this->cancelbutton->Location = System::Drawing::Point(609, 681);
+				 this->cancelbutton->Location = System::Drawing::Point(696, 95);
 				 this->cancelbutton->MouseState = MaterialSkin::MouseState::HOVER;
 				 this->cancelbutton->Name = L"cancelbutton";
 				 this->cancelbutton->Primary = true;
@@ -822,7 +822,7 @@ private: System::Windows::Forms::Button^ updatebutton;
 					 static_cast<System::Byte>(0)));
 				 this->unitbox->FormattingEnabled = true;
 				 this->unitbox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"cm", L"m", L"cm/s", L"m/s" });
-				 this->unitbox->Location = System::Drawing::Point(485, 226);
+				 this->unitbox->Location = System::Drawing::Point(525, 226);
 				 this->unitbox->Name = L"unitbox";
 				 this->unitbox->Size = System::Drawing::Size(58, 28);
 				 this->unitbox->TabIndex = 91;
@@ -837,21 +837,22 @@ private: System::Windows::Forms::Button^ updatebutton;
 				 // 
 				 // richTextBox1
 				 // 
-				 this->richTextBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+				 this->richTextBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
+					 | System::Windows::Forms::AnchorStyles::Right));
 				 this->richTextBox1->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->richTextBox1->Location = System::Drawing::Point(44, 478);
+				 this->richTextBox1->Location = System::Drawing::Point(44, 497);
 				 this->richTextBox1->Name = L"richTextBox1";
 				 this->richTextBox1->ReadOnly = true;
-				 this->richTextBox1->Size = System::Drawing::Size(681, 197);
+				 this->richTextBox1->Size = System::Drawing::Size(721, 152);
 				 this->richTextBox1->TabIndex = 92;
 				 this->richTextBox1->Text = L"";
 				 // 
 				 // harmonicsavebutton
 				 // 
-				 this->harmonicsavebutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+				 this->harmonicsavebutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 				 this->harmonicsavebutton->Depth = 0;
-				 this->harmonicsavebutton->Location = System::Drawing::Point(487, 681);
+				 this->harmonicsavebutton->Location = System::Drawing::Point(696, 53);
 				 this->harmonicsavebutton->MouseState = MaterialSkin::MouseState::HOVER;
 				 this->harmonicsavebutton->Name = L"harmonicsavebutton";
 				 this->harmonicsavebutton->Primary = true;
@@ -894,7 +895,7 @@ private: System::Windows::Forms::Button^ updatebutton;
 				 this->addbutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 				 this->addbutton->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->addbutton->Location = System::Drawing::Point(691, 225);
+				 this->addbutton->Location = System::Drawing::Point(731, 225);
 				 this->addbutton->Name = L"addbutton";
 				 this->addbutton->Size = System::Drawing::Size(32, 29);
 				 this->addbutton->TabIndex = 97;
@@ -907,7 +908,7 @@ private: System::Windows::Forms::Button^ updatebutton;
 				 this->updatebutton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 				 this->updatebutton->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->updatebutton->Location = System::Drawing::Point(546, 441);
+				 this->updatebutton->Location = System::Drawing::Point(586, 450);
 				 this->updatebutton->Name = L"updatebutton";
 				 this->updatebutton->Size = System::Drawing::Size(179, 31);
 				 this->updatebutton->TabIndex = 99;
@@ -920,7 +921,7 @@ private: System::Windows::Forms::Button^ updatebutton;
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->BackColor = System::Drawing::Color::PowderBlue;
-				 this->ClientSize = System::Drawing::Size(784, 729);
+				 this->ClientSize = System::Drawing::Size(824, 661);
 				 this->Controls->Add(this->updatebutton);
 				 this->Controls->Add(this->addbutton);
 				 this->Controls->Add(this->label4);
@@ -958,7 +959,7 @@ private: System::Windows::Forms::Button^ updatebutton;
 				 this->Controls->Add(this->label2);
 				 this->Controls->Add(this->label1);
 				 this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-				 this->MinimumSize = System::Drawing::Size(800, 768);
+				 this->MinimumSize = System::Drawing::Size(840, 700);
 				 this->Name = L"NewForm";
 				 this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 				 this->Text = L"Data for prediction";
