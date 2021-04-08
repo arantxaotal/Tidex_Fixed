@@ -984,11 +984,11 @@ private: System::Windows::Forms::Button^ updatebutton;
 
 	}
 	//método que determina si un string es un número
-	private: bool is_number(const std::string& s)
+	private: bool is_number(const std::string& s, int i)
 	{
 		int punto = 0;
 		std::string::const_iterator it = s.begin();
-		while (it != s.end() && (std::isdigit(*it)||*it=='.') &&punto<2)
+		while (it != s.end() && (my_isdigit(*it,i)||*it=='.') &&punto<2)
 		{
 			if (*it == '.')
 			{
@@ -997,6 +997,12 @@ private: System::Windows::Forms::Button^ updatebutton;
 			++it;
 		}
 		return !s.empty() && it == s.end();			
+	}
+
+	//Metodo que acepta si un char es un digito o un simbolo -
+	bool my_isdigit(unsigned char ch, int i)
+	{
+		return ch == '-' && i==0|| std::isdigit(ch);
 	}
 	 //Método que aplica los datos añadidos al cuadro de texto
 	public: System::Void updatebutton_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1031,8 +1037,8 @@ private: System::Windows::Forms::Button^ updatebutton;
 					|| msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "0")
 					&& (msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != ""
 						|| msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "")&&
-					is_number(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()))&&
-						is_number(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()))&&
+					is_number(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()),i)&&
+						is_number(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()),i)&&
 				(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != "."||
 				(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "."
 				)))
@@ -1373,8 +1379,8 @@ private: System::Void updatebutton_Click_1(System::Object^ sender, System::Event
 			|| msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "0")
 			&& (msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != ""
 				|| msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "") &&
-			is_number(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString())) &&
-			is_number(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString())) &&
+			is_number(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()),i) &&
+			is_number(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()),i) &&
 			(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[1]->Value->ToString()) != "." ||
 				(msclr::interop::marshal_as<std::string>(dataGridView1->Rows[i]->Cells[2]->Value->ToString()) != "."
 					)))
